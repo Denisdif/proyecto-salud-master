@@ -5,9 +5,6 @@
     <li class="breadcrumb-item active">Formulario de Posiciones Forzadas</li>
 @endsection
 
-
-
-
 @section('content')
 {!!Form::open(array(
     'url'=>'posiciones_forzadas',
@@ -1305,8 +1302,6 @@
                                                         <!-- / Tobillo_Izquierda -->
                                                     </tr>  
                                                 </table>
-                        
-                            
                                         <div class="form-group">
                                     </div>
                                 </div>
