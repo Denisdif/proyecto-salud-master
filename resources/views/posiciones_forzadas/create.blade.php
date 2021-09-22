@@ -221,1074 +221,1093 @@
                                                     </tr>
                                                     <tr>
                                                         <td rowspan="2" width="10%">Hombro</td>
-                                                        <td width="5%">Der.</td> <!-- Hombro_Derecha -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_derecha_h" value=1 id="checkboxPrimary34">
-                                                                    <label for="checkboxPrimary34"></label>
-                                                                    <input type="hidden" name="abduccion_derecha_h" value=0 id="checkboxPrimary35" checked>
+                                                        <!-- Hombro_Derecha -->
+                                                            <td width="5%">Der.</td> <!-- Hombro_Derecha -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_derecha_h" value=1 id="checkboxPrimary34">
+                                                                        <label for="checkboxPrimary34"></label>
+
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_derecha_h" value=1 id="checkboxPrimary38">
-                                                                    <label for="checkboxPrimary38"></label>
-                                                                    <input type="hidden" name="adduccion_derecha_h" value=0 id="checkboxPrimary39" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_derecha_h" value=1 id="checkboxPrimary38">
+                                                                        <label for="checkboxPrimary38"></label>
+                                
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_derecha_h" value=1 id="checkboxPrimary42">
-                                                                    <label for="checkboxPrimary42"></label>
-                                                                    <input type="hidden" name="flexion_derecha_h" value=0 id="checkboxPrimary43" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_derecha_h" value=1 id="checkboxPrimary42">
+                                                                        <label for="checkboxPrimary42"></label>
+                                                                        
+                                                                    </div>  
+                                                                </div>     
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_derecha_h" value=1 id="checkboxPrimary46">
+                                                                        <label for="checkboxPrimary46"></label>
+                                                                    
+                                                                    </div>
+                                                                </div>       
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_derecha_h" value=1 id="checkboxPrimary430">
+                                                                        <label for="checkboxPrimary430"></label>
+                                                                        
+                                                                    </div>
                                                                 </div>  
-                                                            </div>     
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_derecha_h" value=1 id="checkboxPrimary46">
-                                                                    <label for="checkboxPrimary46"></label>
-                                                                    <input type="hidden" name="extension_derecha_h" value=0 id="checkboxPrimary47" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_derecha_h" value=1 id="checkboxPrimary788">
+                                                                        <label for="checkboxPrimary788"></label>
+                                                                       
+                                                                    </div>
+                                                                </div>  
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_derecha_h" value=1 id="checkboxPrimary54">
+                                                                        <label for="checkboxPrimary54"></label>
+                                                                        
+                                                                    </div>
+                                                                </div>  
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_derecha_h" value=1 id="checkboxPrimary58">
+                                                                        <label for="checkboxPrimary58"></label>
+                                                                       
+                                                                    </div>
+                                                                </div>  
+                                                            </td>
+                                                        <!-- / Hombro_Derecha -->
+                                                        </tr>
+                                                        <tr>
+                                                        <!-- Hombro_Izquierda -->
+                                                            <td width="5%">Izq.</td> <!-- Hombro_Izquierda -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">   
+                                                                        <input type="checkbox" name="abduccion_izquierda_h" value=1 id="checkboxPrimary4000">
+                                                                        <label for="checkboxPrimary4000"></label>
+                                                                        
+                                                                    </div>                                                           
                                                                 </div>
-                                                            </div>       
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_derecha_h" value=1 id="checkboxPrimary430">
-                                                                    <label for="checkboxPrimary430"></label>
-                                                                    <input type="hidden" name="rexterna_derecha_h" value=0 id="checkboxPrimary431" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_izquierda_h" value=1 id="checkboxPrimary40">
+                                                                        <label for="checkboxPrimary40"></label>
+                                                                        
+                                                                    </div>                                
                                                                 </div>
-                                                            </div>  
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_derecha_h" value=1 id="checkboxPrimary788">
-                                                                    <label for="checkboxPrimary788"></label>
-                                                                    <input type="hidden" name="rinterna_derecha_h" value=0 id="checkboxPrimary789" checked>
-                                                                </div>
-                                                            </div>  
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_derecha_h" value=1 id="checkboxPrimary54">
-                                                                    <label for="checkboxPrimary54"></label>
-                                                                    <input type="hidden" name="irradiacion_derecha_h" value=0 id="checkboxPrimary55" checked>
-                                                                </div>
-                                                            </div>  
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_derecha_h" value=1 id="checkboxPrimary58">
-                                                                    <label for="checkboxPrimary58"></label>
-                                                                    <input type="hidden" name="alteracion_derecha_h" value=0 id="checkboxPrimary59" checked>
-                                                                </div>
-                                                            </div>  
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">Izq.</td> <!-- Hombro_Izquierda -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">   
-                                                                    <input type="checkbox" name="abduccion_izquierda_h" value=1 id="checkboxPrimary4000">
-                                                                    <label for="checkboxPrimary4000"></label>
-                                                                    <input type="hidden" name="abduccion_izquierda_h" value=0 id="checkboxPrimary4001" checked>
-                                                                </div>                                                           
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_izquierda_h" value=1 id="checkboxPrimary40">
-                                                                    <label for="checkboxPrimary40"></label>
-                                                                    <input type="hidden" name="adduccion_izquierda_h" value=0 id="checkboxPrimary41" checked>
-                                                                </div>                                
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_izquierda_h" value=1 id="checkboxPrimary44">
-                                                                    <label for="checkboxPrimary44"></label>
-                                                                    <input type="hidden" name="flexion_izquierda_h" value=0 id="checkboxPrimary45" checked>
-                                                                </div>                                                           
-                                                            </div>                                                    
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox">  <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_izquierda_h" value=1 id="checkboxPrimary48">
-                                                                    <label for="checkboxPrimary48"></label>
-                                                                    <input type="hidden" name="extension_izquierda_h" value=0 id="checkboxPrimary49" checked>
-                                                                </div>                                                           
-                                                            </div>                                                       
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox">  <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_izquierda_h" value=1 id="checkboxPrimary432">
-                                                                    <label for="checkboxPrimary432"></label>
-                                                                    <input type="hidden" name="rexterna_izquierda_h" value=0 id="checkboxPrimary433" checked>
-                                                                </div>                                      
-                                                            </div>                                                        
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_izquierda_h" value=1 id="checkboxPrimary52">
-                                                                    <label for="checkboxPrimary52"></label>
-                                                                    <input type="hidden" name="rinterna_izquierda_h" value=0 id="checkboxPrimary53" checked>
-                                                                </div>                                                           
-                                                            </div>                                                      
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_izquierda_h" value=1 id="checkboxPrimary56">
-                                                                    <label for="checkboxPrimary56"></label>
-                                                                    <input type="hidden" name="irradiacion_izquierda_h" value=0 id="checkboxPrimary57" checked>
-                                                                </div>                                                           
-                                                            </div>                                                      
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_izquierda_h" value=1 id="checkboxPrimary60">
-                                                                    <label for="checkboxPrimary60"></label>
-                                                                    <input type="hidden" name="alteracion_izquierda_h" value=0 id="checkboxPrimary61" checked>
-                                                                </div>                                                           
-                                                            </div>                                                      
-                                                        </td>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_izquierda_h" value=1 id="checkboxPrimary44">
+                                                                        <label for="checkboxPrimary44"></label>
+                                                                       
+                                                                    </div>                                                           
+                                                                </div>                                                    
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">  <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_izquierda_h" value=1 id="checkboxPrimary48">
+                                                                        <label for="checkboxPrimary48"></label>
+                                                                       
+                                                                    </div>                                                           
+                                                                </div>                                                       
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">  <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_izquierda_h" value=1 id="checkboxPrimary432">
+                                                                        <label for="checkboxPrimary432"></label>
+                                                                        
+                                                                    </div>                                      
+                                                                </div>                                                        
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_izquierda_h" value=1 id="checkboxPrimary52">
+                                                                        <label for="checkboxPrimary52"></label>
+                                                                        
+                                                                    </div>                                                           
+                                                                </div>                                                      
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_izquierda_h" value=1 id="checkboxPrimary56">
+                                                                        <label for="checkboxPrimary56"></label>
+                                                                       
+                                                                    </div>                                                           
+                                                                </div>                                                      
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_izquierda_h" value=1 id="checkboxPrimary60">
+                                                                        <label for="checkboxPrimary60"></label>
+                                                                       
+                                                                    </div>                                                           
+                                                                </div>                                                      
+                                                            </td>
+                                                        <!-- / Hombro_Izquierda -->
                                                     </tr>
                                                     <tr>
                                                         <td rowspan="2" width="10%">Codo</td>
-                                                        <td width="5%">Der.</td> <!-- Codo_Derecha -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_derecha_c" value=1 id="checkboxPrimary62">
-                                                                    <label for="checkboxPrimary62"></label>
-                                                                    <input type="hidden" name="abduccion_derecha_c" value=0 id="checkboxPrimary63" checked>
+                                                        <!-- Codo_Derecha -->
+                                                            <td width="5%">Der.</td> <!-- Codo_Derecha -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_derecha_c" value=1 id="checkboxPrimary62">
+                                                                        <label for="checkboxPrimary62"></label>
+                                                                        
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_derecha_c" value=1 id="checkboxPrimary66">
-                                                                    <label for="checkboxPrimary66"></label>
-                                                                    <input type="hidden" name="adduccion_derecha_c" value=0 id="checkboxPrimary67" checked>
-                                                                </div>                                                           
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_derecha_c" value=1 id="checkboxPrimary70">
-                                                                    <label for="checkboxPrimary70"></label>
-                                                                    <input type="hidden" name="flexion_derecha_c" value=0 id="checkboxPrimary71" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_derecha_c" value=1 id="checkboxPrimary66">
+                                                                        <label for="checkboxPrimary66"></label>
+                                                                       
+                                                                    </div>                                                           
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_derecha_c" value=1 id="checkboxPrimary74">
-                                                                    <label for="checkboxPrimary74"></label>
-                                                                    <input type="hidden" name="extension_derecha_c" value=0 id="checkboxPrimary75" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_derecha_c" value=1 id="checkboxPrimary70">
+                                                                        <label for="checkboxPrimary70"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_derecha_c" value=1 id="checkboxPrimary78">
-                                                                    <label for="checkboxPrimary78"></label>
-                                                                    <input type="hidden" name="rexterna_derecha_c" value=0 id="checkboxPrimary79" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_derecha_c" value=1 id="checkboxPrimary74">
+                                                                        <label for="checkboxPrimary74"></label>
+                                                                        
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_derecha_c" value=1 id="checkboxPrimary82">
-                                                                    <label for="checkboxPrimary82"></label>
-                                                                    <input type="hidden" name="rinterna_derecha_c" value=0 id="checkboxPrimary83" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_derecha_c" value=1 id="checkboxPrimary78">
+                                                                        <label for="checkboxPrimary78"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_derecha_c" value=1 id="checkboxPrimary86">
-                                                                    <label for="checkboxPrimary86"></label>
-                                                                    <input type="hidden" name="irradiacion_derecha_c" value=0 id="checkboxPrimary87" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_derecha_c" value=1 id="checkboxPrimary82">
+                                                                        <label for="checkboxPrimary82"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_derecha_c" value=1 id="checkboxPrimary90">
-                                                                    <label for="checkboxPrimary90"></label>
-                                                                    <input type="hidden" name="alteracion_derecha_c" value=0 id="checkboxPrimary91" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_derecha_c" value=1 id="checkboxPrimary86">
+                                                                        <label for="checkboxPrimary86"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">Izq.</td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_izquierda_c" value=1 id="checkboxPrimary64">
-                                                                    <label for="checkboxPrimary64"></label>
-                                                                    <input type="hidden" name="abduccion_izquierda_c" value=0 id="checkboxPrimary65" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_derecha_c" value=1 id="checkboxPrimary90">
+                                                                        <label for="checkboxPrimary90"></label>
+                                                                        
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_izquierda_c" value=1 id="checkboxPrimary68">
-                                                                    <label for="checkboxPrimary68"></label>
-                                                                    <input type="hidden" name="adduccion_izquierda_c" value=0 id="checkboxPrimary69" checked>
+                                                            </td>
+                                                        <!-- / Codo_Derecha -->    
+                                                        </tr>
+                                                        <tr>
+                                                        <!-- Codo_Izquierda -->
+                                                            <td width="5%">Izq.</td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_izquierda_c" value=1 id="checkboxPrimary64">
+                                                                        <label for="checkboxPrimary64"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_izquierda_c" value=1 id="checkboxPrimary72">
-                                                                    <label for="checkboxPrimary72"></label>
-                                                                    <input type="hidden" name="flexion_izquierda_c" value=0 id="checkboxPrimary73" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_izquierda_c" value=1 id="checkboxPrimary68">
+                                                                        <label for="checkboxPrimary68"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_izquierda_c" value=1 id="checkboxPrimary76">
-                                                                    <label for="checkboxPrimary76"></label>
-                                                                    <input type="hidden" name="extension_izquierda_c" value=0 id="checkboxPrimary77" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_izquierda_c" value=1 id="checkboxPrimary72">
+                                                                        <label for="checkboxPrimary72"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_izquierda_c" value=1 id="checkboxPrimary80">
-                                                                    <label for="checkboxPrimary80"></label>
-                                                                    <input type="hidden" name="rexterna_izquierda_c" value=0 id="checkboxPrimary81" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_izquierda_c" value=1 id="checkboxPrimary76">
+                                                                        <label for="checkboxPrimary76"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_izquierda_c" value=1 id="checkboxPrimary84">
-                                                                    <label for="checkboxPrimary84"></label>
-                                                                    <input type="hidden" name="rinterna_izquierda_c" value=0 id="checkboxPrimary85" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_izquierda_c" value=1 id="checkboxPrimary80">
+                                                                        <label for="checkboxPrimary80"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_izquierda_c" value=1 id="checkboxPrimary88">
-                                                                    <label for="checkboxPrimary88"></label>
-                                                                    <input type="hidden" name="irradiacion_izquierda_c" value=0 id="checkboxPrimary89" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_izquierda_c" value=1 id="checkboxPrimary84">
+                                                                        <label for="checkboxPrimary84"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_izquierda_c" value=1 id="checkboxPrimary92">
-                                                                    <label for="checkboxPrimary92"></label>
-                                                                    <input type="hidden" name="alteracion_izquierda_c" value=0 id="checkboxPrimary93" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_izquierda_c" value=1 id="checkboxPrimary88">
+                                                                        <label for="checkboxPrimary88"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_izquierda_c" value=1 id="checkboxPrimary92">
+                                                                        <label for="checkboxPrimary92"></label>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        <!-- / Codo_Izquierda -->
                                                     </tr>
                                                     <tr>
                                                         <td rowspan="2" width="10%">Articulación Muñeca</td>
-                                                        <td width="5%">Der.</td> <!-- Muñeca_Derecha -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_derecha_m" value=1 id="checkboxPrimary94">
-                                                                    <label for="checkboxPrimary94"></label>
-                                                                    <input type="hidden" name="abduccion_derecha_m" value=0 id="checkboxPrimary95" checked>
+                                                        <!-- Muñeca_Derecha -->
+                                                            <td width="5%">Der.</td> <!-- Muñeca_Derecha -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_derecha_m" value=1 id="checkboxPrimary94">
+                                                                        <label for="checkboxPrimary94"></label>
+                                                                        
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_derecha_m" value=1 id="checkboxPrimary98">
-                                                                    <label for="checkboxPrimary98"></label>
-                                                                    <input type="hidden" name="adduccion_derecha_m" value=0 id="checkboxPrimary99" checked>
-                                                                </div>                                                                                                               
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_derecha_m" value=1 id="checkboxPrimary102">
-                                                                    <label for="checkboxPrimary102"></label>
-                                                                    <input type="hidden" name="flexion_derecha_m" value=0 id="checkboxPrimary103" checked>
-                                                                </div>                                 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_derecha_m" value=1 id="checkboxPrimary106">
-                                                                    <label for="checkboxPrimary106"></label>
-                                                                    <input type="hidden" name="extension_derecha_m" value=0 id="checkboxPrimary107" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_derecha_m" value=1 id="checkboxPrimary98">
+                                                                        <label for="checkboxPrimary98"></label>
+                                                                       
+                                                                    </div>                                                                                                               
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_derecha_m" value=1 id="checkboxPrimary110">
-                                                                    <label for="checkboxPrimary110"></label>
-                                                                    <input type="hidden" name="rexterna_derecha_m" value=0 id="checkboxPrimary111" checked>
-                                                                </div>       
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_derecha_m" value=1 id="checkboxPrimary114">
-                                                                    <label for="checkboxPrimary114"></label>
-                                                                    <input type="hidden" name="rinterna_derecha_m" value=0 id="checkboxPrimary115" checked>
-                                                                </div> 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_derecha_m" value=1 id="checkboxPrimary118">
-                                                                    <label for="checkboxPrimary118"></label>
-                                                                    <input type="hidden" name="irradiacion_derecha_m" value=0 id="checkboxPrimary119" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_derecha_m" value=1 id="checkboxPrimary102">
+                                                                        <label for="checkboxPrimary102"></label>
+                                                                       
+                                                                    </div>                                 
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_derecha_m" value=1 id="checkboxPrimary122">
-                                                                    <label for="checkboxPrimary122"></label>
-                                                                    <input type="hidden" name="alteracion_derecha_m" value=0 id="checkboxPrimary123" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_derecha_m" value=1 id="checkboxPrimary106">
+                                                                        <label for="checkboxPrimary106"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">Izq.</td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_izquierda_m" value=1 id="checkboxPrimary96">
-                                                                    <label for="checkboxPrimary96"></label>
-                                                                    <input type="hidden" name="abduccion_izquierda_m" value=0 id="checkboxPrimary97" checked>
-                                                                </div>                                                       
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_izquierda_m" value=1 id="checkboxPrimary100">
-                                                                    <label for="checkboxPrimary100"></label>
-                                                                    <input type="hidden" name="adduccion_izquierda_m" value=0 id="checkboxPrimary101" checked>
-                                                                </div>                                           
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_izquierda_m" value=1 id="checkboxPrimary104">
-                                                                    <label for="checkboxPrimary104"></label>
-                                                                    <input type="hidden" name="flexion_izquierda_m" value=0 id="checkboxPrimary105" checked>
-                                                                </div>            
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_izquierda_m" value=1 id="checkboxPrimary108">
-                                                                    <label for="checkboxPrimary108"></label>
-                                                                    <input type="hidden" name="extension_izquierda_m" value=0 id="checkboxPrimary109" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_derecha_m" value=1 id="checkboxPrimary110">
+                                                                        <label for="checkboxPrimary110"></label>
+                                                                       
+                                                                    </div>       
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_izquierda_m" value=1 id="checkboxPrimary112">
-                                                                    <label for="checkboxPrimary112"></label>
-                                                                    <input type="hidden" name="rexterna_izquierda_m" value=0 id="checkboxPrimary113" checked>
-                                                                </div>                   
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_izquierda_m" value=1 id="checkboxPrimary116">
-                                                                    <label for="checkboxPrimary116"></label>
-                                                                    <input type="hidden" name="rinterna_izquierda_m" value=0 id="checkboxPrimary117" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_derecha_m" value=1 id="checkboxPrimary114">
+                                                                        <label for="checkboxPrimary114"></label>
+                                                                       
+                                                                    </div> 
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_izquierda_m" value=1 id="checkboxPrimary120">
-                                                                    <label for="checkboxPrimary120"></label>
-                                                                    <input type="hidden" name="irradiacion_izquierda_m" value=0 id="checkboxPrimary121" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_derecha_m" value=1 id="checkboxPrimary118">
+                                                                        <label for="checkboxPrimary118"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_izquierda_m" value=1 id="checkboxPrimary124">
-                                                                    <label for="checkboxPrimary124"></label>
-                                                                    <input type="hidden" name="alteracion_izquierda_m" value=0 id="checkboxPrimary125" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_derecha_m" value=1 id="checkboxPrimary122">
+                                                                        <label for="checkboxPrimary122"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
+                                                            </td>
+                                                        <!-- / Muñeca_Derecha -->
+                                                        </tr>
+                                                        <tr>
+                                                        <!-- Muñeca_izquierda -->
+                                                            <td width="5%">Izq.</td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_izquierda_m" value=1 id="checkboxPrimary96">
+                                                                        <label for="checkboxPrimary96"></label>
+                                                                       
+                                                                    </div>                                                       
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_izquierda_m" value=1 id="checkboxPrimary100">
+                                                                        <label for="checkboxPrimary100"></label>
+                                                                       
+                                                                    </div>                                           
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_izquierda_m" value=1 id="checkboxPrimary104">
+                                                                        <label for="checkboxPrimary104"></label>
+                                                                       
+                                                                    </div>            
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_izquierda_m" value=1 id="checkboxPrimary108">
+                                                                        <label for="checkboxPrimary108"></label>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_izquierda_m" value=1 id="checkboxPrimary112">
+                                                                        <label for="checkboxPrimary112"></label>
+                                                                      
+                                                                    </div>                   
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_izquierda_m" value=1 id="checkboxPrimary116">
+                                                                        <label for="checkboxPrimary116"></label>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_izquierda_m" value=1 id="checkboxPrimary120">
+                                                                        <label for="checkboxPrimary120"></label>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_izquierda_m" value=1 id="checkboxPrimary124">
+                                                                        <label for="checkboxPrimary124"></label>
+                                                                      
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        <!-- / Muñeca_izquierda -->
                                                     </tr>
                                                     <tr>
                                                         <td rowspan="2" width="10%">Articulación Mano y Dedos</td>
-                                                        <td width="5%">Der.</td> <!-- MandoDedo_Derecha -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_derecha_md" value=1 id="checkboxPrimary126">
-                                                                    <label for="checkboxPrimary126"></label>
-                                                                    <input type="hidden" name="abduccion_derecha_md" value=0 id="checkboxPrimary127" checked>
+                                                        <!-- MandoDedo_Derecha -->
+                                                            <td width="5%">Der.</td> <!-- MandoDedo_Derecha -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_derecha_md" value=1 id="checkboxPrimary126">
+                                                                        <label for="checkboxPrimary126"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_derecha_md" value=1 id="checkboxPrimary130">
-                                                                    <label for="checkboxPrimary130"></label>
-                                                                    <input type="hidden" name="adduccion_derecha_md" value=0 id="checkboxPrimary131" checked>
-                                                                </div>                                                                                                             
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_derecha_md" value=1 id="checkboxPrimary134">
-                                                                    <label for="checkboxPrimary134"></label>
-                                                                    <input type="hidden" name="flexion_derecha_md" value=0 id="checkboxPrimary135" checked>
-                                                                </div>                        
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_derecha_md" value=1 id="checkboxPrimary138">
-                                                                    <label for="checkboxPrimary138"></label>
-                                                                    <input type="hidden" name="extension_derecha_md" value=0 id="checkboxPrimary139" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_derecha_md" value=1 id="checkboxPrimary130">
+                                                                        <label for="checkboxPrimary130"></label>
+                                                                       
+                                                                    </div>                                                                                                             
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_derecha_md" value=1 id="checkboxPrimary142">
-                                                                    <label for="checkboxPrimary142"></label>
-                                                                    <input type="hidden" name="rexterna_derecha_md" value=0 id="checkboxPrimary143" checked>
-                                                                </div>   
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_derecha_md" value=1 id="checkboxPrimary146">
-                                                                    <label for="checkboxPrimary146"></label>
-                                                                    <input type="hidden" name="rinterna_derecha_md" value=0 id="checkboxPrimary147" checked>
-                                                                </div>  
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_derecha_md" value=1 id="checkboxPrimary150">
-                                                                    <label for="checkboxPrimary150"></label>
-                                                                    <input type="hidden" name="irradiacion_derecha_md" value=0 id="checkboxPrimary151" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_derecha_md" value=1 id="checkboxPrimary134">
+                                                                        <label for="checkboxPrimary134"></label>
+                                                                       
+                                                                    </div>                        
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_derecha_md" value=1 id="checkboxPrimary154">
-                                                                    <label for="checkboxPrimary154"></label>
-                                                                    <input type="hidden" name="alteracion_derecha_md" value=0 id="checkboxPrimary155" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_derecha_md" value=1 id="checkboxPrimary138">
+                                                                        <label for="checkboxPrimary138"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">Izq.</td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_izquierda_md" value=1 id="checkboxPrimary128">
-                                                                    <label for="checkboxPrimary128"></label>
-                                                                    <input type="hidden" name="abduccion_izquierda_md" value=0 id="checkboxPrimary129" checked>
-                                                                </div>                                             
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_izquierda_md" value=1 id="checkboxPrimary132">
-                                                                    <label for="checkboxPrimary132"></label>
-                                                                    <input type="hidden" name="adduccion_izquierda_md" value=0 id="checkboxPrimary133" checked>
-                                                                </div>                                     
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_izquierda_md" value=1 id="checkboxPrimary136">
-                                                                    <label for="checkboxPrimary136"></label>
-                                                                    <input type="hidden" name="flexion_izquierda_md" value=0 id="checkboxPrimary137" checked>
-                                                                </div>     
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_izquierda_md" value=1 id="checkboxPrimary140">
-                                                                    <label for="checkboxPrimary140"></label>
-                                                                    <input type="hidden" name="extension_izquierda_md" value=0 id="checkboxPrimary141" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_derecha_md" value=1 id="checkboxPrimary142">
+                                                                        <label for="checkboxPrimary142"></label>
+                                                                        
+                                                                    </div>   
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_izquierda_md" value=1 id="checkboxPrimary144">
-                                                                    <label for="checkboxPrimary144"></label>
-                                                                    <input type="hidden" name="rexterna_izquierda_md" value=0 id="checkboxPrimary145" checked>
-                                                                </div>                  
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_izquierda_md" value=1 id="checkboxPrimary148">
-                                                                    <label for="checkboxPrimary148"></label>
-                                                                    <input type="hidden" name="rinterna_izquierda_md" value=0 id="checkboxPrimary149" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_derecha_md" value=1 id="checkboxPrimary146">
+                                                                        <label for="checkboxPrimary146"></label>
+                                                                     
+                                                                    </div>  
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_izquierda_md" value=1 id="checkboxPrimary152">
-                                                                    <label for="checkboxPrimary152"></label>
-                                                                    <input type="hidden" name="irradiacion_izquierda_md" value=0 id="checkboxPrimary153" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_derecha_md" value=1 id="checkboxPrimary150">
+                                                                        <label for="checkboxPrimary150"></label>
+                                                                        
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_izquierda_md" value=1 id="checkboxPrimary156">
-                                                                    <label for="checkboxPrimary156"></label>
-                                                                    <input type="hidden" name="alteracion_izquierda_md" value=0 id="checkboxPrimary157" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_derecha_md" value=1 id="checkboxPrimary154">
+                                                                        <label for="checkboxPrimary154"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
+                                                            </td>
+                                                        <!-- / MandoDedo_Derecha -->
+                                                        </tr>
+                                                        <tr>
+                                                        <!-- MandoDedo_Izquierda -->
+                                                            <td width="5%">Izq.</td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_izquierda_md" value=1 id="checkboxPrimary128">
+                                                                        <label for="checkboxPrimary128"></label>
+                                                                       
+                                                                    </div>                                             
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_izquierda_md" value=1 id="checkboxPrimary132">
+                                                                        <label for="checkboxPrimary132"></label>
+                                                                      
+                                                                    </div>                                     
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_izquierda_md" value=1 id="checkboxPrimary136">
+                                                                        <label for="checkboxPrimary136"></label>
+                                                                       
+                                                                    </div>     
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_izquierda_md" value=1 id="checkboxPrimary140">
+                                                                        <label for="checkboxPrimary140"></label>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_izquierda_md" value=1 id="checkboxPrimary144">
+                                                                        <label for="checkboxPrimary144"></label>
+                                                                       
+                                                                    </div>                  
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_izquierda_md" value=1 id="checkboxPrimary148">
+                                                                        <label for="checkboxPrimary148"></label>
+                                                                      
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_izquierda_md" value=1 id="checkboxPrimary152">
+                                                                        <label for="checkboxPrimary152"></label>
+                                                                      
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_izquierda_md" value=1 id="checkboxPrimary156">
+                                                                        <label for="checkboxPrimary156"></label>
+                                                                     
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        <!-- / MandoDedo_Izquierda -->
                                                     </tr>                                                
                                                     <tr>
                                                         <td rowspan="2" width="10%">Articulación Cadera</td>
-                                                        <td width="5%">Der.</td> <!-- Cadera_Derecha -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_derecha_cad" value=1 id="checkboxPrimary158">
-                                                                    <label for="checkboxPrimary158"></label>
-                                                                    <input type="hidden" name="abduccion_derecha_cad" value=0 id="checkboxPrimary159" checked>
-                                                                </div> 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_derecha_cad" value=1 id="checkboxPrimary162">
-                                                                    <label for="checkboxPrimary162"></label>
-                                                                    <input type="hidden" name="adduccion_derecha_cad" value=0 id="checkboxPrimary163" checked>
-                                                                </div>                                                                                                            
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_derecha_cad" value=1 id="checkboxPrimary166">
-                                                                    <label for="checkboxPrimary166"></label>
-                                                                    <input type="hidden" name="flexion_derecha_cad" value=0 id="checkboxPrimary167" checked>
-                                                                </div>                  
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_derecha_cad" value=1 id="checkboxPrimary170">
-                                                                    <label for="checkboxPrimary170"></label>
-                                                                    <input type="hidden" name="extension_derecha_cad" value=0 id="checkboxPrimary171" checked>
+                                                        <!-- Cadera_Derecha -->
+                                                            <td width="5%">Der.</td> <!-- Cadera_Derecha -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_derecha_cad" value=1 id="checkboxPrimary158">
+                                                                        <label for="checkboxPrimary158"></label>
+                                                                       
+                                                                    </div> 
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_derecha_cad" value=1 id="checkboxPrimary174">
-                                                                    <label for="checkboxPrimary174"></label>
-                                                                    <input type="hidden" name="rexterna_derecha_cad" value=0 id="checkboxPrimary175" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_derecha_cad" value=1 id="checkboxPrimary162">
+                                                                        <label for="checkboxPrimary162"></label>
+                                                                      
+                                                                    </div>                                                                                                            
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_derecha_cad" value=1 id="checkboxPrimary178">
-                                                                    <label for="checkboxPrimary178"></label>
-                                                                    <input type="hidden" name="rinterna_derecha_cad" value=0 id="checkboxPrimary179" checked>
-                                                                </div>  
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_derecha_cad" value=1 id="checkboxPrimary182">
-                                                                    <label for="checkboxPrimary182"></label>
-                                                                    <input type="hidden" name="irradiacion_derecha_cad" value=0 id="checkboxPrimary183" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_derecha_cad" value=1 id="checkboxPrimary166">
+                                                                        <label for="checkboxPrimary166"></label>
+                                                                      
+                                                                    </div>                  
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_derecha_cad" value=1 id="checkboxPrimary186">
-                                                                    <label for="checkboxPrimary186"></label>
-                                                                    <input type="hidden" name="alteracion_derecha_cad" value=0 id="checkboxPrimary187" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_derecha_cad" value=1 id="checkboxPrimary170">
+                                                                        <label for="checkboxPrimary170"></label>
+                                                                    
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">Izq.</td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_izquierda_cad" value=1 id="checkboxPrimary160">
-                                                                    <label for="checkboxPrimary160"></label>
-                                                                    <input type="hidden" name="abduccion_izquierda_cad" value=0 id="checkboxPrimary161" checked>
-                                                                </div>                         
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_izquierda_cad" value=1 id="checkboxPrimary164">
-                                                                    <label for="checkboxPrimary164"></label>
-                                                                    <input type="hidden" name="adduccion_izquierda_cad" value=0 id="checkboxPrimary165" checked>
-                                                                </div>                         
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_izquierda_cad" value=1 id="checkboxPrimary168">
-                                                                    <label for="checkboxPrimary168"></label>
-                                                                    <input type="hidden" name="flexion_izquierda_cad" value=0 id="checkboxPrimary169" checked>
-                                                                </div> 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_izquierda_cad" value=1 id="checkboxPrimary172">
-                                                                    <label for="checkboxPrimary172"></label>
-                                                                    <input type="hidden" name="extension_izquierda_cad" value=0 id="checkboxPrimary173" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_derecha_cad" value=1 id="checkboxPrimary174">
+                                                                        <label for="checkboxPrimary174"></label>
+                                                                     
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_izquierda_cad" value=1 id="checkboxPrimary176">
-                                                                    <label for="checkboxPrimary176"></label>
-                                                                    <input type="hidden" name="rexterna_izquierda_cad" value=0 id="checkboxPrimary177" checked>
-                                                                </div>             
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_izquierda_cad" value=1 id="checkboxPrimary180">
-                                                                    <label for="checkboxPrimary180"></label>
-                                                                    <input type="hidden" name="rinterna_izquierda_cad" value=0 id="checkboxPrimary181" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_derecha_cad" value=1 id="checkboxPrimary178">
+                                                                        <label for="checkboxPrimary178"></label>
+                                                                     
+                                                                    </div>  
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_izquierda_cad" value=1 id="checkboxPrimary184">
-                                                                    <label for="checkboxPrimary184"></label>
-                                                                    <input type="hidden" name="irradiacion_izquierda_cad" value=0 id="checkboxPrimary185" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_derecha_cad" value=1 id="checkboxPrimary182">
+                                                                        <label for="checkboxPrimary182"></label>
+                                                                     
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_izquierda_cad" value=1 id="checkboxPrimary188">
-                                                                    <label for="checkboxPrimary188"></label>
-                                                                    <input type="hidden" name="alteracion_izquierda_cad" value=0 id="checkboxPrimary189" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_derecha_cad" value=1 id="checkboxPrimary186">
+                                                                        <label for="checkboxPrimary186"></label>
+                                                                    
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
+                                                            </td>
+                                                        <!-- / Cadera_Derecha -->
+                                                        </tr>
+                                                        <tr>
+                                                        <!-- Cadera_izquierda -->
+                                                            <td width="5%">Izq.</td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_izquierda_cad" value=1 id="checkboxPrimary160">
+                                                                        <label for="checkboxPrimary160"></label>
+                                                                      
+                                                                    </div>                         
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_izquierda_cad" value=1 id="checkboxPrimary164">
+                                                                        <label for="checkboxPrimary164"></label>
+                                                                      
+                                                                    </div>                         
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_izquierda_cad" value=1 id="checkboxPrimary168">
+                                                                        <label for="checkboxPrimary168"></label>
+                                                                       
+                                                                    </div> 
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_izquierda_cad" value=1 id="checkboxPrimary172">
+                                                                        <label for="checkboxPrimary172"></label>
+                                                                     
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_izquierda_cad" value=1 id="checkboxPrimary176">
+                                                                        <label for="checkboxPrimary176"></label>
+                                                                     
+                                                                    </div>             
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_izquierda_cad" value=1 id="checkboxPrimary180">
+                                                                        <label for="checkboxPrimary180"></label>
+                                                                      
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_izquierda_cad" value=1 id="checkboxPrimary184">
+                                                                        <label for="checkboxPrimary184"></label>
+                                                                     
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_izquierda_cad" value=1 id="checkboxPrimary188">
+                                                                        <label for="checkboxPrimary188"></label>
+                                                                    
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        <!-- / Cadera_izquierda -->
                                                     </tr>     
                                                     <tr>
                                                         <td rowspan="2" width="10%">Articulación Rodilla</td>
-                                                        <td width="5%">Der.</td> <!-- RODILLA_Derecha -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_derecha_rod" value=1 id="checkboxPrimary190">
-                                                                    <label for="checkboxPrimary190"></label>
-                                                                    <input type="hidden" name="abduccion_derecha_rod" value=0 id="checkboxPrimary191" checked>
+                                                        <!-- RODILLA_Derecha -->
+                                                            <td width="5%">Der.</td> <!-- RODILLA_Derecha -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_derecha_rod" value=1 id="checkboxPrimary190">
+                                                                        <label for="checkboxPrimary190"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_derecha_rod" value=1 id="checkboxPrimary194">
-                                                                    <label for="checkboxPrimary194"></label>
-                                                                    <input type="hidden" name="adduccion_derecha_rod" value=0 id="checkboxPrimary195" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_derecha_rod" value=1 id="checkboxPrimary194">
+                                                                        <label for="checkboxPrimary194"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_derecha_rod" value=1 id="checkboxPrimary198">
-                                                                    <label for="checkboxPrimary198"></label>
-                                                                    <input type="hidden" name="flexion_derecha_rod" value=0 id="checkboxPrimary199" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_derecha_rod" value=1 id="checkboxPrimary198">
+                                                                        <label for="checkboxPrimary198"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_derecha_rod" value=1 id="checkboxPrimary202">
-                                                                    <label for="checkboxPrimary202"></label>
-                                                                    <input type="hidden" name="extension_derecha_rod" value=0 id="checkboxPrimary203" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_derecha_rod" value=1 id="checkboxPrimary202">
+                                                                        <label for="checkboxPrimary202"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_derecha_rod" value=1 id="checkboxPrimary206">
-                                                                    <label for="checkboxPrimary206"></label>
-                                                                    <input type="hidden" name="rexterna_derecha_rod" value=0 id="checkboxPrimary207" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_derecha_rod" value=1 id="checkboxPrimary206">
+                                                                        <label for="checkboxPrimary206"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_derecha_rod" value=1 id="checkboxPrimary210">
-                                                                    <label for="checkboxPrimary210"></label>
-                                                                    <input type="hidden" name="rinterna_derecha_rod" value=0 id="checkboxPrimary211" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_derecha_rod" value=1 id="checkboxPrimary210">
+                                                                        <label for="checkboxPrimary210"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_derecha_rod" value=1 id="checkboxPrimary214">
-                                                                    <label for="checkboxPrimary214"></label>
-                                                                    <input type="hidden" name="irradiacion_derecha_rod" value=0 id="checkboxPrimary215" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_derecha_rod" value=1 id="checkboxPrimary214">
+                                                                        <label for="checkboxPrimary214"></label>
+                                                                        
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_derecha_rod" value=1 id="checkboxPrimary218">
-                                                                    <label for="checkboxPrimary218"></label>
-                                                                    <input type="hidden" name="alteracion_derecha_rod" value=0 id="checkboxPrimary219" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_derecha_rod" value=1 id="checkboxPrimary218">
+                                                                        <label for="checkboxPrimary218"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">Izq.</td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_izquierda_rod" value=1 id="checkboxPrimary192">
-                                                                    <label for="checkboxPrimary192"></label>
-                                                                    <input type="hidden" name="abduccion_izquierda_rod" value=0 id="checkboxPrimary193" checked>
+                                                            </td>
+                                                        <!-- / RODILLA_Derecha -->
+                                                        </tr>
+                                                        <tr>
+                                                        <!-- RODILLA_izquierda -->
+                                                            <td width="5%">Izq.</td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_izquierda_rod" value=1 id="checkboxPrimary192">
+                                                                        <label for="checkboxPrimary192"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_izquierda_rod" value=1 id="checkboxPrimary196">
-                                                                    <label for="checkboxPrimary196"></label>
-                                                                    <input type="hidden" name="adduccion_izquierda_rod" value=0 id="checkboxPrimary197" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_izquierda_rod" value=1 id="checkboxPrimary196">
+                                                                        <label for="checkboxPrimary196"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_izquierda_rod" value=1 id="checkboxPrimary200">
-                                                                    <label for="checkboxPrimary200"></label>
-                                                                    <input type="hidden" name="flexion_izquierda_rod" value=0 id="checkboxPrimary201" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_izquierda_rod" value=1 id="checkboxPrimary200">
+                                                                        <label for="checkboxPrimary200"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_izquierda_rod" value=1 id="checkboxPrimary204">
-                                                                    <label for="checkboxPrimary204"></label>
-                                                                    <input type="hidden" name="extension_izquierda_rod" value=0 id="checkboxPrimary205" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_izquierda_rod" value=1 id="checkboxPrimary204">
+                                                                        <label for="checkboxPrimary204"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_izquierda_rod" value=1 id="checkboxPrimary208">
-                                                                    <label for="checkboxPrimary208"></label>
-                                                                    <input type="hidden" name="rexterna_izquierda_rod" value=0 id="checkboxPrimary209" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_izquierda_rod" value=1 id="checkboxPrimary208">
+                                                                        <label for="checkboxPrimary208"></label>
+                                                                     
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_izquierda_rod" value=1 id="checkboxPrimary212">
-                                                                    <label for="checkboxPrimary212"></label>
-                                                                    <input type="hidden" name="rinterna_izquierda_rod" value=0 id="checkboxPrimary213" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_izquierda_rod" value=1 id="checkboxPrimary212">
+                                                                        <label for="checkboxPrimary212"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_izquierda_rod" value=1 id="checkboxPrimary216">
-                                                                    <label for="checkboxPrimary216"></label>
-                                                                    <input type="hidden" name="irradiacion_izquierda_rod" value=0 id="checkboxPrimary217" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_izquierda_rod" value=1 id="checkboxPrimary216">
+                                                                        <label for="checkboxPrimary216"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_izquierda_rod" value=1 id="checkboxPrimary220">
-                                                                    <label for="checkboxPrimary220"></label>
-                                                                    <input type="hidden" name="alteracion_izquierda_rod" value=0 id="checkboxPrimary221" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_izquierda_rod" value=1 id="checkboxPrimary220">
+                                                                        <label for="checkboxPrimary220"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
+                                                            </td>
+                                                        <!-- / RODILLA_izquierda -->
                                                     </tr>   
                                                     <tr>
                                                         <td rowspan="2" width="10%">Articulacion Tobillo</td>
-                                                        <td width="5%">Der.</td> <!-- _Derecha -->
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_derecha_t" value=1 id="checkboxPrimary222">
-                                                                    <label for="checkboxPrimary222"></label>
-                                                                    <input type="hidden" name="abduccion_derecha_t" value=0 id="checkboxPrimary223" checked>
+                                                        <!-- Tobillo_Derecha -->
+                                                            <td width="5%">Der.</td> <!-- _Derecha -->
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_derecha_t" value=1 id="checkboxPrimary222">
+                                                                        <label for="checkboxPrimary222"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_derecha_t" value=1 id="checkboxPrimary226">
-                                                                    <label for="checkboxPrimary226"></label>
-                                                                    <input type="hidden" name="adduccion_derecha_t" value=0 id="checkboxPrimary227" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_derecha_t" value=1 id="checkboxPrimary226">
+                                                                        <label for="checkboxPrimary226"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_derecha_t" value=1 id="checkboxPrimary230">
-                                                                    <label for="checkboxPrimary230"></label>
-                                                                    <input type="hidden" name="flexion_derecha_t" value=0 id="checkboxPrimary231" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_derecha_t" value=1 id="checkboxPrimary230">
+                                                                        <label for="checkboxPrimary230"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_derecha_t" value=1 id="checkboxPrimary234">
-                                                                    <label for="checkboxPrimary234"></label>
-                                                                    <input type="hidden" name="extension_derecha_t" value=0 id="checkboxPrimary235" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_derecha_t" value=1 id="checkboxPrimary234">
+                                                                        <label for="checkboxPrimary234"></label>
+                                                                     
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_derecha_t" value=1 id="checkboxPrimary238">
-                                                                    <label for="checkboxPrimary238"></label>
-                                                                    <input type="hidden" name="rexterna_derecha_t" value=0 id="checkboxPrimary239" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_derecha_t" value=1 id="checkboxPrimary238">
+                                                                        <label for="checkboxPrimary238"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_derecha_t" value=1 id="checkboxPrimary500">
-                                                                    <label for="checkboxPrimary500"></label>
-                                                                    <input type="hidden" name="rinterna_derecha_t" value=0 id="checkboxPrimary501" checked>
-                                                                </div> 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_derecha_t" value=1 id="checkboxPrimary900">
-                                                                    <label for="checkboxPrimary900"></label>
-                                                                    <input type="hidden" name="irradiacion_derecha_t" value=0 id="checkboxPrimary901" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_derecha_t" value=1 id="checkboxPrimary500">
+                                                                        <label for="checkboxPrimary500"></label>
+                                                                      
+                                                                    </div> 
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_derecha_t" value=1 id="checkboxPrimary904">
-                                                                    <label for="checkboxPrimary904"></label>
-                                                                    <input type="hidden" name="alteracion_derecha_t" value=0 id="checkboxPrimary905" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_derecha_t" value=1 id="checkboxPrimary900">
+                                                                        <label for="checkboxPrimary900"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">Izq.</td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Abdución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="abduccion_izquierda_t" value=1 id="checkboxPrimary224">
-                                                                    <label for="checkboxPrimary224"></label>
-                                                                    <input type="hidden" name="abduccion_izquierda_t" value=0 id="checkboxPrimary225" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_derecha_t" value=1 id="checkboxPrimary904">
+                                                                        <label for="checkboxPrimary904"></label>
+                                                                     
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Addución -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="adduccion_izquierda_t" value=1 id="checkboxPrimary228">
-                                                                    <label for="checkboxPrimary228"></label>
-                                                                    <input type="hidden" name="adduccion_izquierda_t" value=0 id="checkboxPrimary229" checked>
+                                                            </td>
+                                                        <!-- / Tobillo_Derecha -->
+                                                        </tr>
+                                                        <tr>
+                                                        <!-- Tobillo_Izquierda -->
+                                                            <td width="5%">Izq.</td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Abdución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="abduccion_izquierda_t" value=1 id="checkboxPrimary224">
+                                                                        <label for="checkboxPrimary224"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Flexión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="flexion_izquierda_t" value=1 id="checkboxPrimary232">
-                                                                    <label for="checkboxPrimary232"></label>
-                                                                    <input type="hidden" name="flexion_izquierda_t" value=0 id="checkboxPrimary233" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Addución -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="adduccion_izquierda_t" value=1 id="checkboxPrimary228">
+                                                                        <label for="checkboxPrimary228"></label>
+                                                                      
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Extensión -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="extension_izquierda_t" value=1 id="checkboxPrimary236">
-                                                                    <label for="checkboxPrimary236"></label>
-                                                                    <input type="hidden" name="extension_izquierda_t" value=0 id="checkboxPrimary237" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Flexión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="flexion_izquierda_t" value=1 id="checkboxPrimary232">
+                                                                        <label for="checkboxPrimary232"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rexterna_izquierda_t" value=1 id="checkboxPrimary240">
-                                                                    <label for="checkboxPrimary240"></label>
-                                                                    <input type="hidden" name="rexterna_izquierda_t" value=0 id="checkboxPrimary241" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Extensión -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="extension_izquierda_t" value=1 id="checkboxPrimary236">
+                                                                        <label for="checkboxPrimary236"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="rinterna_izquierda_t" value=1 id="checkboxPrimary700">
-                                                                    <label for="checkboxPrimary700"></label>
-                                                                    <input type="hidden" name="rinterna_izquierda_t" value=0 id="checkboxPrimary701" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Externa -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rexterna_izquierda_t" value=1 id="checkboxPrimary240">
+                                                                        <label for="checkboxPrimary240"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Irradiación -->
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="irradiacion_izquierda_t" value=1 id="checkboxPrimary902">
-                                                                    <label for="checkboxPrimary902"></label>
-                                                                    <input type="hidden" name="irradiacion_izquierda_t" value=0 id="checkboxPrimary903" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Rot. Interna -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="rinterna_izquierda_t" value=1 id="checkboxPrimary700">
+                                                                        <label for="checkboxPrimary700"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
-                                                                <div class="icheck-primary d-inline">
-                                                                    <input type="checkbox" name="alteracion_izquierda_t" value=1 id="checkboxPrimary906">
-                                                                    <label for="checkboxPrimary906"></label>
-                                                                    <input type="hidden" name="alteracion_izquierda_t" value=0 id="checkboxPrimary907" checked>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Irradiación -->
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="irradiacion_izquierda_t" value=1 id="checkboxPrimary902">
+                                                                        <label for="checkboxPrimary902"></label>
+                                                                       
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
+                                                            </td>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox"> <!-- Alt. Masa muscular -->             
+                                                                    <div class="icheck-primary d-inline">
+                                                                        <input type="checkbox" name="alteracion_izquierda_t" value=1 id="checkboxPrimary906">
+                                                                        <label for="checkboxPrimary906"></label>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        <!-- / Tobillo_Izquierda -->
                                                     </tr>  
-
                                                 </table>
                         
                             
                                         <div class="form-group">
-                                    
-                    
-                                        
-                                    
-                                        
-                                    
-                                        
-                                    
                                     </div>
                                 </div>
                             </div>

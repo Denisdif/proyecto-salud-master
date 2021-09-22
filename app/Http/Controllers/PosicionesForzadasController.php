@@ -63,7 +63,7 @@ class PosicionesForzadasController extends Controller
 
     public function store(Request $request)
     {
-
+            
             $n=PosicionesForzada::count() + 1;
 
             //Creo una instancia de declaracion jurada
