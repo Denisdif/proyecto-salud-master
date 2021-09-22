@@ -55,23 +55,16 @@
                         <td><p style="font-size:120%">{{ $posiciones_forzada->paciente->nombreCompleto() }}</p></td>
                         <td><p style="font-size:120%">{{($posiciones_forzada->created_at)->format('d/m/Y') }}</p></td>
                         <td><p style="font-size:120%">{{Carbon\Carbon::parse($posiciones_forzada->fecha_realizacion)->format('d/m/Y') }}</p></td>
-
                         <td>
-
-
-
                             <!--aca incluir al modal show cuando todo funcione-->
-
-
-
-
+                            <a href="{{ route('posiciones_forzadas.pdf',$posiciones_forzada->id) }}">
+                                <button title="exportar pdf" class="btn btn-danger btn-responsive">
+                                    <i class="fas fa-file-pdf"></i>
+                                </button>
+                            </a>
                         </td>
-
-
                     </tr>
-
                     <!-- aca colocar el modaldelete-->
-
                     @endforeach
                 </tbody>
             </table>

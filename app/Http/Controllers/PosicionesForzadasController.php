@@ -46,12 +46,12 @@ class PosicionesForzadasController extends Controller
     {
         $posiciones_forzada=PosicionesForzada::find($id);
 
-        $pdf = PDF::loadView('posiciones_forzada.pdf',[
+        $pdf = PDF::loadView('posiciones_forzadas.pdf',[
             "posiciones_forzada"   =>  $posiciones_forzada
             ]);
 
         $pdf->setPaper('a4','letter');
-        return $pdf->download('posiciones-forzada.pdf');
+        return $pdf->stream('posiciones-forzada.pdf');
     }
 
 
