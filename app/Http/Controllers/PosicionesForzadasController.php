@@ -245,12 +245,11 @@ class PosicionesForzadasController extends Controller
             $dolor->posiciones_forzada_id=$posiciones_forzada->id;
             $dolor->save();
 
-            /*
             $semiologica=new Semiologica();
             $semiologica->grado=$request->grado;
             $semiologica->observacion1_s=$request->observacion1_s;
             $semiologica->posiciones_forzada_id=$posiciones_forzada->id;
-            $semiologica->save();*/
+            $semiologica->save();
 
         return redirect()->route('posiciones_forzadas.index');
     }

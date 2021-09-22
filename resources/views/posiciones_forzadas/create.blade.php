@@ -1363,18 +1363,17 @@
 
                                         Caracterización semiológica
                                         <div class="form-group">
-                                            <label>{{ Form::radio('grado','opcion1_s') }} Grado 0: Ausencia de signos y síntomas</label>
-                                            <label>{{ Form::radio('grado','opcion2_s') }} Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva </label>
-                                            <label>{{ Form::radio('grado','opcion13_s') }} Grado 2: Grado 1 mas contractura y/o dolor a la movilización</label>
-                                            <label>{{ Form::radio('grado','opcion1_s') }} Grado 3: Grado 2 mas dolor a la palpación y/o percusión</label>
-                                            <label>{{ Form::radio('grado','opcion1_s') }} Grado 4: Grado 3 mas limitación funcional evidente clínicamente</label>
-
+                                            <label>{{ Form::radio('grado','opcion1_s') }} Grado 0: Ausencia de signos y síntomas</label><br>
+                                            <label>{{ Form::radio('grado','opcion2_s') }} Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva </label><br>
+                                            <label>{{ Form::radio('grado','opcion3_s') }} Grado 2: Grado 1 mas contractura y/o dolor a la movilización</label><br>
+                                            <label>{{ Form::radio('grado','opcion4_s') }} Grado 3: Grado 2 mas dolor a la palpación y/o percusión</label><br>
+                                            <label>{{ Form::radio('grado','opcion5_s') }} Grado 4: Grado 3 mas limitación funcional evidente clínicamente</label><br>
                                         </div>
-
-
-
+                                        <div class="form-group">
+                                            <label for="observacion1">Observación: </label>
+                                            <input type="text" class="form-control" id="observacion1_s"  name="observacion1_s"  placeholder="Ingrese alguna observacion...">
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

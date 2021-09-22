@@ -542,9 +542,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                     ¿Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos?
                                     <div class="form-group clearfix">
                                         <div class="icheck-primary d-inline">
@@ -556,8 +553,6 @@
                                                 <label class="radio-inline" for="radioPrimary58">NO</label>
                                         </div>
                                     </div>
-
-
                                     <div id="opcion5" style="display: none;">
                                         ¿Cuáles?
                                         <div class="custom-control">
@@ -574,10 +569,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
                                     ¿Insuficiencia respiratoria,  ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica?
                                     <div class="form-group clearfix">
                                         <div class="icheck-primary d-inline">
