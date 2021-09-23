@@ -57,7 +57,7 @@ class PosicionesForzada extends Model
         return $this->hasOne(ArticulacionHombro::class);
     }
 
-    public function articulacion_mano_dedo()
+    public function articulacion_mano()
     {
         return $this->hasOne(ArticulacionManoDedo::class);
     }

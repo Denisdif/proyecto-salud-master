@@ -860,4 +860,52 @@ class PosicionesForzadasController extends Controller
 }
 
 
+/*
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
+    
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
 
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
+    
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
+    
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
+    
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
+    
+    @if ($posiciones_forzada->)
+        <td style="text-align: center">x</td>
+    @else
+        <td style="text-align: center"></td>
+    @endif
+
+    -->*/
