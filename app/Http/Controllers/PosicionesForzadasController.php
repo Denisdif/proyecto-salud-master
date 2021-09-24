@@ -46,12 +46,30 @@ class PosicionesForzadasController extends Controller
     {
         $posiciones_forzada=PosicionesForzada::find($id);
 
+        /*
         $pdf = PDF::loadView('posiciones_forzadas.pdf',[
             "posiciones_forzada"   =>  $posiciones_forzada
             ]);
 
         $pdf->setPaper('a4','letter');
+        return $pdf->stream('posiciones-forzada.pdf');*/
+
+        /*
+        $pdf = PDF::loadView('PDFs.espirometria',[
+            "posiciones_forzada"   =>  $posiciones_forzada
+            ]);
+
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('posiciones-forzada.pdf');*/
+
+                
+        $pdf = PDF::loadView('PDFs.audiometria',[
+            "posiciones_forzada"   =>  $posiciones_forzada
+            ]);
+
+        $pdf->setPaper('a4','letter');
         return $pdf->stream('posiciones-forzada.pdf');
+        
     }
 
 
@@ -858,54 +876,3 @@ class PosicionesForzadasController extends Controller
         //
     }
 }
-
-
-/*
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-    
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-    
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-    
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-    
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-    
-    @if ($posiciones_forzada->)
-        <td style="text-align: center">x</td>
-    @else
-        <td style="text-align: center"></td>
-    @endif
-
-    -->*/
