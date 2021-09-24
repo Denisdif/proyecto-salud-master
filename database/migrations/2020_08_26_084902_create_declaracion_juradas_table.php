@@ -24,9 +24,6 @@ class CreateDeclaracionJuradasTable extends Migration
             $table->foreign('voucher_id')->references('id')->on('vouchers')->onDelete('restrict');
             $table->unsignedBigInteger('ciudad_id');
             $table->foreign('ciudad_id')->references('id')->on('ciudades')->onDelete('restrict');
-
-
-
             $table->timestamps();
         });
     }
