@@ -27,17 +27,89 @@
 
         <!-- Tarea -->
             @if ($posiciones_forzada->tarea != null)
-                Tiempo:          {{$posiciones_forzada->tarea->tiempo }} <br>
-                Ciclo:           {{$posiciones_forzada->tarea->ciclo }} <br>
-                Observación:     {{$posiciones_forzada->tarea->observacion_tarea }} <br>
-                pregunta 1:      {{$posiciones_forzada->tarea->pregunta1 }} <br>
-                pregunta 2:      {{$posiciones_forzada->tarea->pregunta2 }} <br>
-                pregunta 3:      {{$posiciones_forzada->tarea->pregunta3 }} <br>
-                pregunta 4:      {{$posiciones_forzada->tarea->pregunta4 }} <br>
-                pregunta 5:      {{$posiciones_forzada->tarea->pregunta5 }} <br>
-                pregunta 6:      {{$posiciones_forzada->tarea->pregunta6 }} <br>
-                pregunta 7:      {{$posiciones_forzada->tarea->pregunta7 }} <br>
-                pregunta 8:      {{$posiciones_forzada->tarea->pregunta8 }} <br>
+
+            <!-- Tiempo -->
+                <br> Tiempo de tarea:
+                @switch($posiciones_forzada->tarea->tiempo)
+                    @case("opcion1")
+                        Esporádico            
+                        @break
+                    @case("opcion2")
+                        Continuo > 2hs y < 4hs
+                        @break
+                    @case("opcion3")
+                        Continuo > 4hs        
+                        @break
+                    @default
+                        No se selecciono ninguna opción
+                @endswitch
+            <!-- / Tiempo -->
+            <!-- Ciclo -->
+                <br> Ciclo de trabajo:
+                @switch($posiciones_forzada->tarea->ciclo )
+                    @case("opcion4")
+                        Largo (Mayor que 2 minutos)                        
+                        @break
+                    @case("opcion5")
+                        Moderado: 30 segundos - 1 a 2 minutos
+                        @break
+                    @case("opcion6")
+                        Corto: hasta 30 segundos                  
+                        @break
+                    @default
+                        No se selecciono ninguna opción
+                @endswitch
+            <!-- / Ciclo -->
+            <!-- Cargas -->
+                <br> Manipulación manual de cargas: 
+                @switch($posiciones_forzada->tarea->cargas )
+                    @case("opcion7")
+                        Menor a 1 Kg            
+                        @break
+                    @case("opcion8")
+                        Entre 1 Kg y 3 Kgs
+                        @break
+                    @case("opcion9")
+                        Mayor a 3 Kgs     
+                        @break
+                    @default
+                        No se cargó ninguna opción
+                @endswitch
+                <br>
+            <!-- / Cargas -->
+            <!-- Tipos de tarea -->
+
+                Tipos de tareas: 
+                @if ($posiciones_forzada->tarea->pregunta1)
+                    Movimiento de alcance repetidos por encima del hombro <br>
+                @endif
+                @if ($posiciones_forzada->tarea->pregunta2)
+                    Movimiento de extensión o flexión forzados de muñeca <br>
+                @endif
+                @if ($posiciones_forzada->tarea->pregunta3)
+                    Flexión sostenida de columna <br>
+                @endif
+                @if ($posiciones_forzada->tarea->pregunta4)
+                    Flexión extrema del codo <br>
+                @endif
+                @if ($posiciones_forzada->tarea->pregunta5)
+                    El cuello se mantiene flexionado <br>
+                @endif
+                @if ($posiciones_forzada->tarea->pregunta6)
+                    Giros de columna <br>
+                @endif
+                @if ($posiciones_forzada->tarea->pregunta7)
+                    Rotación extrema del antebrazo <br>
+                @endif
+                @if ($posiciones_forzada->tarea->pregunta8)
+                    Flexión mantenida de dedos <br>
+                @endif
+                @if ($posiciones_forzada->tarea->observacion_tarea != null)
+                    {{$posiciones_forzada->tarea->observacion_tarea }} 
+                @endif
+
+            <!-- / Tipos de tarea -->
+
             @endif
         <!-- / Tarea -->
 
@@ -781,25 +853,93 @@
 
         <!-- Dolor -->
             @if ($posiciones_forzada->dolor != null)
-                forma         :    {{$posiciones_forzada->dolor->forma             }} <br>
-                evolucion     :    {{$posiciones_forzada->dolor->evolucion         }} <br>
-                pregunta1_d   :    {{$posiciones_forzada->dolor->pregunta1_d       }} <br>
-                pregunta2_d   :    {{$posiciones_forzada->dolor->pregunta2_d       }} <br> 
-                pregunta3_d   :    {{$posiciones_forzada->dolor->pregunta3_d       }} <br>
-                pregunta4_d   :    {{$posiciones_forzada->dolor->pregunta4_d       }} <br>
-                pregunta5_d   :    {{$posiciones_forzada->dolor->pregunta5_d       }} <br>
-                observacion1_d:    {{$posiciones_forzada->dolor->observacion1_d    }} <br>
-                observacion2_d:    {{$posiciones_forzada->dolor->observacion2_d    }} <br>
+
+                <!-- Forma -->
+                    <br> Por su forma de aparición:
+                    @switch($posiciones_forzada->dolor->forma)
+                        @case("opcion1_d")
+                            Agudo          
+                            @break
+                        @case("opcion2_d")
+                            Insidioso
+                            @break
+                        @case("opcion3_d")
+                            Ausente
+                            @break
+                        @default
+                            No se selecciono ninguna opción
+                    @endswitch
+                <!-- / Forma -->
+                <!-- Evolucion --> 
+                    <br> Por su evolución: 
+                    @switch($posiciones_forzada->dolor->evolucion)
+                        @case("opcion4_d")
+                            Continuo      
+                            @break
+                        @case("opcion5_d")
+                            Brotes
+                            @break
+                        @case("opcion6_d")
+                            Cíclico
+                            @break
+                        @default
+                            No se selecciono ninguna opción
+                    @endswitch
+                <!-- / Evolucion -->
+                <!-- Signos --> 
+                    <br> Otros Signos y Síntomas Presentes en el Segmento Involucrado:
+                    @if ($posiciones_forzada->dolor->pregunta1_d)
+                        Calambres musculares
+                    @endif
+                    @if ($posiciones_forzada->dolor->pregunta2_d)
+                        Parestesias
+                    @endif
+                    @if ($posiciones_forzada->dolor->pregunta3_d)
+                        Calor
+                    @endif
+                    @if ($posiciones_forzada->dolor->pregunta4_d)
+                        Cambios de coloración de la piel
+                    @endif
+                    @if ($posiciones_forzada->dolor->pregunta5_d)
+                        Tumefacción
+                    @endif
+                <!-- / Signos -->
+                <!-- Puntos -->
+                    <br> Puntos dolorosos:   {{$posiciones_forzada->dolor->observacion1_d    }}
+                <!-- / Puntos -->
+                <!-- Localización -->
+                    <br>Localización:       {{$posiciones_forzada->dolor->observacion2_d    }} 
+                <!-- / Localización -->
             @endif
         <!-- / Dolor -->
 
         <!-- Semiológica -->
             @if ($posiciones_forzada->semiologica != null)
-                Grado:       {{$posiciones_forzada->semiologica->grado            }} <br>
-                Observación: {{$posiciones_forzada->semiologica->observacion1_s   }} <br>
-            @else
-                Grado: <br>
-                Observación: <br>
+            <!-- Grado -->    
+                <br> Grado: (Mostrar grados de referencia)
+                @switch($posiciones_forzada->semiologica->grado)
+                    @case("opcion1_s")
+                        0: Ausencia de signos y síntomas                             
+                        @break
+                    @case("opcion2_s")
+                        1: Dolor en reposo y/o existencia de sintomatología sugestiva
+                        @break
+                    @case("opcion3_s")
+                        2: Grado 1 mas contractura y/o dolor a la movilización          
+                        @break
+                    @case("opcion4_s")
+                        3: Grado 2 mas dolor a la palpación y/o percusión                 
+                        @break
+                    @case("opcion5_s")
+                        4: Grado 3 mas limitación funcional evidente clínicamente        
+                        @break
+                    @default
+                        No se selecciono ninguna opción
+                @endswitch
+            <!-- / Grado -->
+            <!-- Observación -->
+                <br> Observaciones: {{$posiciones_forzada->semiologica->observacion1_s   }} <br>
+            <!-- / Observación -->    
             @endif
         <!-- / Semiológica -->
     </div>
