@@ -32,13 +32,13 @@
                 <br> Tiempo de tarea:
                 @switch($posiciones_forzada->tarea->tiempo)
                     @case("opcion1")
-                        Esporádico            
+                        Esporádico.
                         @break
                     @case("opcion2")
-                        Continuo > 2hs y < 4hs
+                        Continuo, mayor a 2hs y menor a 4hs.
                         @break
                     @case("opcion3")
-                        Continuo > 4hs        
+                        Continuo, mayor a 4hs.        
                         @break
                     @default
                         No se selecciono ninguna opción
@@ -889,19 +889,19 @@
                 <!-- Signos --> 
                     <br> Otros Signos y Síntomas Presentes en el Segmento Involucrado:
                     @if ($posiciones_forzada->dolor->pregunta1_d)
-                        Calambres musculares
+                        <br> Calambres musculares
                     @endif
                     @if ($posiciones_forzada->dolor->pregunta2_d)
-                        Parestesias
+                        <br> Parestesias
                     @endif
                     @if ($posiciones_forzada->dolor->pregunta3_d)
-                        Calor
+                        <br> Calor
                     @endif
                     @if ($posiciones_forzada->dolor->pregunta4_d)
-                        Cambios de coloración de la piel
+                        <br> Cambios de coloración de la piel
                     @endif
                     @if ($posiciones_forzada->dolor->pregunta5_d)
-                        Tumefacción
+                        <br> Tumefacción
                     @endif
                 <!-- / Signos -->
                 <!-- Puntos -->
