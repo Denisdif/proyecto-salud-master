@@ -8,4 +8,6 @@
     Route::patch('audiometrias/{id}',                  'AudiometriaController@update')            ->name('audiometrias.update');
     Route::delete('audiometrias/{id}',                 'AudiometriaController@destroy')           ->name('audiometrias.destroy');
 
+    Route::get('audiometrias/{audiometria}/pdf',       'AudiometriaController@crearPDF')          ->name('audiometrias.pdf');
+
 ?>

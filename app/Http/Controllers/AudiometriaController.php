@@ -6,6 +6,8 @@ use App\Models\Audiometria;
 use App\Voucher;
 use Illuminate\Http\Request;
 
+use PDF;
+
 /**
  * Class AudiometriaController
  * @package App\Http\Controllers
@@ -34,6 +36,19 @@ class AudiometriaController extends Controller
         $vouchers = Voucher::all();
         $audiometria = new Audiometria();
         return view('audiometria.create', compact('audiometria', 'vouchers'));
+    }
+
+    public function crearPDF($id)
+    {
+        $audiometria=Audiometria::find($id);
+        
+        $pdf = PDF::loadView('audiometria.PDF',[
+            "audiometria"   =>  $audiometria
+            ]);
+
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('audiometria.pdf');
+        
     }
 
     /**
