@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '25b5042c769e16ef92c3362b2aff8c914adb1504',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -159,6 +159,15 @@
       array (
       ),
       'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+    ),
+    'ibex/crud-generator' => 
+    array (
+      'pretty_version' => 'v1.3',
+      'version' => '1.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '28bad86e286b9952453acb3687c8016a01022658',
     ),
     'illuminate/auth' => 
     array (
@@ -397,12 +406,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '25b5042c769e16ef92c3362b2aff8c914adb1504',
     ),
     'laravel/tinker' => 
     array (

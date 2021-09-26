@@ -20,15 +20,15 @@ class ComposerStaticInit63631679a85957e51fa15b44a34d77e8
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
@@ -123,6 +123,7 @@ class ComposerStaticInit63631679a85957e51fa15b44a34d77e8
         array (
             'Intervention\\Image\\' => 19,
             'Illuminate\\' => 11,
+            'Ibex\\CrudGenerator\\' => 19,
         ),
         'G' => 
         array (
@@ -389,6 +390,10 @@ class ComposerStaticInit63631679a85957e51fa15b44a34d77e8
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
+        ),
+        'Ibex\\CrudGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ibex/crud-generator/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -1665,6 +1670,10 @@ class ComposerStaticInit63631679a85957e51fa15b44a34d77e8
         'Highlight\\RegExUtils' => __DIR__ . '/..' . '/scrivo/highlight.php/Highlight/RegExUtils.php',
         'Highlight\\Terminators' => __DIR__ . '/..' . '/scrivo/highlight.php/Highlight/Terminators.php',
         'HistoriaClinicaSeeder' => __DIR__ . '/../..' . '/database/seeds/HistoriaClinicaSeeder.php',
+        'Ibex\\CrudGenerator\\Commands\\CrudGenerator' => __DIR__ . '/..' . '/ibex/crud-generator/src/Commands/CrudGenerator.php',
+        'Ibex\\CrudGenerator\\Commands\\GeneratorCommand' => __DIR__ . '/..' . '/ibex/crud-generator/src/Commands/GeneratorCommand.php',
+        'Ibex\\CrudGenerator\\CrudServiceProvider' => __DIR__ . '/..' . '/ibex/crud-generator/src/CrudServiceProvider.php',
+        'Ibex\\CrudGenerator\\ModelGenerator' => __DIR__ . '/..' . '/ibex/crud-generator/src/ModelGenerator.php',
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
         'Illuminate\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
         'Illuminate\\Auth\\Access\\HandlesAuthorization' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/HandlesAuthorization.php',
