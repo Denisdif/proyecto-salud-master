@@ -235,12 +235,18 @@
                             </ul>
                         </li>
                         -->
-                       
+                    
                         <li class="nav-header">FORMULARIOS</li>
                         <li class="nav-item">
                             <a href="{{ route('voucher.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
                                 <p>Voucher</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('audiometrias.index') }}" class="nav-link">
+                                <i class="fas fa-stethoscope"></i>
+                                <p>Audiometría</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -260,12 +266,6 @@
                             <a href="{{ route('posiciones_forzadas.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
                                 <p>Posiciones Forzadas</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('audiometrias.index') }}" class="nav-link">
-                                <i class="fas fa-stethoscope"></i>
-                                <p>Audiometría</p>
                             </a>
                         </li>
 

@@ -6,72 +6,73 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div class="card">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            @include('errors.request')
+            <!--inlcude mensaje -->
+        <!-- Cabecera -->
+            <div class="card-header">
+                <div class="card-title">
+                    <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Audiometría</p>
+                </div>
+                <div class="card-tools">
+                    <a href= {{ route('audiometrias.create') }}>
+                        <button class="btn btn-primary">
+                            <i class="fa fa-plus"></i> Nuevo
+                        </button>
+                    </a>
+                </div>
+            </div>
+        <!-- / Cabecera -->
+        <!-- Body -->
+            <div class="card-body">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa fa-filter" aria-hidden="true"></i> Filtrar
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
 
-                            <span id="card_title">
-                                {{ __('Audiometria') }}
-                            </span>
+                            <!-- aca colocar el include-->
 
-                             <div class="float-right">
-                                <a href="{{ route('audiometrias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-										<th>Archivo</th>
-										<th>Voucher Id</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($audiometrias as $audiometria)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $audiometria->archivo }}</td>
-											<td>{{ $audiometria->voucher_id }}</td>
-
-                                            <td>
-                                                <form action="{{ route('audiometrias.destroy',$audiometria->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('audiometrias.show',$audiometria->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('audiometrias.edit',$audiometria->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
-                {!! $audiometrias->links() !!}
+                <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table table-bordered table-condensed table-hover">
+                    <thead style="background-color:#222D32">
+                        <tr>
+                            <th width="10%" style="color:#F8F9F9" height="15px"><p class="text-uppercase" style="font-size:120%">Nro Audiometria</p></th>
+                            <th width="10%" style="color:#F8F9F9" height="15px"><p class="text-uppercase" style="font-size:120%">Nombre del Paciente</p></th>
+                            <th width="10%" style="color:#F8F9F9" height="15px"><p class="text-uppercase" style="font-size:120%">Fecha de carga</p></th>
+                            <th width="10%" style="color:#F8F9F9" height="15px"><p class="text-uppercase" style="font-size:120%">Opciones</p></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($audiometrias as $item)
+                        <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
+                            <td><p style="font-size:120%">{{ $item->id }}</p></td>
+                            <td><p style="font-size:120%">{{ $item->voucher->paciente->nombreCompleto() }}</p></td>
+                            <td><p style="font-size:120%">{{($item->created_at)->format('d/m/Y') }}</p></td>
+                            <td>
+                                <!--aca incluir al modal show cuando todo funcione-->
+                                <a href="">
+                                    <button title="exportar pdf" class="btn btn-danger btn-responsive">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- aca colocar el modaldelete-->
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
+        <!-- / Body -->
         </div>
     </div>
-
 @push('scripts')
     <script src="{{asset('js/tablaDetalle.js')}}"></script>
 @endpush

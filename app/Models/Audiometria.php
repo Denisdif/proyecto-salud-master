@@ -39,7 +39,7 @@ class Audiometria extends Model
      */
     public function voucher()
     {
-        return $this->hasOne('App\Models\Voucher', 'id', 'voucher_id');
+        return $this->hasOne('App\Voucher', 'id', 'voucher_id');
     }
     
 

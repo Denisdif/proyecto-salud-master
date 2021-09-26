@@ -18,10 +18,9 @@ class AudiometriaController extends Controller
      */
     public function index()
     {
-        $audiometrias = Audiometria::paginate();
+        $audiometrias = Audiometria::All();
 
-        return view('audiometria.index', compact('audiometrias'))
-            ->with('i', (request()->input('page', 1) - 1) * $audiometrias->perPage());
+        return view('audiometria.index', compact('audiometrias'));
     }
 
     /**
@@ -59,9 +58,7 @@ class AudiometriaController extends Controller
      */
     public function show($id)
     {
-        $audiometria = Audiometria::find($id);
 
-        return view('audiometria.show', compact('audiometria'));
     }
 
     /**
@@ -72,9 +69,7 @@ class AudiometriaController extends Controller
      */
     public function edit($id)
     {
-        $audiometria = Audiometria::find($id);
 
-        return view('audiometria.edit', compact('audiometria'));
     }
 
     /**
@@ -86,12 +81,7 @@ class AudiometriaController extends Controller
      */
     public function update(Request $request, Audiometria $audiometria)
     {
-        request()->validate(Audiometria::$rules);
 
-        $audiometria->update($request->all());
-
-        return redirect()->route('audiometrias.index')
-            ->with('success', 'Audiometria updated successfully');
     }
 
     /**
@@ -101,9 +91,6 @@ class AudiometriaController extends Controller
      */
     public function destroy($id)
     {
-        $audiometria = Audiometria::find($id)->delete();
 
-        return redirect()->route('audiometrias.index')
-            ->with('success', 'Audiometria deleted successfully');
     }
 }
