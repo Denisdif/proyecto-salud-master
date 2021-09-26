@@ -17,12 +17,13 @@
         <h3 style="text-align: center">POSICIONES FORZADAS</h3>
 
         <!-- Datos de PF -->
-            Codigo:         {{$posiciones_forzada->codigo       }} <br>
-            Puesto:         {{$posiciones_forzada->puesto       }} <br>
-            Antigüedad:     {{$posiciones_forzada->antiguedad   }} <br>
-            Nro de trabajo: {{$posiciones_forzada->nroTrabajo   }} <br>
-            User_id:        {{$posiciones_forzada->user_id      }} <br>
-            Paciente_id:    {{$posiciones_forzada->paciente_id  }} <br>
+            Empresa:        {{$posiciones_forzada->voucher->paciente->origen->definicion         }} <br>
+            CUIT:           {{$posiciones_forzada->voucher->paciente->origen->cuit               }} <br>
+            Paciente:       {{$posiciones_forzada->voucher->paciente->nombreCompleto()           }} <br>
+            DNI:            {{$posiciones_forzada->voucher->paciente->cuil                       }} <br>
+            Puesto:         {{$posiciones_forzada->puesto                                        }} <br>
+            Antigüedad:     {{$posiciones_forzada->antiguedad                                    }} <br>
+            Nro de trabajo: {{$posiciones_forzada->nroTrabajo                                    }} <br>
         <!-- / Datos de PF -->
 
         <!-- Tarea -->

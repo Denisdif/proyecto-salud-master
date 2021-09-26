@@ -16,8 +16,7 @@ use App\ArticulacionManoDedo;
 use App\ArticulacionCadera;
 use App\ArticulacionRodilla;
 use App\ArticulacionTobillo;
-
-
+use App\Voucher;
 use PDF;
 use Carbon\Carbon;
 
@@ -76,7 +75,8 @@ class PosicionesForzadasController extends Controller
     public function create()
     {
         $pacientes=Paciente::all();
-        return view('posiciones_forzadas.create', compact('pacientes'));
+        $vouchers= Voucher::all();
+        return view('posiciones_forzadas.create', compact('pacientes', 'vouchers'));
     }
 
     public function store(Request $request)
@@ -92,12 +92,7 @@ class PosicionesForzadasController extends Controller
             $posiciones_forzada->antiguedad=$request->antiguedad;
             $posiciones_forzada->nroTrabajo=$request->nroTrabajo;
             $posiciones_forzada->user_id=auth()->user()->id;
-            $posiciones_forzada->paciente_id=$request->paciente_id;
-
-            
             $posiciones_forzada->voucher_id=$request->voucher_id;
-
-
             $posiciones_forzada->save();
 
             //Tarea

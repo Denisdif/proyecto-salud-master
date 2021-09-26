@@ -43,13 +43,10 @@ class Paciente extends Model implements Auditable
         return $this->nombres . " " . $this->apellidos;
     }
 
-
     public function estado()
     {
         return $this->belongsTo('App\Estado');
     }
-
-
 
     public function origen()
     {
@@ -65,8 +62,6 @@ class Paciente extends Model implements Auditable
     {
         return $this->belongsTo('App\ObraSocial');
     }
-
-
 
     public function estadoCivil()
     {

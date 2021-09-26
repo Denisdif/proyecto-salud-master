@@ -22,9 +22,9 @@ class PosicionesForzada extends Model
 
     protected $table = 'posiciones_forzadas';
 
-    public function paciente()
+    public function voucher()
     {
-        return $this->belongsTo(Paciente::class);
+        return $this->belongsTo(Voucher::class);
     }
 
     public function dolor()

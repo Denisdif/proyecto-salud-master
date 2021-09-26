@@ -52,7 +52,7 @@
                     @foreach ($posiciones_forzadas as $posiciones_forzada)
                     <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
                         <td><p style="font-size:120%">{{ $posiciones_forzada->codigo }}</p></td>
-                        <td><p style="font-size:120%">{{ $posiciones_forzada->paciente->nombreCompleto() }}</p></td>
+                        <td><p style="font-size:120%">{{ $posiciones_forzada->voucher->paciente->nombreCompleto() }}</p></td>
                         <td><p style="font-size:120%">{{($posiciones_forzada->created_at)->format('d/m/Y') }}</p></td>
                         <td><p style="font-size:120%">{{Carbon\Carbon::parse($posiciones_forzada->fecha_realizacion)->format('d/m/Y') }}</p></td>
                         <td>
