@@ -5,9 +5,6 @@
     <li class="breadcrumb-item active">Historia Clinica</li>
 @endsection
 
-
-
-
 @section('content')
 {!!Form::open(array(
     'url'=>'historia_clinica',

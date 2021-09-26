@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Audiometria;
+use App\Voucher;
 use Illuminate\Http\Request;
 
 /**
@@ -29,9 +30,10 @@ class AudiometriaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $vouchers = Voucher::all();
         $audiometria = new Audiometria();
-        return view('audiometria.create', compact('audiometria'));
+        return view('audiometria.create', compact('audiometria', 'vouchers'));
     }
 
     /**

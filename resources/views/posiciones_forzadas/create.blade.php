@@ -1,7 +1,7 @@
 @extends('layouts.admin')
   <!-- Extiende de layout -->
 @section('navegacion')
-    <li class="breadcrumb-item"><a href="/declaracion_jurada">Indice de Pacientes</a></li>
+    <li class="breadcrumb-item"><a href="/posiciones_forzadas">Indice de Pacientes</a></li>
     <li class="breadcrumb-item active">Formulario de Posiciones Forzadas</li>
 @endsection
 
@@ -1588,10 +1588,6 @@
                         
                         $("#datos_paciente").append(datosPaciente).hide().show('slow');
                         $("#foto_paciente").append(fotoPaciente).hide().show('slow');
-
-                        eliminarDelSelect2 ();
-
-
                     },
                     error:function(){
                         console.log('no anda AJAX');
