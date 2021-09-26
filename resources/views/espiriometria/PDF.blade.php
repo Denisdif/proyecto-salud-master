@@ -17,13 +17,15 @@
         </div>
         <h3 style="text-align: center">ESPIROMETRIA</h3>
 
+        Fecha: <br>
         <!-- Datos precargados -->
-        Empresa<br>
-        Apellido y nombre<br>
-        Fecha<br>
-        DNI<br>
-        Fecha Nacimiento<br>
-        Edad<br>
+        <h4 style="">DATOS DE LA EMPRESA</h4>
+        Razón social:                        {{$espiriometria->voucher->paciente->origen->definicion}}  <br>
+        <h4 style="">DATOS DE LA TRABAJADOR</h4>
+        Apellido y nombre:                   {{$espiriometria->voucher->paciente->nombreCompleto()}}    <br>
+        Fecha Nacimiento:                    {{$espiriometria->voucher->paciente->fecha_nacimiento()}}  <br>
+        CUIL-DNI:                            {{$espiriometria->voucher->paciente->cuil}}                <br>
+        Edad:                                {{$espiriometria->voucher->paciente->edad()}}              <br>
         Altura<br>
         Peso<br>
         <!-- / Datos precargados -->

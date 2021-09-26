@@ -100,6 +100,11 @@ class Paciente extends Model implements Auditable
         return $fecha->format('d/m/Y');
     }
 
+    public function edad(){
+        $edad = new Carbon($this->fecha_nacimiento);
+        return $edad->diffInYears();
+    }
+
     public function domicilio()
     {
         return $this->belongsTo('App\Domicilio');
