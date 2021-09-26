@@ -250,6 +250,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('espiriometrias.index') }}" class="nav-link">
+                                <i class="fas fa-stethoscope"></i>
+                                <p>Espiriometría</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('declaracion_jurada.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
                                 <p>Declaracion Jurada</p>
