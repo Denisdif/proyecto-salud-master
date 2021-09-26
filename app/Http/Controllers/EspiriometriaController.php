@@ -6,6 +6,8 @@ use App\Models\Espiriometria;
 use App\Voucher;
 use Illuminate\Http\Request;
 
+use PDF;
+
 /**
  * Class EspiriometriaController
  * @package App\Http\Controllers
@@ -28,14 +30,26 @@ class EspiriometriaController extends Controller
         return view('espiriometria.create', compact('espiriometria', 'vouchers'));
     }
 
+    public function crearPDF($id)
+    {
+        $espiriometria=Espiriometria::find($id);
+        
+        $pdf = PDF::loadView('espiriometria.PDF',[
+            "espiriometria"   =>  $espiriometria
+            ]);
+
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('espiriometria.pdf');
+        
+    }
+
     public function store(Request $request)
     {
         request()->validate(Espiriometria::$rules);
 
         $espiriometria = Espiriometria::create($request->all());
 
-        return redirect()->route('espiriometrias.index')
-            ->with('success', 'Espiriometria created successfully.');
+        return redirect()->route('espiriometrias.index');
     }
 
     public function show($id)
