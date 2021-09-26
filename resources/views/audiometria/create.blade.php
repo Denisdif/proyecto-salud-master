@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('template_title')
-    Create Audiometria
+@section('navegacion')
+    <li class="breadcrumb-item"><a href="/">Menu Principal</a></li>
+    <li class="breadcrumb-item active">Formulario de Audiometría</li>
 @endsection
 
 @section('content')

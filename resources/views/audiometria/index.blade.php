@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('template_title')
-    Audiometria
+@section('navegacion')
+    <li class="breadcrumb-item"><a href="/">Menu Principal</a></li>
+    <li class="breadcrumb-item active">Audiometría</li>
 @endsection
 
 @section('content')
@@ -70,4 +71,8 @@
             </div>
         </div>
     </div>
+
+@push('scripts')
+    <script src="{{asset('js/tablaDetalle.js')}}"></script>
+@endpush
 @endsection

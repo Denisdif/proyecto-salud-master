@@ -262,6 +262,12 @@
                                 <p>Posiciones Forzadas</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('audiometrias.index') }}" class="nav-link">
+                                <i class="fas fa-stethoscope"></i>
+                                <p>Audiometría</p>
+                            </a>
+                        </li>
 
                         <li class="nav-header">SISTEMA</li>
                         @role('Administrador')
