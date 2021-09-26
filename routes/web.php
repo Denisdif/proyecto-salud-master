@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function() {
     include 'rutas/Personal.php';
 
     include 'rutas/Audiometria.php';
+    include 'rutas/Espiriometria.php';
 
 });
 
