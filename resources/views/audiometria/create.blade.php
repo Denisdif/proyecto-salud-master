@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
-                    <p style="font-size:130%"> <i class="fas fa-stethoscope"></i> Formulario de Posiciones Forzadas</p>
+                    <p style="font-size:130%"> <i class="fas fa-stethoscope"></i>Formulario de Audiometría</p>
                 </div>
             </div>
             <!-- /.card-header -->
