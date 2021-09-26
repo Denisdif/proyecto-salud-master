@@ -13,7 +13,7 @@ class Espiriometria extends Migration
      */
     public function up()
     {
-        Schema::create('espiriometria', function (Blueprint $table) {
+        Schema::create('espiriometrias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('archivo')->nullable();
             $table->unsignedBigInteger('voucher_id');
@@ -29,6 +29,6 @@ class Espiriometria extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('espiriometria');
+        Schema::dropIfExists('espiriometrias');
     }
 }
