@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use OwenIt\Auditing\Contracts\Auditable;
 //use Illuminate\Database\Eloquent\SoftDeletes;
 class Paciente extends Model implements Auditable
@@ -91,6 +92,12 @@ class Paciente extends Model implements Auditable
     public function lugarNacimiento()
     {
         return $this->ciudad->nombre . ", " . $this->ciudad->provincia->nombre . ", " . $this->ciudad->provincia->pais->nombre;
+    }
+
+    public function fecha_nacimiento()
+    {   
+        $fecha = new Carbon($this->fecha_nacimiento);
+        return $fecha->format('d/m/Y');
     }
 
     public function domicilio()

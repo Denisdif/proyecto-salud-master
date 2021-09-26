@@ -17,18 +17,19 @@
         </div>
         <h3 style="text-align: center">ESTUDIO FUNCIONAL DE LA AUDICIÓN</h3>
 
+        Fecha: <br>
+
         <!-- Datos precargados -->
-        Fecha<br>
-        DATOS DE LA EMPRESA <br>
-        Razón social<br>
-        DATOS DE LA TRABAJADOR <br>
-        Apellido y nombre<br>
-        Fecha Nacimiento<br>
-        CUIL-DNI<br>
-        Ambiente <br>
-        Puesto de trabajo<br>
-        Antigüedad en la Empresa<br>
-        Audiómetro utilizado<br>
+            <h4 style="">DATOS DE LA EMPRESA</h4>
+            Razón social:                        {{$audiometria->voucher->paciente->origen->definicion}} <br>
+            <h4 style="">DATOS DE LA TRABAJADOR</h4>
+            Apellido y nombre:                   {{$audiometria->voucher->paciente->nombreCompleto()}} <br>
+            Fecha Nacimiento:                    {{$audiometria->voucher->paciente->fecha_nacimiento()}} <br>
+            CUIL-DNI:                            {{$audiometria->voucher->paciente->cuil}} <br>
+            Ambiente <br>
+            Puesto de trabajo<br>
+            Antigüedad en la Empresa<br>
+            Audiómetro utilizado<br>
         <!-- / Datos precargados -->
         <h4 style="text-align: center">ANTECEDENTES</h4>
         En su familia hay hipoacusicos:<br>

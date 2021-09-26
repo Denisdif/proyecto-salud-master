@@ -63,8 +63,7 @@ class AudiometriaController extends Controller
 
         $audiometria = Audiometria::create($request->all());
 
-        return redirect()->route('audiometrias.index')
-            ->with('success', 'Audiometria created successfully.');
+        return redirect()->route('audiometrias.index');
     }
 
     /**
