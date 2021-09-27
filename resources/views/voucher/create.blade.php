@@ -192,6 +192,63 @@
 
     </script>
 
+<script>
+    
+    $(document).ready(function(){
+
+        //Voucher
+            var select1 = $("#paciente_id").select2({width:'100%'});
+            select1.data('select2').$selection.css('height', '34px');
+
+
+            $("#paciente_id").change(function(){
+                mostrarDatos();
+            });
+
+            function mostrarDatos()
+            {
+                paciente_id=$("#paciente_id").val();
+                
+                /*   Aca iría el Ajax para obtener la cantidad por Paquete*/
+                $.ajax({
+                    type:'get',
+                    url:'{!!URL::to('voucher/create/traerDatosPaciente')!!}',
+                    data:{'id':paciente_id},
+                    success:function(data){
+
+                        documento=data['documento'];
+                        nombres=data['nombres'];
+                        apellidos=data['apellidos'];
+                        fecha_nacimiento=data['fecha_nacimiento'];
+                        foto=data['foto'];
+                        cuil=data['cuil'];
+                        sexo=data['sexo'];
+
+                        datosPaciente='<div class="added"> <input type="hidden" value="'+nombres+'"><p style="font-size:140%" class="text-left">Nombre y Apellido del paciente: '+nombres+'</p><input type="hidden" value="'+documento+'"><p style="font-size:140%" class="text-left">Documento del paciente: '+documento+'</p><input type="hidden" value="'+fecha_nacimiento+'"><p style="font-size:140%" class="text-left">Fecha de nacimiento del paciente: '+fecha_nacimiento+'</p><input type="hidden"  value="'+cuil+'"><p style="font-size:140%" class="text-left">CUIL: '+cuil+'</p><input type="hidden" value="'+sexo+'"><p style="font-size:140%" class="text-left">Sexo: '+sexo+'</p><input type="hidden" name="paciente_id" value="'+paciente_id+'"></div>';
+                        fotoPaciente='<div class="added"> @if('+foto+'==null)<img class="img-thumbnail" height="85px" width="85px" src='+foto+'>@else<img class="img-thumbnail" height="350px" width="350px" src="{{ asset('imagenes/paciente/default.png')}}">@endif </div>';
+
+                        //Limpiar datos agregadoss
+                        $('.added').remove();
+                        
+                        $("#datos_paciente").append(datosPaciente).hide().show('slow');
+                        $("#foto_paciente").append(fotoPaciente).hide().show('slow');
+                    },
+                    error:function(){
+                        console.log('no anda AJAX');
+                    }
+                });
+
+            }
+            function eliminarDelSelect2 ()
+            {
+                $("#paciente_id option:selected").remove();
+
+            }
+        // 
+    
+    });  
+    </script>
+
 @endpush
 
 @endsection

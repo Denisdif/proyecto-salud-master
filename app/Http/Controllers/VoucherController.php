@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Voucher;
 use App\User;
 use App\Paciente;
+use Carbon\Carbon;
 
 class VoucherController extends Controller
 {
@@ -25,11 +26,7 @@ class VoucherController extends Controller
     
     public function traerDatosPaciente(Request $request)
     {
-
-
         $paciente=Paciente::find($request->id);
-        
-        
 
         $retorno = [
             'documento'         =>  number_format( (intval($paciente->documento)/1000), 3, '.', '.'),
@@ -37,11 +34,7 @@ class VoucherController extends Controller
             'fecha_nacimiento'  =>  Carbon::parse($paciente->fecha_nacimiento)->format('d/m/Y'),
             'foto'              =>  asset('imagenes/paciente/'.$paciente->foto),
             'cuil'              =>  $paciente->cuil,
-            'peso'              =>  $paciente->peso,
-            'estatura'          =>  $paciente->estatura,
-            'origen'            =>  $paciente->origen->definicion,
             'sexo'              =>  $paciente->sexo->definicion,
-
         ];
         return response()->json($retorno);
 
