@@ -136,72 +136,66 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-
                                     <div class="form-group">
-
-                                        Tiempo de Tarea
-                                        <div class="form-group">
-                                            <label>{{ Form::radio('tiempo','opcion1') }} Esporádico             </label>
-                                            <label>{{ Form::radio('tiempo','opcion2') }} Continuo > 2hs y < 4hs </label>
-                                            <label>{{ Form::radio('tiempo','opcion3') }} Continuo > 4hs         </label>
+                                        <label for="tarea_1">Tiempo de Tarea: </label>
+                                        <div class="form-group row">
+                                            <div class="col">{{ Form::radio('tiempo','opcion1') }} Esporádico             </div>
+                                            <div class="col">{{ Form::radio('tiempo','opcion2') }} Continuo > 2hs y < 4hs </div>
+                                            <div class="col">{{ Form::radio('tiempo','opcion3') }} Continuo > 4hs         </div>
                                         </div>
-
-                                        Ciclo de trabajo
-                                        <div class="form-group">
-                                            <label>{{ Form::radio('ciclo','opcion4') }} Largo: < 2 minutos                      </label>
-                                            <label>{{ Form::radio('ciclo','opcion5') }} Moderado: 30 segundos - 1 a 2 minutos   </label>
-                                            <label>{{ Form::radio('ciclo','opcion6') }} Corto: hasta 30 segundos                </label>
+                                        <label for="tarea_2">Ciclo de trabajo: </label>
+                                        <div class="form-group row">
+                                            <div class="col">{{ Form::radio('ciclo','opcion4') }} Largo: < 2 minutos                     </div>
+                                            <div class="col">{{ Form::radio('ciclo','opcion5') }} Moderado: 30 segundos - 1 a 2 minutos  </div>
+                                            <div class="col">{{ Form::radio('ciclo','opcion6') }} Corto: hasta 30 segundos               </div>
                                         </div>
-
-                                        Manipulación manual de cargas
-                                        <div class="form-group">
-                                            <label>{{ Form::radio('cargas','opcion7') }} Menor a 1 Kg                 </label>
-                                            <label>{{ Form::radio('cargas','opcion8') }} Entre 1 Kg y 3 Kgs     </label>
-                                            <label>{{ Form::radio('cargas','opcion9') }} Mayor a 3 Kgs          </label>
+                                        <label for="tarea_3">Manipulación manual de cargas: </label>
+                                        <div class="form-group row">
+                                            <div class="col">{{ Form::radio('cargas','opcion7') }} Menor a 1 Kg        </div>
+                                            <div class="col">{{ Form::radio('cargas','opcion8') }} Entre 1 Kg y 3 Kgs  </div>
+                                            <div class="col">{{ Form::radio('cargas','opcion9') }} Mayor a 3 Kgs       </div>
                                         </div>
-
-
-                                        Tipo de tarea:
-                                        <div class="custom-control custom-checkbox">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta1" value=1 id="checkboxPrimary8">
-                                                <label for="checkboxPrimary8">Movimiento de alcance repetidos por encima del hombro</label>
-
+                                        <label for="tipo_tarea">Tipo de tarea: </label>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta1" value=1 id="checkboxPrimary8">
+                                                    <label for="checkboxPrimary8">Movimiento de alcance repetidos por encima del hombro</label>
+                                                </div>
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta2" value=1 id="checkboxPrimary10">
+                                                    <label for="checkboxPrimary10">Movimiento de extensión o flexión forzados de muñeca</label>
+                                                </div>
                                             </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta2" value=1 id="checkboxPrimary10">
-                                                <label for="checkboxPrimary10">Movimiento de extensión o flexión forzados de muñeca</label>
-
+                                            <div class="row">
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta3" value=1 id="checkboxPrimary12">
+                                                    <label for="checkboxPrimary12">Flexión sostenida de columna</label>
+                                                </div>
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta4" value=1 id="checkboxPrimary14">
+                                                    <label for="checkboxPrimary14">Flexión extrema del codo</label>
+                                                </div>
                                             </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta3" value=1 id="checkboxPrimary12">
-                                                <label for="checkboxPrimary12">Flexión sostenida de columna</label>
-
+                                            <div class="row">
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta5" value=1 id="checkboxPrimary16">
+                                                    <label for="checkboxPrimary16">El cuello se mantiene flexionado</label>
+                                                </div>
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta6" value=1 id="checkboxPrimary18">
+                                                    <label for="checkboxPrimary18">Giros de columna</label>
+                                                </div>
                                             </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta4" value=1 id="checkboxPrimary14">
-                                                <label for="checkboxPrimary14">Flexión extrema del codo</label>
-
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta5" value=1 id="checkboxPrimary16">
-                                                <label for="checkboxPrimary16">El cuello se mantiene flexionado</label>
-                                            
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta6" value=1 id="checkboxPrimary18">
-                                                <label for="checkboxPrimary18">Giros de columna</label>
-
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta7" value=1 id="checkboxPrimary20">
-                                                <label for="checkboxPrimary20">Rotación extrema del antebrazo</label>
-
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="checkbox" name="pregunta8" value=1 id="checkboxPrimary22">
-                                                <label for="checkboxPrimary22">Flexión mantenida de dedos</label>
-
+                                            <div class="row">
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta7" value=1 id="checkboxPrimary20">
+                                                    <label for="checkboxPrimary20">Rotación extrema del antebrazo</label>
+                                                </div>
+                                                <div class="col icheck-primary d-inline">
+                                                    <input type="checkbox" name="pregunta8" value=1 id="checkboxPrimary22">
+                                                    <label for="checkboxPrimary22">Flexión mantenida de dedos</label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -1341,73 +1335,69 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-
-                                    <div class="form-group">
-
-                                        Por su forma de aparición
-                                        <div class="form-group">
-                                            <label>{{ Form::radio('forma','opcion1_d') }} Agudo</label>
-                                            <label>{{ Form::radio('forma','opcion2_d') }} Insidioso </label>
-                                            <label>{{ Form::radio('forma','opcion3_d') }} Ausente</label>
-                                        </div>
-
-                                        Por su evolución
-                                        <div class="form-group">
-                                            <label>{{ Form::radio('evolucion','opcion4_d') }} Continuo </label>
-                                            <label>{{ Form::radio('evolucion','opcion5_d') }} Brotes </label>
-                                            <label>{{ Form::radio('evolucion','opcion6_d') }} Cíclico</label>
-                                        </div>
-
-                                        <div class="form-group">
+                                    <div class="form-group row">
+                                        <label class="col" for="dolor_1">Por su forma de aparición: </label>
+                                        <div class="col"> {{ Form::radio('forma','opcion1_d') }} Agudo</div>
+                                        <div class="col"> {{ Form::radio('forma','opcion2_d') }} Insidioso</div>
+                                        <div class="col"> {{ Form::radio('forma','opcion3_d') }} Ausente</div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col" for="dolor_2">Por su evolución: </label>
+                                        <div class="col"> {{ Form::radio('evolucion','opcion4_d') }} Continuo                 </div>
+                                        <div class="col"> {{ Form::radio('evolucion','opcion5_d') }} Brotes                   </div>
+                                        <div class="col"> {{ Form::radio('evolucion','opcion6_d') }} Cíclico                  </div>
+                                    </div>                                    
+                                    <div class="form-group row">
+                                        <div class="col">
                                             <label for="observacion1">Puntos dolorosos: </label>
                                             <input type="text" class="form-control" id="observacion1_d"  name="observacion1_d"  placeholder="Ingrese alguna observacion...">
                                         </div>
-
-                                        <div class="form-group">
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
                                             <label for="observacion1">Localización: </label>
                                             <input type="text" class="form-control" id="observacion2_d"  name="observacion2_d"  placeholder="Ingrese alguna observacion...">
                                         </div>
-
-                                        Otros signos y sintomas presentes en el segmento involucrado
-                                        <div class="custom-control custom-checkbox">
-                                            <div class="icheck-primary d-inline">
+                                    </div>
+                                    <!-- Otros signos y sintomas presentes en el segmento involucrado -->
+                                        <label for="signos_1">Otros signos y sintomas presentes en el segmento involucrado: </label>
+                                        <div class="row">
+                                            <div class="col icheck-primary d-inline">
                                                 <input type="checkbox" name="pregunta1_d" value=1 id="checkboxPrimary24">
-                                                <label for="checkboxPrimary24">Calambres musculares</label>
-
+                                                <label for="checkboxPrimary24">Calambres musculares             </label> 
                                             </div>
-                                            <div class="icheck-primary d-inline">
+                                            <div class="col icheck-primary d-inline">
                                                 <input type="checkbox" name="pregunta2_d" value=1 id="checkboxPrimary26">
-                                                <label for="checkboxPrimary26">Parestesias</label>
-
+                                                <label for="checkboxPrimary26">Parestesias                      </label>
                                             </div>
-                                            <div class="icheck-primary d-inline">
+                                            <div class="col icheck-primary d-inline">
                                                 <input type="checkbox" name="pregunta3_d" value=1 id="checkboxPrimary28">
-                                                <label for="checkboxPrimary28">Calor</label>
-
+                                                <label for="checkboxPrimary28">Calor                            </label>
                                             </div>
-                                            <div class="icheck-primary d-inline">
+                                            <div class="col icheck-primary d-inline">
                                                 <input type="checkbox" name="pregunta4_d" value=1 id="checkboxPrimary30">
-                                                <label for="checkboxPrimary30">Cambios de coloración de la piel</label>
-
+                                                <label for="checkboxPrimary30">Cambios de coloración de la piel </label>
                                             </div>
-                                            <div class="icheck-primary d-inline">
+                                            <div class="col icheck-primary d-inline">
                                                 <input type="checkbox" name="pregunta5_d" value=1 id="checkboxPrimary32">
-                                                <label for="checkboxPrimary32">Tumefacción</label>
-
+                                                <label for="checkboxPrimary32">Tumefacción                      </label>
                                             </div>
                                         </div>
-
-                                        Caracterización semiológica
-                                        <div class="form-group">
-                                            <label>{{ Form::radio('grado','opcion1_s') }} Grado 0: Ausencia de signos y síntomas                                    </label><br>
-                                            <label>{{ Form::radio('grado','opcion2_s') }} Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva       </label><br>
-                                            <label>{{ Form::radio('grado','opcion3_s') }} Grado 2: Grado 1 mas contractura y/o dolor a la movilización              </label><br>
-                                            <label>{{ Form::radio('grado','opcion4_s') }} Grado 3: Grado 2 mas dolor a la palpación y/o percusión                   </label><br>
-                                            <label>{{ Form::radio('grado','opcion5_s') }} Grado 4: Grado 3 mas limitación funcional evidente clínicamente           </label><br>
+                                    <!-- / -->
+                                    <label for="caracterizacion_1">Caracterización semiológica: </label>
+                                    <div class="row"></div>
+                                        <div class="form-group col">
+                                            {{ Form::radio('grado','opcion1_s') }} Grado 0: Ausencia de signos y síntomas.                                    <br>
+                                            {{ Form::radio('grado','opcion2_s') }} Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva.       <br>
+                                            {{ Form::radio('grado','opcion3_s') }} Grado 2: Grado 1 mas contractura y/o dolor a la movilización.              <br>
+                                            {{ Form::radio('grado','opcion4_s') }} Grado 3: Grado 2 mas dolor a la palpación y/o percusión.                   <br>
+                                            {{ Form::radio('grado','opcion5_s') }} Grado 4: Grado 3 mas limitación funcional evidente clínicamente.           <br>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="observacion1">Observación: </label>
-                                            <input type="text" class="form-control" id="observacion1_s"  name="observacion1_s"  placeholder="Ingrese alguna observacion...">
+                                        <div class="form-group row">
+                                            <div class="col">
+                                                <label for="observacion1">Observación: </label>
+                                                <input type="text" class="form-control" id="observacion1_s"  name="observacion1_s"  placeholder="Ingrese alguna observacion...">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1465,7 +1455,6 @@
 
 @push('scripts')
     <script>
-    
     $(document).ready(function(){
         //Firma
             var wrapper = document.getElementById("signature-pad");
@@ -1547,7 +1536,6 @@
             });
 
         //
-
         //Voucher
             var select1 = $("#voucher_id").select2({width:'100%'});
             select1.data('select2').$selection.css('height', '34px');
@@ -1598,11 +1586,8 @@
 
             }
         // 
-    
     });  
     </script>
-
 @endpush
-
 @endsection
 
