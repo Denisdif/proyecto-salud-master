@@ -1319,6 +1319,7 @@
                                                         <!-- / Tobillo_Izquierda -->
                                                     </tr>  
                                                 </table>
+                                            </div>
                                         <div class="form-group">
                                     </div>
                                 </div>
@@ -1326,6 +1327,7 @@
                         </div>
                     <!-- / Semiología -->
                     <!-- Características del dolor -->
+                    </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="card card-dark">
                                 <div class="card-header">
@@ -1385,7 +1387,7 @@
                                         </div>
                                     <!-- / -->
                                     <label for="caracterizacion_1">Caracterización semiológica: </label>
-                                    <div class="row"></div>
+                                    <div class="row">
                                         <div class="form-group col">
                                             {{ Form::radio('grado','opcion1_s') }} Grado 0: Ausencia de signos y síntomas.                                    <br>
                                             {{ Form::radio('grado','opcion2_s') }} Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva.       <br>
@@ -1393,11 +1395,11 @@
                                             {{ Form::radio('grado','opcion4_s') }} Grado 3: Grado 2 mas dolor a la palpación y/o percusión.                   <br>
                                             {{ Form::radio('grado','opcion5_s') }} Grado 4: Grado 3 mas limitación funcional evidente clínicamente.           <br>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col">
-                                                <label for="observacion1">Observación: </label>
-                                                <input type="text" class="form-control" id="observacion1_s"  name="observacion1_s"  placeholder="Ingrese alguna observacion...">
-                                            </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <label for="observacion1">Observación: </label>
+                                            <input type="text" class="form-control" id="observacion1_s"  name="observacion1_s"  placeholder="Ingrese alguna observacion...">
                                         </div>
                                     </div>
                                 </div>
