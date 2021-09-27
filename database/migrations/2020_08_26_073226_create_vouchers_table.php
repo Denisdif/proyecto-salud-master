@@ -20,6 +20,8 @@ class CreateVouchersTable extends Migration
             $table->boolean('hc_formulario')->nullable();
             $table->boolean('posiciones_forzadas')->nullable();
             $table->boolean('direccionado')->nullable();
+            $table->boolean('audiometria')->nullable();
+            $table->boolean('espiriometria')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->unsignedBigInteger('paciente_id');

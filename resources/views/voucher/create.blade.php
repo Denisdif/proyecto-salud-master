@@ -97,7 +97,6 @@
                                             <td>
                                                 <div class="custom-control custom-checkbox">
                                                     <label class="checkbox-inline rows">
-                                                        <input type="hidden" name=declaracion value=0>
                                                         <input type="checkbox" name=declaracion value=1> 
                                                     </label>
                                                 </div>   
@@ -108,7 +107,6 @@
                                             <td>
                                                 <div class="custom-control custom-checkbox">
                                                     <label class="checkbox-inline rows">
-                                                        <input type="hidden" name=hc_formulario value=0>
                                                         <input type="checkbox" name=hc_formulario value=1> 
                                                     </label>
                                                 </div>   
@@ -119,7 +117,6 @@
                                             <td>
                                                 <div class="custom-control custom-checkbox">
                                                     <label class="checkbox-inline rows">
-                                                        <input type="hidden" name=posiciones_forzadas value=0>
                                                         <input type="checkbox" name=posiciones_forzadas value=1> 
                                                     </label>
                                                 </div>   
@@ -131,7 +128,26 @@
                                             <td>
                                                 <div class="custom-control custom-checkbox">
                                                     <label class="checkbox-inline rows">
-                                                        <input type="hidden" name=direccionado value=0>
+                                                        <input type="checkbox" name=audiometria value=1> 
+                                                    </label>
+                                                </div>   
+                                            </td>
+                                            <th> Audiometría</th>              
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <label class="checkbox-inline rows">
+                                                        <input type="checkbox" name=espiriometria value=1> 
+                                                    </label>
+                                                </div>   
+                                            </td>
+                                            <th> Espiriometría</th>              
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <label class="checkbox-inline rows">
                                                         <input type="checkbox" name=direccionado value=1> 
                                                     </label>
                                                 </div>   
@@ -172,8 +188,6 @@
             var select67 = $("#paciente_id").select2({width:'100%'});
             select67.data('select2').$selection.css('height', '34px');
 
-            
-            
         });
 
     </script>

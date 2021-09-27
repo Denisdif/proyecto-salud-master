@@ -88,11 +88,13 @@ class VoucherController extends Controller
         $voucher=new Voucher();
         $voucher->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
         $voucher->user_id=auth()->user()->id;
-        $voucher->paciente_id=$request->paciente_id;
-        $voucher->declaracion=$request->get('declaracion');
-        $voucher->hc_formulario=$request->get('hc_formulario');
-        $voucher->posiciones_forzadas=$request->get('posiciones_forzadas');
-        $voucher->direccionado=$request->get('direccionado');
+        $voucher->paciente_id = $request->paciente_id;
+        $voucher->declaracion = $request->declaracion;
+        $voucher->hc_formulario = $request->hc_formulario;
+        $voucher->posiciones_forzadas = $request->posiciones_forzadas;
+        $voucher->audiometria = $request->audiometria;
+        $voucher->espiriometria = $request->espiriometria;
+        $voucher->direccionado = $request->direccionado;
         $voucher->save();
 
         return redirect()->route('voucher.index');
