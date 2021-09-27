@@ -53,21 +53,6 @@ class PosicionesForzadasController extends Controller
         $pdf->setPaper('a4','letter');
         return $pdf->stream('posiciones-forzada.pdf');
 
-        /*
-        $pdf = PDF::loadView('PDFs.espirometria',[
-            "posiciones_forzada"   =>  $posiciones_forzada
-            ]);
-
-        $pdf->setPaper('a4','letter');
-        return $pdf->stream('posiciones-forzada.pdf');*/
-
-        /*        
-        $pdf = PDF::loadView('PDFs.audiometria',[
-            "posiciones_forzada"   =>  $posiciones_forzada
-            ]);
-
-        $pdf->setPaper('a4','letter');
-        return $pdf->stream('posiciones-forzada.pdf');*/
         
     }
 

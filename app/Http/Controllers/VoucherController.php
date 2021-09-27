@@ -9,13 +9,11 @@ use App\User;
 use App\Paciente;
 use Carbon\Carbon;
 
+use PDF;
+
 class VoucherController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     function __construct()
     {
          $this->middleware('permission:listar vouchers|crear voucher|editar voucher|eliminar voucher', ['only' => ['index','store']]);
@@ -40,11 +38,7 @@ class VoucherController extends Controller
 
     }
     
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $vouchers = Voucher::all();
@@ -56,11 +50,36 @@ class VoucherController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function pdf_paciente($id)
+    {
+        $voucher=Voucher::find($id);
+
+        
+        $pdf = PDF::loadView('voucher.pdf_paciente',[
+            "voucher"   =>  $voucher
+            ]);
+
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('voucher_paciente.pdf');
+
+        
+    }
+
+    public function pdf_medico($id)
+    {
+        $voucher=Voucher::find($id);
+
+        
+        $pdf = PDF::loadView('voucher.pdf_medico',[
+            "voucher"   =>  $voucher
+            ]);
+
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('voucher_medico.pdf');
+
+        
+    }
+
     public function create()
     {
         $pacientes=Paciente::all();
@@ -68,12 +87,7 @@ class VoucherController extends Controller
         return view("voucher.create", compact('pacientes'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $n=Voucher::count() + 1;
@@ -93,46 +107,21 @@ class VoucherController extends Controller
         return redirect()->route('voucher.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

@@ -53,21 +53,33 @@
                         <td>{{ $voucher->paciente->nombreCompleto() }}</td>
                         <td>{{ $voucher->created_at->format('d/m/Y') }}</td>
                         <td style="text-align: center" colspan="3">
-                            <!--a data-keyboard="false" data-target="#modal-show-{{ $voucher->id }}" data-toggle="modal">
-                                <button title="editar" class="btn btn-info btn-responsive">
-                                    <i class="fa fa-eye"></i>
+                            <a href="{{ route('voucher.pdf_paciente',$voucher->id) }}">
+                                <button title="exportar pdf" class="btn btn-danger btn-responsive">
+                                    <i class="fas fa-file-pdf"></i>
                                 </button>
                             </a>
-                            <a href="{{URL::action('VoucherController@edit',$voucher->id)}}">
-                                <button title="editar" class="btn btn-primary btn-responsive">
-                                    <i class="fa fa-edit"></i>
+                            <a href="{{ route('voucher.pdf_medico',$voucher->id) }}">
+                                <button title="exportar pdf" class="btn btn-success btn-responsive">
+                                    <i class="fas fa-file-pdf"></i>
                                 </button>
                             </a>
-                            <a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $voucher->id }}" data-toggle="modal">
-                                <button title="eliminar" class="btn btn-danger btn-responsive">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </a-->
+                            <!-- Otros botones-->
+                                <!--a data-keyboard="false" data-target="#modal-show-{{ $voucher->id }}" data-toggle="modal">
+                                    <button title="editar" class="btn btn-info btn-responsive">
+                                        <i class="fa fa-eye"></i>
+                                    </button>
+                                </a>
+                                <a href="{{URL::action('VoucherController@edit',$voucher->id)}}">
+                                    <button title="editar" class="btn btn-primary btn-responsive">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </a>
+                                <a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $voucher->id }}" data-toggle="modal">
+                                    <button title="eliminar" class="btn btn-danger btn-responsive">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </a-->
+                            <!-- / Otros botones-->
                              <!-- aca colocar el modalshow-->
                         </td>
                     </tr>
