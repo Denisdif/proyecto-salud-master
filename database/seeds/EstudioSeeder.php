@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Estudio;
 use Illuminate\Database\Seeder;
-use App\Estudio;
 
 class EstudioSeeder extends Seeder
 {
