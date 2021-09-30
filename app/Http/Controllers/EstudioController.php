@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Estudio;
+use App\Models\TipoEstudio;
 use Illuminate\Http\Request;
 
 /**
@@ -22,7 +23,8 @@ class EstudioController extends Controller
     public function create()
     {
         $estudio = new Estudio();
-        return view('estudio.create', compact('estudio'));
+        $tipo_estudios = TipoEstudio::all();
+        return view('estudio.create', compact('estudio', 'tipo_estudios'));
     }
 
     public function store(Request $request)

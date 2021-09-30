@@ -27,10 +27,13 @@
                                     {!! $errors->first('nombre', '<div class="invalid-feedback">:message</p>') !!}
                                 </div>
                             </div>
-                            <div class="box-footer ">
-                                <button type="submit" class="btn btn-primary">Guerdar</button>
-                            </div>
 
+                            <div class="" id="guardar">
+                                <div class="form-group">
+                                    <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
+                                        <button class="btn btn-success btn-lg btn-block" id="confirmar"type="submit"><i class="fa fa-check"> </i>Cargar estudio</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
