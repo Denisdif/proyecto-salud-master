@@ -14,11 +14,7 @@ use PDF;
  */
 class AudiometriaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $audiometrias = Audiometria::All();
@@ -26,11 +22,6 @@ class AudiometriaController extends Controller
         return view('audiometria.index', compact('audiometrias'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {   
         $vouchers = Voucher::all();
@@ -51,12 +42,6 @@ class AudiometriaController extends Controller
         
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         request()->validate(Audiometria::$rules);
@@ -66,45 +51,21 @@ class AudiometriaController extends Controller
         return redirect()->route('audiometrias.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Audiometria $audiometria
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Audiometria $audiometria)
     {
 
     }
 
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
     public function destroy($id)
     {
 

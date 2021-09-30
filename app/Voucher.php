@@ -36,9 +36,9 @@ class Voucher extends Model implements Auditable
         return $this->created_at->format('d/m/Y') . " - " . $this->paciente->nombreCompleto() . " - " . $this->paciente->documento;
     }
 
-    public function estudios()
+    public function vouchersEstudios()
     {
-        return $this->belongsToMany(Estudio::class);
+        return $this->hasMany('App\Models\VouchersEstudio', 'estudio_id', 'id');
     }
     
 }
