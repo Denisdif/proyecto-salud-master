@@ -39,26 +39,17 @@ class EstudioController extends Controller
 
     public function show($id)
     {
-        $estudio = Estudio::find($id);
 
-        return view('estudio.show', compact('estudio'));
     }
 
     public function edit($id)
     {
-        $estudio = Estudio::find($id);
 
-        return view('estudio.edit', compact('estudio'));
     }
 
     public function update(Request $request, Estudio $estudio)
     {
-        request()->validate(Estudio::$rules);
-
-        $estudio->update($request->all());
-
-        return redirect()->route('estudios.index')
-            ->with('success', 'Estudio updated successfully');
+ 
     }
 
     public function destroy($id)
