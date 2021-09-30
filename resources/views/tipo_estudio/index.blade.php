@@ -2,7 +2,7 @@
 
 @section('navegacion')
     <li class="breadcrumb-item"><a href="/">Menu Principal</a></li>
-    <li class="breadcrumb-item active">Audiometría</li>
+    <li class="breadcrumb-item active">Tipos de estudio</li>
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@
                     <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Tipos de Estudios </p>
                 </div>
                 <div class="card-tools">
-                    <a href= {{ route('tipo_estudios.index') }}>
+                    <a href= {{ route('tipo_estudios.create') }}>
                         <button class="btn btn-primary">
                             <i class="fa fa-plus"></i> Nuevo
                         </button>
