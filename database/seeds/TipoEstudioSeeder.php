@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\TipoEstudio;
 use Illuminate\Database\Seeder;
-use App\TipoEstudio;
 
 class TipoEstudioSeeder extends Seeder
 {
@@ -12,26 +12,24 @@ class TipoEstudioSeeder extends Seeder
      */
     public function run()
     {
+
         $tipoEstudio = TipoEstudio::create([
-
-        	'nombre' => 'RX',
-
+        	'nombre' => 'Análisis bioquímicos',
         ]);
-
         $tipoEstudio = TipoEstudio::create([
-
-        	'nombre' => 'Laboratorio',
-
+        	'nombre' => 'Análisis bioquímicos Anexo 01',
         ]);
-
         $tipoEstudio = TipoEstudio::create([
-
-        	'nombre' => 'Psicología',
+        	'nombre' => 'Complementarios',
         ]);
-
         $tipoEstudio = TipoEstudio::create([
-
-        	'nombre' => 'Clinicos',
+        	'nombre' => 'Ex. Clinicos',
+        ]);
+        $tipoEstudio = TipoEstudio::create([
+        	'nombre' => 'Psicotécnico',
+        ]);
+        $tipoEstudio = TipoEstudio::create([
+        	'nombre' => 'Radiología',
         ]);
     }
 }
