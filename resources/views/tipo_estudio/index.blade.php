@@ -32,13 +32,6 @@
                             <i class="fa fa-filter" aria-hidden="true"></i> Filtrar
                         </a>
                     </p>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-
-                            <!-- aca colocar el include-->
-
-                        </div>
-                    </div>
                 </div>
                 <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table table-bordered table-condensed table-hover">
                     <thead style="background-color:#222D32">
