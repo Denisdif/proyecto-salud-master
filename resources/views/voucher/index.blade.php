@@ -63,6 +63,11 @@
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
                             </a>
+                            <a href="{{ route('voucher.show',$voucher->id) }}">
+                                <button title="carpeta" class="btn btn-primary btn-responsive">
+                                    <i style="color: rgb(255, 255, 255)" class="fas fa-folder"></i>
+                                </button>
+                            </a>
                             <!-- Otros botones-->
                                 <!--a data-keyboard="false" data-target="#modal-show-{{ $voucher->id }}" data-toggle="modal">
                                     <button title="editar" class="btn btn-info btn-responsive">

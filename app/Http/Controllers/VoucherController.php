@@ -81,7 +81,9 @@ class VoucherController extends Controller
 
     public function show($id)
     {
-        //
+        $voucher = Voucher::find($id);
+
+        return view('voucher.show', compact('voucher'));
     }
 
     public function edit($id)

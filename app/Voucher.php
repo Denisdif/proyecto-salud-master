@@ -38,7 +38,7 @@ class Voucher extends Model implements Auditable
 
     public function vouchersEstudios()
     {
-        return $this->hasMany('App\Models\VouchersEstudio', 'estudio_id', 'id');
+        return $this->hasMany('App\Models\VoucherEstudio', 'voucher_id', 'id');
     }
     
 }

@@ -6,6 +6,7 @@
     Route::post('voucher',                              'VoucherController@store')->                        name('voucher.store');
     Route::get('voucher/{voucher}/edit',                'VoucherController@edit')->                         name('voucher.edit');
     Route::patch('voucher/{voucher}',                   'VoucherController@update')->                       name('voucher.update');
+    Route::get('voucher/{voucher}',                     'VoucherController@show')->                         name('voucher.show');
     Route::get('voucher/create/traerDatosPaciente',     'VoucherController@traerDatosPaciente');
     Route::get('voucher/{voucher}/pdf_medico',          'VoucherController@pdf_medico')->                   name('voucher.pdf_medico'  );
     Route::get('voucher/{voucher}/pdf_paciente',        'VoucherController@pdf_paciente')->                 name('voucher.pdf_paciente');
