@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Estudio;
+use App\Models\TipoEstudio;
 use Illuminate\Http\Request;
 use App\Voucher;
 use App\User;
 use App\Paciente;
+use App\Models\VoucherEstudio;
 use Carbon\Carbon;
 
 use PDF;
@@ -35,75 +38,44 @@ class VoucherController extends Controller
             'sexo'              =>  $paciente->sexo->definicion,
         ];
         return response()->json($retorno);
-
     }
-    
-
     public function index()
     {
         $vouchers = Voucher::all();
-
         return view('voucher.index',[
             "vouchers"         =>  $vouchers
-
             ]);
-
-    }
-
-    public function pdf_paciente($id)
-    {
-        $voucher=Voucher::find($id);
-
-        
-        $pdf = PDF::loadView('voucher.pdf_paciente',[
-            "voucher"   =>  $voucher
-            ]);
-
-        $pdf->setPaper('a4','letter');
-        return $pdf->stream('voucher_paciente.pdf');
-
-        
-    }
-
-    public function pdf_medico($id)
-    {
-        $voucher=Voucher::find($id);
-
-        
-        $pdf = PDF::loadView('voucher.pdf_medico',[
-            "voucher"   =>  $voucher
-            ]);
-
-        $pdf->setPaper('a4','letter');
-        return $pdf->stream('voucher_medico.pdf');
-
-        
     }
 
     public function create()
     {
-        $pacientes=Paciente::all();
-
-        return view("voucher.create", compact('pacientes'));
+        $tipo_estudios =    TipoEstudio::all();
+        $estudios =         Estudio::All();
+        $pacientes =        Paciente::all();
+        return view("voucher.create", compact('pacientes', 'estudios', 'tipo_estudios'));
     }
 
 
     public function store(Request $request)
-    {
+    {   
+        //return $request;
         $n=Voucher::count() + 1;
-
         $voucher=new Voucher();
         $voucher->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
         $voucher->user_id=auth()->user()->id;
         $voucher->paciente_id = $request->paciente_id;
-        $voucher->declaracion = $request->declaracion;
-        $voucher->hc_formulario = $request->hc_formulario;
-        $voucher->posiciones_forzadas = $request->posiciones_forzadas;
-        $voucher->audiometria = $request->audiometria;
-        $voucher->espiriometria = $request->espiriometria;
-        $voucher->direccionado = $request->direccionado;
         $voucher->save();
 
+        $estudios = Estudio::all();
+        foreach ($estudios as $item) {
+            $nombre = $item->id;
+            if ($request->$nombre == 1) {
+                $voucher_estudio = new VoucherEstudio;
+                $voucher_estudio->voucher_id = $voucher->id;
+                $voucher_estudio->estudio_id = $item->id;
+                $voucher_estudio->save();
+            }
+        }
         return redirect()->route('voucher.index');
     }
 
@@ -125,5 +97,25 @@ class VoucherController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function pdf_paciente($id)
+    {
+        $voucher=Voucher::find($id);
+        $pdf = PDF::loadView('voucher.pdf_paciente',[
+            "voucher"   =>  $voucher
+            ]);
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('voucher_paciente.pdf');
+    }
+
+    public function pdf_medico($id)
+    {
+        $voucher=Voucher::find($id);
+        $pdf = PDF::loadView('voucher.pdf_medico',[
+            "voucher"   =>  $voucher
+            ]);
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('voucher_medico.pdf');
     }
 }
