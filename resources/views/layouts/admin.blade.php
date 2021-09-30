@@ -243,6 +243,7 @@
                                 <p>Voucher</p>
                             </a>
                         </li>
+                        <!--  
                         <li class="nav-item">
                             <a href="{{ route('audiometrias.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
@@ -254,7 +255,7 @@
                                 <i class="fas fa-stethoscope"></i>
                                 <p>Espiriometría</p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="{{ route('declaracion_jurada.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
@@ -281,6 +282,18 @@
                             <a href="{{ route('audits.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-eye"></i>
                                 <p>Auditoria</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('estudios.index') }}" class="nav-link">
+                                <i class="nav-icon fa fa-cogs"></i>
+                                <p>Estudios</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('tipo_estudios.index') }}" class="nav-link">
+                                <i class="nav-icon fa fa-cogs"></i>
+                                <p>Tipos de estudios</p>
                             </a>
                         </li>
                         @endrole

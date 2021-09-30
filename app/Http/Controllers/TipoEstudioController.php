@@ -20,7 +20,7 @@ class TipoEstudioController extends Controller
     {
         $tipoEstudios = TipoEstudio::paginate();
 
-        return view('tipo-estudio.index', compact('tipoEstudios'))
+        return view('tipo_estudio.index', compact('tipoEstudios'))
             ->with('i', (request()->input('page', 1) - 1) * $tipoEstudios->perPage());
     }
 
@@ -32,7 +32,7 @@ class TipoEstudioController extends Controller
     public function create()
     {
         $tipoEstudio = new TipoEstudio();
-        return view('tipo-estudio.create', compact('tipoEstudio'));
+        return view('tipo_estudio.create', compact('tipoEstudio'));
     }
 
     /**
@@ -47,7 +47,7 @@ class TipoEstudioController extends Controller
 
         $tipoEstudio = TipoEstudio::create($request->all());
 
-        return redirect()->route('tipo-estudios.index')
+        return redirect()->route('tipo_estudios.index')
             ->with('success', 'TipoEstudio created successfully.');
     }
 
@@ -61,7 +61,7 @@ class TipoEstudioController extends Controller
     {
         $tipoEstudio = TipoEstudio::find($id);
 
-        return view('tipo-estudio.show', compact('tipoEstudio'));
+        return view('tipo_estudio.show', compact('tipoEstudio'));
     }
 
     /**
@@ -74,7 +74,7 @@ class TipoEstudioController extends Controller
     {
         $tipoEstudio = TipoEstudio::find($id);
 
-        return view('tipo-estudio.edit', compact('tipoEstudio'));
+        return view('tipo_estudio.edit', compact('tipoEstudio'));
     }
 
     /**
@@ -90,7 +90,7 @@ class TipoEstudioController extends Controller
 
         $tipoEstudio->update($request->all());
 
-        return redirect()->route('tipo-estudios.index')
+        return redirect()->route('tipo_estudios.index')
             ->with('success', 'TipoEstudio updated successfully');
     }
 
@@ -103,7 +103,7 @@ class TipoEstudioController extends Controller
     {
         $tipoEstudio = TipoEstudio::find($id)->delete();
 
-        return redirect()->route('tipo-estudios.index')
+        return redirect()->route('tipo_estudios.index')
             ->with('success', 'TipoEstudio deleted successfully');
     }
 }
