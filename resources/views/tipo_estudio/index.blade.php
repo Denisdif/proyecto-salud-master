@@ -57,12 +57,11 @@
                             <td><p style="font-size:120%">{{ $item->nombre }}</p></td>
                             <td><p style="font-size:120%">{{($item->created_at)->format('d/m/Y') }}</p></td>
                             <td>
-                                <!--aca incluir al modal show cuando todo funcione-->
-                                <a href="">
-                                    <button title="exportar pdf" class="btn btn-danger btn-responsive">
-                                        <i class="fas fa-file-pdf"></i>
-                                    </button>
-                                </a>
+                                <form action="{{ route('tipo_estudios.destroy',$item->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i></button>
+                                </form>
                             </td>
                         </tr>
                         <!-- aca colocar el modaldelete-->

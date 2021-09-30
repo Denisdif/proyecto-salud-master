@@ -37,33 +37,23 @@ class TipoEstudioController extends Controller
 
     public function show($id)
     {
-        $tipoEstudio = TipoEstudio::find($id);
 
-        return view('tipo_estudio.show', compact('tipoEstudio'));
     }
 
     public function edit($id)
     {
-        $tipoEstudio = TipoEstudio::find($id);
 
-        return view('tipo_estudio.edit', compact('tipoEstudio'));
     }
 
     public function update(Request $request, TipoEstudio $tipoEstudio)
     {
-        request()->validate(TipoEstudio::$rules);
-
-        $tipoEstudio->update($request->all());
-
-        return redirect()->route('tipo_estudios.index')
-            ->with('success', 'TipoEstudio updated successfully');
+ 
     }
 
     public function destroy($id)
     {
         $tipoEstudio = TipoEstudio::find($id)->delete();
 
-        return redirect()->route('tipo_estudios.index')
-            ->with('success', 'TipoEstudio deleted successfully');
+        return redirect()->route('tipo_estudios.index');
     }
 }
