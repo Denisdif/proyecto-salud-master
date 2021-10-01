@@ -200,7 +200,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="observacion_tarea">Otros, especificar: </label>
-                                            <input type="text" class="form-control" id="observacion_tarea"  name="observacion1_tarea"  placeholder="Ingrese alguna observacion...">
+                                            <input type="text" class="form-control" id="observacion_tarea"  name="observacion_tarea"  placeholder="Ingrese alguna observacion...">
                                         </div>
                                     </div>
                                 </div>

@@ -58,7 +58,7 @@
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
                             </a>
-                            <a href="{{ route('voucher.pdf_medico',$voucher->id) }}">
+                            <a target="_blank" href="{{ route('voucher.pdf_medico',$voucher->id) }}">
                                 <button title="exportar pdf" class="btn btn-success btn-responsive">
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
