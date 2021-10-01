@@ -243,7 +243,7 @@
                                 <p>Voucher</p>
                             </a>
                         </li>
-                        <!--  
+                       
                         <li class="nav-item">
                             <a href="{{ route('audiometrias.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
@@ -255,7 +255,7 @@
                                 <i class="fas fa-stethoscope"></i>
                                 <p>Espiriometría</p>
                             </a>
-                        </li> -->
+                        </li> 
                         <li class="nav-item">
                             <a href="{{ route('declaracion_jurada.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
