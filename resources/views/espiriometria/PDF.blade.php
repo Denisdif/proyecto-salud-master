@@ -5,44 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="{{ public_path('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <style>
+        .marco{
+            border: rgb(0, 0, 0) 1px solid;
+        }
+        .tabla {
+            border-collapse: collapse;
+        }
+        .tabla th, .tabla td {
+            border: rgb(0, 0, 0) 1px solid;
+        }
+        .titulo{
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .subtitulo{
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 12px;
+        }
+        .campos{
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .datos{
+            font-size: 12px;
+        }
+    </style>
 
     <title>ESPIROMETRIA</title>
 </head>
-<body>
+<body style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
 
     <div id="content" class="container">
+
+
         <div id="header" style="text-align: right">
             <img src="{{public_path('imagenes/logo.png')}}" alt="logo" width="200px">
         </div>
-        <h3 style="text-align: center">ESPIROMETRIA</h3>
+        <h3 class="titulo" style="text-align: center">ESTUDIO FUNCIONAL ESPIROMETRIA         </h3>
 
-        Fecha: <br>
+        <p class="campos" >Fecha: _________/_________/_________</p>
         <!-- Datos precargados -->
-        <h4 style="">DATOS DE LA EMPRESA</h4>
-        Razón social:                        {{$espiriometria->voucher->paciente->origen->definicion}}  <br>
-        <h4 style="">DATOS DE LA TRABAJADOR</h4>
-        Apellido y nombre:                   {{$espiriometria->voucher->paciente->nombreCompleto()}}    <br>
-        Fecha Nacimiento:                    {{$espiriometria->voucher->paciente->fecha_nacimiento()}}  <br>
-        CUIL-DNI:                            {{$espiriometria->voucher->paciente->cuil}}                <br>
-        Edad:                                {{$espiriometria->voucher->paciente->edad()}}              <br>
-        Altura<br>
-        Peso<br>
-        <!-- / Datos precargados -->
-        Oximetría<br>
-        Satura al %<br>
-        Frecuencia cardíaca<br>
-        <h4 style="text-align: center">DECLARACIÓN JURADA</h4>
-        Fumador<br>
-        Exfumador<br>
-        Cantidad<br>
-        Antecedentes<br>
-        Usa Broncodilatador<br>
-        Problemas para realizar el estudio<br>
-        Actualmente problemas respiratorios<br>
-        Utiliza elementos de protección respiratoria<br>
-        Observaciones<br>
-        Firmas<br>
+        <p class="subtitulo">DATOS DE LA EMPRESA</p>
+        <p class="datos"> <label class="campos" for="">Razón social:</label> {{$espiriometria->voucher->paciente->origen->definicion}} </p>
+
+        <p class="subtitulo">DATOS DE LA TRABAJADOR</p>
+
+        <table class="datos">
+            <tbody>
+                <tr>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">Apellido y nombre:  </label> {{$espiriometria->voucher->paciente->nombreCompleto()}}
+                    </td>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">Fecha Nacimiento:   </label>{{$espiriometria->voucher->paciente->fecha_nacimiento()}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">CUIL-DNI:  </label>{{$espiriometria->voucher->paciente->cuil}}
+                    </td>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">           Edad:</label> {{$espiriometria->voucher->paciente->edad()}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">           Peso:  </label>___________________________________
+                    </td>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">           Altura:</label> ___________________________________
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">           Oximetría:  </label>_______________________________
+                    </td>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">           Satura al</label> _______%
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left; width: 350px">
+                        <label class="campos" for="">           Frecuencia Cardíaca:  </label> _______x´
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <hr>
+        <div id="header" style="text-align:center">
+            <img src="{{public_path('imagenes/DJ _Espir.JPG')}}" width="710px">
+        </div>
+        <div id="header" style="text-align:center; padding-top: 7%">
+            <img src="{{public_path('imagenes/Firma_esp.JPG')}}" width="710px">
+        </div>
     </div>
 
 </body>
