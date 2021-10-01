@@ -49,6 +49,7 @@ class VoucherController extends Controller
 
     public function create()
     {
+
         $tipo_estudios =    TipoEstudio::all();
         $estudios =         Estudio::All();
         $pacientes =        Paciente::all();
@@ -82,8 +83,10 @@ class VoucherController extends Controller
     public function show($id)
     {
         $voucher = Voucher::find($id);
+        $tipo_estudios = TipoEstudio::all();
+        $estudios = array('Audiometría', 'Espiriometría', 'Historia Clínica', 'Declaración Jurada', 'Posiciones Forzadas');
 
-        return view('voucher.show', compact('voucher'));
+        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios'));
     }
 
     public function edit($id)

@@ -72,9 +72,14 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="card card-dark "> <!--collapsed-card -->
                             <div class="card-header">
-                                <h3 class="card-title">{{$tipo->nombre}}</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 class="card-title">{{$tipo->nombre}}</h3> 
+                                    </div>
+                                    <div style="text-align: right" class="col">
+                                        <input type="checkbox" onClick="ActivarCasilla(this,{{$tipo->id}});" />
+                                        <Label>Seleccionar todo</Label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-body" > <!--style="display: none;" -->
@@ -84,7 +89,7 @@
                                             <div class="col-6">
                                                 <div class="custom-control custom-checkbox">
                                                     <div class="icheck-primary d-inline">
-                                                        <input type="checkbox" name="{{$item->id}}" value = 1 id="{{$item->id}}">
+                                                        <input class="{{$tipo->id}}" type="checkbox" name="{{$item->id}}" value = 1 id="{{$item->id}}">
                                                         <label for="{{$item->id}}"> {{strtoupper($item->nombre)}} </label>
                                                     </div>
                                                 </div>  
@@ -185,7 +190,22 @@
         });  
     </script>
 
+    <script type="text/javascript">
+        function ActivarCasilla(casilla, id) 
+        {
+            miscasillas=document.getElementsByClassName(id); //Rescatamos controles tipo Input
+            for(i=0;i<miscasillas.length;i++) //Ejecutamos y recorremos los controles
+            {
+                if(miscasillas[i].type == "checkbox") // Ejecutamos si es una casilla de verificacion
+                {
+                    miscasillas[i].checked=casilla.checked; // Si el input es CheckBox se aplica la funcion ActivarCasilla
+                }
+            }
+        }
+    </script>
 @endpush
+
+
 
 @endsection
 
