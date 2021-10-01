@@ -117,8 +117,14 @@ class VoucherController extends Controller
     public function pdf_medico($id)
     {
         $voucher=Voucher::find($id);
+
+        $tipo_estudios =    TipoEstudio::all();
+        $estudios =         Estudio::All();
+
         $pdf = PDF::loadView('voucher.pdf_medico',[
-            "voucher"   =>  $voucher
+            "voucher"           =>  $voucher,
+            "tipo_estudios"     =>  $tipo_estudios,
+            "estudios"          =>  $estudios
             ]);
         $pdf->setPaper('a4','letter');
         return $pdf->stream('voucher_medico.pdf');

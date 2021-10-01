@@ -55,25 +55,24 @@
                     <div class="card-body">
                         <div class="row">
                         @foreach ($tipo_estudios as $tipo)
-                                <div class="col-6" style="padding-bottom: 2%;">
+                                <div class="col-12" style="padding-bottom: 2%;">
                                     <div class=""> 
-                                        <strong>{{ $tipo->nombre}}</strong>
-                                        <div class="row">
-                                            @foreach ($voucher->vouchersEstudios as $item)
-                                                @if ($item->estudio->tipo_estudio_id == $tipo->id)
-                                                    <div class="col-12">{{ strtoupper($item->estudio->nombre)}} </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
+                                        <h2>{{ $tipo->nombre}}</h2>
+                                        <ul> 
+                                            <div class="row " style="padding: 1%;">
+                                                @foreach ($voucher->vouchersEstudios as $item)
+                                                    @if ($item->estudio->tipo_estudio_id == $tipo->id)
+                                                        <div class="col-6"><li>{{ strtoupper($item->estudio->nombre)}}</li> </div>
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                        </ul>
                                     </div>
                                 </div>
                         @endforeach
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div> 
@@ -83,32 +82,3 @@
 @endpush
 
 @endsection
-
-
-
-<!--
-
- @foreach ($tipo_estudios as $tipo)
-                    <div class="row">
-                        <div class="col">
-                            <div class="card card-dark "> 
-                                <div style="height: 45px" class="card-header">
-                                    <div class="card-title">
-                                        <p></i> {{$tipo->nombre}}</p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        @foreach ($voucher->vouchersEstudios as $item)
-                                            @if ($item->estudio->tipo_estudio_id == $tipo->id)
-                                                <div class="col-6">{{ strtoupper($item->estudio->nombre)}} </div>
-                                            @endif
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-    -->
