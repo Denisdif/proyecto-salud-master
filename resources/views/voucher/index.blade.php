@@ -53,13 +53,13 @@
                         <td>{{ $voucher->paciente->nombreCompleto() }}</td>
                         <td>{{ $voucher->created_at->format('d/m/Y') }}</td>
                         <td style="text-align: center" colspan="3">
-                            <a href="{{ route('voucher.pdf_paciente',$voucher->id) }}">
-                                <button title="exportar pdf" class="btn btn-danger btn-responsive">
+                            <a target="_blank" href="{{ route('voucher.pdf_paciente',$voucher->id) }}">
+                                <button title="exportar pdf paciente" class="btn btn-danger btn-responsive">
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
                             </a>
                             <a target="_blank" href="{{ route('voucher.pdf_medico',$voucher->id) }}">
-                                <button title="exportar pdf" class="btn btn-success btn-responsive">
+                                <button title="exportar pdf médico" class="btn btn-success btn-responsive">
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
                             </a>

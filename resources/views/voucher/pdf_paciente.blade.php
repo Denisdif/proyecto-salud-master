@@ -30,7 +30,7 @@
         }
     </style>
 
-    <title>VOUCHER</title>
+    <title>VOUCHER PACIENTE</title>
 </head>
 <body style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 10px;">
 
@@ -39,7 +39,7 @@
             <img src="{{public_path('imagenes/logo.png')}}" alt="logo" width="200px">
         </div>
         <h3 style="text-align: center; font-size: 25px;font-weight: bold;
-        text-decoration: underline;">VOUCHER</h3>
+        text-decoration: underline;">VOUCHER PACIENTE</h3>
            
     </div> 
     @foreach ($tipo_estudios as $tipo)
