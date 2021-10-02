@@ -107,8 +107,32 @@ class VoucherController extends Controller
     public function pdf_paciente($id)
     {
         $voucher=Voucher::find($id);
+        $tipo_estudios =    TipoEstudio::all();
+        $estudios = [];
+        $tipos = [];
+        $i = -1;
+        $cont = 0;
+        foreach ($tipo_estudios as $tipo) {
+            $aux = 0;
+            foreach ($voucher->vouchersEstudios as $item) {
+                if  ($item->estudio->tipo_estudio_id == $tipo->id){
+                    $estudios[] = $item->esudio;
+                    if ($aux == 0) {
+                        $aux = 1;
+                    }
+                }
+            }
+            if ($aux == 1) {
+                $tipos[] = $tipo;
+            }
+        }
+        
         $pdf = PDF::loadView('voucher.pdf_paciente',[
-            "voucher"   =>  $voucher
+            "voucher"           =>  $voucher,
+            "tipo_estudios"     =>  $tipos,
+            "estudios"          =>  $estudios,
+            "i"                 =>  $i,
+            "cont"              =>  $cont
             ]);
         $pdf->setPaper('a4','letter');
         return $pdf->stream('voucher_paciente.pdf');
@@ -116,15 +140,34 @@ class VoucherController extends Controller
 
     public function pdf_medico($id)
     {
-        $voucher=Voucher::find($id);
 
+        $voucher=Voucher::find($id);
         $tipo_estudios =    TipoEstudio::all();
-        $estudios =         Estudio::All();
+        $estudios = [];
+        $tipos = [];
+        $i = -1;
+        $cont = 0;
+        foreach ($tipo_estudios as $tipo) {
+            $aux = 0;
+            foreach ($voucher->vouchersEstudios as $item) {
+                if  ($item->estudio->tipo_estudio_id == $tipo->id){
+                    $estudios[] = $item->esudio;
+                    if ($aux == 0) {
+                        $aux = 1;
+                    }
+                }
+            }
+            if ($aux == 1) {
+                $tipos[] = $tipo;
+            }
+        }
 
         $pdf = PDF::loadView('voucher.pdf_medico',[
             "voucher"           =>  $voucher,
-            "tipo_estudios"     =>  $tipo_estudios,
-            "estudios"          =>  $estudios
+            "tipo_estudios"     =>  $tipos,
+            "estudios"          =>  $estudios,
+            "i"                 =>  $i,
+            "cont"              =>  $cont
             ]);
         $pdf->setPaper('a4','letter');
         return $pdf->stream('voucher_medico.pdf');

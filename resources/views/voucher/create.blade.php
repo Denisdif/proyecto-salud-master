@@ -19,28 +19,38 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <!-- Paciente -->
-                    <div class="form-group">
-                        <label> <p style="font-size:130%">Seleccionar Paciente</p></label>
-                        <select
-                            name="paciente_id"
-                            id="paciente_id"
-                            class="paciente_id custom-select"
-                            >
-                            <option
-                                value="0"
-                                disabled="true"
-                                selected="true"
-                                title="-Seleccione un tipo de paciente-">
-                                -Seleccione un paciente-
-                            </option>
-                            @foreach ($pacientes as $paciente)
-                                <option value="{{$paciente->id }}">{{$paciente->documento . " " . $paciente->nombreCompleto() . " " . $paciente->origen->definicion}}</option>
-                            @endforeach
-                        </select>
+                <div class="row">
+                    <div class="col-6">
+                        <!-- Paciente -->
+                        <div class="form-group">
+                            <label> <p style="font-size:130%">Seleccionar Paciente</p></label>
+                            <select
+                                name="paciente_id"
+                                id="paciente_id"
+                                class="paciente_id custom-select"
+                                >
+                                <option
+                                    value="0"
+                                    disabled="true"
+                                    selected="true"
+                                    title="-Seleccione un tipo de paciente-">
+                                    -Seleccione un paciente-
+                                </option>
+                                @foreach ($pacientes as $paciente)
+                                    <option value="{{$paciente->id }}">{{$paciente->documento . " " . $paciente->nombreCompleto() . " " . $paciente->origen->definicion}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-                </div> 
+                    <div class="col-6 ">
+                        <!-- Paciente -->
+                        <div class="form-group">
+                            <label> <p style="font-size:130%">Fecha: </p></label>
+                            <input class="form-control" type="date" name="turno"  required
+                            value="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
+                        </div>
+                    </div> 
+                </div>
                 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card card-dark "> <!--collapsed-card -->
