@@ -17,7 +17,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header header-bg">
                 <div class="card-title">
                     <p style="font-size:130%"> <i class="fas fa-stethoscope"></i>Formulario de Audiometría</p>
                 </div>

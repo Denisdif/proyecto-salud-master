@@ -7,8 +7,8 @@
 
 @section('content')
     <div class="container">
-        <div class="card card-dark">
-            <div class="card-header">
+        <div class="card ">
+            <div class="card-header fondo2">
                 <div class="card-title">
                     <p style="font-size:130%"> <i class="fa fa-voucher" aria-hidden="true"></i> Datos de Voucher</p>
                 </div>
@@ -29,12 +29,12 @@
                                     <td style="width: 65%">{{ $item }}</td>
                                     <td style="text-align: center">
                                         <a href="">
-                                            <button title="Exportar pdf" class="btn btn-danger btn-responsive">
+                                            <button title="Exportar pdf" class="btn fondo1 btn-responsive">
                                                 <i class="fas fa-file-pdf"></i>
                                             </button>
                                         </a>
                                         <a href="">
-                                            <button title="Cargar pdf" class="btn btn-primary btn-responsive">
+                                            <button title="Cargar pdf" class="btn fondo2 btn-responsive">
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </a>
@@ -46,8 +46,8 @@
                     </div>
                 </div>
 
-                <div class="card card-dark"> 
-                    <div class="card-header">
+                <div class="card "> 
+                    <div class="card-header fondo2">
                         <div class="card-title">
                             <strong> OTROS ESTUDIOS</strong>
                         </div>

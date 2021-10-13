@@ -18,6 +18,8 @@
         .titulo{
             font-weight: bold;
             text-decoration: underline;
+            background-color: red;
+            color: white;
         }
         .subtitulo{
             font-weight: bold;
@@ -95,6 +97,7 @@
             </tbody>
         </table>
         <hr>
+        <h3 class="titulo" style="text-align: center">DECLARACION JURADA        </h3>
         <div id="header" style="text-align:center">
             <img src="{{public_path('imagenes/DJ _Espir.JPG')}}" width="710px">
         </div>

@@ -11,11 +11,14 @@
         }
         .tabla {
             border-collapse: collapse;
-            padding: 3%;
+            padding: 1%;
         }
         .titulo{
             background-color: red;
             color: white;
+            font-weight: bold;
+            font-size: 15px;
+            text-align: center;
         }
         .subtitulo{
             font-weight: bold;
@@ -32,19 +35,19 @@
 
     <title>VOUCHER PACIENTE</title>
 </head>
-<body style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 10px;">
+<body style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 7px;">
 
     <div id="content" class="container">
         <div id="header" style="text-align: right">
             <img src="{{public_path('imagenes/logo.png')}}" alt="logo" width="200px">
         </div>
-        <h3 style="text-align: center; font-size: 25px;font-weight: bold;
-        text-decoration: underline;">VOUCHER PACIENTE</h3>
+        <div style="text-align: center; font-size: 20px;font-weight: bold; text-decoration: underline;">VOUCHER PACIENTE</div>
            
     </div> 
     @foreach ($tipo_estudios as $tipo)
     <div hidden style="color: white">{{$i = -1}}</div>
-        <label class="subtitulo" for=""> {{ $tipo->nombre}}</label>
+    <h3 class="titulo">{{ $tipo->nombre}}</h3>
+
         <div class="marco">
         <table class="tabla">
             <tbody>

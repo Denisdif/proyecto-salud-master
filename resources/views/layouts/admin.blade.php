@@ -33,13 +33,46 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" /></head>
 
+  <style>
+      .fondo0{
+        background-color: #ffffff;
+        color: black
+      }
+      .fondo1{
+        background-color: #DA0037;
+        color: rgb(255, 255, 255)
+      }
+      .fondo2{
+        background-color: #222D32;
+        color: rgb(255, 255, 255)
+      }
+      .fondo3{
+        background-color: #171717;
+        color: rgb(255, 255, 255)
+      }
+      .header-bg{
+        background-color: #222D32;
+        color: rgb(255, 255, 255)
+      }
+      .tableHeader-bg{
+        background-color: #222D32;
+        color: rgb(255, 255, 255)
+      }
+      td{
+          text-align: center;
+          
+      }
+      th{
+        text-align: center;
+      }
+  </style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <div class="wrapper" >
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light fondo2">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a style="color: white" class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                    <!--
                 <li class="nav-item d-none d-sm-inline-block">
@@ -47,7 +80,7 @@
                 </li>
                  -->
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/logout" class="nav-link">
+                    <a style="color: white" href="/logout" class="nav-link">
                         <i class="fas fa-sign-out-alt"></i> Cerrar sesión
                     </a>
                 </li>
@@ -149,7 +182,7 @@
         </nav>
 
 
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary fondo2 elevation-4">
 
             <a href="/home" class="brand-link">
                 <!--img src="{{ asset('imagenes/logo.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"-->
@@ -277,13 +310,14 @@
                         </li>
 
                         <li class="nav-header">SISTEMA</li>
+                        <!--
                         @role('Administrador')
                         <li class="nav-item">
                             <a href="{{ route('audits.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-eye"></i>
                                 <p>Auditoria</p>
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a href="{{ route('estudios.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-cogs"></i>

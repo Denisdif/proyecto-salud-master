@@ -12,13 +12,14 @@
         {!!Form::open(array('url'=>'voucher','method'=>'POST','autocomplete'=>'off','files' => true,))!!}
         {{Form::token()}}
 
-        <div class="card card-outline card-dark">
-            <div class="card-header">
+        <div class="card card-outline">
+            <div class="card-header header-bg">
                 <div class="card-title">
                     <p style="font-size:130%"> <i class="fa fa-voucher" aria-hidden="true"></i> Datos Vouchers</p>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body fondo0">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="row">
                     <div class="col-6">
                         <!-- Paciente -->
@@ -51,10 +52,11 @@
                         </div>
                     </div> 
                 </div>
+                </div>
                 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="card card-dark "> <!--collapsed-card -->
-                        <div class="card-header">
+                    <div class="card "> <!--collapsed-card -->
+                        <div class="card-header header-bg">
                             <h3 class="card-title">Datos del Paciente</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
@@ -80,16 +82,21 @@
                 <!-- Estudios -->
                 @foreach ($tipo_estudios as $tipo)
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark "> <!--collapsed-card -->
-                            <div class="card-header">
+                        <div class="card "> <!--collapsed-card -->
+                            <div class="card-header header-bg">
                                 <div class="row">
                                     <div class="col">
                                         <h3 class="card-title">{{$tipo->nombre}}</h3> 
                                     </div>
-                                    <div style="text-align: right" class="col">
-                                        <input type="checkbox" onClick="ActivarCasilla(this,{{$tipo->id}});" />
-                                        <Label>Seleccionar todo</Label>
-                                    </div>
+
+                                        
+                                            <div style="text-align: right" class="col">
+                                                <div class="icheck-danger d-inline">
+                                                <input id="a{{$tipo->id}}" type="checkbox" onClick="ActivarCasilla(this,{{$tipo->id}});" />
+                                                <Label for="a{{$tipo->id}}">{{strtoupper("Seleccionar todo")}} </Label>
+                                            </div>
+                                        </div>
+
                                 </div>
                             </div>
                             <div class="card-body" > <!--style="display: none;" -->
@@ -98,7 +105,7 @@
                                         @if ($item->tipo_estudio_id == $tipo->id)
                                             <div class="col-6">
                                                 <div class="custom-control custom-checkbox">
-                                                    <div class="icheck-primary d-inline">
+                                                    <div class="icheck-danger d-inline">
                                                         <input class="{{$tipo->id}}" type="checkbox" name="{{$item->id}}" value = 1 id="{{$item->id}}">
                                                         <label for="{{$item->id}}"> {{strtoupper($item->nombre)}} </label>
                                                     </div>
