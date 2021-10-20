@@ -20,6 +20,14 @@ use App\RegionInguinal;
 use App\Genital;
 use App\RegionAnal;
 use App\Voucher;
+use App\ObraSocial;
+use App\Origen;
+use App\Domicilio;
+use App\Ciudad;
+use App\Pais;
+use App\Provincia;
+use App\Barrio;
+use App\Calle;
 
 use Illuminate\Http\Request;
 
@@ -64,9 +72,12 @@ class HistoriaClinicaController extends Controller
 
         //esta variable $voucher deberia traer el voucher + nombre del paciente y dni + fecha...en el modelo y quedarte eunuco
         $vouchers=Voucher::all();
+        $origenes = Origen::all();
+        $obra_sociales = ObraSocial::all();
+        $paises=Pais::all();
 
 
-        return view('historia_clinica.create', compact('vouchers','pacientes'));
+        return view('historia_clinica.create', compact('vouchers','pacientes','origenes','obra_sociales','paises'));
     }
 
     /**
@@ -87,6 +98,12 @@ class HistoriaClinicaController extends Controller
         //$historia_clinica->firma=$request->firma;
         $historia_clinica->user_id=auth()->user()->id;
         $historia_clinica->save();
+        
+        $idPaciente = $historia_clinica->voucher->paciente->id;
+        $paciente=Paciente::findOrFail($idPaciente);
+        $paciente->obra_social_id=$request->get('obra_social_id');
+        $paciente->origen_id=$request->get('origen_id');
+        $paciente->update();
 
         //cuando la magia andaba... 
         //Paciente::find($historia_clinica->paciente_id)->update(['historia_clinica'=>true]);

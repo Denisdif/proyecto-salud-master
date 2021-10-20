@@ -96,37 +96,106 @@
                     </div>
                 </div-->
                 <div class="col-md-12">
-                    <div class="card card-dark">
-                        <div class="card-header">
-                            <h3 class="card-title">Examen Clínico</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                    <div class="row">
+                        <!-- Seleccionar Voucher -->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="obra_social_id">Obra Social</label>
+                            <div class="form-group">
+                                <select
+                                    name="obra_social_id"
+                                    id="obra_social_id"
+                                    class="obra_social_id custom-select"
+                                    required>
+                                    <option
+                                        value="0"
+                                        disabled="true"
+                                        selected="true"
+                                        title="-Seleccione la obra social-">
+                                        -Seleccione una obra social-
+                                    </option>
+                                    @foreach ($obra_sociales as $obra_social)
+                                        <option
+                                            value="{{$obra_social->id }}">{{$obra_social->obraSocialCompleta()}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <a data-target="#modal-agregarObraSocial" data-toggle="modal">
+                                    <button title="agregar obra social" class="btn btn-dark btn-md">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </a>
+                                @include('obra_social.modalAgregarObraSocial')
                             </div>
                         </div>
-                        <div class="card-body">
+
+                        <!--Fecha de Realización -->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="origen_id">Procedencia</label>
                             <div class="form-group">
-                                Estatura:
-                                <div class="custom-control">
-                                    <input type="string" name="estatura">
-                                </div>
-                                Peso:
-                                <div class="custom-control">
-                                    <input type="string" name="peso">
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <label class="checkbox-inline">
-                                        <input type="hidden" name="sobrepeso" value=0>
-                                        <input type="checkbox" name="sobrepeso" value=1> Sobrepeso
-                                    </label>
-                                </div>
-                                IMC
-                                <div class="custom-control">
-                                    <input type="string" name="imc">
-                                </div>
-                                Medicacion actual:
-                                <div class="custom-control">
-                                    <input type="text" name="medicacion_actual">
-                                </div>
+                                <select
+                                    name="origen_id"
+                                    id="origen_id"
+                                    class="origen_id custom-select"
+                                    required>
+                                    <option
+                                        value="0"
+                                        disabled="true"
+                                        selected="true"
+                                        title="-Seleccione la procedencia-">
+                                        -Seleccione la procedencia-
+                                    </option>
+                                    @foreach ($origenes as $origen)
+                                        <option
+                                            value="{{$origen->id }}">{{$origen->definicion}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <a data-target="#modal-agregarOrigen" data-toggle="modal">
+                                    <button title="agregar procedencia" class="btn btn-dark btn-md">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </a>
+                                @include('origen.modalAgregarOrigen')
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="col-md-12">
+                <div class="card card-dark">
+                    <div class="card-header">
+                        <h3 class="card-title">Examen Clínico</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            Estatura:
+                            <div class="custom-control">
+                                <input type="string" name="estatura">
+                            </div>
+                            Peso:
+                            <div class="custom-control">
+                                <input type="string" name="peso">
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <label class="checkbox-inline">
+                                    <input type="hidden" name="sobrepeso" value=0>
+                                    <input type="checkbox" name="sobrepeso" value=1> Sobrepeso
+                                </label>
+                            </div>
+                            IMC
+                            <div class="custom-control">
+                                <input type="string" name="imc">
+                            </div>
+                            Medicacion actual:
+                            <div class="custom-control">
+                                <input type="text" name="medicacion_actual">
                             </div>
                         </div>
                     </div>
@@ -1082,6 +1151,10 @@
 
             var select1 = $("#voucher_id").select2({width:'100%'});
             select1.data('select2').$selection.css('height', '34px');
+            var select2 = $("#obra_social_id").select2({width:'100%'});
+            select2.data('select2').$selection.css('height', '34px');
+            var select3 = $("#origen_id").select2({width:'100%'});
+            select3.data('select2').$selection.css('height', '34px');
 
             $("#paciente_id").change(function(){
                 mostrarDatos();
