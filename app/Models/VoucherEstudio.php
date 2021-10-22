@@ -19,4 +19,9 @@ class VoucherEstudio extends Model
     {
         return $this->belongsTo(Estudio::class);
     }
+
+    public function archivo_adjunto()
+    {
+        return $this->hasOne('App\ArchivoAdjunto','voucher_estudio_id','id');
+    }
 }

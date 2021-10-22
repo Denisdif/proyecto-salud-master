@@ -33,7 +33,7 @@ class Estudio extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre','tipo_estudio_id'];
+    protected $fillable = ['nombre','carga','tipo_estudio_id'];
 
 
     /**
