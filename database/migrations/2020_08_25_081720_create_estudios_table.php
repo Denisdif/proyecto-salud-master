@@ -16,6 +16,7 @@ class CreateEstudiosTable extends Migration
         Schema::create('estudios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
+            $table->boolean('carga');
             $table->unsignedBigInteger('tipo_estudio_id');
             $table->foreign('tipo_estudio_id')->references('id')->on('tipo_estudios')->onDelete('restrict');
             $table->timestamps();

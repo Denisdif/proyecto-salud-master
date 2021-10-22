@@ -17,8 +17,8 @@ class CreateArchivoAdjuntosTable extends Migration
             $table->bigIncrements('id');
             $table->string('anexo');
             $table->timestamps();
-            $table->unsignedBigInteger('historia_clinica_id');
-            $table->foreign('historia_clinica_id')->references('id')->on('historia_clinicas')->onDelete('restrict');
+            $table->unsignedBigInteger('voucher_estudio_id');
+            $table->foreign('voucher_estudio_id')->references('id')->on('voucher-estudios')->onDelete('restrict');
         });
     }
 

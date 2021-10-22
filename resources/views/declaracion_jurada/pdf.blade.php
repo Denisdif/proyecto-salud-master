@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="{{ public_path('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-
     <title>Declaracion Jurada</title>
+
+    <style>
+        td{
+            border-bottom:  0.1px solid rgb(202, 202, 202);
+            padding: 3px;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -20,47 +26,35 @@
 
         <!-- DATOS PERSONALES -->
         <h5 style="text-align: center; background-color: brown; color: #FFFFFF"><b>DATOS PERSONALES</b></h5>
-        <table class="table table-condensed table-hover" style="border:1px solid #FFFFFF; width:100%">
-            <tr style="text-align: left" valign="middle">
-              <th colspan="4">Apellidos y Nombres Completos: </th>
-              <td colspan="3" style="text-align: left">{{$declaracion_jurada->voucher->paciente->nombreCompleto()}}</td>
+        <table class="table table-condensed table-hover" >
+            <tr style="text-align: left;">
+                <td style=" width: 342px" colspan="6"> <b> Nombre Completo:</b> {{$declaracion_jurada->voucher->paciente->nombreCompleto()}}</td>
+                <td style=" width: 342px" colspan="6"><b>Sexo:</b> {{$declaracion_jurada->voucher->paciente->sexo->abreviatura }}  </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th width="5%" >Sexo: </th>
-                <td width="5%" style="text-align: left">{{$declaracion_jurada->voucher->paciente->sexo->abreviatura }}</td>
-                <th width="25%">Fecha de Nacimiento: </th>
-                <td width="15%" style="text-align: left">{{Carbon\Carbon::parse($declaracion_jurada->voucher->paciente->fecha_nacimiento)->format('d/m/Y') }}</td>
-                <th width="10%">Lugar: </th>
-                <td colspan="2" width="40%" style="text-align: left">{{$declaracion_jurada->voucher->paciente->lugarNacimiento() }}</td>
+            <tr style="text-align: left;" >
+                <td style=" width: 342px" colspan="6"> <b> Fecha de Nacimiento:</b> {{Carbon\Carbon::parse($declaracion_jurada->voucher->paciente->fecha_nacimiento)->format('d/m/Y') }}</td>
+                <td style=" width: 342px" colspan="6"> <b>Lugar:</b>  {{$declaracion_jurada->voucher->paciente->lugarNacimiento() }} </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="3" >Documento de identidad: </th>
-                <td colspan="2" style="text-align: left">{{$declaracion_jurada->voucher->paciente->documentoIdentidad() }}</td>
-                <th>Estado Civil: </th>
-                <td style="text-align: left">{{$declaracion_jurada->voucher->paciente->estadoCivil->abreviatura }}</td>
+            <tr style="text-align: left;" >
+                <td style=" width: 342px" colspan="6"> <b> Documento de identidad: </b>    {{$declaracion_jurada->voucher->paciente->documentoIdentidad() }}           </td>
+                <td style=" width: 342px" colspan="6"> <b> Estado Civil:           </b>    {{$declaracion_jurada->voucher->paciente->estadoCivil->abreviatura }}       </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2" >Domicilio: </th>
-                <td colspan="3" style="text-align: left">{{$declaracion_jurada->voucher->paciente->direccion() }}</td>
-                <th>Localidad: </th>
-                <td style="text-align: left">{{$declaracion_jurada->voucher->paciente->ciudad->nombre }}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2" >Provincia: </th>
-                <td colspan="1" style="text-align: left">{{$declaracion_jurada->voucher->paciente->domicilio->ciudad->provincia->nombre }}</td>
-                <th>CP: </th>
-                <td style="text-align: left">{{$declaracion_jurada->voucher->paciente->domicilio->ciudad->codigo_postal }}</td>
-                <th>TE: </th>
-                <td style="text-align: left" width="30%">{{$declaracion_jurada->voucher->paciente->telefono }}</td>
+            <tr style="text-align: left;" >
+                <td style=" width: 342px" colspan="6"> <b> Domicilio: </b>     {{$declaracion_jurada->voucher->paciente->direccion() }}                               </td>
+                <td style=" width: 342px" colspan="6"> <b> CP:        </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->codigo_postal }}          </td>
 
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="1" >Peso (Kgrs.): </th>
-                <td colspan="1" style="text-align: left">{{$declaracion_jurada->voucher->paciente->peso }}</td>
-                <th colspan="1">Estatura: (Mts.) </th>
-                <td style="text-align: left">{{$declaracion_jurada->voucher->paciente->estatura }}</td>
-                <th colspan="2">FECHA ÚLTIMO EXAMEN </th>
-                <td style="text-align: left">...</td>
+            <tr style="text-align: left;" >
+                <td style=" width: 342px" colspan="6"> <b> Provincia: </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->provincia->nombre }}      </td>
+                <td style=" width: 342px" colspan="6"> <b> Localidad: </b>     {{$declaracion_jurada->voucher->paciente->ciudad->nombre }}      </td>
+            </tr>
+            <tr style="text-align: left;" >
+                <td style=" width: 342px" colspan="6"> <b> Teléfono:      </b>     {{$declaracion_jurada->voucher->paciente->telefono }}      </td>
+                <td style=" width: 342px" colspan="6"> <b> Peso (Kgrs.):  </b>     {{$declaracion_jurada->voucher->paciente->peso }}          </td>
+            </tr>
+            <tr style="text-align: left;" >
+                <td style=" width: 342px" colspan="6"> <b> Estatura: (Mts.)    </b>   {{$declaracion_jurada->voucher->paciente->estatura }}        </td>
+                <td style=" width: 342px" colspan="6"> <b> FECHA ÚLTIMO EXAMEN </b>   ...        </td>
             </tr>
         </table>
 

@@ -53,7 +53,13 @@
                         <td>{{ $voucher->paciente->nombreCompleto() }}</td>
                         <td>{{ $voucher->created_at->format('d/m/Y') }}</td>
                         <td style="text-align: center" colspan="3">
+                            <!--
                             <a target="_blank" href="{{ route('voucher.pdf_paciente',$voucher->id) }}">
+                                <button title="exportar pdf paciente" class="btn fondo1 btn-responsive">
+                                    <i class="fas fa-file-pdf"></i>
+                                </button>
+                            </a>-->
+                            <a target="_blank" id="pdf_js">
                                 <button title="exportar pdf paciente" class="btn fondo1 btn-responsive">
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
@@ -98,6 +104,26 @@
 </div>
 @push('scripts')
     <script src="{{asset('js/tablaDetalle.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            var prueba;
+            var prueba2;
+            $("#pdf_js").click(function(){
+                prueba = window.open(
+                    "{{ route('posiciones_forzadas.index') }}",
+                    '_blank'
+                );
+                prueba = window.open(
+                    "{{ route('posiciones_forzadas.create') }}",
+                    '_blank'
+                );
+                prueba = window.open(
+                    "http://www.google.com",
+                    '_blank'
+                );
+            });
+        }); 
+    </script>
 @endpush
 @endsection
 

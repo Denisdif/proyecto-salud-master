@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Audiometria;
 use App\Models\Estudio;
 use App\Models\TipoEstudio;
 use Illuminate\Http\Request;
@@ -49,9 +50,8 @@ class VoucherController extends Controller
 
     public function create()
     {
-
         $tipo_estudios =    TipoEstudio::all();
-        $estudios =         Estudio::All();
+        $estudios =         Estudio::all();
         $pacientes =        Paciente::all();
         return view("voucher.create", compact('pacientes', 'estudios', 'tipo_estudios'));
     }
@@ -77,7 +77,14 @@ class VoucherController extends Controller
                 $voucher_estudio->save();
             }
         }
-        return redirect()->route('voucher.index');
+        
+        $audiometria = new Audiometria();
+        $audiometria->voucher_id = $voucher->id;
+        $audiometria->save();
+
+        //
+
+        return redirect()->route('voucher.showforms',$voucher->id);
     }
 
     public function show($id)
@@ -85,8 +92,19 @@ class VoucherController extends Controller
         $voucher = Voucher::find($id);
         $tipo_estudios = TipoEstudio::all();
         $estudios = array('Audiometría', 'Espiriometría', 'Historia Clínica', 'Declaración Jurada', 'Posiciones Forzadas');
+        $generar_formularios = false;
 
-        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios'));
+        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios','generar_formularios'));
+    }
+
+    public function showforms($id)
+    {
+        $voucher = Voucher::find($id);
+        $tipo_estudios = TipoEstudio::all();
+        $estudios = array('Audiometría', 'Espiriometría', 'Historia Clínica', 'Declaración Jurada', 'Posiciones Forzadas');
+        $generar_formularios = true;
+
+        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios','generar_formularios'));
     }
 
     public function edit($id)
