@@ -47,11 +47,10 @@
                     <div class="col-6 d-flex align-items-stretch ">
                         <div class="card flex-fill">
                             <div style="text-align: center" class="card-header fondo2">
-                                ESTUDIOS
-                                <button id="generar2">+</button>
+                                ESTUDIOS DEL SISTEMA
                             </div>
                             <div class="card-body">
-                                <table id="tablaDetalle" style="width:100%" class="table-sm table-bordered table-condensed table-hover">
+                                <table id="tablaEstudios" style="width:100%" class="table-sm table-bordered table-condensed table-hover">
                                     <tbody>
                                         @foreach ($estudios as $item)
                                         <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
@@ -76,25 +75,73 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="card flex-fill">
+                            <div style="text-align: center" class="card-header fondo2">
+                                ESTUDIOS CARGADOS
+                            </div>
+                            <div class="card-body">
+                                <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table-sm table-bordered table-condensed table-hover">
+                                    <thead class="fondo2">
+                                        <tr>
+                                            <th style="width: 30%"> Tipo de estudio       </th>
+                                            <th style="width: 30%"> Estudio               </th>
+                                            <th style="width: 25%"> Estado                </th>
+                                            <th style="width: 15%"> Acción                </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($estudios_cargar as $item)
+                                        <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
+                                            <td style="text-align: left"> {{strtoupper($item->estudio->nombre)    }}    </td>
+                                            <td style="text-align: left"> {{($item->estudio->tipoEstudio->nombre) }}    </td> 
+                                            @if ($item->archivo_adjunto)
+                                                <td>  Cargado     </td>
+                                            @else
+                                                <td>  Pendiente   </td>
+                                            @endif
+                                            
+                                            <td style="text-align: center">
+                                                <a href="">
+                                                    <button title="Exportar pdf" class="btn fondo1 btn-responsive">
+                                                        <i class="fas fa-file-pdf"></i>
+                                                    </button>
+                                                </a>
+                                                <a href="">
+                                                    <button title="Cargar pdf" class="btn fondo2 btn-responsive">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card "> 
                     <div style="text-align: center" class="card-header fondo2">
-                        <div class="card-title">
                             TODOS LOS ESTUDIOS
-                        </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
                         @foreach ($tipo_estudios as $tipo)
                                 <div class="col-12"  style="padding-bottom: 2%;">
                                     <div class=""> 
-                                        <h2>{{ $tipo->nombre}}</h2>
+                                        <h3 style="font-weight: bold;font-size: 20px" >{{ $tipo->nombre}}</h3>
                                         <ul> 
                                             <div class="row " style="padding: 1%;">
                                                 @foreach ($voucher->vouchersEstudios as $item)
                                                     @if ($item->estudio->tipo_estudio_id == $tipo->id)
                                                         <div class="col-4" style="font-size: 15px">
                                                             <li>
-                                                                <a href="{{ route('voucherEstudio.archivo',$item->id) }}"> {{ strtoupper($item->estudio->nombre)}}</a>
+                                                                {{ strtoupper($item->estudio->nombre)}}
                                                             </li> 
                                                         </div>
                                                     @endif
@@ -119,6 +166,7 @@
     </div>-->
 
 @push('scripts')
+<script src="{{asset('js/tablaDetalle.js')}}"></script>
 <script>
     $(document).ready(function(){
         /*var prueba;

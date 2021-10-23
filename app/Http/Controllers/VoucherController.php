@@ -92,8 +92,11 @@ class VoucherController extends Controller
         //Obtener Voucher
         $voucher = Voucher::find($id);
 
-        //Obetener todos los tipos de estudio
-        $tipo_estudios = TipoEstudio::all();
+        //Tipos de estudio en Voucher
+        $tipo_estudios = $voucher->tipos_estudios();
+
+        //Estudios a cargar
+        $estudios_cargar = $voucher->estudios_cargar();
 
         //Estudios generados por el sistema
         $estudios = [];
@@ -109,7 +112,7 @@ class VoucherController extends Controller
             }
         }
 
-        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios'));
+        return view('voucher.show', compact('voucher', 'estudios','estudios_cargar', 'tipo_estudios'));
     }
 
     /*

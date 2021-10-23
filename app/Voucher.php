@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\TipoEstudio;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
@@ -29,6 +30,36 @@ class Voucher extends Model implements Auditable
     public function paciente()
     {
         return $this->belongsTo(Paciente::class);
+    }
+
+    //Devuelve todos los voucher-estudios a cargar del voucher
+    public function estudios_cargar()
+    {
+        $estudios = [];
+        foreach ($this->vouchersEstudios as $item) {
+            if ($item->estudio->carga){
+                $estudios[] = $item;
+            }
+        }
+        return $estudios;
+    }
+
+    //Devuelve todos los tipos de estudios de los estudios del voucher
+    public function tipos_estudios()
+    {
+        $tipo_estudios = [];
+        foreach (TipoEstudio::all() as $tipo) {
+            $carga = false;
+            foreach ($this->vouchersEstudios as $item) {
+                if ($item->estudio->tipoEstudio == $tipo){
+                    $carga = true;
+                }
+            }
+            if ($carga){
+                $tipo_estudios[] = $tipo;
+            }
+        }
+        return $tipo_estudios;
     }
 
     public function voucherPaciente()
