@@ -284,7 +284,7 @@ class EstudioSeeder extends Seeder
         ]);
         $estudio = Estudio::create([
             'carga' => true,
-            'nombre' => 'ESPIROMETRIA',
+            'nombre' => 'ESPIRIOMETRIA',
             'tipo_estudio_id' => 3,
         ]);
         $estudio = Estudio::create([
@@ -301,18 +301,17 @@ class EstudioSeeder extends Seeder
         ]);
         $estudio = Estudio::create([
             'carga' => true,
-            'nombre' => 'HISTORIA CLINICO',
+            'nombre' => 'HISTORIA CLINICA',
             'tipo_estudio_id' => 4,
         ]);
         $estudio = Estudio::create([
             'carga' => true,
-            'nombre' => 'CUESTIONARIO
-            DIRECCIONADO POSICI FZA',
+            'nombre' => 'POSICIONES FORZADAS',
             'tipo_estudio_id' => 4,
         ]);
         $estudio = Estudio::create([
             'carga' => true,
-            'nombre' => 'CUESTIONARIO DIRECCIONADO ILUMINACION',
+            'nombre' => 'ILUMINACION',
             'tipo_estudio_id' => 4,
         ]);
     //

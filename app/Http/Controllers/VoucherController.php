@@ -84,28 +84,42 @@ class VoucherController extends Controller
 
         //
 
-        return redirect()->route('voucher.showforms',$voucher->id);
+        return redirect()->route('voucher.show',$voucher->id);
     }
 
     public function show($id)
     {
+        //Obtener Voucher
         $voucher = Voucher::find($id);
-        $tipo_estudios = TipoEstudio::all();
-        $estudios = array('Audiometría', 'Espiriometría', 'Historia Clínica', 'Declaración Jurada', 'Posiciones Forzadas');
-        $generar_formularios = false;
 
-        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios','generar_formularios'));
+        //Obetener todos los tipos de estudio
+        $tipo_estudios = TipoEstudio::all();
+
+        //Estudios generados por el sistema
+        $estudios = [];
+        $forms = array(     'DECLARACION JURADA',
+                            'HISTORIA CLINICA',
+                            'POSICIONES FORZADAS',
+                            'AUDIOMETRIA',
+                            'ESPIRIOMETRIA',
+                            'ILUMINACION');
+        foreach ($voucher->vouchersEstudios as $item) {
+            if ( in_array($item->estudio->nombre, $forms)) {
+                $estudios[] = $item->estudio->nombre;
+            }
+        }
+
+        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios'));
     }
 
+    /*
     public function showforms($id)
-    {
-        $voucher = Voucher::find($id);
-        $tipo_estudios = TipoEstudio::all();
-        $estudios = array('Audiometría', 'Espiriometría', 'Historia Clínica', 'Declaración Jurada', 'Posiciones Forzadas');
+    {   
+        //Variable para abrir formularios en otra vista
         $generar_formularios = true;
 
         return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios','generar_formularios'));
-    }
+    }*/
 
     public function edit($id)
     {

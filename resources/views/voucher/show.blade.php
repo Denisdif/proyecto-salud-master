@@ -92,7 +92,11 @@
                                             <div class="row " style="padding: 1%;">
                                                 @foreach ($voucher->vouchersEstudios as $item)
                                                     @if ($item->estudio->tipo_estudio_id == $tipo->id)
-                                                        <div class="col-4"><li>{{ strtoupper($item->estudio->nombre)}}</li> </div>
+                                                        <div class="col-4" style="font-size: 15px">
+                                                            <li>
+                                                                <a href="{{ route('voucherEstudio.archivo',$item->id) }}"> {{ strtoupper($item->estudio->nombre)}}</a>
+                                                            </li> 
+                                                        </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -108,15 +112,16 @@
         </div>
     </div>
 
+    <!-- Abrir formularios en otras pestañas ---
     <div class="form-group">
-        <input type="text" class="form-control" value={{$generar_formularios}} name="generar" id="generar" placeholder="" hidden>
-        <input type="text" class="form-control" value={{$voucher->id}} name="voucher_id" id="voucher_id" placeholder="" hidden>
-    </div>
+        <input type="text" class="form-control" value=$generar_formularios name="generar" id="generar" placeholder="" hidden>
+        <input type="text" class="form-control" value=$voucher->id name="voucher_id" id="voucher_id" placeholder="" hidden>
+    </div>-->
 
 @push('scripts')
 <script>
     $(document).ready(function(){
-        var prueba;
+        /*var prueba;
         var voucher_id = $("#voucher_id").val();
         if ( $("#generar").val() == true ) {
             prueba = window.open(
@@ -129,7 +134,7 @@
                 "http://www.google.com",
                 '_blank'
             );
-        });
+        });*/
     }); 
 </script>
 @endpush
