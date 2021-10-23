@@ -16,27 +16,27 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-6 d-flex align-items-stretch">
-                        <div class="card">
+                        <div class="card flex-fill">
                             <div style="text-align: center" class="card-header fondo2">
                                 DATOS DEL PACIENTE
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-8">
                                         <div class="added"> <input type="hidden" value="'+nombres+'">
-                                            <p style="font-size:100%" class="text-left">Nombre completo: '+nombres+'</p>
-                                            <p style="font-size:100%" class="text-left">Documento: '+documento+'</p>
-                                            <p style="font-size:100%" class="text-left">Fecha de nacimiento: '+fecha_nacimiento+'</p>
-                                            <p style="font-size:100%" class="text-left">CUIL: '+cuil+'</p>
-                                            <p style="font-size:100%" class="text-left">Sexo: '+sexo+'</p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Nombre completo:    </strong> {{$voucher->paciente->nombreCompleto()     }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> CUIL:               </strong> {{$voucher->paciente->cuil                 }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Fecha de nacimiento:</strong> {{$voucher->paciente->fecha_nacimiento()   }} </p> 
+                                            <p style="font-size:100%" class="text-left"> <strong> Edad:               </strong> {{$voucher->paciente->edad()               }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Sexo:               </strong> {{$voucher->paciente->sexo->definicion     }} </p>        
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-4">
                                         <div class="added"> 
-                                            @if('+foto+'==null)
-                                                <img class="img-thumbnail" height="85px" width="85px" src='+foto+'>
+                                            @if($voucher->paciente->imagen==null)
+                                                <img class="img-thumbnail" height="200px" width="200px" src="{{ asset('imagenes/paciente/default.png')}}">
                                             @else
-                                                <img class="img-thumbnail" height="350px" width="350px" src="{{ asset('imagenes/paciente/default.png')}}">
+                                                <img class="img-thumbnail" height="200px" width="200px" src="{{$voucher->paciente->imagen}}">
                                             @endif 
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                 <button id="generar2">+</button>
                             </div>
                             <div class="card-body">
-                                <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table table-bordered table-condensed table-hover">
+                                <table id="tablaDetalle" style="width:100%" class="table-sm table-bordered table-condensed table-hover">
                                     <tbody>
                                         @foreach ($estudios as $item)
                                         <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
@@ -79,7 +79,7 @@
                 <div class="card "> 
                     <div style="text-align: center" class="card-header fondo2">
                         <div class="card-title">
-                            OTROS ESTUDIOS
+                            TODOS LOS ESTUDIOS
                         </div>
                     </div>
                     <div class="card-body">
