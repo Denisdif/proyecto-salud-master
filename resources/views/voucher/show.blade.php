@@ -15,6 +15,7 @@
             </div>
             <div class="card-body">
                 <div class="row">
+                    <!-- PACIENTE -->
                     <div class="col-6 d-flex align-items-stretch">
                         <div class="card flex-fill">
                             <div style="text-align: center" class="card-header fondo2">
@@ -44,6 +45,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- ESTUDIOS DEL SISTEMA -->
                     <div class="col-6 d-flex align-items-stretch ">
                         <div class="card flex-fill">
                             <div style="text-align: center" class="card-header fondo2">
@@ -75,9 +77,8 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="row">
+                    <!-- ESTUDIOS CARGADOS -->
                     <div class="col">
                         <div class="card flex-fill">
                             <div style="text-align: center" class="card-header fondo2">
@@ -100,22 +101,20 @@
                                             <td style="text-align: left"> {{($item->estudio->tipoEstudio->nombre) }}    </td> 
                                             @if ($item->archivo_adjunto)
                                                 <td>  Cargado     </td>
+                                                <td style="text-align: center">
+                                                    <a target="_blank" href="{{ route('voucherEstudio.show',$item->id) }}" class="btn fondo1 btn-responsive">
+                                                        <i class="fas fa-file-pdf"></i>
+                                                    </a>
+                                                </td>
                                             @else
                                                 <td>  Pendiente   </td>
+                                                <td style="text-align: center">
+                                                    <button type="button" class="btn fondo2" data-toggle="modal" data-target="#archivoModal" data-whatever="[{{$item->estudio}}, {{$item}}]">
+                                                        <i class="fa fa-plus" ></i>
+                                                    </button>
+                                                </td>
                                             @endif
-                                            
-                                            <td style="text-align: center">
-                                                <a href="">
-                                                    <button title="Exportar pdf" class="btn fondo1 btn-responsive">
-                                                        <i class="fas fa-file-pdf"></i>
-                                                    </button>
-                                                </a>
-                                                <a href="">
-                                                    <button title="Cargar pdf" class="btn fondo2 btn-responsive">
-                                                        <i class="fas fa-plus"></i>
-                                                    </button>
-                                                </a>
-                                            </td>
+
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -124,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- TODOS LOS ESTUDIOS -->
                 <div class="card "> 
                     <div style="text-align: center" class="card-header fondo2">
                             TODOS LOS ESTUDIOS
@@ -159,6 +158,40 @@
         </div>
     </div>
 
+    <!-- MODAL PARA ARCHIVOS -->
+    <div class="modal fade" id="archivoModal" tabindex="-1" role="dialog" aria-labelledby="archivoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- HEADER -->
+                <div class="modal-header fondo1">
+                    <h5 class="modal-title" id="archivoModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <form method="POST" action="{{route('voucherEstudio.archivo')}}" enctype="multipart/form-data">
+                @csrf
+                <!-- BODY -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Archivo:</label>
+                        <input class="form-control-file" name="anexo" type="file">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="voucher_estudio_id" class="form-control" id="voucher_estudio" hidden>
+                        <input type="text" name="estudio" class="form-control" id="estudio" hidden>
+                    </div>
+                </div>
+                <!-- FOOTER -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn fondo1" >Guardar</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Abrir formularios en otras pestañas ---
     <div class="form-group">
         <input type="text" class="form-control" value=$generar_formularios name="generar" id="generar" placeholder="" hidden>
@@ -166,25 +199,37 @@
     </div>-->
 
 @push('scripts')
-<script src="{{asset('js/tablaDetalle.js')}}"></script>
-<script>
-    $(document).ready(function(){
-        /*var prueba;
-        var voucher_id = $("#voucher_id").val();
-        if ( $("#generar").val() == true ) {
-            prueba = window.open(
-                    "{{ route('audiometrias.pdf', 1) }}",
+    <script src="{{asset('js/tablaDetalle.js')}}"></script>
+    <script>/*
+        $(document).ready(function(){
+            var prueba;
+            var voucher_id = $("#voucher_id").val();
+            if ( $("#generar").val() == true ) {
+                prueba = window.open(
+                        "{{ route('audiometrias.pdf', 1) }}",
+                        '_blank'
+                    );
+            }
+            $("#generar2").click(function(){
+                prueba = window.open(
+                    "http://www.google.com",
                     '_blank'
                 );
-        }
-        $("#generar2").click(function(){
-            prueba = window.open(
-                "http://www.google.com",
-                '_blank'
-            );
-        });*/
-    }); 
-</script>
+            });
+        }); */
+    </script>
+
+    <script>
+        $('#archivoModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('Carga de archivo de ' + recipient[0].nombre)
+            modal.find('#estudio').val(recipient[0].nombre)
+            modal.find('#voucher_estudio').val(recipient[1].id)
+          })
+    </script>
 @endpush
 
 @endsection

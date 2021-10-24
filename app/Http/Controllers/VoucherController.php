@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Audiometria;
+use App\Models\Espiriometria;
 use App\Models\Estudio;
 use App\Models\TipoEstudio;
 use Illuminate\Http\Request;
@@ -12,7 +13,6 @@ use App\User;
 use App\Paciente;
 use App\Models\VoucherEstudio;
 use Carbon\Carbon;
-
 use PDF;
 
 class VoucherController extends Controller
@@ -59,7 +59,6 @@ class VoucherController extends Controller
 
     public function store(Request $request)
     {   
-        //return $request;
         $n=Voucher::count() + 1;
         $voucher=new Voucher();
         $voucher->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
@@ -69,21 +68,29 @@ class VoucherController extends Controller
 
         $estudios = Estudio::all();
         foreach ($estudios as $item) {
-            $nombre = $item->id;
-            if ($request->$nombre == 1) {
+            //La variable aux toma el valor del id del Estudio
+            $aux = $item->id;
+
+            //Compara el aux con el campo de la request, que en la vista se establece que cada uno es el id de un Estudio distinto.
+            if ($request->$aux == 1) {
                 $voucher_estudio = new VoucherEstudio;
                 $voucher_estudio->voucher_id = $voucher->id;
                 $voucher_estudio->estudio_id = $item->id;
                 $voucher_estudio->save();
+
+                if ($item->nombre == "AUDIOMETRIA") {
+                    $audiometria = new Audiometria();
+                    $audiometria->voucher_id = $voucher->id;
+                    $audiometria->save();
+                }
+
+                if ($item->nombre == "ESPIRIOMETRIA") {
+                    $espiriometria = new Espiriometria();
+                    $espiriometria->voucher_id = $voucher->id;
+                    $espiriometria->save();
+                }
             }
         }
-        
-        $audiometria = new Audiometria();
-        $audiometria->voucher_id = $voucher->id;
-        $audiometria->save();
-
-        //
-
         return redirect()->route('voucher.show',$voucher->id);
     }
 
@@ -116,12 +123,12 @@ class VoucherController extends Controller
     }
 
     /*
-    public function showforms($id)
-    {   
-        //Variable para abrir formularios en otra vista
-        $generar_formularios = true;
+        public function showforms($id)
+        {   
+            //Variable para abrir formularios en otra vista
+            $generar_formularios = true;
 
-        return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios','generar_formularios'));
+            return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios','generar_formularios'));
     }*/
 
     public function edit($id)

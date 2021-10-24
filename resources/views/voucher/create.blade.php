@@ -80,54 +80,47 @@
                 </div>
                 <!-- / Paciente -->   
                 <!-- Estudios -->
-                @foreach ($tipo_estudios as $tipo)
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card "> <!--collapsed-card -->
-                            <div class="card-header header-bg">
-                                <div class="row">
-                                    <div class="col">
-                                        <h3 class="card-title">{{$tipo->nombre}}</h3> 
-                                    </div>
-
-                                        
+                    @foreach ($tipo_estudios as $tipo)
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="card "> <!--collapsed-card -->
+                                <div class="card-header header-bg">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3 class="card-title">{{$tipo->nombre}}</h3> 
+                                        </div>
                                             <div style="text-align: right" class="col">
                                                 <div class="icheck-danger d-inline">
                                                 <input id="a{{$tipo->id}}" type="checkbox" onClick="ActivarCasilla(this,{{$tipo->id}});" />
                                                 <Label for="a{{$tipo->id}}">{{strtoupper("Seleccionar todo")}} </Label>
                                             </div>
                                         </div>
-
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-body" > <!--style="display: none;" -->
-                                <div class="row">
-                                    @foreach ($estudios as $item)
-                                        @if ($item->tipo_estudio_id == $tipo->id)
-                                            <div class="col-6">
-                                                <div class="custom-control custom-checkbox">
-                                                    <div class="icheck-danger d-inline">
-                                                        <input class="{{$tipo->id}}" type="checkbox" name="{{$item->id}}" value = 1 id="{{$item->id}}">
-                                                        <label for="{{$item->id}}"> {{strtoupper($item->nombre)}} </label>
-                                                    </div>
-                                                </div>  
-                                            </div>         
-                                        @endif
-                                    @endforeach
+                                <div class="card-body" > <!--style="display: none;" -->
+                                    <div class="row">
+                                        @foreach ($estudios as $item)
+                                            @if ($item->tipo_estudio_id == $tipo->id)
+                                                <div class="col-6">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <div class="icheck-danger d-inline">
+                                                            <input class="{{$tipo->id}}" type="checkbox" name="{{$item->id}}" value = 1 id="{{$item->id}}">
+                                                            <label for="{{$item->id}}"> {{strtoupper($item->nombre)}} </label>
+                                                        </div>
+                                                    </div>  
+                                                </div>         
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
                 <!-- / Estudios-->
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="form-group" style="text-align:center">
-                <label>
-
-                </label>
-                <br>
                 <a href="/voucher">
                     <button title="Cancelar" class="btn btn-danger btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
                 </a>
@@ -142,18 +135,13 @@
 @push('scripts')
     <script>
         $(document).ready(function(){
-            
             var select67 = $("#paciente_id").select2({width:'100%'});
             select67.data('select2').$selection.css('height', '34px');
-
         });
 
     </script>
-
     <script>
-        
         $(document).ready(function(){
-
             //Voucher
                 var select1 = $("#paciente_id").select2({width:'100%'});
                 select1.data('select2').$selection.css('height', '34px');
@@ -203,7 +191,6 @@
 
                 }
             // 
-        
         });  
     </script>
 
