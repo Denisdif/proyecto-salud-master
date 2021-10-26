@@ -47,54 +47,45 @@
             <!-- /.card-header header-bg -->
             <div class="card-body">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <!-- Seleccionar Voucher -->
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label>Seleccionar Voucher</label>
-                                <select
-                                    name="voucher_id"
-                                    id="voucher_id"
-                                    class="voucher_id custom-select"
-                                    >
-                                    <option
-                                        value="0"
-                                        disabled="true"
-                                        selected="true"
-                                        title="-Seleccione un paciente-">
-                                        -Seleccione un voucher-
-                                    </option>
-                                    @foreach ($vouchers as $voucher)
-                                        <option value="{{$voucher->id }}">{{$voucher->voucherPaciente()}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    <!-- / Seleccionar paciente -->
+
+                    <!-- Voucher id HIDDEN -->
+                    <div class="form-group">
+                        <input type="number" name="voucher_id" value="{{$voucher->id }}" hidden>
+                    </div>
                     <!-- Datos del paciente -->
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="card  "> <!--collapsed-card -->
-                                <div class="card-header header-bg">
-                                    <h3 class="card-title">Datos del Paciente</h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                    </div>
+                    <div class="col-12">
+                        <div class="card" >
+                            <div class="card-header header-bg">
+                                <h3 class="card-title">Datos del paciente</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
                                 </div>
-                                <div class="card-body" > <!--style="display: none;" -->
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div id="datos_paciente" class="form-group">
-
-                                            </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="added"> <input type="hidden" value="'+nombres+'">
+                                            <p style="font-size:100%" class="text-left"> <strong> Nombre completo:    </strong> {{$voucher->paciente->nombreCompleto()     }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> CUIL:               </strong> {{$voucher->paciente->cuil                 }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Fecha de nacimiento:</strong> {{$voucher->paciente->fecha_nacimiento()   }} </p> 
+                                            <p style="font-size:100%" class="text-left"> <strong> Edad:               </strong> {{$voucher->paciente->edad()               }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Sexo:               </strong> {{$voucher->paciente->sexo->definicion     }} </p>        
                                         </div>
-                                        <div class="col-md-6">
-                                            <div id="foto_paciente" class="form-group">
-
-                                            </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="added"> 
+                                            @if($voucher->paciente->imagen==null)
+                                                <img class="img-thumbnail" height="200px" width="200px" src="{{ asset('imagenes/paciente/default.png')}}">
+                                            @else
+                                                <img class="img-thumbnail" height="200px" width="200px" src="{{$voucher->paciente->imagen}}">
+                                            @endif 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
                     <!-- / Datos del paciente -->
                     <!-- Datos laborales -->
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -1537,7 +1528,8 @@
                 }
             });
 
-        //
+        // 
+        /*
         //Voucher
             var select1 = $("#voucher_id").select2({width:'100%'});
             select1.data('select2').$selection.css('height', '34px');
@@ -1552,7 +1544,6 @@
                 voucher_id=$("#voucher_id").val();
                 vouchers=$("#voucher_id option:selected").text();
 
-                /*   Aca iría el Ajax para obtener la cantidad por Paquete*/
                 $.ajax({
                     type:'get',
                     url:'{!!URL::to('declaracion_jurada/create/traerDatosPaciente')!!}',
@@ -1587,7 +1578,7 @@
                 $("#voucher_id option:selected").remove();
 
             }
-        // 
+        // */
     });  
     </script>
 @endpush

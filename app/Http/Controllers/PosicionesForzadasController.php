@@ -44,24 +44,21 @@ class PosicionesForzadasController extends Controller
     public function crearPDF($id)
     {
         $posiciones_forzada=PosicionesForzada::find($id);
-
-        
         $pdf = PDF::loadView('posiciones_forzadas.pdf',[
             "posiciones_forzada"   =>  $posiciones_forzada
             ]);
 
         $pdf->setPaper('a4','letter');
         return $pdf->stream('posiciones-forzada.pdf');
-
-        
     }
 
 
-    public function create()
+    public function create($id)
     {
-        $pacientes=Paciente::all();
-        $vouchers= Voucher::all();
-        return view('posiciones_forzadas.create', compact('pacientes', 'vouchers'));
+        $pacientes= Paciente::all();
+        $voucher  = Voucher::find($id);
+        $vouchers = Voucher::all();
+        return view('posiciones_forzadas.create', compact('pacientes', 'vouchers', 'voucher'));
     }
 
     public function store(Request $request)

@@ -175,11 +175,9 @@ class PersonalClinicaController extends Controller
 
     public function edit($id)
     {
-
         $personal=PersonalClinica::findOrFail($id);
         $sexos=Sexo::all();
         return view("personal.edit",["personal"=>$personal,"sexos"=>$sexos]);
-
     }
 
 

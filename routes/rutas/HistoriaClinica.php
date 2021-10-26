@@ -7,7 +7,7 @@
         ->name('historia_clinica.destroy');
 
 
-    Route::get('historia_clinica/create', 'HistoriaClinicaController@create')
+    Route::get('historia_clinica/create/{voucher}', 'HistoriaClinicaController@create')
         ->name('historia_clinica.create');
 
     Route::post('historia_clinica', 'HistoriaClinicaController@store')

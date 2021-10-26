@@ -54,21 +54,24 @@
                             <div class="card-body">
                                 <table id="tablaEstudios" style="width:100%" class="table-sm table-bordered table-condensed table-hover">
                                     <tbody>
-                                        @foreach ($estudios as $item)
+                                        @foreach ($estudios_sistema[2] as $item)
                                         <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
-                                            <td style="width: 65%">{{ $item }}</td>
-                                            <td style="text-align: center">
-                                                <a href="">
-                                                    <button title="Exportar pdf" class="btn fondo1 btn-responsive">
+                                            <td style="width: 65%">{{ $estudios_sistema[0][$item]->estudio->nombre }}</td>
+                                            @if ($estudios_sistema[0][$item]->archivo_adjunto)
+                                                <td style="text-align: center">
+                                                    <a target="_blank" href="" class="btn fondo1 btn-responsive">
                                                         <i class="fas fa-file-pdf"></i>
-                                                    </button>
-                                                </a>
-                                                <a href="">
+                                                    </a>
+                                                </td>
+                                            @else
+                                            <td>
+                                                <a href={{ route($estudios_sistema[1][$item], $voucher->id)}}>
                                                     <button title="Cargar pdf" class="btn fondo2 btn-responsive">
-                                                        <i class="fas fa-plus"></i>
+                                                        <i class="fa fa-plus" ></i>
                                                     </button>
                                                 </a>
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -114,7 +117,6 @@
                                                     </button>
                                                 </td>
                                             @endif
-
                                         </tr>
                                         @endforeach
                                     </tbody>

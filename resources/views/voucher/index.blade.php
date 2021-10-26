@@ -110,14 +110,6 @@
             var prueba2;
             $("#pdf_js").click(function(){
                 prueba = window.open(
-                    "{{ route('posiciones_forzadas.index') }}",
-                    '_blank'
-                );
-                prueba = window.open(
-                    "{{ route('posiciones_forzadas.create') }}",
-                    '_blank'
-                );
-                prueba = window.open(
                     "http://www.google.com",
                     '_blank'
                 );

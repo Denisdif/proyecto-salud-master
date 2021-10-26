@@ -5,7 +5,7 @@
     Route::delete('declaracion_jurada/{declaracion_jurada}', 'DeclaracionJuradaController@destroy')->name('declaracion_jurada.destroy');
 
 
-    Route::get('declaracion_jurada/create', 'DeclaracionJuradaController@create')->name('declaracion_jurada.create');
+    Route::get('declaracion_jurada/create/{voucher}', 'DeclaracionJuradaController@create')->name('declaracion_jurada.create');
 
 
     Route::post('declaracion_jurada', 'DeclaracionJuradaController@store')->name('declaracion_jurada.store');

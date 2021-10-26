@@ -5,7 +5,7 @@
     Route::delete('posiciones_forzadas/{posiciones_forzadas}', 'PosicionesForzadasController@destroy')->name('posiciones_forzadas.destroy');
 
 
-    Route::get('posiciones_forzadas/create', 'PosicionesForzadasController@create')->name('posiciones_forzadas.create');
+    Route::get('posiciones_forzadas/create/{voucher}', 'PosicionesForzadasController@create')->name('posiciones_forzadas.create');
 
 
     Route::post('posiciones_forzadas', 'PosicionesForzadasController@store')->name('posiciones_forzadas.store');

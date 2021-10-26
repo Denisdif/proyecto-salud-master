@@ -106,20 +106,40 @@ class VoucherController extends Controller
         $estudios_cargar = $voucher->estudios_cargar();
 
         //Estudios generados por el sistema
+        $estudios_sistema = [];
         $estudios = [];
-        $forms = array(     'DECLARACION JURADA',
+        $indice = [];
+        $rutas = [];
+        $forms = [];
+        $forms[] = array(   'DECLARACION JURADA',
                             'HISTORIA CLINICA',
                             'POSICIONES FORZADAS',
                             'AUDIOMETRIA',
-                            'ESPIRIOMETRIA',
-                            'ILUMINACION');
+                            'ESPIRIOMETRIA');
+                            //'ILUMINACION'); 
+
+        $forms[] = array(   'declaracion_jurada.create',
+                            'historia_clinica.create',                    
+                            'posiciones_forzadas.create',
+                            'audiometrias.create',
+                            'espiriometrias.create');
+                            //'ILUMINACION');
+
         foreach ($voucher->vouchersEstudios as $item) {
-            if ( in_array($item->estudio->nombre, $forms)) {
-                $estudios[] = $item->estudio->nombre;
+            for ($i=0; $i < sizeof($forms[0]); $i++) { 
+                if ( $item->estudio->nombre == $forms[0][$i]) {
+                    $estudios[] = $item;
+                    $rutas[] = $forms[1][$i];
+                    $indice[] = $i;
+                }
+
             }
         }
 
-        return view('voucher.show', compact('voucher', 'estudios','estudios_cargar', 'tipo_estudios'));
+        $estudios_sistema[] = $estudios;
+        $estudios_sistema[] = $rutas;
+        $estudios_sistema[] = $indice;
+        return view('voucher.show', compact('voucher', 'estudios_sistema','estudios_cargar', 'tipo_estudios'));
     }
 
     /*

@@ -1,7 +1,7 @@
 <?php
 
     Route::get('espiriometrias',                         'EspiriometriaController@index')             ->name('espiriometrias.index');
-    Route::get('espiriometrias/create',                  'EspiriometriaController@create')            ->name('espiriometrias.create');
+    Route::get('espiriometrias/create/{voucher}',        'EspiriometriaController@create')            ->name('espiriometrias.create');
     Route::post('espiriometrias',                        'EspiriometriaController@store')             ->name('espiriometrias.store');
     Route::get('espiriometrias/{espiriometria}',         'EspiriometriaController@show')              ->name('espiriometrias.show');
     Route::get('espiriometrias/{espiriometria}/edit',    'EspiriometriaController@edit')              ->name('espiriometrias.edit');
