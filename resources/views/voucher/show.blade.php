@@ -25,11 +25,12 @@
                                 <div class="row">
                                     <div class="col-8">
                                         <div class="added"> <input type="hidden" value="'+nombres+'">
-                                            <p style="font-size:100%" class="text-left"> <strong> Nombre completo:    </strong> {{$voucher->paciente->nombreCompleto()     }} </p>
-                                            <p style="font-size:100%" class="text-left"> <strong> CUIL:               </strong> {{$voucher->paciente->cuil                 }} </p>
-                                            <p style="font-size:100%" class="text-left"> <strong> Fecha de nacimiento:</strong> {{$voucher->paciente->fecha_nacimiento()   }} </p> 
-                                            <p style="font-size:100%" class="text-left"> <strong> Edad:               </strong> {{$voucher->paciente->edad()               }} </p>
-                                            <p style="font-size:100%" class="text-left"> <strong> Sexo:               </strong> {{$voucher->paciente->sexo->definicion     }} </p>        
+                                            <p style="font-size:100%" class="text-left"> <strong> Nombre completo:              </strong> {{$voucher->paciente->nombreCompleto()     }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> CUIL:                         </strong> {{$voucher->paciente->cuil                 }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Fecha de nacimiento:          </strong> {{$voucher->paciente->fecha_nacimiento()   }} </p> 
+                                            <p style="font-size:100%" class="text-left"> <strong> Edad:                         </strong> {{$voucher->paciente->edad()               }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Sexo:                         </strong> {{$voucher->paciente->sexo->definicion     }} </p>        
+                                            <p style="font-size:100%" class="text-left"> <strong> Turno de este Voucher:        </strong> {{$voucher->turno     }} </p>  
                                         </div>
                                     </div>
                                     <div class="col-4">

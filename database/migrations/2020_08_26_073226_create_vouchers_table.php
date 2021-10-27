@@ -16,17 +16,12 @@ class CreateVouchersTable extends Migration
         Schema::create('vouchers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('codigo',10);
-            $table->boolean('declaracion')->nullable();
-            $table->boolean('hc_formulario')->nullable();
-            $table->boolean('posiciones_forzadas')->nullable();
-            $table->boolean('direccionado')->nullable();
-            $table->boolean('audiometria')->nullable();
-            $table->boolean('espiriometria')->nullable();
+            $table->date('turno')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->unsignedBigInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('restrict');
-            $table->timestamps();
         });
     }
 

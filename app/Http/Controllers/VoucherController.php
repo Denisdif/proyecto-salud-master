@@ -63,6 +63,7 @@ class VoucherController extends Controller
         $n=Voucher::count() + 1;
         $voucher=new Voucher();
         $voucher->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
+        $voucher->turno=$request->turno;
         $voucher->user_id=auth()->user()->id;
         $voucher->paciente_id = $request->paciente_id;
         $voucher->save();

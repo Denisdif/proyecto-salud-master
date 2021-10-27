@@ -14,15 +14,7 @@ class VoucherSeeder extends Seeder
     {
         Voucher::create([
 
-        	'codigo' => 0000000001,
-
-        	'declaracion' => 1,
-
-        	'hc_formulario' => 0,
-
-        	'posiciones_forzadas' => 0,
-
-        	'direccionado' => 0,
+        	'codigo' => "0000000001",
 
         	'user_id' => 1,
 
@@ -32,15 +24,7 @@ class VoucherSeeder extends Seeder
 
         Voucher::create([
 
-        	'codigo' => 0000000002,
-
-        	'declaracion' => 1,
-
-        	'hc_formulario' => 0,
-
-        	'posiciones_forzadas' => 0,
-
-        	'direccionado' => 0,
+        	'codigo' => "0000000002",
 
         	'user_id' => 1,
 
@@ -50,15 +34,7 @@ class VoucherSeeder extends Seeder
 
         Voucher::create([
 
-        	'codigo' => 0000000003,
-
-        	'declaracion' => 1,
-
-        	'hc_formulario' => 0,
-
-        	'posiciones_forzadas' => 0,
-
-        	'direccionado' => 0,
+        	'codigo' => "0000000003",
 
         	'user_id' => 1,
 
