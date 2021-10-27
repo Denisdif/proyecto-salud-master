@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Audiometria;
 use App\Voucher;
-use Illuminate\Http\Request;
-
 use PDF;
+use Dompdf\Dompdf;
+use Illuminate\Http\Request;
 
 /**
  * Class AudiometriaController
@@ -32,12 +32,13 @@ class AudiometriaController extends Controller
     public function crearPDF($id)
     {
         $audiometria=Audiometria::find($id);
-        
         $pdf = PDF::loadView('audiometria.PDF',[
             "audiometria"   =>  $audiometria
             ]);
 
         $pdf->setPaper('a4','letter');
+        $pdf->save(public_path().'/archivo/'."es una prueba.pdf");
+
         return $pdf->stream('audiometria.pdf');
         
     }

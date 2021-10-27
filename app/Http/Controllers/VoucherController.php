@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ArchivoAdjunto;
 use App\Http\Controllers\Controller;
 use App\Models\Audiometria;
 use App\Models\Espiriometria;
@@ -78,16 +79,51 @@ class VoucherController extends Controller
                 $voucher_estudio->estudio_id = $item->id;
                 $voucher_estudio->save();
 
-                if ($item->nombre == "AUDIOMETRIA") {
+                if ($item->nombre == "AUDIOMETRIA") 
+                {
+                    //Nueva audiometria
                     $audiometria = new Audiometria();
                     $audiometria->voucher_id = $voucher->id;
                     $audiometria->save();
+
+                    //Ruta de PDF
+                    $ruta = public_path().'/archivo/'."AUDIOMETRIA".$voucher_estudio->id.".pdf";
+
+                    //Generar PDF
+                    $pdf = PDF::loadView('audiometria.PDF',[
+                        "audiometria"   =>  $audiometria
+                        ]);
+                    $pdf->setPaper('a4','letter');
+                    $pdf->save($ruta);
+                    
+                    //Almacenar archivo adjunto
+                    $archivo_adjunto = new ArchivoAdjunto();
+                    $archivo_adjunto->anexo = $ruta;
+                    $archivo_adjunto->voucher_estudio_id = $voucher_estudio->id;
+                    $archivo_adjunto->save();
                 }
 
-                if ($item->nombre == "ESPIRIOMETRIA") {
+                if ($item->nombre == "ESPIRIOMETRIA") 
+                {
                     $espiriometria = new Espiriometria();
                     $espiriometria->voucher_id = $voucher->id;
                     $espiriometria->save();
+
+                    //Ruta de PDF
+                    $ruta = public_path().'/archivo/'."ESPIRIOMETRIA".$voucher_estudio->id.".pdf";
+
+                    //Generar PDF
+                    $pdf = PDF::loadView('espiriometria.PDF',[
+                        "espiriometria"   =>  $espiriometria
+                        ]);
+                    $pdf->setPaper('a4','letter');
+                    $pdf->save($ruta);
+                    
+                    //Almacenar archivo adjunto
+                    $archivo_adjunto = new ArchivoAdjunto();
+                    $archivo_adjunto->anexo = $ruta;
+                    $archivo_adjunto->voucher_estudio_id = $voucher_estudio->id;
+                    $archivo_adjunto->save();
                 }
             }
         }
@@ -124,18 +160,18 @@ class VoucherController extends Controller
                             'audiometrias.create',
                             'espiriometrias.create');
                             //'ILUMINACION');
-
+        $a = 0;
         foreach ($voucher->vouchersEstudios as $item) {
-            for ($i=0; $i < sizeof($forms[0]); $i++) { 
+            for ($i=0; $i < sizeof($forms[0]); $i++) {
                 if ( $item->estudio->nombre == $forms[0][$i]) {
                     $estudios[] = $item;
                     $rutas[] = $forms[1][$i];
-                    $indice[] = $i;
+                    $indice[] = $a;
+                    $a++;
                 }
 
             }
         }
-
         $estudios_sistema[] = $estudios;
         $estudios_sistema[] = $rutas;
         $estudios_sistema[] = $indice;
@@ -234,4 +270,6 @@ class VoucherController extends Controller
         $pdf->setPaper('a4','letter');
         return $pdf->stream('voucher_medico.pdf');
     }
+
+
 }
