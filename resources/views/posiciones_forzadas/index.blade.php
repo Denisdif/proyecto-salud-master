@@ -14,14 +14,14 @@
             <div class="card-title">
                 <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Posiciones Forzadas</p>
             </div>
-            
+      <!--
             <div class="card-tools">
-                <a href= {{ route('posiciones_forzadas.create')}}>
+                <a href= route('posiciones_forzadas.create')>
                     <button class="btn fondo1 ">
                         <i class="fa fa-plus"></i> Nuevo
                     </button>
                 </a>
-            </div>
+            </div>-->
         </div>
         <div class="card-body fondo0">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

@@ -15,7 +15,7 @@
 
     {{Form::token()}}
 
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-6 offset-3">
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
@@ -24,9 +24,8 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-                    <div class="form-group col-6">
+                <div class="col-12">
+                    <div class="form-group col-12">
                         <label>Seleccionar tipo de Estudio</label>
                         <select 
                             name="tipo_estudio_id"
@@ -34,7 +33,7 @@
                             class="tipo_estudio_id custom-select"
                             >
                             <option
-                                value="0"
+                                value=null
                                 disabled="true"
                                 selected="true"
                                 title="-Seleccione tipo de estudio-">
@@ -45,23 +44,29 @@
                             @endforeach
                         </select>
                     </div>
-
-                    <div class="form-group col-6">
+                    <div class="form-group col-12">
                         {{ Form::label('nombre') }}
                         {{ Form::text('nombre', $estudio->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
                         {!! $errors->first('nombre', '<div class="invalid-feedback">:message</p>') !!}
                     </div>
-                    
+                    <div class="form-group col-12">
+                        <label>¿Este estudio tiene un formulario propio?</label>
+                        <select 
+                            name="carga"
+                            id="carga"
+                            class="custom-select">
+                            <option value=1>Si</option>
+                            <option value=0>No</option>
+                        </select>
+                    </div>
+                    <!-- Guardar -->
+                        <div class="form-group col-12 " id="guardar" style="padding-top: 5%">
+                            <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
+                            <button class="btn btn-success btn-lg btn-block" id="confirmar"type="submit"><i class="fa fa-check"> </i>Cargar estudio</button>
+                    </div>
+                    <!-- / Guardar -->
                 </div>
             </div>
-        <!-- Guardar -->
-            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="guardar">
-                <div class="form-group">
-                    <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
-                        <button class="btn btn-success btn-lg btn-block" id="confirmar"type="submit"><i class="fa fa-check"> </i>Cargar estudio</button>
-                </div>
-            </div>
-        <!-- / Guardar -->
         </div>
     </div>
 
