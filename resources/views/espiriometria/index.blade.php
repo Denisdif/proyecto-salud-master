@@ -15,13 +15,6 @@
                 <div class="card-title">
                     <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Espiriometría</p>
                 </div>
-                <div class="card-tools">
-                    <a href= {{ route('espiriometrias.create') }}>
-                        <button class="btn fondo1">
-                            <i class="fa fa-plus"></i> Nuevo
-                        </button>
-                    </a>
-                </div>
             </div>
         <!-- / Cabecera -->
         <!-- Body -->
