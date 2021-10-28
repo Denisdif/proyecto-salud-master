@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\IluminacionDireccionado;
 use App\Voucher;
 use Illuminate\Http\Request;
 
 class IluminacionDireccionadoController extends Controller
 {
+    public function index()
+    {
+        $iluminacionesDireccionados = IluminacionDireccionado::All();
+
+        return view('direccionado_iluminacion.index', compact('iluminacionesDireccionados'));
+    }
     public function create($id)
     {
         $voucher  = Voucher::find($id);
@@ -17,7 +22,6 @@ class IluminacionDireccionadoController extends Controller
     public function store(Request $request)
     {
         $iluminacion = IluminacionDireccionado::create($request->all());
-        $voucher  = Voucher::find($iluminacion->voucher_id);
-        return view('direccionado_iluminacion.create', compact('voucher'));
+        return redirect()->route('iluminacion_direccionados.index');
     }
 }
