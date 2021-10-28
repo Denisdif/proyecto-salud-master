@@ -52,12 +52,12 @@ class PosicionesForzadasController extends Controller
         return $pdf->stream('posiciones-forzada.pdf');
     }
 
-
     public function create($id)
     {
         $pacientes= Paciente::all();
         $voucher  = Voucher::find($id);
         $vouchers = Voucher::all();
+        //return view('direccionado_iluminacion.create', compact('pacientes', 'vouchers', 'voucher'));
         return view('posiciones_forzadas.create', compact('pacientes', 'vouchers', 'voucher'));
     }
 

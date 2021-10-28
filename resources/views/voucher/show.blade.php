@@ -104,14 +104,14 @@
                                             <td style="text-align: left"> {{strtoupper($item->estudio->nombre)    }}    </td>
                                             <td style="text-align: left"> {{($item->estudio->tipoEstudio->nombre) }}    </td> 
                                             @if ($item->archivo_adjunto)
-                                                <td>  Cargado     </td>
+                                                <td><label class="badge badge-success" style="font-size:90%">Cargado</label></td>
                                                 <td style="text-align: center">
                                                     <a target="_blank" href="{{ route('voucherEstudio.show',$item->id) }}" class="btn fondo1 btn-responsive">
                                                         <i class="fas fa-file-pdf"></i>
                                                     </a>
                                                 </td>
                                             @else
-                                                <td>  Pendiente   </td>
+                                                <td><label class="badge badge-danger" style="font-size:90%">Pendiente</label></td>
                                                 <td style="text-align: center">
                                                     <button type="button" class="btn fondo2" data-toggle="modal" data-target="#archivoModal" data-whatever="[{{$item->estudio}}, {{$item}}]">
                                                         <i class="fa fa-plus" ></i>
