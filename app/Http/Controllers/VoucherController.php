@@ -152,15 +152,15 @@ class VoucherController extends Controller
                             'HISTORIA CLINICA',
                             'POSICIONES FORZADAS',
                             'AUDIOMETRIA',
-                            'ESPIRIOMETRIA');
-                            //'ILUMINACION'); 
+                            'ESPIRIOMETRIA',
+                            'ILUMINACION'); 
 
         $forms[] = array(   'declaracion_jurada.create',
                             'historia_clinica.create',                    
                             'posiciones_forzadas.create',
                             'audiometrias.create',
-                            'espiriometrias.create');
-                            //'ILUMINACION');
+                            'espiriometrias.create',
+                            'iluminacion_direccionados.create');
         $a = 0;
         foreach ($voucher->vouchersEstudios as $item) {
             for ($i=0; $i < sizeof($forms[0]); $i++) {
