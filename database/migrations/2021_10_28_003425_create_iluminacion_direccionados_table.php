@@ -17,7 +17,7 @@ class CreateIluminacionDireccionadosTable extends Migration
             //Atributos de formulario
                 $table->bigIncrements('id');
                 $table->string('puesto');
-                $table->string('antigüedad');
+                $table->string('antiguedad');
                 $table->string('direccion_completa');
                 $table->string('observaciones');
                 $table->unsignedBigInteger('voucher_id');

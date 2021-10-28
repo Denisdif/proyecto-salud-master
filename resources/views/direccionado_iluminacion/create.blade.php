@@ -22,7 +22,7 @@
 </style>
 
 {!!Form::open(array(
-    'url'=>'posiciones_forzadas',
+    'url'=>'iluminacion_direccionados',
     'method'=>'POST',
     'autocomplete'=>'off',
     'files' => true,
@@ -132,7 +132,7 @@
                                 <div class="row">
                                     <div class="form-group col">
                                         <label for="observacion1">Dirección completa:   </label>
-                                        <input type="text" class="form-control" name="direccion_trabajo" placeholder="Lugar donde se desempeña el trabajador...">
+                                        <input type="text" class="form-control" name="direccion_completa" placeholder="Lugar donde se desempeña el trabajador...">
                                     </div>
                                 </div>
                             </div>
@@ -352,7 +352,7 @@
                                 <div class="row">
                                     <div class="form-group col">
                                         <label>Con corrección:                                      </label>
-                                        <input type="text" class="form-control" name="av_con_correccion" placeholder="Describa...">
+                                        <input type="text" class="form-control" name="av_correccion" placeholder="Describa...">
                                     </div>
                                     <div class="form-group col">
                                         <label>Sin corrección:                                      </label>

@@ -20,7 +20,7 @@ class IluminacionDireccionado extends Model
                             'vision_doble',
                             'mareo_vertigo',
                             'conjuntivitis',
-                            'vision _borrosa',
+                            'vision_borrosa',
                             'inseguridad_de_pie',
                             'no_centrados',
                             'pupilas_anormales',
