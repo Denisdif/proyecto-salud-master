@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('personal', 'PersonalClinicaController@index')->name('personal.index');
 
     Route::delete('personal/{personal}', 'PersonalClinicaController@delete')->name('personal.delete');

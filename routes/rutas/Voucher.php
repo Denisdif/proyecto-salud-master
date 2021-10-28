@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('voucher',                               'VoucherController@index')->                        name('voucher.index');
     Route::delete('voucher/{voucher}',                  'VoucherController@destroy')->                      name('voucher.destroy');
     Route::get('voucher/create',                        'VoucherController@create')->                       name('voucher.create');

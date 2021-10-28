@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('user', 'UserController@index')->name('user.index');
 
     //Route::delete('user/{user}', 'UserController@destroy')->name('user.destroy');

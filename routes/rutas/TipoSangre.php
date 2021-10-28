@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('tipo-sangre', 'TipoSangreController@index')->name('tipo-sangre.index');
 
     Route::delete('tipo-sangre/{tipo-sangre}', 'TipoSangreController@destroy')->name('tipo-sangre.destroy');

@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('historia_clinica', 'HistoriaClinicaController@index')
         ->name('historia_clinica.index');
 

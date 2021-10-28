@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('tipo_estudios',                         'TipoEstudioController@index')             ->name('tipo_estudios.index');
     Route::get('tipo_estudios/create',                  'TipoEstudioController@create')            ->name('tipo_estudios.create');
     Route::post('tipo_estudios',                        'TipoEstudioController@store')             ->name('tipo_estudios.store');

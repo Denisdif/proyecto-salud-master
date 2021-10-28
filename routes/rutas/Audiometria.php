@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('audiometrias',                         'AudiometriaController@index')             ->name('audiometrias.index');
     Route::get('audiometrias/create/{voucher}',        'AudiometriaController@create')            ->name('audiometrias.create');
     Route::post('audiometrias',                        'AudiometriaController@store')             ->name('audiometrias.store');

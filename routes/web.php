@@ -11,13 +11,14 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
-
-
 
 Route::middleware(['auth'])->group(function() {
     include 'rutas/Welcome.php';
@@ -42,6 +43,7 @@ Route::middleware(['auth'])->group(function() {
     include 'rutas/Estudio.php';
     include 'rutas/TiposEstudio.php';
     include 'rutas/VoucherEstudio.php';
+    include 'rutas/IluminacionDireccionado.php';
 
 });
 

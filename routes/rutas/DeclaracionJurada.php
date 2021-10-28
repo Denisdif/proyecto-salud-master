@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('declaracion_jurada', 'DeclaracionJuradaController@index')->name('declaracion_jurada.index');
 
     Route::delete('declaracion_jurada/{declaracion_jurada}', 'DeclaracionJuradaController@destroy')->name('declaracion_jurada.destroy');

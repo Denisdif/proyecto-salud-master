@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('espiriometrias',                         'EspiriometriaController@index')             ->name('espiriometrias.index');
     Route::get('espiriometrias/create/{voucher}',        'EspiriometriaController@create')            ->name('espiriometrias.create');
     Route::post('espiriometrias',                        'EspiriometriaController@store')             ->name('espiriometrias.store');

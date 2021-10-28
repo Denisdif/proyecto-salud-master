@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('paciente', 'PacienteController@index')->name('paciente.index');
 
     Route::delete('paciente/{paciente}', 'PacienteController@destroy')->name('paciente.destroy');

@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('roles', 'RoleController@index')->name('roles.index');
 
     Route::delete('roles/{roles}', 'RoleController@destroy')->name('roles.destroy');

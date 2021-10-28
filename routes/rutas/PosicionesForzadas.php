@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('posiciones_forzadas', 'PosicionesForzadasController@index')->name('posiciones_forzadas.index');
 
     Route::delete('posiciones_forzadas/{posiciones_forzadas}', 'PosicionesForzadasController@destroy')->name('posiciones_forzadas.destroy');

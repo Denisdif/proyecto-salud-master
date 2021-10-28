@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
     Route::get('obra_social', 'ObraSocialController@index')->name('obra_social.index');
 
     Route::delete('obra_social/{obra_social}', 'ObraSocialController@destroy')->name('obra_social.destroy');
