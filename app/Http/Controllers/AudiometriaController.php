@@ -35,12 +35,10 @@ class AudiometriaController extends Controller
         $pdf = PDF::loadView('audiometria.PDF',[
             "audiometria"   =>  $audiometria
             ]);
-
         $pdf->setPaper('a4','letter');
         $pdf->save(public_path().'/archivo/'."es una prueba.pdf");
 
         return $pdf->stream('audiometria.pdf');
-        
     }
 
     public function store(Request $request)
