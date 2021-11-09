@@ -16,15 +16,9 @@ class CreateGenitalesTable extends Migration
         Schema::create('genitales', function (Blueprint $table) {
 
             $table->bigIncrements('id');
-
-            $table->boolean('pregunta1_ge')->nullable();
             $table->string('observacion1_ge')->nullable();
-
-
-            $table->timestamps();
-
             $table->string('observacion_ge')->nullable();
-
+            $table->timestamps();
 
             $table->unsignedBigInteger('historia_clinica_id');
             $table->foreign('historia_clinica_id')->references('id')->on('historia_clinicas')->onDelete('restrict');

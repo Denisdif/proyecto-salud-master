@@ -16,30 +16,17 @@ class CreateOdontologicosTable extends Migration
         Schema::create('odontologicos', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->boolean('pregunta1_od')->nullable();
             $table->string('observacion1_od')->nullable();
-
-            $table->boolean('pregunta2_od')->nullable();
             $table->string('observacion2_od')->nullable();
-
-            $table->boolean('pregunta3_od')->nullable();
-
             $table->boolean('pregunta4_od')->nullable();
-
             $table->boolean('pregunta5_od')->nullable();
-
-
             $table->string('observacion_od')->nullable();
             $table->string('superior')->nullable();
-
             $table->string('inferior')->nullable();
-
+            $table->timestamps();
+            
             $table->unsignedBigInteger('historia_clinica_id');
             $table->foreign('historia_clinica_id')->references('id')->on('historia_clinicas')->onDelete('restrict');
-
-            $table->timestamps();
-
-
         });
     }
 

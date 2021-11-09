@@ -15,36 +15,18 @@ class CreateNeurologicosTable extends Migration
     {
         Schema::create('neurologicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->boolean('pregunta1_neu')->nullable();
             $table->string('observacion1_neu')->nullable();
-
-            $table->boolean('pregunta2_neu')->nullable();
             $table->string('observacion2_neu')->nullable();
-
-            $table->boolean('pregunta3_neu')->nullable();
             $table->string('observacion3_neu')->nullable();
-
-            $table->boolean('pregunta4_neu')->nullable();
             $table->string('observacion4_neu')->nullable();
-
-
-            $table->boolean('pregunta5_neu')->nullable();
             $table->string('observacion5_neu')->nullable();
-
-            $table->boolean('pregunta6_neu')->nullable();
             $table->string('observacion6_neu')->nullable();
-
-            $table->timestamps();
-
-            $table->boolean('pregunta7_neu')->nullable();
             $table->string('observacion7_neu')->nullable();
-
             $table->string('observacion_neu')->nullable();
+            $table->timestamps();
 
             $table->unsignedBigInteger('historia_clinica_id');
             $table->foreign('historia_clinica_id')->references('id')->on('historia_clinicas')->onDelete('restrict');
-
         });
     }
 

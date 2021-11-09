@@ -15,22 +15,11 @@ class CreateOsteoarticularesTable extends Migration
     {
         Schema::create('osteoarticulares', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->boolean('pregunta1_os')->nullable();
             $table->string('observacion1_os')->nullable();
-
-            $table->boolean('pregunta2_os')->nullable();
             $table->string('observacion2_os')->nullable();
-
-            $table->boolean('pregunta3_os')->nullable();
             $table->string('observacion3_os')->nullable();
-
-            $table->boolean('pregunta4_os')->nullable();
             $table->string('observacion4_os')->nullable();
-
-            $table->string('obervacion_os')->nullable();
-
-
+            $table->string('observacion_os')->nullable();
             $table->timestamps();
 
             $table->unsignedBigInteger('historia_clinica_id');

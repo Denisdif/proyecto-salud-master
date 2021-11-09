@@ -14,35 +14,16 @@ class CreatePielesTable extends Migration
     public function up()
     {
         Schema::create('pieles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->boolean('pregunta1_piel')->nullable();
+            $table->bigIncrements('id');            
             $table->string('observacion1_piel')->nullable();
-
-            $table->boolean('vesicula')->nullable();
             $table->string('obs_vesicula')->nullable();
-
-            $table->boolean('ulceras')->nullable();
             $table->string('obs_ulceras')->nullable();
-
-            $table->boolean('fisuras')->nullable();
             $table->string('obs_fisuras')->nullable();
-
-            $table->boolean('prurito')->nullable();
             $table->string('obs_prurito')->nullable();
-
-            $table->boolean('eczemas')->nullable();
             $table->string('obs_eczemas')->nullable();
-
-            $table->boolean('dertmatitis')->nullable();
             $table->string('obs_dertmatitis')->nullable();
-
-            $table->boolean('eritemas')->nullable();
             $table->string('obs_eritemas')->nullable();
-
-
-            $table->boolean('petequias')->nullable();
             $table->string('obs_petequias')->nullable();
-
             $table->string('tejido')->nullable();
 
             $table->unsignedBigInteger('historia_clinica_id');

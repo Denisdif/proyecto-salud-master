@@ -15,13 +15,8 @@ class CreateRespiratoriosTable extends Migration
     {
         Schema::create('respiratorios', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->boolean('pregunta1_re')->nullable();
             $table->string('observacion1_re')->nullable();
-
-            $table->boolean('pregunta2_re')->nullable();
             $table->string('observacion2_re')->nullable();
-
             $table->timestamps();
 
             $table->unsignedBigInteger('historia_clinica_id');

@@ -15,11 +15,6 @@
                 <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Historia Clinica</p>
             </div>
             <div class="card-tools">
-                <a href= {{ route('historia_clinica.create')}}>
-                    <button class="btn btn-primary">
-                        <i class="fa fa-plus"></i> Nueva
-                    </button>
-                </a>
             </div>
         </div>
         <div class="card-body">
@@ -54,28 +49,8 @@
                         <td><p style="font-size:120%">{{ $historia_clinica->voucher->paciente->nombreCompleto() }}</p></td>
                         <td><p style="font-size:120%">{{($historia_clinica->created_at)->format('d/m/Y') }}</p></td>
                         <td>
-
-                            <!--aca incluir al modal show cuando todo funcione-->
-
-                            <!--a href="{{ route('hc_formulario.index',$historia_clinica) }}">
-                                <button title="ver historia clinica" class="btn btn-primary btn-responsive">
-                                    <i class="fa fa-folder" aria-hidden="true"></i>
-                                </button>
-                            </a>
-
-
-                            <a href="{{ route('hc_formulario.create',$historia_clinica) }}">
-                                <button title="añadir formulario de historia clinica" class="btn btn-primary btn-responsive">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </button>
-                            </a-->
                         </td>
-
-
                     </tr>
-
-                    <!-- aca colocar el modaldelete-->
-
                     @endforeach
                 </tbody>
             </table>

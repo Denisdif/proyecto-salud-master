@@ -15,22 +15,11 @@ class CreateColumnasTable extends Migration
     {
         Schema::create('columnas', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->boolean('pregunta1_col')->nullable();
             $table->string('observacion1_col')->nullable();
-
-            $table->boolean('pregunta2_col')->nullable();
             $table->string('observacion2_col')->nullable();
-
-            $table->boolean('pregunta3_col')->nullable();
             $table->string('observacion3_col')->nullable();
-
-            $table->boolean('pregunta4_col')->nullable();
             $table->string('observacion4_col')->nullable();
-
-            $table->string('obervacion_col')->nullable();
-
-
+            $table->string('observacion_col')->nullable();
             $table->timestamps();
 
             $table->unsignedBigInteger('historia_clinica_id');

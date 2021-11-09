@@ -16,10 +16,11 @@ class CreateCardiovascularesTable extends Migration
         Schema::create('cardiovasculares', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('frecuencia_cardiaca')->nullable();
+            $table->string('observacion_varices')->nullable();
+            $table->boolean('varices')->nullable();
             $table->boolean('tension_arterial')->nullable();
             $table->boolean('pulso')->nullable();
-            $table->boolean('varices')->nullable();
-            $table->string('observacion_varices')->nullable();
+
             $table->unsignedBigInteger('historia_clinica_id');
             $table->foreign('historia_clinica_id')->references('id')->on('historia_clinicas')->onDelete('restrict');
             $table->timestamps();

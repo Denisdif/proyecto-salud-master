@@ -15,24 +15,14 @@ class CreateRegionInguinalesTable extends Migration
     {
         Schema::create('region_inguinales', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->boolean('pregunta1_in')->nullable();
             $table->string('observacion1_in')->nullable();
-
-            $table->boolean('pregunta2_in')->nullable();
             $table->string('observacion2_in')->nullable();
-
-            $table->boolean('pregunta3_in')->nullable();
             $table->string('observacion3_in')->nullable();
-
-            $table->timestamps();
-
             $table->string('observacion_in')->nullable();
-
+            $table->timestamps();
 
             $table->unsignedBigInteger('historia_clinica_id');
             $table->foreign('historia_clinica_id')->references('id')->on('historia_clinicas')->onDelete('restrict');
-
         });
     }
 

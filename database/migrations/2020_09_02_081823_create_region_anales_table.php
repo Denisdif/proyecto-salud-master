@@ -15,15 +15,9 @@ class CreateRegionAnalesTable extends Migration
     {
         Schema::create('region_anales', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->boolean('pregunta1_an')->nullable();
             $table->string('observacion1_an')->nullable();
-
-
-            $table->timestamps();
-
             $table->string('observacion_an')->nullable();
-
+            $table->timestamps();
 
             $table->unsignedBigInteger('historia_clinica_id');
             $table->foreign('historia_clinica_id')->references('id')->on('historia_clinicas')->onDelete('restrict');
