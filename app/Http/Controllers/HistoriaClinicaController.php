@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\HistoriaClinica;
 use App\Paciente;
-use App\HcFormulario;
 use App\ExamenClinico;
 use App\Cardiovascular;
 use App\Piel;
@@ -47,7 +46,7 @@ class HistoriaClinicaController extends Controller
 
     public function crearPDF($id)
     {
-    $historias_clinica=HistoriaClinica::find($id);
+    $historia_clinica=HistoriaClinica::find($id);
 
         $pdf = PDF::loadView('hc_formulario.pdf',[
             "historia_clinica"   =>  $historia_clinica
