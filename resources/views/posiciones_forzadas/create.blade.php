@@ -36,7 +36,6 @@
 </style>
 
 <div class="row">
-
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="card-header header-bg header-bg">
@@ -47,7 +46,6 @@
             <!-- /.card-header header-bg -->
             <div class="card-body">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
                     <!-- Voucher id HIDDEN -->
                     <div class="form-group">
                         <input type="number" name="voucher_id" value="{{$voucher->id }}" hidden>
@@ -85,7 +83,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <!-- / Datos del paciente -->
                     <!-- Datos laborales -->
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -128,23 +125,44 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="tarea_1">Tiempo de Tarea: </label>
+                                        <!-- Tiempo de Tarea -->
                                         <div class="form-group row">
-                                            <div class="col">{{ Form::radio('tiempo','opcion1') }} Esporádico             </div>
-                                            <div class="col">{{ Form::radio('tiempo','opcion2') }} Continuo > 2hs y < 4hs </div>
-                                            <div class="col">{{ Form::radio('tiempo','opcion3') }} Continuo > 4hs         </div>
+                                            <label class="col" for="tarea_1">Tiempo de Tarea: </label>
+                                            <div class="col">
+                                                <label><input type="radio" name="tiempo" value="Esporádico">Esporádico</label>
+                                            </div>
+                                            <div class="col">
+                                                <label><input type="radio" name="tiempo" value="Continuo > 2hs y < 4hs"> Continuo > 2hs y < 4hs</label>
+                                            </div>
+                                            <div class="col"> 
+                                                <label><input type="radio" name="tiempo" value="Continuo > 4hs"> Continuo > 4hs</label>
+                                            </div>
                                         </div>
-                                        <label for="tarea_2">Ciclo de trabajo: </label>
+                                        <!-- Ciclo de trabajo: -->
                                         <div class="form-group row">
-                                            <div class="col">{{ Form::radio('ciclo','opcion4') }} Largo: < 2 minutos                     </div>
-                                            <div class="col">{{ Form::radio('ciclo','opcion5') }} Moderado: 30 segundos - 1 a 2 minutos  </div>
-                                            <div class="col">{{ Form::radio('ciclo','opcion6') }} Corto: hasta 30 segundos               </div>
+                                            <label class="col" for="tarea_1">Ciclo de trabajo: </label>
+                                            <div class="col"> 
+                                                <label><input type="radio" name="ciclo" value="Corto: hasta 30 segundos">hasta 30 segundos</label>
+                                            </div>
+                                            <div class="col">
+                                                <label><input type="radio" name="ciclo" value="Moderado: 30 segundos - 1 a 2 minutos">30 segundos a 2 minutos</label>
+                                            </div>
+                                            <div class="col">
+                                                <label><input type="radio" name="ciclo" value="Largo: < 2 minutos">< 2 minutos</label>
+                                            </div>
                                         </div>
-                                        <label for="tarea_3">Manipulación manual de cargas: </label>
+                                        <!-- Manipulación manual de cargas: -->
                                         <div class="form-group row">
-                                            <div class="col">{{ Form::radio('cargas','opcion7') }} Menor a 1 Kg        </div>
-                                            <div class="col">{{ Form::radio('cargas','opcion8') }} Entre 1 Kg y 3 Kgs  </div>
-                                            <div class="col">{{ Form::radio('cargas','opcion9') }} Mayor a 3 Kgs       </div>
+                                            <label class="col" for="tarea_1">Manipulación manual de cargas: </label>
+                                            <div class="col">
+                                                <label><input type="radio" name="cargas" value="Menor a 1 Kg ">Menor a 1 Kg </label>
+                                            </div>
+                                            <div class="col">
+                                                <label><input type="radio" name="cargas" value="Entre 1 Kg y 3 Kgs">Entre 1 Kg y 3 Kgs</label>
+                                            </div>
+                                            <div class="col"> 
+                                                <label><input type="radio" name="cargas" value="Mayor a 3 Kgs">Mayor a 3 Kgs</label>
+                                            </div>
                                         </div>
                                         <label for="tipo_tarea">Tipo de tarea: </label>
                                         <div class="form-group">
@@ -285,12 +303,19 @@
                                             <label><input type="radio" name="forma" value="Ausente"> Ausente</label>
                                         </div>
                                     </div>
+                                    <!-- Por su evolución -->
                                     <div class="form-group row">
-                                        <label class="col" for="dolor_2">Por su evolución: </label>
-                                        <div class="col"> {{ Form::radio('evolucion','opcion4_d') }} Continuo                 </div>
-                                        <div class="col"> {{ Form::radio('evolucion','opcion5_d') }} Brotes                   </div>
-                                        <div class="col"> {{ Form::radio('evolucion','opcion6_d') }} Cíclico                  </div>
-                                    </div>                                    
+                                        <label class="col" for="dolor_1">Por su evolución: </label>
+                                        <div class="col">
+                                            <label><input type="radio" name="evolucion" value="Continuo"> Continuo</label>
+                                        </div>
+                                        <div class="col">
+                                            <label><input type="radio" name="evolucion" value="Brotes"> Brotes</label>
+                                        </div>
+                                        <div class="col"> 
+                                            <label><input type="radio" name="evolucion" value="Cíclico"> Cíclico</label>
+                                        </div>
+                                    </div>                                  
                                     <div class="form-group row">
                                         <div class="col">
                                             <label for="observacion1">Puntos dolorosos: </label>
@@ -328,16 +353,27 @@
                                             </div>
                                         </div>
                                     <!-- / -->
-                                    <label for="caracterizacion_1">Caracterización semiológica: </label>
-                                    <div class="row">
-                                        <div class="form-group col">
-                                            {{ Form::radio('grado','opcion1_s') }} Grado 0: Ausencia de signos y síntomas.                                    <br>
-                                            {{ Form::radio('grado','opcion2_s') }} Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva.       <br>
-                                            {{ Form::radio('grado','opcion3_s') }} Grado 2: Grado 1 mas contractura y/o dolor a la movilización.              <br>
-                                            {{ Form::radio('grado','opcion4_s') }} Grado 3: Grado 2 mas dolor a la palpación y/o percusión.                   <br>
-                                            {{ Form::radio('grado','opcion5_s') }} Grado 4: Grado 3 mas limitación funcional evidente clínicamente.           <br>
+                                    <!-- Caracterización semiológica -->
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <label for="">Caracterización semiológica:</label>
                                         </div>
-                                    </div>
+                                        <div class="col-6">
+                                            <label><input type="radio" name="grado" value="Grado 0: Ausencia de signos y síntomas."> Grado 0: Ausencia de signos y síntomas.</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <label><input type="radio" name="grado" value="Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva."> Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva.</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <label><input type="radio" name="grado" value="Grado 2: Grado 1 mas contractura y/o dolor a la movilización."> Grado 2: Grado 1 mas contractura y/o dolor a la movilización.</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <label><input type="radio" name="grado" value="Grado 3: Grado 2 mas dolor a la palpación y/o percusión."> Grado 3: Grado 2 mas dolor a la palpación y/o percusión.</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <label><input type="radio" name="grado" value="Grado 4: Grado 3 mas limitación funcional evidente clínicamente."> Grado 4: Grado 3 mas limitación funcional evidente clínicamente.</label>
+                                        </div>
+                                    </div>                                 
                                     <div class="form-group row">
                                         <div class="col">
                                             <label for="observacion1">Observación: </label>

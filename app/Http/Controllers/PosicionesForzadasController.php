@@ -69,106 +69,47 @@ class PosicionesForzadasController extends Controller
             $posiciones_forzada->nroTrabajo=$request->nroTrabajo;
             $posiciones_forzada->user_id=auth()->user()->id;
             $posiciones_forzada->voucher_id=$request->voucher_id;
-
-            //Tabla
+            //Tabla articulaciones
                 //Cada cuadro es representado por una posicion en el String
                 $dolor_articular = "";
                 for ($i=0; $i < 112; $i++) { 
                     $dolor_articular = $dolor_articular.$request->$i;
                 }
-                $posiciones_forzada->dolor_articular = $dolor_articular;
-            //
+            $posiciones_forzada->dolor_articular = $dolor_articular;
             $posiciones_forzada->diagnostico = " ";
             $posiciones_forzada->save();
-
-            //Tarea
+            
+            //Tablas secundarias
+                //Tarea
                 $tarea=new Tarea();
                 $tarea->tiempo=$request->tiempo;
                 $tarea->ciclo=$request->ciclo;
                 $tarea->cargas=$request->cargas;
-                //Preguntas
-                    if ($request->pregunta1) {
-                        $tarea->pregunta1 = true;     
-                    } else {
-                        $tarea->pregunta1 = false;
-                    }
-                    if ($request->pregunta2) {
-                        $tarea->pregunta2 = true;     
-                    } else {
-                        $tarea->pregunta2 = false;
-                    }
-                    if ($request->pregunta3) {
-                        $tarea->pregunta3 = true;     
-                    } else {
-                        $tarea->pregunta3 = false;
-                    }
-                    if ($request->pregunta4) {
-                        $tarea->pregunta4 = true;     
-                    } else {
-                        $tarea->pregunta4 = false;
-                    }
-                    if ($request->pregunta5) {
-                        $tarea->pregunta5 = true;     
-                    } else {
-                        $tarea->pregunta5 = false;
-                    }
-                    if ($request->pregunta6) {
-                        $tarea->pregunta6 = true;     
-                    } else {
-                        $tarea->pregunta6 = false;
-                    }
-                    if ($request->pregunta7) {
-                        $tarea->pregunta7 = true;     
-                    } else {
-                        $tarea->pregunta7 = false;
-                    }
-                    if ($request->pregunta8) {
-                        $tarea->pregunta8 = true;     
-                    } else {
-                        $tarea->pregunta8 = false;
-                    }
-                //    
+                $tarea->pregunta1 = $request->pregunta1;     
+                $tarea->pregunta2 = $request->pregunta2;     
+                $tarea->pregunta3 = $request->pregunta3;     
+                $tarea->pregunta4 = $request->pregunta4;     
+                $tarea->pregunta5 = $request->pregunta5;     
+                $tarea->pregunta6 = $request->pregunta6;     
+                $tarea->pregunta7 = $request->pregunta7;     
+                $tarea->pregunta8 = $request->pregunta8;        
                 $tarea->observacion_tarea=$request->observacion_tarea;
                 $tarea->posiciones_forzada_id=$posiciones_forzada->id;
                 $tarea->save();
-            //
-            //Dolor
+                //Dolor
                 $dolor=new Dolor();
                 $dolor->forma=$request->forma;
                 $dolor->evolucion=$request->evolucion;
-                //preguntas
-                    if ($request->pregunta1_d) {
-                        $dolor->pregunta1_d = true;    
-                    } else {
-                        $dolor->pregunta1_d = false;
-                    }
-                    if ($request->pregunta2_d) {
-                        $dolor->pregunta2_d = true;    
-                    } else {
-                        $dolor->pregunta2_d = false;
-                    }
-                    if ($request->pregunta3_d) {
-                        $dolor->pregunta3_d = true;    
-                    } else {
-                        $dolor->pregunta3_d = false;
-                    }
-                    if ($request->pregunta4_d) {
-                        $dolor->pregunta4_d = true;    
-                    } else {
-                        $dolor->pregunta4_d = false;
-                    }
-                    if ($request->pregunta5_d) {
-                        $dolor->pregunta5_d = true;    
-                    } else {
-                        $dolor->pregunta5_d = false;
-                    }
-                //
+                $dolor->pregunta1_d = $request->pregunta1_d;    
+                $dolor->pregunta2_d = $request->pregunta2_d;    
+                $dolor->pregunta3_d = $request->pregunta3_d;    
+                $dolor->pregunta4_d = $request->pregunta4_d;    
+                $dolor->pregunta5_d = $request->pregunta5_d;    
                 $dolor->observacion1_d=$request->observacion1_d;
                 $dolor->observacion2_d=$request->observacion2_d;
                 $dolor->posiciones_forzada_id=$posiciones_forzada->id;
                 $dolor->save();
-            //
-            //Semiologica
+                //Semiologica
                 $semiologica=new Semiologica();
                 $semiologica->grado=$request->grado;
                 $semiologica->observacion1_s=$request->observacion1_s;

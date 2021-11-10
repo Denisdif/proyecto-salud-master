@@ -22,11 +22,11 @@ class CreateDoloresTable extends Migration
             $table->string('observacion1_d')->nullable();
             $table->string('observacion2_d')->nullable();
 
-            $table->boolean('pregunta1_d')->default(false);
-            $table->boolean('pregunta2_d')->default(false);
-            $table->boolean('pregunta3_d')->default(false);
-            $table->boolean('pregunta4_d')->default(false);
-            $table->boolean('pregunta5_d')->default(false);
+            $table->boolean('pregunta1_d')->nullable();
+            $table->boolean('pregunta2_d')->nullable();
+            $table->boolean('pregunta3_d')->nullable();
+            $table->boolean('pregunta4_d')->nullable();
+            $table->boolean('pregunta5_d')->nullable();
 
             $table->unsignedBigInteger('posiciones_forzada_id');
             $table->foreign('posiciones_forzada_id')->references('id')->on('posiciones_forzadas')->onDelete('restrict');
