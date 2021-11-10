@@ -89,123 +89,123 @@ class DeclaracionJuradaController extends Controller
             $n=DeclaracionJurada::count() + 1;
 
             // Generación de Diagnóstico
-            /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
-            Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
-            $matriz = [];
-            $diagnostico = "<b>ANTECEDENTES FAMILIARES</b><br><br>";
-            //Carga variables
-                $matriz[] = [       //ANTECEDENTES FAMILIARES
-                                    $request->su_padre_vive,
-                                    $request->su_madre_vive,
-                                    $request->cancer,
-                                    $request->diabetes,
-                                    $request->infarto,
-                                    $request->hipertension_Arterial,
-                                    $request->detalle,
-                                    //ANTECEDENTES PERSONALES
-                                    ' ',
-                                    $request->fuma,
-                                    $request->bebe,
-                                    $request->actividad_fisica,
-                                    //ANTECEDENTES INFANCIA
-                                    ' ',
-                                    $request->sarampion,
-                                    $request->rebeola,
-                                    $request->epilepsia,
-                                    $request->varicela,
-                                    $request->parotiditis,
-                                    $request->cefalea_prolongada,
-                                    $request->hepatitis,
-                                    $request->gastritis,
-                                    $request->ulcera_gastrica,
-                                    $request->hemorroide,
-                                    $request->hemorragias,
-                                    $request->neumonia,
-                                    $request->asma,
-                                    $request->tuberculosis,
-                                    $request->tos_cronica,
-                                    $request->catarro,
-                                    $request->detalle1_m,
-                                    //ANTECEDENTES RECIENTES
-                                    ' ',
-                                    $request->detalle1_reciente,
-                                    $request->detalle2_reciente,
-                                    $request->detalle3_reciente,
-                                    $request->detalle4_reciente,
-                                    $request->detalle5_reciente,
-                                    $request->detalle6_reciente,
-                                    $request->detalle7_reciente,
-                                    $request->detalle8_reciente,
-                                    $request->detalle9_reciente,
-                                    $request->detalle10_reciente,
-                                    $request->detalle11_reciente,
-                                    $request->detalle12_reciente,
-                                    $request->detalle13_reciente,
-                                    $request->detalle14_reciente,
-                                    //ANTECEDENTES QUIRURJICOS
-                                    ' ',
-                                    $request->detalle1_q,
-                                    $request->detalle2_q,
-                                    $request->detalle3_q,
-                                ];
-            //
-            //Carga Labels
-                $matriz[] = [  
-                    'Su padre falleció: ',
-                    'Su madre falleció: ',
-                    'Cancer: ',
-                    'Diabetes: ',
-                    'Infarto: ',
-                    'Hipertension Arterial: ',
-                    'Ingrese algún detalle: ',
+                /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
+                Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
+                $matriz = [];
+                $diagnostico = "<b>ANTECEDENTES FAMILIARES</b><br><br>";
+                //Carga variables
+                    $matriz[] = [       //ANTECEDENTES FAMILIARES
+                                        $request->su_padre_vive,
+                                        $request->su_madre_vive,
+                                        $request->cancer,
+                                        $request->diabetes,
+                                        $request->infarto,
+                                        $request->hipertension_Arterial,
+                                        $request->detalle,
+                                        //ANTECEDENTES PERSONALES
+                                        ' ',
+                                        $request->fuma,
+                                        $request->bebe,
+                                        $request->actividad_fisica,
+                                        //ANTECEDENTES INFANCIA
+                                        ' ',
+                                        $request->sarampion,
+                                        $request->rebeola,
+                                        $request->epilepsia,
+                                        $request->varicela,
+                                        $request->parotiditis,
+                                        $request->cefalea_prolongada,
+                                        $request->hepatitis,
+                                        $request->gastritis,
+                                        $request->ulcera_gastrica,
+                                        $request->hemorroide,
+                                        $request->hemorragias,
+                                        $request->neumonia,
+                                        $request->asma,
+                                        $request->tuberculosis,
+                                        $request->tos_cronica,
+                                        $request->catarro,
+                                        $request->detalle1_m,
+                                        //ANTECEDENTES RECIENTES
+                                        ' ',
+                                        $request->detalle1_reciente,
+                                        $request->detalle2_reciente,
+                                        $request->detalle3_reciente,
+                                        $request->detalle4_reciente,
+                                        $request->detalle5_reciente,
+                                        $request->detalle6_reciente,
+                                        $request->detalle7_reciente,
+                                        $request->detalle8_reciente,
+                                        $request->detalle9_reciente,
+                                        $request->detalle10_reciente,
+                                        $request->detalle11_reciente,
+                                        $request->detalle12_reciente,
+                                        $request->detalle13_reciente,
+                                        $request->detalle14_reciente,
+                                        //ANTECEDENTES QUIRURJICOS
+                                        ' ',
+                                        $request->detalle1_q,
+                                        $request->detalle2_q,
+                                        $request->detalle3_q,
+                                    ];
+                //
+                //Carga Labels
+                    $matriz[] = [  
+                        'Su padre falleció: ',
+                        'Su madre falleció: ',
+                        'Cancer: ',
+                        'Diabetes: ',
+                        'Infarto: ',
+                        'Hipertension Arterial: ',
+                        'Ingrese algún detalle: ',
 
-                    '<br><b>ANTECEDENTES FAMILIARES</b><br>',
-                    'Fuma: ',
-                    'Bebe: ',
-                    'Actividad física: ',
+                        '<br><b>ANTECEDENTES FAMILIARES</b><br>',
+                        'Fuma: ',
+                        'Bebe: ',
+                        'Actividad física: ',
 
-                    '<br><b>ANTECEDENTES INFANCIA</b><br>',
-                    'Sarampión: ',
-                    'Rubéola: ',
-                    'Epilepsias: ',
-                    'Varicela: ',
-                    'Parotiditis: ',
-                    'Cefalea prolongadas: ',
-                    'Hepatítis: ',
-                    'Gastrítis: ',
-                    'Ulcera Gástrica: ',
-                    'Hemorroides: ',
-                    'Hemorragia: ',
-                    'Neumonía: ',
-                    'Asma: ',
-                    'Tuberculosis: ',
-                    'Tos Crónica: ',
-                    'Catarro: ',
-                    'Otras Afecciones: ',
-                    
-                    '<br><b>ANTECEDENTES RECIENTES</b><br>',
-                    '¿Enfermedad de los ojos, oidos , nariz o garganta?',
-                    '¿Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos?',
-                    '¿Insuficiencia respiratoria,  ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica?',
-                    '¿Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos?',
-                    '¿Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula?',
-                    '¿Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata?',
-                    '¿Diabetes, Tiroides u otra enfermedad endócrinas?',
-                    '¿Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones?',
-                    '¿Deformidades, rengueras o amputaciones?',
-                    '¿Enfermedades de la piel?',
-                    '¿Alergias, anemias u otras enfermedades de la sangre?',
-                    '¿Está Ud. Actualmente bajo observación o tratamiento?',
-                    '¿Ha tenido algún cambio en su peso en el último año?',
-                    'HERNIA: ',
-                    
-                    '<br><b>ANTECEDENTES QUIRÚRJUCOS</b><br>',
-                    '¿Fue intervenido/a quirúrgicamente por alguna causa?',
-                    '¿Tiene pendiente alguna cirugía? Por favor detallar Diagnóstico y fecha:',
-                    '¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?',
-                    ];
-            //
-            //Carga de diagnostico
+                        '<br><b>ANTECEDENTES INFANCIA</b><br>',
+                        'Sarampión: ',
+                        'Rubéola: ',
+                        'Epilepsias: ',
+                        'Varicela: ',
+                        'Parotiditis: ',
+                        'Cefalea prolongadas: ',
+                        'Hepatítis: ',
+                        'Gastrítis: ',
+                        'Ulcera Gástrica: ',
+                        'Hemorroides: ',
+                        'Hemorragia: ',
+                        'Neumonía: ',
+                        'Asma: ',
+                        'Tuberculosis: ',
+                        'Tos Crónica: ',
+                        'Catarro: ',
+                        'Otras Afecciones: ',
+                        
+                        '<br><b>ANTECEDENTES RECIENTES</b><br>',
+                        '¿Enfermedad de los ojos, oidos , nariz o garganta?',
+                        '¿Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos?',
+                        '¿Insuficiencia respiratoria,  ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica?',
+                        '¿Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos?',
+                        '¿Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula?',
+                        '¿Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata?',
+                        '¿Diabetes, Tiroides u otra enfermedad endócrinas?',
+                        '¿Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones?',
+                        '¿Deformidades, rengueras o amputaciones?',
+                        '¿Enfermedades de la piel?',
+                        '¿Alergias, anemias u otras enfermedades de la sangre?',
+                        '¿Está Ud. Actualmente bajo observación o tratamiento?',
+                        '¿Ha tenido algún cambio en su peso en el último año?',
+                        'HERNIA: ',
+                        
+                        '<br><b>ANTECEDENTES QUIRÚRJUCOS</b><br>',
+                        '¿Fue intervenido/a quirúrgicamente por alguna causa?',
+                        '¿Tiene pendiente alguna cirugía? Por favor detallar Diagnóstico y fecha:',
+                        '¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?',
+                        ];
+                //
+                //Carga de diagnostico
                 for ($i=0; $i < sizeof($matriz[1]); $i++) {
                     if ($matriz[0][$i]) {
                         $diagnostico = $diagnostico.$matriz[1][$i].$matriz[0][$i]."<br>";
@@ -222,70 +222,71 @@ class DeclaracionJuradaController extends Controller
             $declaracion_jurada->fecha_realizacion=$request->fecha_realizacion;
             $declaracion_jurada->save();
 
-            $antecedente_familiar=new AntecedenteFamiliar();
-            $antecedente_familiar->su_padre_vive=$request->su_padre_vive;
-            $antecedente_familiar->su_madre_vive=$request->su_madre_vive;
-            $antecedente_familiar->cancer=$request->cancer;
-            $antecedente_familiar->diabetes=$request->diabetes;
-            $antecedente_familiar->infarto=$request->infarto;
-            $antecedente_familiar->hipertension_Arterial=$request->hipertension_Arterial;
-            $antecedente_familiar->detalle=$request->detalle;
-            $antecedente_familiar->declaracion_jurada_id=$declaracion_jurada->id;
-            $antecedente_familiar->save();
+            //Tablas secundarias
+                $antecedente_familiar=new AntecedenteFamiliar();
+                $antecedente_familiar->su_padre_vive=$request->su_padre_vive;
+                $antecedente_familiar->su_madre_vive=$request->su_madre_vive;
+                $antecedente_familiar->cancer=$request->cancer;
+                $antecedente_familiar->diabetes=$request->diabetes;
+                $antecedente_familiar->infarto=$request->infarto;
+                $antecedente_familiar->hipertension_Arterial=$request->hipertension_Arterial;
+                $antecedente_familiar->detalle=$request->detalle;
+                $antecedente_familiar->declaracion_jurada_id=$declaracion_jurada->id;
+                $antecedente_familiar->save();
 
-            $antecedente_personal=new AntecedentePersonal();
-            $antecedente_personal->fuma=$request->fuma;
-            $antecedente_personal->bebe=$request->bebe;
-            $antecedente_personal->actividad_fisica=$request->actividad_fisica;
-            $antecedente_personal->declaracion_jurada_id=$declaracion_jurada->id;
-            $antecedente_personal->save();
+                $antecedente_personal=new AntecedentePersonal();
+                $antecedente_personal->fuma=$request->fuma;
+                $antecedente_personal->bebe=$request->bebe;
+                $antecedente_personal->actividad_fisica=$request->actividad_fisica;
+                $antecedente_personal->declaracion_jurada_id=$declaracion_jurada->id;
+                $antecedente_personal->save();
 
-            $antecedente_medico_infancia=new AntecedenteMedicoInfancia();
-            $antecedente_medico_infancia->sarampion=$request->sarampion;
-            $antecedente_medico_infancia->rebeola=$request->rebeola;
-            $antecedente_medico_infancia->epilepsia=$request->epilepsia;
-            $antecedente_medico_infancia->varicela=$request->varicela;
-            $antecedente_medico_infancia->parotiditis=$request->parotiditis;
-            $antecedente_medico_infancia->cefalea_prolongada=$request->cefalea_prolongada;
-            $antecedente_medico_infancia->hepatitis=$request->hepatitis;
-            $antecedente_medico_infancia->gastritis=$request->gastritis;
-            $antecedente_medico_infancia->ulcera_gastrica=$request->ulcera_gastrica;
-            $antecedente_medico_infancia->hemorroide=$request->hemorroide;
-            $antecedente_medico_infancia->hemorragias=$request->hemorragias;
-            $antecedente_medico_infancia->neumonia=$request->neumonia;
-            $antecedente_medico_infancia->asma=$request->asma;
-            $antecedente_medico_infancia->tuberculosis=$request->tuberculosis;
-            $antecedente_medico_infancia->tos_cronica=$request->tos_cronica;
-            $antecedente_medico_infancia->catarro=$request->catarro;
-            $antecedente_medico_infancia->detalle1_m=$request->detalle1_m;
-            $antecedente_medico_infancia->declaracion_jurada_id=$declaracion_jurada->id;
-            $antecedente_medico_infancia->save();
+                $antecedente_medico_infancia=new AntecedenteMedicoInfancia();
+                $antecedente_medico_infancia->sarampion=$request->sarampion;
+                $antecedente_medico_infancia->rebeola=$request->rebeola;
+                $antecedente_medico_infancia->epilepsia=$request->epilepsia;
+                $antecedente_medico_infancia->varicela=$request->varicela;
+                $antecedente_medico_infancia->parotiditis=$request->parotiditis;
+                $antecedente_medico_infancia->cefalea_prolongada=$request->cefalea_prolongada;
+                $antecedente_medico_infancia->hepatitis=$request->hepatitis;
+                $antecedente_medico_infancia->gastritis=$request->gastritis;
+                $antecedente_medico_infancia->ulcera_gastrica=$request->ulcera_gastrica;
+                $antecedente_medico_infancia->hemorroide=$request->hemorroide;
+                $antecedente_medico_infancia->hemorragias=$request->hemorragias;
+                $antecedente_medico_infancia->neumonia=$request->neumonia;
+                $antecedente_medico_infancia->asma=$request->asma;
+                $antecedente_medico_infancia->tuberculosis=$request->tuberculosis;
+                $antecedente_medico_infancia->tos_cronica=$request->tos_cronica;
+                $antecedente_medico_infancia->catarro=$request->catarro;
+                $antecedente_medico_infancia->detalle1_m=$request->detalle1_m;
+                $antecedente_medico_infancia->declaracion_jurada_id=$declaracion_jurada->id;
+                $antecedente_medico_infancia->save();
 
-            $antecedente_reciente=new AntecedenteReciente();            
-            $antecedente_reciente->detalle1_reciente=$request->detalle1_reciente;
-            $antecedente_reciente->detalle2_reciente=$request->detalle2_reciente;
-            $antecedente_reciente->detalle3_reciente=$request->detalle3_reciente;
-            $antecedente_reciente->detalle4_reciente=$request->detalle4_reciente;
-            $antecedente_reciente->detalle5_reciente=$request->detalle5_reciente;
-            $antecedente_reciente->detalle6_reciente=$request->detalle6_reciente;
-            $antecedente_reciente->detalle7_reciente=$request->detalle7_reciente;
-            $antecedente_reciente->detalle8_reciente=$request->detalle8_reciente;
-            $antecedente_reciente->detalle9_reciente=$request->detalle9_reciente;
-            $antecedente_reciente->detalle10_reciente=$request->detalle10_reciente;
-            $antecedente_reciente->detalle11_reciente=$request->detalle11_reciente;
-            $antecedente_reciente->detalle12_reciente=$request->detalle12_reciente;
-            $antecedente_reciente->detalle13_reciente=$request->detalle13_reciente;
-            $antecedente_reciente->detalle14_reciente=$request->detalle14_reciente;
-            $antecedente_reciente->declaracion_jurada_id=$declaracion_jurada->id;
-            $antecedente_reciente->save();
+                $antecedente_reciente=new AntecedenteReciente();            
+                $antecedente_reciente->detalle1_reciente=$request->detalle1_reciente;
+                $antecedente_reciente->detalle2_reciente=$request->detalle2_reciente;
+                $antecedente_reciente->detalle3_reciente=$request->detalle3_reciente;
+                $antecedente_reciente->detalle4_reciente=$request->detalle4_reciente;
+                $antecedente_reciente->detalle5_reciente=$request->detalle5_reciente;
+                $antecedente_reciente->detalle6_reciente=$request->detalle6_reciente;
+                $antecedente_reciente->detalle7_reciente=$request->detalle7_reciente;
+                $antecedente_reciente->detalle8_reciente=$request->detalle8_reciente;
+                $antecedente_reciente->detalle9_reciente=$request->detalle9_reciente;
+                $antecedente_reciente->detalle10_reciente=$request->detalle10_reciente;
+                $antecedente_reciente->detalle11_reciente=$request->detalle11_reciente;
+                $antecedente_reciente->detalle12_reciente=$request->detalle12_reciente;
+                $antecedente_reciente->detalle13_reciente=$request->detalle13_reciente;
+                $antecedente_reciente->detalle14_reciente=$request->detalle14_reciente;
+                $antecedente_reciente->declaracion_jurada_id=$declaracion_jurada->id;
+                $antecedente_reciente->save();
 
-            $antecedente_quirurjico=new AntecedenteQuirurjico();
-            $antecedente_quirurjico->detalle1_q=$request->detalle1_q;
-            $antecedente_quirurjico->detalle2_q=$request->detalle2_q;
-            $antecedente_quirurjico->detalle3_q=$request->detalle3_q;
-            $antecedente_quirurjico->declaracion_jurada_id=$declaracion_jurada->id;
-            $antecedente_quirurjico->save();
-        
+                $antecedente_quirurjico=new AntecedenteQuirurjico();
+                $antecedente_quirurjico->detalle1_q=$request->detalle1_q;
+                $antecedente_quirurjico->detalle2_q=$request->detalle2_q;
+                $antecedente_quirurjico->detalle3_q=$request->detalle3_q;
+                $antecedente_quirurjico->declaracion_jurada_id=$declaracion_jurada->id;
+                $antecedente_quirurjico->save();
+            //
         return redirect()->route('declaracion_jurada.index');
     }
 
