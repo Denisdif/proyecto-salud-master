@@ -12,6 +12,13 @@
                 <div class="card-title">
                     <p style="font-size:130%"> <i class="fa fa-voucher" aria-hidden="true"></i> Datos de Voucher</p>
                 </div>
+                <div class="card-tools">
+                    <a href= {{ route('aptitudes.create',$voucher->id)}}>
+                        <button class="btn fondo1">
+                             Informe Final
+                        </button>
+                    </a>
+                </div>
             </div>
             <div class="card-body">
                 <div class="row">

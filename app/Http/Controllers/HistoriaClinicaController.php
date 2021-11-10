@@ -85,7 +85,7 @@ class HistoriaClinicaController extends Controller
         $paciente->update();
         //cuando la magia andaba... 
         //Paciente::find($historia_clinica->paciente_id)->update(['historia_clinica'=>true]);
-        /*
+        
         //Examen Clinico
             $examen_clinico=new ExamenClinico();
             $examen_clinico->peso=$request->peso;
@@ -96,7 +96,6 @@ class HistoriaClinicaController extends Controller
             $examen_clinico->historia_clinica_id=$historia_clinica->id;
             $examen_clinico->save();
         //
-        
         //Cardiovascular
             $cardiovascular=new Cardiovascular();
             $cardiovascular->frecuencia_cardiaca=         $request->frecuencia_cardiaca;
@@ -107,7 +106,6 @@ class HistoriaClinicaController extends Controller
             $cardiovascular->historia_clinica_id=         $historia_clinica->id;
             $cardiovascular->save();
         //
-        
         //PIEL
             $piel=new Piel();
             $piel->observacion1_piel=     $request->observacion1_piel;
@@ -123,7 +121,6 @@ class HistoriaClinicaController extends Controller
             $piel->historia_clinica_id=   $historia_clinica->id;
             $piel->save();
         //
-
         //OSTEOARTICULAR
             $osteoarticular=new Osteoarticular();
             $osteoarticular->observacion1_os=       $request->observacion1_os;
@@ -134,7 +131,6 @@ class HistoriaClinicaController extends Controller
             $osteoarticular->historia_clinica_id=   $historia_clinica->id;
             $osteoarticular->save();
         //
-
         //COLUMNA VERTEBRAL
             $columna=new Columna();
             $columna->observacion1_col=$request->observacion1_col;
@@ -145,7 +141,6 @@ class HistoriaClinicaController extends Controller
             $columna->historia_clinica_id=$historia_clinica->id;
             $columna->save();
         //
-
         //CABEZA Y CUELLO
             $cabezacuello=new CabezaCuello();
             $cabezacuello->observacion1_cc=$request->observacion1_cc;
@@ -157,7 +152,6 @@ class HistoriaClinicaController extends Controller
             $cabezacuello->historia_clinica_id=$historia_clinica->id;
             $cabezacuello->save();
         //
-
         //OFTALMOLÓGICO
             $oftalmologico=new Oftalmologico();
             $oftalmologico->observacion1_of=$request->observacion1_of;
@@ -171,7 +165,6 @@ class HistoriaClinicaController extends Controller
             $oftalmologico->historia_clinica_id=$historia_clinica->id;
             $oftalmologico->save();
         //
-
         //NEUROLOGICO
             $neutologico=new Neurologico();
             $neutologico->observacion1_neu=$request->observacion1_neu;
@@ -185,7 +178,6 @@ class HistoriaClinicaController extends Controller
             $neutologico->historia_clinica_id=$historia_clinica->id;
             $neutologico->save();
         //
-
         //ODONTOLOGICO
             $odontologico=new Odontologico();
             $odontologico->observacion1_od=$request->observacion1_od;
@@ -198,7 +190,6 @@ class HistoriaClinicaController extends Controller
             $odontologico->historia_clinica_id=$historia_clinica->id;
             $odontologico->save();
         //
-
         //TORAX Y APARTO RESPIRATORIO
             $respiratorio=new Respiratorio();
             $respiratorio->observacion1_re=$request->observacion1_re;
@@ -206,7 +197,6 @@ class HistoriaClinicaController extends Controller
             $respiratorio->historia_clinica_id=$historia_clinica->id;
             $respiratorio->save();
         //
-
         //ABDOMEN
             $abdomen=new Abdomen();
             $abdomen->observacion1_ab=$request->observacion1_ab;
@@ -219,7 +209,6 @@ class HistoriaClinicaController extends Controller
             $abdomen->historia_clinica_id=$historia_clinica->id;
             $abdomen->save();
         //
-
         //REGIONES INGUINALES
             $inguinal=new RegionInguinal();
             $inguinal->observacion1_in=$request->observacion1_in;
@@ -229,7 +218,6 @@ class HistoriaClinicaController extends Controller
             $inguinal->historia_clinica_id=$historia_clinica->id;
             $inguinal->save();
         //
-
         //GENITALES
             $genital=new Genital();
             $genital->observacion1_ge=$request->observacion1_ge;
@@ -237,7 +225,6 @@ class HistoriaClinicaController extends Controller
             $genital->historia_clinica_id=$historia_clinica->id;
             $genital->save();
         //
-*/
         //REGIÓN ANAL
             $reganal=new RegionAnal();
             $reganal->observacion1_an=$request->observacion1_an;

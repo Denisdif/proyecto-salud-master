@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function() {
     include 'rutas/TiposEstudio.php';
     include 'rutas/VoucherEstudio.php';
     include 'rutas/IluminacionDireccionado.php';
+    include 'rutas/Aptitud.php';
 
 });
 

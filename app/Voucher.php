@@ -72,4 +72,8 @@ class Voucher extends Model implements Auditable
         return $this->hasMany('App\Models\VoucherEstudio', 'voucher_id', 'id');
     }
     
+    public function historiaClinica()
+    {
+        return $this->hasMany('App\HistoriaClinica', 'voucher_id', 'id');
+    }
 }
