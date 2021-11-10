@@ -16,8 +16,8 @@ class CreateDoloresTable extends Migration
         Schema::create('dolores', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->enum('forma', ['opcion1_d', 'opcion2_d', 'opcion3_d']);
-            $table->enum('evolucion', ['opcion4_d', 'opcion5_d', 'opcion6_d']);
+            $table->string('forma')->nullable();
+            $table->string('evolucion')->nullable();
 
             $table->string('observacion1_d')->nullable();
             $table->string('observacion2_d')->nullable();

@@ -20,6 +20,9 @@ class CreatePosicionesForzadasTable extends Migration
             $table->string('puesto');
             $table->integer('antiguedad');
             $table->string('nroTrabajo');
+            $table->char('dolor_articular',112);
+            $table->text('diagnostico');
+            
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->unsignedBigInteger('voucher_id')->nullable();
