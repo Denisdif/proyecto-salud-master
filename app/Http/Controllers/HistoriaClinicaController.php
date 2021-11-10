@@ -73,10 +73,9 @@ class HistoriaClinicaController extends Controller
         $historia_clinica=new HistoriaClinica();
         // Generación de Diagnóstico
             /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
-            Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó la historia clínica*/
-            //Diagnostico
-                $matriz = [];
-            //
+            Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
+            $matriz = [];
+            $diagnostico = "<b>EXAMEN CLÍNICO</b><br><br>";
             //Carga variables
                 $matriz[] = [           //Examen Clinico
                                         $request->peso,
@@ -84,13 +83,17 @@ class HistoriaClinicaController extends Controller
                                         $request->sobrepeso,
                                         $request->imc,
                                         $request->medicacion_actual,
+
                                         //Cardiovascular
+                                        ' ',
                                         $request->frecuencia_cardiaca,
                                         $request->tension_arterial,
                                         $request->pulso,
                                         $request->varices,
                                         $request->observacion_varices,
+
                                         //Piel
+                                        ' ',
                                         $request->observacion1_piel,
                                         $request->obs_vesicula,
                                         $request->obs_ulceras,
@@ -101,26 +104,34 @@ class HistoriaClinicaController extends Controller
                                         $request->obs_eritemas,
                                         $request->obs_petequias,
                                         $request->tejido,
+
                                         //OSTEOARTICULAR
+                                        ' ',
                                         $request->observacion1_os,
                                         $request->observacion2_os,
                                         $request->observacion3_os,
                                         $request->observacion4_os,
                                         $request->observacion_os,
+
                                         //COLUMNA VERTEBRAL
+                                        ' ',
                                         $request->observacion1_col,
                                         $request->observacion2_col,
                                         $request->observacion3_col,
                                         $request->observacion4_col,
                                         $request->observacion_col,
+
                                         //CABEZA Y CUELLO
+                                        ' ',
                                         $request->observacion1_cc,
                                         $request->observacion2_cc,
                                         $request->observacion3_cc,
                                         $request->observacion4_cc,
                                         $request->observacion5_cc,
                                         $request->observacion6_cc,
+
                                         //OFTALMOLÓGICO
+                                        ' ',
                                         $request->observacion1_of,
                                         $request->observacion2_of,
                                         $request->observacion3_of,
@@ -129,7 +140,9 @@ class HistoriaClinicaController extends Controller
                                         $request->observacion6_of,
                                         $request->pregunta7_of,
                                         $request->observacion_of,
+
                                         //NEUROLOGICO
+                                        ' ',
                                         $request->observacion1_neu,
                                         $request->observacion2_neu,
                                         $request->observacion3_neu,
@@ -138,7 +151,9 @@ class HistoriaClinicaController extends Controller
                                         $request->observacion6_neu,
                                         $request->observacion7_neu,
                                         $request->observacion_neu,
+
                                         //ODONTOLOGICO
+                                        ' ',
                                         $request->observacion1_od,
                                         $request->observacion2_od,
                                         $request->pregunta4_od, 
@@ -146,10 +161,14 @@ class HistoriaClinicaController extends Controller
                                         $request->superior,
                                         $request->inferior,
                                         $request->observacion_od,
+
                                         //TORAX Y APARTO RESPIRATORIO
+                                        ' ',
                                         $request->observacion1_re,
                                         $request->observacion2_re,
+
                                         //ABDOMEN
+                                        ' ',
                                         $request->observacion1_ab,
                                         $request->observacion2_ab,
                                         $request->observacion3_ab,
@@ -157,32 +176,40 @@ class HistoriaClinicaController extends Controller
                                         $request->observacion5_ab,
                                         $request->observacion6_ab,
                                         $request->observacion_ab,
+
                                         //REGIONES INGUINALES
+                                        ' ',
                                         $request->observacion1_in,
                                         $request->observacion2_in,
                                         $request->observacion3_in,
                                         $request->observacion_in,
+
                                         //GENITALES
+                                        ' ',
                                         $request->observacion1_ge,
                                         $request->observacion_ge,
+
                                         //REGIÓN ANAL
+                                        ' ',
                                         $request->observacion1_an,
                                         $request->observacion_an,
                 ];
             //
-            //Carca Labels
+            //Carga Labels
                 $matriz[] = [   'Peso: ',
                                 'Estatura: ',
                                 'Sobrepeso:',
                                 'IMC: ',
                                 'Medicación adicional: ',
 
+                                '<br><b>CARDIOVASCULAR</b><br>',
                                 'Fecruencia cardíaca: ',
                                 'Tensión arterial "S":',
                                 'Pulso "N"',
                                 'Várices: ',
                                 'Tipo várices: ',
 
+                                '<br><b>PIEL</b><br>',
                                 'Cicatrices patológicas visibles: ',
                                 'Vesícula: ',
                                 'Ulceras: ',
@@ -194,18 +221,21 @@ class HistoriaClinicaController extends Controller
                                 'Petequias: ',
                                 'Tejido celular subcutaneo: ',
                                 
+                                '<br><b>OSTEOARTICULAR</b><br>',
                                 'Limitaciones funcionales: ',
                                 'Amputaciones: ',
                                 'Movilidad y reflejo: ',
                                 'Tonicidad y fuerza muscular normal: ',
                                 'Observaciones: ',
 
+                                '<br><b>COLUMNA VERTEBRAL</b><br>',
                                 'Examen normal: ',
                                 'Contracturas: ',
                                 'Puntos dolorosos: ',
                                 'Limitaciones funcionales: ',
                                 'Observaciones: ',
 
+                                '<br><b>CABEZA Y CUELLO</b><br>',
                                 'Cráneo: ',
                                 'Cara: ',
                                 'Nariz: ',
@@ -213,6 +243,7 @@ class HistoriaClinicaController extends Controller
                                 'Boca: ',
                                 'Cuello y Tiroides: ',
 
+                                '<br><b>OFTALMOLÓGICO</b><br>',
                                 'Pupilas: ',
                                 'Corneas: ',
                                 'Conjuntivas: ',
@@ -222,6 +253,7 @@ class HistoriaClinicaController extends Controller
                                 'Usa lentes: ',
                                 'Observaciones: ',
 
+                                '<br><b>NEUROLOGICO</b><br>',
                                 'Motilidad activa: ',
                                 'Motilidad pasiva: ',
                                 'Sensibilidad: ',
@@ -231,6 +263,7 @@ class HistoriaClinicaController extends Controller
                                 'Taxia: ',
                                 'Observaciones: ',
 
+                                '<br><b>ODONTOLOGICO</b><br>',
                                 'Encias y mucosas: ',
                                 'Esmalte dental: ',
                                 'Superior: ',
@@ -238,10 +271,12 @@ class HistoriaClinicaController extends Controller
                                 'Caries: ',
                                 'Faltan piezas dentarias: ',
                                 'Observaciones: ',
-
+                                
+                                '<br><b>TORAX Y APARTO RESPIRATORIO</b><br>',
                                 'Caja torácica: ',
                                 'Pulmones: ',
-
+                                
+                                '<br><b>ABDOMEN</b><br>',
                                 'Forma: ',
                                 'Hígado: ',
                                 'Bazo: ',
@@ -249,82 +284,27 @@ class HistoriaClinicaController extends Controller
                                 'Ruidos hidroaéreos: ',
                                 'Puño percusión: ',
                                 'Cicatrices quirúrjicas: ',
-
+                                
+                                '<br><b>REGIONES INGUINALES</b><br>',
                                 'Tono de la pared posterior: ',
                                 'Orificios superficiales: ',
                                 'Orificios profundos: ',
                                 'Observaciones: ',
-
+                                
+                                '<br><b>GENITALES</b><br>',
                                 'Características: ',
                                 'Observaciones: ',
-
+                                
+                                '<br><b>REGIÓN ANAL</b><br>',
                                 'Características: ',
                                 'Observaciones: ',
                                 ];
                 
             //
             //Carga de diagnostico
-                $diagnostico = "<b>Examen Clínico</b><br><br>";
                 for ($i=0; $i < sizeof($matriz[1]); $i++) {
                     if ($matriz[0][$i]) {
                         $diagnostico = $diagnostico.$matriz[1][$i].$matriz[0][$i]."<br>";
-                    }
-                    switch ($i) { //El wswitch es para cargar títulos.
-                        case 4:
-                            $diagnostico = $diagnostico."<br><b>Cardiovascular</b><br><br>";
-                            break;
-
-                        case 9:
-                            $diagnostico = $diagnostico."<br><b>Piel</b><br><br>";
-                            break;
-
-                        case 19:
-                            $diagnostico = $diagnostico."<br><b>OSTEOARTICULAR</b><br><br>";
-                            break;
-
-                        case 24:
-                            $diagnostico = $diagnostico."<br><b>COLUMNA VERTEBRAL</b><br><br>";
-                            break;
-
-                        case 29:
-                            $diagnostico = $diagnostico."<br><b>CABEZA Y CUELLO</b><br><br>";
-                            break;
-
-                        case 35:
-                            $diagnostico = $diagnostico."<br><b>OFTALMOLÓGICO</b><br><br>";
-                            break;
-
-                        case 43:
-                            $diagnostico = $diagnostico."<br><b>NEUROLOGICO</b><br><br>";
-                            break;
-
-                        case 51:
-                            $diagnostico = $diagnostico."<br><b>ODONTOLOGICO</b><br><br>";
-                            break;
-
-                        case 58:
-                            $diagnostico = $diagnostico."<br><b>TORAX Y APARTO RESPIRATORIO</b><br><br>";
-                            break;
-
-                        case 60:
-                            $diagnostico = $diagnostico."<br><b>ABDOMEN</b><br><br>";
-                            break;
-                            
-                        case 67:
-                            $diagnostico = $diagnostico."<br><b>REGIONES INGUINALES</b><br><br>";
-                            break;
-
-                        case 71:
-                            $diagnostico = $diagnostico."<br><b>GENITALES</b><br><br>";
-                            break;
-                            
-                        case 73:
-                            $diagnostico = $diagnostico."<br><b>REGIÓN ANAL</b><br><br>";
-                            break;
-                            
-                        default:
-                            # code...
-                            break;
                     }
                 }
                 $historia_clinica->diagnostico=$diagnostico;
@@ -495,7 +475,7 @@ class HistoriaClinicaController extends Controller
                 $reganal->save();
             //
         //
-
+        return $diagnostico;
         return redirect()->route('historia_clinica.index');
     }
 

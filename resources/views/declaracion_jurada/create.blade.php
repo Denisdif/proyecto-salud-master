@@ -107,14 +107,18 @@
                                         <div class="col">
                                             <div class="icheck-danger d-inline">
                                                 <input value=1 type="checkbox" name="su_padre_vive" id="su_padre_vive">
-                                                <label for="su_padre_vive">¿Su padre vive?</label>
+                                                <label for="su_padre_vive">
+                                                    ¿Su padre vive?
+                                                </label>
                                             </div>
                                         </div>
                                         <!-- ¿Su madre vive? -->
                                         <div class="col">
                                             <div class="icheck-danger d-inline">
                                                 <input value=1 type="checkbox" name="su_madre_vive" id="su_madre_vive">
-                                                <label for="su_madre_vive">¿Su madre vive?</label>
+                                                <label for="su_madre_vive">
+                                                    ¿Su madre vive?
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -172,17 +176,23 @@
                                 <div class="form-group">
                                     <!-- Fuma -->
                                     <div class="form-group row">
-                                        <label for="detalle">Fuma:</label>
+                                        <label for="detalle">
+                                            Fuma:
+                                        </label>
                                         <input type="text" class="form-control"  name="fuma"  placeholder="Ingrese cantidad si corresponde...">
                                     </div>
                                     <!-- Bebe -->
                                     <div class="form-group row">
-                                        <label for="detalle">Bebe:</label>
+                                        <label for="detalle">
+                                            Bebe:
+                                        </label>
                                         <input type="text" class="form-control"  name="bebe"  placeholder="Ingrese cantidad si corresponde...">
                                     </div>
                                     <!-- Actividad fisica -->
                                     <div class="form-group row">
-                                        <label for="detalle">Actividad física:</label>
+                                        <label for="detalle">
+                                            Actividad física:
+                                        </label>
                                         <input type="text" class="form-control"  name="actividad_fisica"  placeholder="Ingrese cantidad si corresponde...">
                                     </div>
                                 </div>
