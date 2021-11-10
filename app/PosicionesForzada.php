@@ -41,39 +41,4 @@ class PosicionesForzada extends Model
     {
         return $this->hasOne(Semiologica::class);
     }
-
-    public function articulacion_cadera()
-    {
-        return $this->hasOne(ArticulacionCadera::class);
-    }
-
-    public function articulacion_codo()
-    {
-        return $this->hasOne(ArticulacionCodo::class);
-    }
-
-    public function articulacion_hombro()
-    {
-        return $this->hasOne(ArticulacionHombro::class);
-    }
-
-    public function articulacion_mano()
-    {
-        return $this->hasOne(ArticulacionManoDedo::class);
-    }
-
-    public function articulacion_muneca()
-    {
-        return $this->hasOne(ArticulacionMuneca::class);
-    }
-
-    public function articulacion_rodilla()
-    {
-        return $this->hasOne(ArticulacionRodilla::class);
-    }
-
-    public function articulacion_tobillo()
-    {
-        return $this->hasOne(ArticulacionTobillo::class);
-    }
 }
