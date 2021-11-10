@@ -17,12 +17,13 @@ class CreateHistoriaClinicasTable extends Migration
             $table->bigIncrements('id');
             //$table->binary('firma')->nullable();
             $table->char('codigo',10);
+            $table->text('diagnostico')->nullable();
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->unsignedBigInteger('voucher_id');
             $table->foreign('voucher_id')->references('id')->on('vouchers')->onDelete('restrict');
             $table->timestamps();
-
         });
     }
 

@@ -197,70 +197,70 @@
                     <!-- Cicatrices -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">¿Cicatrices patológicas visibles?</label>
+                            <label for="" class="form-label">¿Cicatrices patológicas visibles?          </label>
                             <input class="form-control" type="text" name="observacion1_piel" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Vesícula -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Vesícula</label>
+                            <label for="" class="form-label">Vesícula                                   </label>
                             <input class="form-control" type="text" name="obs_vesicula" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Ulceras -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Ulceras</label>
+                            <label for="" class="form-label">Ulceras                                    </label>
                             <input class="form-control" type="text" name="obs_ulceras" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Fisuras -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Fisuras</label>
+                            <label for="" class="form-label">Fisuras                                    </label>
                             <input class="form-control" type="text" name="obs_fisuras" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Prurito -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Prurito</label>
+                            <label for="" class="form-label">Prurito                                    </label>
                             <input class="form-control" type="text" name="obs_prurito" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Eczemas -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Eczemas</label>
+                            <label for="" class="form-label">Eczemas                                    </label>
                             <input class="form-control" type="text" name="obs_eczemas" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Dermatitis -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Dermatitis</label>
+                            <label for="" class="form-label">Dermatitis                                 </label>
                             <input class="form-control" type="text" name="obs_dertmatitis" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Eritemas -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Eritemas</label>
+                            <label for="" class="form-label">Eritemas                                   </label>
                             <input class="form-control" type="text" name="obs_eritemas" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Petequias -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Petequias</label>
+                            <label for="" class="form-label">Petequias                                  </label>
                             <input class="form-control" type="text" name="obs_petequias" placeholder="descripciones">
                         </div>
                     </div>
                     <!-- Tejido celular subcutaneo -->
                     <div class="form-group row">
                         <div class="col">
-                            <label for="" class="form-label">Tejido celular subcutaneo</label>
+                            <label for="" class="form-label">Tejido celular subcutaneo                                  </label>
                             <input class="form-control" type="text" name="tejido" placeholder="descripciones">
                         </div>
                     </div>
