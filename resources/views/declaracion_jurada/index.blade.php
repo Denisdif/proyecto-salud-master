@@ -15,11 +15,7 @@
                 <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Declaraciones Juradas</p>
             </div>
             <div class="card-tools">
-                <a href= {{ route('declaracion_jurada.create')}}>
-                    <button class="btn btn-primary">
-                        <i class="fa fa-plus"></i> Nuevo
-                    </button>
-                </a>
+
             </div>
         </div>
         <div class="card-body">

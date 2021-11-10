@@ -15,21 +15,9 @@ class CreateAntecedenteQuirurjicosTable extends Migration
     {
         Schema::create('antecedente_quirurjicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-
-            $table->boolean('pregunta1_q'); //padece alguna enfermedad...
-            $table->string('detalle1_q')->nullable(); //cuales
-            $table->enum('especificacion1_q', ['observacion1_q', 'preexistencia1_q'])->nullable();
-
-
-            $table->boolean('pregunta2_q'); //tiene pendiente alguna cirujia
-            $table->string('detalle2_q')->nullable(); //por favor detallar diagnostico y fecha
-
-            $table->boolean('pregunta3_q'); //padece alguna enfermedad...
-            $table->string('detalle3_q')->nullable(); //cuales
-            $table->enum('especificacion3_q', ['observacion3_q', 'preexistencia3_q'])->nullable();
-
-    
+            $table->string('detalle1_q')->nullable(); 
+            $table->string('detalle2_q')->nullable(); 
+            $table->string('detalle3_q')->nullable(); 
 
             $table->unsignedBigInteger('declaracion_jurada_id');
             $table->foreign('declaracion_jurada_id')->references('id')->on('declaracion_juradas')->onDelete('restrict');

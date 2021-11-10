@@ -17,7 +17,8 @@ class CreateDeclaracionJuradasTable extends Migration
             $table->bigIncrements('id');
             $table->binary('firma')->nullable();
             $table->char('codigo',10);
-            $table->date('fecha_realizacion');
+            $table->date('fecha_realizacion')->nullable();
+            
             $table->unsignedBigInteger('personal_clinica_id');
             $table->foreign('personal_clinica_id')->references('id')->on('personal_clinicas')->onDelete('restrict');
             $table->unsignedBigInteger('voucher_id');

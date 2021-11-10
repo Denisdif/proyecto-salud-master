@@ -5,9 +5,6 @@
     <li class="breadcrumb-item active">Declaración jurada de Salud</li>
 @endsection
 
-
-
-
 @section('content')
 {!!Form::open(array(
     'url'=>'declaracion_jurada',
@@ -48,9 +45,10 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="row">
+                        <!-- Voucher -->
+                        <input type="number" name="voucher_id" value={{$voucher->id}} hidden>
                         <!-- Seleccionar Medico -->
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
@@ -73,46 +71,6 @@
                                 </select>
                             </div>
                         </div>
-
-                        <!--Fecha de Realización -->
-
-                    </div>
-                    <div class="row">
-                        <!-- Seleccionar Voucher -->
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label>Seleccionar Paciente</label>
-                                <select
-                                    name="voucher_id"
-                                    id="voucher_id"
-                                    class="voucher_id custom-select"
-                                    >
-                                    <option
-                                        value="0"
-                                        disabled="true"
-                                        selected="true"
-                                        title="-Seleccione un paciente-">
-                                        -Seleccione un paciente-
-                                    </option>
-                                    @foreach ($vouchers as $voucher)
-                                        <option value="{{$voucher->id }}">{{$voucher->voucherPaciente()}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                        <!--Fecha de Realización -->
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <label>Fecha de realización</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                </div>
-                                <input type="date" name="fecha_realizacion" placeholder="dd/mm/AAAA" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                            </div>
-                        </div>
-
-
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <label>Estatura</label>
                             <div class="input-group">
@@ -132,35 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <hr>
-
-
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark "> <!--collapsed-card -->
-                            <div class="card-header">
-                                <h3 class="card-title">Datos del Paciente</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-body" > <!--style="display: none;" -->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div id="datos_paciente" class="form-group">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div id="foto_paciente" class="form-group">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Antecedentes Familiares -->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="card card-dark">
                             <div class="card-header">
@@ -170,76 +100,66 @@
                                 </div>
                             </div>
                             <div class="card-body">
-
                                 <div class="form-group">
-
-                                    ¿Su padre vive?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary1" value=1  name="su_padre_vive" checked>
-                                                <label class="radio-inline" for="radioPrimary1">SI</label>
+                                    <!-- Padre y madre -->
+                                    <div class="form-group row">
+                                        <!-- ¿Su padre vive? -->
+                                        <div class="col">
+                                            <div class="icheck-danger d-inline">
+                                                <input value=1 type="checkbox" name="su_padre_vive" id="su_padre_vive">
+                                                <label for="su_padre_vive">¿Su padre vive?</label>
+                                            </div>
                                         </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary2" value=0  name="su_padre_vive">
-                                                <label class="radio-inline" for="radioPrimary2">NO</label>
-                                        </div>
-                                    </div>
-
-                                    ¿Su madre vive?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary3" value=1  name="su_madre_vive" checked>
-                                                <label class="radio-inline" for="radioPrimary3">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary4" value=0  name="su_madre_vive">
-                                                <label class="radio-inline" for="radioPrimary4">NO</label>
+                                        <!-- ¿Su madre vive? -->
+                                        <div class="col">
+                                            <div class="icheck-danger d-inline">
+                                                <input value=1 type="checkbox" name="su_madre_vive" id="su_madre_vive">
+                                                <label for="su_madre_vive">¿Su madre vive?</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    ¿Su madre o padre padece alguna de las siguientes afecciones?
-
-                                    <div class="form-group">
-
-                                        <input type="hidden" name=cancer value=0>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" value=1 name=cancer id="todoCheck1"> Cancer
-                                            <label for="todoCheck1"></label>
+                                    <h3>¿Su madre o padre padece alguna de las siguientes afecciones?</h3>
+                                    <!-- Afecciones -->
+                                    <div class="form-group row">
+                                        <!-- Cancer -->
+                                        <div class="col">
+                                            <div class="icheck-danger d-inline">
+                                                <input value=1 type="checkbox" name="cancer" id="cancer">
+                                                <label for="cancer">Cancer</label>
+                                            </div>
                                         </div>
-
-                                        <input type="hidden" name=diabetes value=0>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" value=1 name=diabetes id="todoCheck2"> Diabetes
-                                            <label for="todoCheck2"></label>
+                                        <!-- Diabetes -->
+                                        <div class="col">
+                                            <div class="icheck-danger d-inline">
+                                                <input value=1 type="checkbox" name="diabetes" id="diabetes">
+                                                <label for="diabetes">Diabetes</label>
+                                            </div>
                                         </div>
-
-                                        <input type="hidden" name=infarto value=0>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" value=1 name=infarto id="todoCheck3"> Infarto
-                                            <label for="todoCheck3"></label>
+                                        <!-- Infarto -->
+                                        <div class="col">
+                                            <div class="icheck-danger d-inline">
+                                                <input value=1 type="checkbox" name="infarto" id="infarto">
+                                                <label for="infarto">Infarto</label>
+                                            </div>
                                         </div>
-
-                                        <input type="hidden" name=hipertension_Arterial value=0>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="checkbox" value=1 name=hipertension_Arterial id="todoCheck4"> Hipertension Arterial
-                                            <label for="todoCheck4"></label>
+                                        <!-- Hipertension Arterial -->
+                                        <div class="col">
+                                            <div class="icheck-danger d-inline">
+                                                <input value=1 type="checkbox" name="hipertension_Arterial" id="hipertension_Arterial">
+                                                <label for="hipertension_Arterial">Hipertension Arterial</label>
+                                            </div>
                                         </div>
-
-
-
-
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="detalle">Opcional: Ingrese algun detalle</label>
-                                        <input type="text" class="form-control" id="detalle"  name="detalle"  placeholder="Ingrese alguna observacion...">
+                                    <!-- Opcional: Ingrese algun detalle -->
+                                    <div class="form-group row">
+                                        <label for="detalle">Ingrese algun detalle (Opcional):</label>
+                                        <input type="text" class="form-control" id="detalle"  name="detalle"  placeholder="Ingrese alguna observación...">
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
+                    <!-- Antecedentes Personales -->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="card card-dark">
                             <div class="card-header">
@@ -250,123 +170,26 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    ¿Fuma?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary5" value=1  name="fuma" >
-                                                <label class="radio-inline" for="radioPrimary5">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary6" value=0  name="fuma" checked>
-                                                <label class="radio-inline" for="radioPrimary6">NO</label>
-                                        </div>
+                                    <!-- Fuma -->
+                                    <div class="form-group row">
+                                        <label for="detalle">Fuma:</label>
+                                        <input type="text" class="form-control"  name="fuma"  placeholder="Ingrese cantidad si corresponde...">
                                     </div>
-                                    <div id="opcion1" style="display: none;">
-                                        Opcional: ¿En que cantidad?
-                                        <div class="custom-control">
-                                            <input list="cantidad_paquetes" type="text" name="detalle1_p">
-                                            <datalist id="cantidad_paquetes">
-                                                <option value="más de 10 paquetes al día"></option>
-                                                <option value="6 a 9 paquetes al día"></option>
-                                                <option value="4 a 5 paquetes al día"></option>
-                                                <option value="1 a 3 paquetes por día"></option>
-                                                <option value="menos de 3 paquetes por día"></option>
-                                            </datalist>
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor1" value=observacion1_p  name="especificacion1_p" checked>
-                                                <label class="radio-inline" for="valor1">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor2" value=preexistencia1_p  name="especificacion1_p">
-                                                <label class="radio-inline" for="valor2">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- Bebe -->
+                                    <div class="form-group row">
+                                        <label for="detalle">Bebe:</label>
+                                        <input type="text" class="form-control"  name="bebe"  placeholder="Ingrese cantidad si corresponde...">
                                     </div>
-
-
-                                    ¿Bebe?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary7" value=1  name="bebe" >
-                                                <label class="radio-inline" for="radioPrimary7">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary8" value=0  name="bebe" checked>
-                                                <label class="radio-inline" for="radioPrimary8">NO</label>
-                                        </div>
+                                    <!-- Actividad fisica -->
+                                    <div class="form-group row">
+                                        <label for="detalle">Actividad física:</label>
+                                        <input type="text" class="form-control"  name="actividad_fisica"  placeholder="Ingrese cantidad si corresponde...">
                                     </div>
-
-                                    <div id="opcion2" style="display: none;">
-                                        Opcional: ¿En que cantidad?
-                                        <div class="custom-control">
-                                            <input list="cantidad_bebida" type="text" name="detalle2_p">
-                                            <datalist id="cantidad_bebida">
-                                                <option value="más de 10 bebidas por día"></option>
-                                                <option value="6 a 9 bebidas por día"></option>
-                                                <option value="4 a 5 bebidas por día"></option>
-                                                <option value="1 a 3 bebidas por día"></option>
-                                                <option value="menos de 3 bebidas por día"></option>
-                                            </datalist>
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor3" value=observacion2_p  name="especificacion2_p" checked>
-                                                <label class="radio-inline" for="valor3">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor4" value=preexistencia2_p  name="especificacion2_p">
-                                                <label class="radio-inline" for="valor4">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    ¿Act. Física?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary9" value=1  name="actividad_fisica" >
-                                                <label class="radio-inline" for="radioPrimary9">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary10" value=0  name="actividad_fisica" checked>
-                                                <label class="radio-inline" for="radioPrimary10">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion3" style="display: none;">
-                                        Opcional: ¿En que cantidad?
-                                        <div class="custom-control">
-                                            <input list="cantidad_actividad" type="text" name="detalle3_p">
-                                            <datalist id="cantidad_actividad">
-                                                <option value="más de 6 veces por semana"></option>
-                                                <option value="4 a 6 veces por semana"></option>
-                                                <option value="1 a 3 veces por semana"></option>
-                                            </datalist>
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor5" value=observacion3_p  name="especificacion3_p" checked>
-                                                <label class="radio-inline" for="valor5">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor6" value=preexistencia3_p  name="especificacion3_p">
-                                                <label class="radio-inline" for="valor6">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
+                    <!-- Antecedentes de la Infancia -->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="card card-dark">
                             <div class="card-header">
@@ -376,131 +199,111 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                            ¿Padeció algunas de las siguientes afecciones?
-
+                                <h3>¿Padeció algunas de las siguientes afecciones?</h3>
                                 <div class="form-group">
-                                    <input type="hidden" name=sarampion value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=sarampion id="todoCheck10"> Sarampión
-                                        <label for="todoCheck10"></label>
-                                    </div><br>
-
-                                    <input type="hidden" name=rebeola value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=rebeola id="todoCheck11"> Rubéola
-                                        <label for="todoCheck11"></label>
-                                    </div>
-
-                                    <input type="hidden" name=epilepsia value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=epilepsia id="todoCheck12"> Epilepsias
-                                        <label for="todoCheck12"></label>
-                                    </div>
-
-                                    <input type="hidden" name=varicela value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=varicela id="todoCheck13"> Varicela
-                                        <label for="todoCheck13"></label>
-                                    </div>
-
-                                    <input type="hidden" name=parotiditis value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=parotiditis id="todoCheck14"> Parotiditis
-                                        <label for="todoCheck14"></label>
-                                    </div>
-
-                                    <input type="hidden" name=cefalea_prolongada value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=cefalea_prolongada id="todoCheck15"> Cefalea prolongadas
-                                        <label for="todoCheck15"></label>
-                                    </div>
-
-                                    <input type="hidden" name=hepatitis value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=hepatitis id="todoCheck16"> Hepatítis
-                                        <label for="todoCheck16"></label>
-                                    </div>
-
-                                    <input type="hidden" name=gastritis value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=gastritis id="todoCheck17"> Gastrítis
-                                        <label for="todoCheck17"></label>
-                                    </div>
-
-                                    <input type="hidden" name=ulcera_gastrica value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=ulcera_gastrica id="todoCheck18"> Ulcera Gástrica
-                                        <label for="todoCheck18"></label>
-                                    </div>
-
-
-                                    <input type="hidden" name=hemorroide value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=hemorroide id="todoCheck19"> Hemorroides
-                                        <label for="todoCheck19"></label>
-                                    </div>
-
-                                    <input type="hidden" name=hemorragias value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=hemorragias id="todoCheck20"> Hemorragia
-                                        <label for="todoCheck20"></label>
-                                    </div>
-
-                                    <input type="hidden" name=neumonia value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=neumonia id="todoCheck21"> Neumonía
-                                        <label for="todoCheck21"></label>
-                                    </div>
-
-                                    <input type="hidden" name=asma value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=asma id="todoCheck22"> Asma
-                                        <label for="todoCheck22"></label>
-                                    </div>
-
-                                    <input type="hidden" name=tuberculosis value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=tuberculosis id="todoCheck23"> Tuberculosis
-                                        <label for="todoCheck23"></label>
-                                    </div>
-
-                                    <input type="hidden" name=tos_cronica value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=tos_cronica id="todoCheck24"> Tos Crónica
-                                        <label for="todoCheck24"></label>
-                                    </div>
-
-                                    <input type="hidden" name=catarro value=0>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="checkbox" value=1 name=catarro id="todoCheck25"> Catarro
-                                        <label for="todoCheck25"></label>
-                                    </div>
-
-                                </div>
-
-                                <div>
-                                    Otras Afecciones
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle1_m">
+                                    <div class="row">
+                                        <input type="hidden" name=sarampion value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=sarampion id="todoCheck10"> 
+                                            <label for="todoCheck10">Sarampión</label>
                                         </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor7" value=observacion1_m  name="especificacion1_m" checked>
-                                                <label class="radio-inline" for="valor7">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor8" value=preexistencia1_m  name="especificacion1_m">
-                                                <label class="radio-inline" for="valor8">Preexistencia</label>
-                                            </div>
+                                        <input type="hidden" name=rebeola value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=rebeola id="todoCheck11">
+                                            <label for="todoCheck11"> Rubéola</label>
                                         </div>
+                                        <input type="hidden" name=epilepsia value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=epilepsia id="todoCheck12"> 
+                                            <label for="todoCheck12">Epilepsias</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <input type="hidden" name=varicela value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=varicela id="todoCheck13"> 
+                                            <label for="todoCheck13">Varicela</label>
+                                        </div>
+                                        <input type="hidden" name=parotiditis value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=parotiditis id="todoCheck14">
+                                            <label for="todoCheck14"> Parotiditis</label>
+                                        </div>
+                                        <input type="hidden" name=cefalea_prolongada value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=cefalea_prolongada id="todoCheck15"> 
+                                            <label for="todoCheck15">Cefalea prolongadas</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <input type="hidden" name=hepatitis value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=hepatitis id="todoCheck16"> 
+                                            <label for="todoCheck16">Hepatítis</label>
+                                        </div>
+                                        <input type="hidden" name=gastritis value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=gastritis id="todoCheck17"> 
+                                            <label for="todoCheck17">Gastrítis</label>
+                                        </div>
+                                        <input type="hidden" name=ulcera_gastrica value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=ulcera_gastrica id="todoCheck18">
+                                            <label for="todoCheck18"> Ulcera Gástrica</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <input type="hidden" name=hemorroide value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=hemorroide id="todoCheck19"> 
+                                            <label for="todoCheck19">Hemorroides</label>
+                                        </div>
+                                        <input type="hidden" name=hemorragias value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=hemorragias id="todoCheck20"> 
+                                            <label for="todoCheck20">Hemorragia</label>
+                                        </div>
+                                        <input type="hidden" name=neumonia value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=neumonia id="todoCheck21"> 
+                                            <label for="todoCheck21">Neumonía</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <input type="hidden" name=asma value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=asma id="todoCheck22"> 
+                                            <label for="todoCheck22">Asma</label>
+                                        </div>
+                                        <input type="hidden" name=tuberculosis value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=tuberculosis id="todoCheck23"> 
+                                            <label for="todoCheck23">Tuberculosis</label>
+                                        </div>
+                                        <input type="hidden" name=tos_cronica value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=tos_cronica id="todoCheck24"> 
+                                            <label for="todoCheck24">Tos Crónica</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <input type="hidden" name=catarro value=0>
+                                        <div class="col icheck-primary d-inline">
+                                            <input type="checkbox" value=1 name=catarro id="todoCheck25">
+                                            <label for="todoCheck25"> Catarro</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="" class="form-label">Otras Afecciones:</label>
+                                            <input type="text" class="form-control" name="detalle1_m">
+                                        </div>
+                                    </div>
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
-
+                    <!-- Antecedentes Recientes -->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="card card-dark">
                             <div class="card-header">
@@ -511,431 +314,109 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-
-
-                                    ¿Enfermedad de los ojos, oidos , nariz o garganta?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary55" value=1  name="pregunta1_reciente">
-                                                <label class="radio-inline" for="radioPrimary55">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary56" value=0  name="pregunta1_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary56">NO</label>
-                                        </div>
+                                    <!-- ¿Enfermedad de los ojos, oidos , nariz o garganta? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Enfermedad de los ojos, oidos , nariz o garganta?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle1_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-
-                                    <div id="opcion4" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle1_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor9" value=observacion1_reciente  name="especificacion1_reciente" checked>
-                                                <label class="radio-inline" for="valor9">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor10" value=preexistencia1_reciente  name="especificacion1_reciente">
-                                                <label class="radio-inline" for="valor10">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- ¿Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle2_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-                                    ¿Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary57" value=1  name="pregunta2_reciente">
-                                                <label class="radio-inline" for="radioPrimary57">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary58" value=0  name="pregunta2_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary58">NO</label>
-                                        </div>
+                                    <!-- ¿Insuficiencia respiratoria,  ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Insuficiencia respiratoria,  ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle3_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-                                    <div id="opcion5" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle2_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor20" value=observacion2_reciente  name="especificacion2_reciente" checked>
-                                                <label class="radio-inline" for="valor20">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor21" value=preexistencia2_reciente  name="especificacion2_reciente">
-                                                <label class="radio-inline" for="valor21">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- ¿Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle4_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-                                    ¿Insuficiencia respiratoria,  ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary11112" value=1  name="pregunta3_reciente">
-                                                <label class="radio-inline" for="radioPrimary11112">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary8888" value=0  name="pregunta3_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary8888">NO</label>
-                                        </div>
+                                    <!-- ¿Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle5_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-                                    <div id="opcion6" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle3_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor22" value=observacion3_reciente  name="especificacion3_reciente" checked>
-                                                <label class="radio-inline" for="valor22">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor23" value=preexistencia3_reciente  name="especificacion3_reciente">
-                                                <label class="radio-inline" for="valor23">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- ¿Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle6_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-
-
-                                    ¿Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary60" value=1  name="pregunta4_reciente">
-                                                <label class="radio-inline" for="radioPrimary60">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary61" value=0  name="pregunta4_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary61">NO</label>
-                                        </div>
+                                    <!-- ¿Diabetes, Tiroides u otra enfermedad endócrinas? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Diabetes, Tiroides u otra enfermedad endócrinas?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle7_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-                                    <div id="opcion7" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle4_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor24" value=observacion4_reciente  name="especificacion4_reciente" checked>
-                                                <label class="radio-inline" for="valor24">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor25" value=preexistencia4_reciente  name="especificacion4_reciente">
-                                                <label class="radio-inline" for="valor25">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- ¿Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle8_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-
-                                    ¿Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary99" value=1  name="pregunta5_reciente">
-                                                <label class="radio-inline" for="radioPrimary99">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary908" value=0  name="pregunta5_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary908">NO</label>
-                                        </div>
+                                    <!-- ¿Deformidades, rengueras o amputaciones? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Deformidades, rengueras o amputaciones?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle9_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-                                    <div id="opcion8" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle5_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor28" value=observacion5_reciente  name="especificacion5_reciente" checked>
-                                                <label class="radio-inline" for="valor28">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor29" value=preexistencia5_reciente  name="especificacion5_reciente">
-                                                <label class="radio-inline" for="valor29">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- ¿Enfermedades de la piel? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Enfermedades de la piel?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle10_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-
-                                    ¿Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary635" value=1  name="pregunta6_reciente">
-                                                <label class="radio-inline" for="radioPrimary635">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary646" value=0  name="pregunta6_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary646">NO</label>
-                                        </div>
+                                    <!-- ¿Alergias, anemias u otras enfermedades de la sangre? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Alergias, anemias u otras enfermedades de la sangre?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle11_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-                                    <div id="opcion9" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle6_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor88" value=observacion6_reciente  name="especificacion6_reciente" checked>
-                                                <label class="radio-inline" for="valor88">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor89" value=preexistencia6_reciente  name="especificacion6_reciente">
-                                                <label class="radio-inline" for="valor89">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- ¿Está Ud. Actualmente bajo observación o tratamiento? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Está Ud. Actualmente bajo observación o tratamiento?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle12_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-
-                                    ¿Diabetes, Tiroides u otra enfermedad endócrinas?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary65" value=1  name="pregunta7_reciente">
-                                                <label class="radio-inline" for="radioPrimary65">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary66" value=0  name="pregunta7_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary66">NO</label>
-                                        </div>
+                                    <!-- ¿Ha tenido algún cambio en su peso en el último año? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Ha tenido algún cambio en su peso en el último año?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle13_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-                                    <div id="opcion10" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle7_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor50" value=observacion7_reciente  name="especificacion7_reciente" checked>
-                                                <label class="radio-inline" for="valor50">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor51" value=preexistencia7_reciente  name="especificacion7_reciente">
-                                                <label class="radio-inline" for="valor51">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- HERNIA -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            HERNIA
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle14_reciente"  placeholder="Detalle si corresponde...">
                                     </div>
-
-
-                                    ¿Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary67" value=1  name="pregunta8_reciente">
-                                                <label class="radio-inline" for="radioPrimary67">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary68" value=0  name="pregunta8_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary68">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion11" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle8_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor51" value=observacion8_reciente  name="especificacion8_reciente" checked>
-                                                <label class="radio-inline" for="valor51">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor52" value=preexistencia8_reciente  name="especificacion8_reciente">
-                                                <label class="radio-inline" for="valor52">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    ¿Deformidades, rengueras o amputaciones?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary69" value=1  name="pregunta9_reciente">
-                                                <label class="radio-inline" for="radioPrimary69">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary70" value=0  name="pregunta9_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary70">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion12" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle9_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor53" value=observacion9_reciente  name="especificacion9_reciente" checked>
-                                                <label class="radio-inline" for="valor53">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor54" value=preexistencia9_reciente  name="especificacion9_reciente">
-                                                <label class="radio-inline" for="valor54">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    ¿Enfermedades de la piel ?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary71" value=1  name="pregunta10_reciente">
-                                                <label class="radio-inline" for="radioPrimary71">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary72" value=0  name="pregunta10_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary72">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion13" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle10_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor55" value=observacion10_reciente  name="especificacion10_reciente" checked>
-                                                <label class="radio-inline" for="valor55">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor56" value=preexistencia10_reciente  name="especificacion10_reciente">
-                                                <label class="radio-inline" for="valor56">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    ¿Alergias, anemias u otras enfermedades de la sangre ?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary73" value=1  name="pregunta11_reciente">
-                                                <label class="radio-inline" for="radioPrimary73">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary74" value=0  name="pregunta11_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary74">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion14" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle11_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor57" value=observacion11_reciente  name="especificacion11_reciente" checked>
-                                                <label class="radio-inline" for="valor57">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor58" value=preexistencia11_reciente  name="especificacion11_reciente">
-                                                <label class="radio-inline" for="valor58">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    ¿Está Ud. Actualmente bajo observación o tratamiento?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary76" value=1  name="pregunta12_reciente">
-                                                <label class="radio-inline" for="radioPrimary76">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary77" value=0  name="pregunta12_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary77">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion15" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle12_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor59" value=observacion12_reciente  name="especificacion12_reciente" checked>
-                                                <label class="radio-inline" for="valor59">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor60" value=preexistencia12_reciente  name="especificacion12_reciente">
-                                                <label class="radio-inline" for="valor60">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    ¿Ha tenido algún cambio en su peso en el último año?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary79" value=1  name="pregunta13_reciente">
-                                                <label class="radio-inline" for="radioPrimary79">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary80" value=0  name="pregunta13_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary80">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion16" style="display: none;">
-                                        ¿Cuáles?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle13_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor61" value=observacion13_reciente  name="especificacion13_reciente" checked>
-                                                <label class="radio-inline" for="valor61">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor62" value=preexistencia13_reciente  name="especificacion13_reciente">
-                                                <label class="radio-inline" for="valor62">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    HERNIA
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary81" value=1  name="pregunta14_reciente">
-                                                <label class="radio-inline" for="radioPrimary81">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary82" value=0  name="pregunta14_reciente" checked>
-                                                <label class="radio-inline" for="radioPrimary82">NO</label>
-                                        </div>
-                                    </div>
-
-                                    <div id="opcion17" style="display: none;">
-                                        ¿Tipo?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle14_reciente">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor63" value=observacion14_reciente  name="especificacion14_reciente" checked>
-                                                <label class="radio-inline" for="valor63">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor64" value=preexistencia14_reciente  name="especificacion14_reciente">
-                                                <label class="radio-inline" for="valor64">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <!-- Antecedentes Quirúrjicos -->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="card card-dark">
                             <div class="card-header">
@@ -946,100 +427,32 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-
-                                    ¿Fue intervenido/a quirúrgicamente por alguna causa?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary83" value=1  name="pregunta1_q" >
-                                                <label class="radio-inline" for="radioPrimary83">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary84" value=0  name="pregunta1_q" checked>
-                                                <label class="radio-inline" for="radioPrimary84">NO</label>
-                                        </div>
+                                    <!-- ¿Fue intervenido/a quirúrgicamente por alguna causa? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Fue intervenido/a quirúrgicamente por alguna causa?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle1_q"  placeholder="Detalle si corresponde...">
                                     </div>
-                                    <div id="opcion18" style="display: none;">
-                                        ¿De que?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle1_q">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor65" value=observacion1_q  name="especificacion1_q" checked>
-                                                <label class="radio-inline" for="valor65">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor66" value=preexistencia1_q  name="especificacion1_q">
-                                                <label class="radio-inline" for="valor66">Preexistencia</label>
-                                            </div>
-                                        </div>
+                                    <!-- ¿Tiene pendiente alguna cirugía? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Tiene pendiente alguna cirugía? Por favor detallar Diagnóstico y fecha:
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle2_q"  placeholder="Detalle si corresponde...">
                                     </div>
-
-
-
-
-
-
-                                    ¿Tiene pendiente alguna cirugía?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary88" value=1  name="pregunta2_q">
-                                                <label class="radio-inline" for="radioPrimary88">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary89" value=0  name="pregunta2_q" checked>
-                                                <label class="radio-inline" for="radioPrimary89">NO</label>
-                                        </div>
+                                    <!-- ¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior? -->
+                                    <div class="form-group row">
+                                        <label for="detalle">
+                                            ¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?
+                                        </label>
+                                        <input type="text" class="form-control"  name="detalle3_q"  placeholder="Detalle si corresponde...">
                                     </div>
-                                    <div id="opcion19" style="display: none;">
-                                        Por favor detallar Diagnóstico y fecha:
-                                        <div class="custom-control">
-                                            <textarea type="text" name="detalle2_q"></textarea>
-                                        </div>
-                                    </div>
-                                    ¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?
-                                    <div class="form-group clearfix">
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary90" value=1  name="pregunta3_q" >
-                                                <label class="radio-inline" for="radioPrimary90">SI</label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                            <input type="radio" id="radioPrimary91" value=0  name="pregunta3_q" checked>
-                                                <label class="radio-inline" for="radioPrimary91">NO</label>
-                                        </div>
-                                    </div>
-                                    <div id="opcion20" style="display: none;">
-                                        ¿Cuál?
-                                        <div class="custom-control">
-                                            <input type="text" name="detalle3_q">
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor200" value=observacion3_q  name="especificacion3_q" checked>
-                                                <label class="radio-inline" for="valor200">Observación</label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="valor194" value=preexistencia3_q  name="especificacion3_q">
-                                                <label class="radio-inline" for="valor194">Preexistencia</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
+                    <!-- Firma -->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="card card-dark">
                             <div class="card-header">
@@ -1071,8 +484,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <input type="hidden" name="firma" id="firma">
                 </div>
             </div>
@@ -1087,7 +498,6 @@
                 </a>
                 <button title="Guardar" id="confirmar" class="btn btn-success btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
             </div>
-    </div>
          </div>
     </div>
 </div>
@@ -1387,11 +797,7 @@
 
         //
         });
-
-
     </script>
-
 @endpush
-
 @endsection
 

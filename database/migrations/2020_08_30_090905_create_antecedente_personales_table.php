@@ -15,18 +15,9 @@ class CreateAntecedentePersonalesTable extends Migration
     {
         Schema::create('antecedente_personales', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('fuma');
-            $table->boolean('bebe');
-            $table->boolean('actividad_fisica');
-
-            $table->string('detalle1_p')->nullable();; // (antes observacion)
-            $table->enum('especificacion1_p', ['observacion1_p', 'preexistencia1_p'])->nullable();
-
-            $table->string('detalle2_p')->nullable();; // (antes observacion)
-            $table->enum('especificacion2_p', ['observacion2_p', 'preexistencia2_p'])->nullable();
-
-            $table->string('detalle3_p')->nullable();; // (antes observacion)
-            $table->enum('especificacion3_p', ['observacion3_p', 'preexistencia3_p'])->nullable();
+            $table->string('fuma')->nullable();
+            $table->string('bebe')->nullable();
+            $table->string('actividad_fisica')->nullable();
 
             $table->unsignedBigInteger('declaracion_jurada_id');
             $table->foreign('declaracion_jurada_id')->references('id')->on('declaracion_juradas')->onDelete('restrict');

@@ -15,25 +15,23 @@ class CreateAntecedenteMedicoInfanciasTable extends Migration
     {
         Schema::create('antecedente_medico_infancias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('sarampion');
-            $table->boolean('rebeola');
-            $table->boolean('epilepsia');
-            $table->boolean('varicela');
-            $table->boolean('parotiditis');
-            $table->boolean('cefalea_prolongada');
-            $table->boolean('hepatitis');
-            $table->boolean('gastritis');
-            $table->boolean('ulcera_gastrica');
-            $table->boolean('hemorroide');
-            $table->boolean('hemorragias');
-            $table->boolean('neumonia');
-            $table->boolean('asma');
-            $table->boolean('tuberculosis');
-            $table->boolean('tos_cronica');
-            $table->boolean('catarro');
-
+            $table->boolean('sarampion')->nullable();
+            $table->boolean('rebeola')->nullable();
+            $table->boolean('epilepsia')->nullable();
+            $table->boolean('varicela')->nullable();
+            $table->boolean('parotiditis')->nullable();
+            $table->boolean('cefalea_prolongada')->nullable();
+            $table->boolean('hepatitis')->nullable();
+            $table->boolean('gastritis')->nullable();
+            $table->boolean('ulcera_gastrica')->nullable();
+            $table->boolean('hemorroide')->nullable();
+            $table->boolean('hemorragias')->nullable();
+            $table->boolean('neumonia')->nullable();
+            $table->boolean('asma')->nullable();
+            $table->boolean('tuberculosis')->nullable();
+            $table->boolean('tos_cronica')->nullable();
+            $table->boolean('catarro')->nullable();
             $table->string('detalle1_m')->nullable(); // (antes observacion)
-            $table->enum('especificacion1_m', ['observacion1_m', 'preexistencia1_m'])->nullable();
 
             $table->unsignedBigInteger('declaracion_jurada_id');
             $table->foreign('declaracion_jurada_id')->references('id')->on('declaracion_juradas')->onDelete('restrict');
