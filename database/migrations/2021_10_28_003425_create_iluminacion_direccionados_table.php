@@ -20,6 +20,8 @@ class CreateIluminacionDireccionadosTable extends Migration
                 $table->string('antiguedad');
                 $table->string('direccion_completa');
                 $table->string('observaciones');
+                $table->text('diagnostico');
+
                 $table->unsignedBigInteger('voucher_id');
                 $table->foreign('voucher_id')->references('id')->on('vouchers')->onDelete('restrict');
                 $table->timestamps();

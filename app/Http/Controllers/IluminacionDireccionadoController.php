@@ -27,8 +27,10 @@ class IluminacionDireccionadoController extends Controller
     }
     
     public function store(Request $request)
-    {
+    {   
         $iluminacion = IluminacionDireccionado::create($request->all());
+        $iluminacion->diagnostico = $iluminacion->generarDiagnostico();
+        $iluminacion->update();
         return redirect()->route('iluminacion_direccionados.index');
     }
 }
