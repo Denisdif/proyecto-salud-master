@@ -38,17 +38,33 @@ class AptitudController extends Controller
 
     public function store(Request $request)
     {   
+        //Obtener voucher
+        $voucher= Voucher::find($request->voucher_id);
+
+        //Cargar Aptitud
         $aptitud = Aptitud::create($request->all());
         $aptitud->riesgos = implode($request->riesgos);
-        $aptitud->update();
+
+
+        //Guardar diagnosticos de estudios cargados
+        $estudios = $voucher->vouchersEstudios;
+        for ($i=0; $i < sizeof($estudios); $i++) {
+            if ($estudios[$i]->archivo_adjunto) {
+                $archivo = $estudios[$i]->archivo_adjunto;
+                $archivo->diagnostico = $request->$i;
+                $archivo->save();
+            }
+        }
 
         //PDF
-        $voucher= Voucher::find($aptitud->voucher_id);
+        $ruta = public_path().'/archivo/'."APTITUD".$aptitud->id.".pdf";
         $pdf = PDF::loadView('aptitud.pdf',["voucher"   =>  $voucher]);
         $pdf->setPaper('a4','letter');
+        $pdf->save($ruta);
+        $aptitud->pdf = $ruta;
 
-        return $pdf->stream('aptitud.pdf');
+        $aptitud->update();
 
-        //return redirect()->route('voucher.show',$voucher->id);
+        return redirect()->route('voucher.show',$voucher->id);
     }
 }

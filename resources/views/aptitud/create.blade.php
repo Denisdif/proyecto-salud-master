@@ -173,8 +173,8 @@
                                     </div>
                                 </div>
                             @endif
+                            <!-- Estudios por cargar -->
                             @for ($i = 0; $i < sizeof($estudios); $i++)
-                                <!-- Estudios por cargar -->
                                 <div class="col-6">
                                     <div class="card">
                                         <div class="card-header fondo2">
@@ -184,7 +184,7 @@
                                             <div class="row form-group">
                                                 <div class="col">
                                                     <label for="">Diagnóstico: </label>
-                                                    <textarea class="form-control" name="diagnostico{{$i}}" id="" cols="15" rows="5"></textarea>
+                                                    <textarea class="form-control" name={{$i}}  cols="15" rows="5"></textarea>
                                                 </div>
                                             </div>
                                         </div>
