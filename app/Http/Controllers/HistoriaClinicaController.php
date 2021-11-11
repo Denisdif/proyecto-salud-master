@@ -45,12 +45,12 @@ class HistoriaClinicaController extends Controller
     public function crearPDF($id)
     {
     $historia_clinica=HistoriaClinica::find($id);
-        $pdf = PDF::loadView('hc_formulario.pdf',[
-            "historia_clinica"   =>  $historia_clinica
+        $pdf = PDF::loadView('historia_clinica.pdf',[
+            "hc_formulario"   =>  $historia_clinica
             ]);
 
         $pdf->setPaper('a4','letter');
-        return $pdf->download('historia-clinica.pdf');
+        return $pdf->stream('historia-clinica.pdf');
     }
 
     public function create($id)

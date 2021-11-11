@@ -33,6 +33,13 @@
                         <td><p style="font-size:120%">{{ $historia_clinica->codigo }}</p></td>
                         <td><p style="font-size:120%">{{ $historia_clinica->voucher->paciente->nombreCompleto() }}</p></td>
                         <td><p style="font-size:120%">{{($historia_clinica->created_at)->format('d/m/Y') }}</p></td>
+                        <td>
+                            <a href="{{ route('historia_clinica.pdf',$historia_clinica->id) }}">
+                                <button title="exportar pdf" class="btn btn-danger btn-responsive">
+                                    <i class="fas fa-file-pdf"></i>
+                                </button>
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

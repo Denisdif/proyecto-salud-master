@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 
     //PDF
-    Route::get('historia_clinica/{historia_clinica}/pdf','HcFormularioController@crearPDF')
+    Route::get('historia_clinica/{historia_clinica}/pdf','HistoriaClinicaController@crearPDF')
         ->name('historia_clinica.pdf');
 
 
