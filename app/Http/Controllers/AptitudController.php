@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Aptitud;
 use App\Voucher;
 use Illuminate\Http\Request;
+use PDF;
 
 class AptitudController extends Controller
 {
     public function create($id)
     {
         $voucher  = Voucher::find($id);
+
+        //Carga de riesgos
         $riesgos = ['RIESGO COD. 01: SIN EXPOSICIÓN A AGENTES O ACTIVIDADES DE RIESGO ESPECÍFICOS.',
                     'RIESGO COD. 02: SUSTANCIAS QUÍMICAS (POLVOS, HUMOS, VAPORES O GASES).',
                     'RIESGO COD. 03: RUIDO.',
@@ -21,10 +24,14 @@ class AptitudController extends Controller
                     'RIESGO COD. 08: TRABAJO EN ALTURA.',
                     'RIESGO COD. 09: INGRESO EN ESPACIOS CONFINADOS.',
                     'RIESGO COD. 10: OPERACIÓN DE VEHÍCULOS MOTORIZADOS.',];
+
+        //Carga de estudios de sistema
         $declaracion_jurada = $voucher->declaracionJurada;
         $historia_clinica = $voucher->historiaClinica;
         $posiciones_forzadas = $voucher->posicionesForzadas;
         $iluminacion_direccionado = $voucher->iluminacionDireccionado;
+
+        //Carga de estudios cargados
         $estudios = $voucher->estudiosCargar();
         return view('aptitud.create', compact('voucher','riesgos','estudios','declaracion_jurada','historia_clinica','posiciones_forzadas','iluminacion_direccionado'));
     }
@@ -34,7 +41,13 @@ class AptitudController extends Controller
         $aptitud = Aptitud::create($request->all());
         $aptitud->riesgos = implode($request->riesgos);
         $aptitud->update();
-        return $aptitud;
+
+        //PDF
+        $voucher= Voucher::find($aptitud->voucher_id);
+        $pdf = PDF::loadView('aptitud.pdf',["voucher"   =>  $voucher]);
+        $pdf->setPaper('a4','letter');
+
+        return $pdf->stream('aptitud.pdf');
 
         //return redirect()->route('voucher.show',$voucher->id);
     }
