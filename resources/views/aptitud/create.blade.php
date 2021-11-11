@@ -77,14 +77,15 @@
                             </div>
                             <div class="card-body" > 
                                 <div class="row">
-                                    @foreach ($riesgos as $item)
-                                        <div class="form-group col-12">
-                                            <div class="icheck-danger d-inline">
-                                                <input type="checkbox" value="{{$item}}" id="{{$item}}" name="riesgos[]">
-                                                <label for="{{$item}}">{{$item}}</label>
-                                            </div>
+                                    @for ($i = 0; $i < sizeof($riesgos); $i++)
+                                    <div class="form-group col-12">
+                                        <input type="text" value=0  name="riesgos[{{$i}}]" hidden>
+                                        <div class="icheck-danger d-inline">
+                                            <input type="checkbox" value=1 id="{{$i}}" name="riesgos[{{$i}}]">
+                                            <label for="{{$i}}">{{$riesgos[$i]}}</label>
                                         </div>
-                                    @endforeach
+                                    </div>
+                                    @endfor
                                 </div>
                             </div>
                         </div>
@@ -251,7 +252,7 @@
 
 @push('scripts')
     <script>
-
+        
     </script>
 @endpush
 @endsection

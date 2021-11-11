@@ -16,7 +16,7 @@ class CreateArchivoAdjuntosTable extends Migration
         Schema::create('archivo_adjuntos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('anexo');
-            $table->string('diagnostico');
+            $table->string('diagnostico')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('voucher_estudio_id');
             $table->foreign('voucher_estudio_id')->references('id')->on('vouchers_estudios')->onDelete('restrict');

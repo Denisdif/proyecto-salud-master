@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aptitud;
 use App\Voucher;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,11 @@ class AptitudController extends Controller
 
     public function store(Request $request)
     {   
-        return $request;
+        $aptitud = Aptitud::create($request->all());
+        $aptitud->riesgos = implode($request->riesgos);
+        $aptitud->update();
+        return $aptitud;
+
         //return redirect()->route('voucher.show',$voucher->id);
     }
 }
