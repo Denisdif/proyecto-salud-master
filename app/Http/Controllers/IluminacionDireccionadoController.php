@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\ArchivoAdjunto;
 use App\Models\IluminacionDireccionado;
 use App\Voucher;
 use Illuminate\Http\Request;
@@ -28,9 +30,33 @@ class IluminacionDireccionadoController extends Controller
     
     public function store(Request $request)
     {   
+        $voucher=Voucher::find($request->voucher_id);
         $iluminacion = IluminacionDireccionado::create($request->all());
         $iluminacion->diagnostico = $iluminacion->generarDiagnostico();
         $iluminacion->update();
+
+        //Generar PDF y enlazarlo
+            //Obtener voucher-estudio
+            foreach ($voucher->vouchersEstudios as $item) {
+                if ($item->estudio->nombre == "ILUMINACION") {
+                    $estudio = $item;
+                }
+            }
+            //Ruta de PDF
+            $ruta = public_path().'/archivo/'."ILUMINACION".$estudio->id.".pdf";
+            //Generar PDF
+            $pdf = PDF::loadView('direccionado_iluminacion.PDF',["iluminacion"   =>  $iluminacion]);
+            $pdf->setPaper('a4','letter');
+            $pdf->save($ruta);
+            //Almacenar archivo adjunto
+            $archivo_adjunto = new ArchivoAdjunto();
+            $archivo_adjunto->anexo = $ruta;
+            $archivo_adjunto->voucher_estudio_id = $estudio->id;
+            $archivo_adjunto->save();
+        //
+
+
+
         return redirect()->route('iluminacion_direccionados.index');
     }
 }

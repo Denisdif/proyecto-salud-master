@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ArchivoAdjunto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Paciente;
@@ -61,6 +62,7 @@ class PosicionesForzadasController extends Controller
     public function store(Request $request)
     {          
             $n=PosicionesForzada::count() + 1;
+            $voucher=Voucher::find($request->voucher_id);
             $posiciones_forzada=new PosicionesForzada();
             $posiciones_forzada->firma=$request->firma;
             $posiciones_forzada->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
@@ -199,6 +201,32 @@ class PosicionesForzadasController extends Controller
                 $semiologica->observacion1_s=$request->observacion1_s;
                 $semiologica->posiciones_forzada_id=$posiciones_forzada->id;
                 $semiologica->save();
+            //
+
+            //Generar PDF y enlazarlo
+                //Obtener voucher-estudio
+                foreach ($voucher->vouchersEstudios as $item) {
+                    if ($item->estudio->nombre == "POSICIONES FORZADAS") {
+                        $estudio = $item;
+                    }
+                }
+                //Ruta de PDF
+                $ruta = public_path().'/archivo/'."POSICIONES FORZADAS".$estudio->id.".pdf";
+                //Generar PDF
+                $articulaciones = ['Hombro','Codo','Muñeca','Mano y dedos','Cadera','Rodilla','Tobillo'];
+                $cuadro = 0;
+                $pdf = PDF::loadView('posiciones_forzadas.pdf',[
+                    "posiciones_forzada"   =>  $posiciones_forzada,
+                    "articulaciones"       =>  $articulaciones,
+                    "cuadro"               =>  $cuadro
+                    ]);
+                $pdf->setPaper('a4','letter');
+                $pdf->save($ruta);
+                //Almacenar archivo adjunto
+                $archivo_adjunto = new ArchivoAdjunto();
+                $archivo_adjunto->anexo = $ruta;
+                $archivo_adjunto->voucher_estudio_id = $estudio->id;
+                $archivo_adjunto->save();
             //
         return redirect()->route('posiciones_forzadas.index');
     }

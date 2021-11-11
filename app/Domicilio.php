@@ -23,7 +23,7 @@ class Domicilio extends Model implements Auditable
         return $this->belongsTo('App\Ciudad');
     }
 
-   /* public function direccion()
+    /*public function direccion()
     {
         return $this->altura . " " . $this->calle->nombre . " " . $this->calle->barrio->nombre;
     }*/

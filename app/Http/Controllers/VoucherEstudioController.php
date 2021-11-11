@@ -26,6 +26,6 @@ class VoucherEstudioController extends Controller
     public function show($id)
     {   
         $voucher_estudio = VoucherEstudio::find($id);
-        return response()->file('archivo/'.$voucher_estudio->archivo_adjunto->anexo);
+        return response()->file($voucher_estudio->archivo_adjunto->anexo);
     }
 }

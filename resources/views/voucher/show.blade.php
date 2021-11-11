@@ -4,20 +4,15 @@
     <li class="breadcrumb-item"><a href="/voucher">Indice de Vouchers</a></li>
     <li class="breadcrumb-item active">Datos de Voucher</li>
 @endsection
-
 @section('content')
     <div class="container col-12">
         <div class="card">
             <div class="card-header fondo2">
                 <div class="card-title">
-                    <p style="font-size:130%"> <i class="fa fa-voucher" aria-hidden="true"></i> Datos de Voucher</p>
+                    <p style="font-size:130%"> <i class="fa fa-voucher" aria-hidden="true"></i>Datos de Voucher</p>
                 </div>
                 <div class="card-tools">
-                    <a href= {{ route('aptitudes.create',$voucher->id)}}>
-                        <button class="btn fondo1">
-                             Informe Final
-                        </button>
-                    </a>
+                    <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Informe Final</a>
                 </div>
             </div>
             <div class="card-body">
@@ -67,16 +62,14 @@
                                             <td style="width: 65%">{{ $estudios_sistema[0][$item]->estudio->nombre }}</td>
                                             @if ($estudios_sistema[0][$item]->archivo_adjunto)
                                                 <td style="text-align: center">
-                                                    <a target="_blank" href="" class="btn fondo1 btn-responsive">
+                                                    <a target="_blank" href="{{ route('voucherEstudio.show',$estudios_sistema[0][$item]->id) }}" class="btn fondo1 btn-responsive">
                                                         <i class="fas fa-file-pdf"></i>
                                                     </a>
                                                 </td>
                                             @else
-                                            <td>
-                                                <a href={{ route($estudios_sistema[1][$item], $voucher->id)}}>
-                                                    <button title="Cargar pdf" class="btn fondo2 btn-responsive">
-                                                        <i class="fa fa-plus" ></i>
-                                                    </button>
+                                            <td> 
+                                                <a  title="Cargar pdf" class="btn fondo2 btn-responsive" href={{ route($estudios_sistema[1][$item], $voucher->id)}} >
+                                                    <i class="fa fa-plus" ></i>
                                                 </a>
                                             </td>
                                             @endif
@@ -96,7 +89,7 @@
                                 ESTUDIOS CARGADOS
                             </div>
                             <div class="card-body">
-                                <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table-sm table-bordered table-condensed table-hover">
+                                <table data-page-length='10' id="tablaDetalle" style="border:1px solid black; width:100%" class="table-sm table-bordered table-condensed table-hover ">
                                     <thead class="fondo2">
                                         <tr>
                                             <th style="width: 30%"> Tipo de estudio       </th>
@@ -133,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- TODOS LOS ESTUDIOS -->
+                <!-- TODOS LOS ESTUDIOS 
                 <div class="card "> 
                     <div style="text-align: center" class="card-header fondo2">
                             TODOS LOS ESTUDIOS
@@ -163,11 +156,10 @@
                         @endforeach
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
-
     <!-- MODAL PARA ARCHIVOS -->
     <div class="modal fade" id="archivoModal" tabindex="-1" role="dialog" aria-labelledby="archivoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -201,34 +193,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Abrir formularios en otras pestañas ---
-    <div class="form-group">
-        <input type="text" class="form-control" value=$generar_formularios name="generar" id="generar" placeholder="" hidden>
-        <input type="text" class="form-control" value=$voucher->id name="voucher_id" id="voucher_id" placeholder="" hidden>
-    </div>-->
-
 @push('scripts')
     <script src="{{asset('js/tablaDetalle.js')}}"></script>
-    <script>/*
-        $(document).ready(function(){
-            var prueba;
-            var voucher_id = $("#voucher_id").val();
-            if ( $("#generar").val() == true ) {
-                prueba = window.open(
-                        "{{ route('audiometrias.pdf', 1) }}",
-                        '_blank'
-                    );
-            }
-            $("#generar2").click(function(){
-                prueba = window.open(
-                    "http://www.google.com",
-                    '_blank'
-                );
-            });
-        }); */
-    </script>
-
     <script>
         $('#archivoModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
@@ -241,5 +207,4 @@
           })
     </script>
 @endpush
-
 @endsection

@@ -15,18 +15,16 @@ use App\Neurologico;
 use App\Odontologico;
 use App\Respiratorio;
 use App\Abdomen;
+use App\ArchivoAdjunto;
 use App\RegionInguinal;
 use App\Genital;
 use App\RegionAnal;
 use App\Voucher;
 use App\ObraSocial;
 use App\Origen;
-use App\Domicilio;
-use App\Ciudad;
 use App\Pais;
-use App\Provincia;
-use App\Barrio;
-use App\Calle;
+use PDF;
+
 
 use Illuminate\Http\Request;
 
@@ -70,6 +68,7 @@ class HistoriaClinicaController extends Controller
     public function store(Request $request)
     {
         $n=HistoriaClinica::count() + 1;
+        $voucher=Voucher::find($request->voucher_id);
         $historia_clinica=new HistoriaClinica();
         // Generación de Diagnóstico
             /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
@@ -475,7 +474,28 @@ class HistoriaClinicaController extends Controller
                 $reganal->save();
             //
         //
-
+        
+        //Generar PDF y enlazarlo
+            //Obtener voucher-estudio
+            foreach ($voucher->vouchersEstudios as $item) {
+                if ($item->estudio->nombre == "HISTORIA CLINICA") {
+                    $estudio = $item;
+                }
+            }
+            //Ruta de PDF
+            $ruta = public_path().'/archivo/'."HISTORIA CLINICA".$estudio->id.".pdf";
+            //Generar PDF
+            $pdf = PDF::loadView('historia_clinica.pdf',[
+                "hc_formulario"   =>  $historia_clinica
+                ]);
+            $pdf->setPaper('a4','letter');
+            $pdf->save($ruta);
+            //Almacenar archivo adjunto
+            $archivo_adjunto = new ArchivoAdjunto();
+            $archivo_adjunto->anexo = $ruta;
+            $archivo_adjunto->voucher_estudio_id = $estudio->id;
+            $archivo_adjunto->save();
+        //
         return redirect()->route('historia_clinica.index');
     }
 

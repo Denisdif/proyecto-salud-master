@@ -10,6 +10,7 @@ use App\AntecedenteMedicoInfancia;
 use App\AntecedentePersonal;
 use App\AntecedenteQuirurjico;
 use App\AntecedenteReciente;
+use App\ArchivoAdjunto;
 use App\Voucher;
 use App\PersonalClinica;
 
@@ -287,6 +288,29 @@ class DeclaracionJuradaController extends Controller
                 $antecedente_quirurjico->declaracion_jurada_id=$declaracion_jurada->id;
                 $antecedente_quirurjico->save();
             //
+            
+            //Generar PDF y enlazarlo
+                //Obtener voucher-estudio
+                foreach ($voucher->vouchersEstudios as $item) {
+                    if ($item->estudio->nombre == "DECLARACION JURADA") {
+                        $estudio = $item;
+                    }
+                }
+                //Ruta de PDF
+                $ruta = public_path().'/archivo/'."DECLARACION JURADA".$estudio->id.".pdf";
+                //Generar PDF
+                $pdf = PDF::loadView('declaracion_jurada.pdf',[
+                    "declaracion_jurada"   =>  $declaracion_jurada
+                    ]);
+                $pdf->setPaper('a4','letter');
+                $pdf->save($ruta);
+                //Almacenar archivo adjunto
+                $archivo_adjunto = new ArchivoAdjunto();
+                $archivo_adjunto->anexo = $ruta;
+                $archivo_adjunto->voucher_estudio_id = $estudio->id;
+                $archivo_adjunto->save();
+            //
+
         return redirect()->route('declaracion_jurada.index');
     }
 
