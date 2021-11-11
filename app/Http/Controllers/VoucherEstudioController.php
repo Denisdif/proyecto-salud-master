@@ -12,11 +12,12 @@ class VoucherEstudioController extends Controller
     {   
         if ($request->hasFile('anexo')) {
             $archivo = $request->file('anexo');
-            $nombre = $request->estudio."_".$request->voucher_estudio_id;
+            $nombre = $request->estudio."_".$request->voucher_estudio_id.".pdf";
             $archivo->move(public_path().'/archivo/',$nombre);
 
+            $ruta = public_path().'/archivo/'.$nombre;
             $archivo_adjunto = new ArchivoAdjunto();
-            $archivo_adjunto->anexo = $nombre;
+            $archivo_adjunto->anexo = $ruta;
             $archivo_adjunto->voucher_estudio_id = $request->voucher_estudio_id;
             $archivo_adjunto->save();
         }
