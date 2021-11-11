@@ -206,69 +206,56 @@
 
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-header">GESTION PERSONAL</li>
-
+                        <!-- GESTION -->
+                        <li class="nav-header">GESTION</li>
                         <li class="nav-item">
                             <a href="{{ route('personal.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-user-md"></i>
                                 <p>Personal</p>
                             </a>
-                        </li>                       
-                       
-                        <li class="nav-header">GESTIÓN DE ACCESO</li>
-                        
-                        <li class="nav-item">
-                            <a href="{{ route('user.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>Cuenta de Usuario</p>
-                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('roles.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-key"></i>
-                                <p>Roles y Permisos</p>
-                            </a>
-                        </li>
-                       
-                       
-                        <li class="nav-header">GESTIÓN PACIENTES</li>
-
                         <li class="nav-item">
                             <a href="{{ route('paciente.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-user"></i>
-                                <p>Paciente</p>
+                                <p>Pacientes</p>
                             </a>
-                        </li>
-
+                        </li>                    
                         <!--
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-envelope"></i>
-                                <p>Correos<i class="fas fa-angle-left right"></i></p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Bandeja de entrada</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/mailbox/compose.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Escribir correo</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Leer correos</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                            <li class="nav-header">GESTIÓN DE ACCESO</li>
+                                
+                            <li class="nav-header">GESTIÓN PACIENTES</li>
+
+
+
+                            
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon far fa-envelope"></i>
+                                    <p>Correos<i class="fas fa-angle-left right"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Bandeja de entrada</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pages/mailbox/compose.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Escribir correo</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pages/mailbox/read-mail.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Leer correos</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         -->
-                    
+                        <!-- FORMULARIOS -->
                         <li class="nav-header">FORMULARIOS</li>
                         <li class="nav-item">
                             <a href="{{ route('voucher.index') }}" class="nav-link">
@@ -276,7 +263,6 @@
                                 <p>Voucher</p>
                             </a>
                         </li>
-                       
                         <li class="nav-item">
                             <a href="{{ route('audiometrias.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
@@ -301,7 +287,6 @@
                                 <p>Declaracion Jurada</p>
                             </a>
                         </li>
-                        
                         <li class="nav-item">
                             <a href="{{ route('historia_clinica.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
@@ -325,6 +310,18 @@
                             </a>
                         </li>-->
                         <li class="nav-item">
+                            <a href="{{ route('roles.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-key"></i>
+                                <p>Roles y Permisos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('user.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>Cuenta de Usuario</p>
+                            </a>
+                        </li>   
+                        <li class="nav-item">
                             <a href="{{ route('estudios.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-cogs"></i>
                                 <p>Estudios</p>
@@ -337,72 +334,73 @@
                             </a>
                         </li>
                         @endrole
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-cogs"></i>
-                                <p>Configuracion <span class="badge badge-info right"></span></p>
+                        <!--
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fa fa-cogs"></i>
+                                    <p>Configuracion <span class="badge badge-info right"></span></p>
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-chart-pie"></i>
+                                    <p>Estadística</p>
+                                </a>
+                            </li>
 
-                            </a>
-                        </li>
-                          <!--
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>Estadística</p>
-                            </a>
-                        </li>
 
-
-                        <li class="nav-header">AYUDA Y SOPORTE</li>
-                        <li class="nav-item">
-                            <a href="https://adminlte.io/docs/3.0" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>Documentación</p>
-                            </a>
-                        </li>
+                            <li class="nav-header">AYUDA Y SOPORTE</li>
+                            <li class="nav-item">
+                                <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                                    <i class="nav-icon fas fa-file"></i>
+                                    <p>Documentación</p>
+                                </a>
+                            </li>
                         -->
                         <!--li class="nav-header">EJEMPLO MULTINIVEL</li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-circle"></i>
-                                <p>Nivel 1<i class="right fas fa-angle-left"></i></p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Nivel 1</p>
-                                    </a>
-                                </li>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-circle"></i>
+                                    <p>Nivel 1<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Nivel 1</p>
+                                        </a>
+                                    </li>
 
-                                <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Nivel 2<i class="right fas fa-angle-left"></i></p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-dot-circle nav-icon"></i>
-                                                <p>Nivel 1</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-dot-circle nav-icon"></i>
-                                                <p>Nivel 2</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-dot-circle nav-icon"></i>
-                                                <p>Nivel 3</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li-->
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Nivel 2<i class="right fas fa-angle-left"></i></p>
+                                        </a>
+                                        <ul class="nav nav-treeview">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="far fa-dot-circle nav-icon"></i>
+                                                    <p>Nivel 1</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="far fa-dot-circle nav-icon"></i>
+                                                    <p>Nivel 2</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="far fa-dot-circle nav-icon"></i>
+                                                    <p>Nivel 3</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li
+                        -->
                     </ul>
                 </nav>
             </div>
