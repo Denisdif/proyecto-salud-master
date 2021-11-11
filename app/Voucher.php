@@ -91,4 +91,9 @@ class Voucher extends Model implements Auditable
     {
         return $this->hasOne('App\Models\IluminacionDireccionado', 'voucher_id', 'id');
     }
+
+    public function aptitud()
+    {
+        return $this->hasOne('App\Models\Aptitud', 'voucher_id', 'id');
+    }
 }
