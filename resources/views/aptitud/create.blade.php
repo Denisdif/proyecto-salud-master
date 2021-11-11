@@ -3,7 +3,7 @@
 @section('content')
 
 {!!Form::open(array(
-    'url'=>'iluminacion_direccionados',
+    'url'=>'aptitudes',
     'method'=>'POST',
     'autocomplete'=>'off',
     'files' => true,
@@ -92,120 +92,149 @@
                     <!-- Estudios -->
                     <div class="col-12">
                         <div class="row">
-                        @foreach ($estudios as $item)
-                            @switch($item)
-                                @case("LABORATORIO")
-                                    <!-- Laboratorio -->
-                                    <div class="col-12">
-                                        <div class="card ">
-                                            <div class="card-header fondo2">
-                                                {{$item}}
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="form-group">
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Estado:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <select class="form-control" name="resultados[{{$item}}][estado]" id="" placeholder="Estado">
-                                                                <option value="Normal    ">Normal    </option>
-                                                                <option value="Anormal   ">Anormal   </option>
-                                                                <option value="No realiza">No realiza</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Hemograma:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <input type="text" class="form-control" name="resultados[{{$item}}][hemograma]" placeholder="hemograma">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Eritrosedimentación:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <input type="text" class="form-control" name="resultados[{{$item}}][eritrosedimentacion]" placeholder="Eritrosedimentación">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Glucemia:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <input type="text" class="form-control" name="resultados[{{$item}}][glucemia]" placeholder="Glucemia">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Colesterolemia:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <input type="text" class="form-control" name="resultados[{{$item}}][colesterolemia]" placeholder="Colesterolemia">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Uremia:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <input type="text" class="form-control" name="resultados[{{$item}}][uremia]" placeholder="Uremia">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Orina completa:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <input type="text" class="form-control" name="resultados[{{$item}}][orinaCompleta]" placeholder="Orina completa">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col-3">
-                                                            <label for="">Otros:</label>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <input type="text" class="form-control" name="resultados[{{$item}}][otros]" placeholder="Otros">
-                                                        </div>
-                                                    </div>
+                            <!-- Historia Clínica -->
+                            @if ($historia_clinica)
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-header fondo2">
+                                            Historia Clínica
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row form-group">
+                                                <div class="col">
+                                                    <label for="">Diagnóstico: </label>
+                                                    @php
+                                                        echo $historia_clinica->diagnostico;
+                                                    @endphp
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    @break
-                                @default
-                                    <!-- Otros estudios -->
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <div class="card-header fondo2">
-                                                {{$item}}
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row form-group">
-                                                    <div class="col">
-                                                        <label for="">Estado</label>
-                                                        <select class="form-control" name="resultados[{{$item}}][estado]" id="" placeholder="Estado     ">
-                                                            <option value="Normal    ">Normal    </option>
-                                                            <option value="Anormal   ">Anormal   </option>
-                                                            <option value="No realiza">No realiza</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row form-group">
-                                                    <div class="col">
-                                                        <label for="">Diagnóstico</label>
-                                                        <input type="text" class="form-control" name="resultados[{{$item}}][diagnostico]" placeholder="Diagnóstico">
-                                                    </div>
+                                </div>
+                            @endif
+                            <!-- Declaracion Jurada -->
+                            @if ($declaracion_jurada)
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-header fondo2">
+                                            Declaracion Jurada
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row form-group">
+                                                <div class="col">
+                                                    <label for="">Diagnóstico: </label>
+                                                    @php
+                                                        echo $declaracion_jurada->diagnostico;
+                                                    @endphp
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                            @endswitch
-                        @endforeach
+                                </div>
+                            @endif
+                            <!-- Posiciones Forzadas -->
+                            @if ($posiciones_forzadas)
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-header fondo2">
+                                            Posiciones Forzadas
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row form-group">
+                                                <div class="col">
+                                                    <label for="">Diagnóstico: </label>
+                                                    @php
+                                                        echo $posiciones_forzadas->diagnostico;
+                                                    @endphp
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            <!-- Iluminacion Insuficiente -->
+                            @if ($iluminacion_direccionado)
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-header fondo2">
+                                            Iluminacion Insuficiente
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row form-group">
+                                                <div class="col">
+                                                    <label for="">Diagnóstico: </label>
+                                                    @php
+                                                        echo $iluminacion_direccionado->diagnostico;
+                                                    @endphp
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @for ($i = 0; $i < sizeof($estudios); $i++)
+                                <!-- Estudios por cargar -->
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-header fondo2">
+                                            {{$estudios[$i]->estudio->nombre}}
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row form-group">
+                                                <div class="col">
+                                                    <label for="">Diagnóstico: </label>
+                                                    <textarea class="form-control" name="diagnostico{{$i}}" id="" cols="15" rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endfor
                         </div>   
+                    </div>
+                    <!-- Aptitud laboral -->
+                    <div class="col-12">
+                        <div class="card  "> <!--collapsed-card -->
+                            <div class="card-header header-bg">
+                                <h3 class="card-title">Aptitud laboral</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body" > 
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <div class="icheck-danger d-inline">
+                                            <input type="checkbox" value=1 id="preexistencias" name="preexistencias">
+                                            <label for="preexistencias">CON PREEXISTENCIAS</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label><input type="radio" name="aptitud_laboral" value="APTO “A”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO"> APTO “A”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <label><input type="radio" name="aptitud_laboral" value="APTO “B”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO CON PROBLEMAS MEDICOS CONTROLADOS"> APTO “B”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO CON PROBLEMAS MEDICOS CONTROLADOS </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <label><input type="radio" name="aptitud_laboral" value="APTO “C”: CON CONDICIONANTESSEGÚNEXPOSICIÓN A RIESGO"> APTO “C”: CON CONDICIONANTESSEGÚNEXPOSICIÓN A RIESGO </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <label><input type="radio" name="aptitud_laboral" value="APTO “D”: INCONVENIENTE SU INGRESO EN EL MOMENTO ACTUAL"> APTO “D”: INCONVENIENTE SU INGRESO EN EL MOMENTO ACTUAL </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <label><input type="radio" name="aptitud_laboral" value="APTO “E”: NO APTO"> APTO “E”: NO APTO </label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <label for="">COMENTARIOS SOBRE PATOLOGIAS NO RELACIONADAS CON EL TRABAJO: </label>
+                                        <textarea class="form-control" name="comentario" id="" cols="15" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Guardar -->

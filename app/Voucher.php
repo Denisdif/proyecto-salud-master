@@ -33,7 +33,7 @@ class Voucher extends Model implements Auditable
     }
 
     //Devuelve todos los voucher-estudios a cargar del voucher
-    public function estudios_cargar()
+    public function estudiosCargar()
     {
         $estudios = [];
         foreach ($this->vouchersEstudios as $item) {
@@ -45,7 +45,7 @@ class Voucher extends Model implements Auditable
     }
 
     //Devuelve todos los tipos de estudios de los estudios del voucher
-    public function tipos_estudios()
+    public function tiposEstudios()
     {
         $tipo_estudios = [];
         foreach (TipoEstudio::all() as $tipo) {
@@ -74,6 +74,21 @@ class Voucher extends Model implements Auditable
     
     public function historiaClinica()
     {
-        return $this->hasMany('App\HistoriaClinica', 'voucher_id', 'id');
+        return $this->hasOne('App\HistoriaClinica', 'voucher_id', 'id');
+    }
+
+    public function declaracionJurada()
+    {
+        return $this->hasOne('App\DeclaracionJurada', 'voucher_id', 'id');
+    }
+
+    public function posicionesForzadas()
+    {
+        return $this->hasOne('App\PosicionesForzada', 'voucher_id', 'id');
+    }
+
+    public function iluminacionDireccionado()
+    {
+        return $this->hasOne('App\Models\IluminacionDireccionado', 'voucher_id', 'id');
     }
 }

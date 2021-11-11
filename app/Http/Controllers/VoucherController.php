@@ -137,10 +137,10 @@ class VoucherController extends Controller
         $voucher = Voucher::find($id);
 
         //Tipos de estudio en Voucher
-        $tipo_estudios = $voucher->tipos_estudios();
+        $tipo_estudios = $voucher->tiposEstudios();
 
         //Estudios a cargar
-        $estudios_cargar = $voucher->estudios_cargar();
+        $estudios_cargar = $voucher->estudiosCargar();
 
         //Estudios generados por el sistema
         $estudios_sistema = [];

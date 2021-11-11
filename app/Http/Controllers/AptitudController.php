@@ -20,23 +20,17 @@ class AptitudController extends Controller
                     'RIESGO COD. 08: TRABAJO EN ALTURA.',
                     'RIESGO COD. 09: INGRESO EN ESPACIOS CONFINADOS.',
                     'RIESGO COD. 10: OPERACIÓN DE VEHÍCULOS MOTORIZADOS.',];
+        $declaracion_jurada = $voucher->declaracionJurada;
+        $historia_clinica = $voucher->historiaClinica;
+        $posiciones_forzadas = $voucher->posicionesForzadas;
+        $iluminacion_direccionado = $voucher->iluminacionDireccionado;
+        $estudios = $voucher->estudiosCargar();
+        return view('aptitud.create', compact('voucher','riesgos','estudios','declaracion_jurada','historia_clinica','posiciones_forzadas','iluminacion_direccionado'));
+    }
 
-        $estudios = ['LABORATORIO',
-                     'AUDIOMETRÍA',
-                     'E.C.G',
-                     'E.E.G',
-                     'ESPIROMETRIA',
-                     'RX DE TORAX',
-                     'RX DE COLUMNA LUMBOSACRA',
-                     'RX DE COLUMNA CERVICAL',
-                     'RX DE MANOS / MUÑECAS',
-                     'RX DE RODILLAS',
-                     'PSICOTECNICO',
-                     'PSICOSENSOMETRICO',];
-
-        $historiaClinica = [];
-        $aux = $voucher->historiaClinica;
-
-        return view('aptitud.create', compact('voucher','riesgos','estudios'));
+    public function store(Request $request)
+    {   
+        return $request;
+        //return redirect()->route('voucher.show',$voucher->id);
     }
 }

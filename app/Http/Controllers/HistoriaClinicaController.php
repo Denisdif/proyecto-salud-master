@@ -475,7 +475,7 @@ class HistoriaClinicaController extends Controller
                 $reganal->save();
             //
         //
-        return $diagnostico;
+
         return redirect()->route('historia_clinica.index');
     }
 
