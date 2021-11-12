@@ -46,7 +46,7 @@
         <p class="campos" >Fecha: _________/_________/_________</p>
         <!-- Datos precargados -->
         <p class="subtitulo">DATOS DE LA EMPRESA</p>
-        <p class="datos"> <label class="campos" for="">Razón social:</label> {{$audiometria->voucher->paciente->origen->definicion}} </p>
+        <p class="datos"> <label class="campos" for="">Razón social:</label> {{$voucher->paciente->origen->definicion}} </p>
 
         <p class="subtitulo">DATOS DE LA TRABAJADOR</p>
 
@@ -54,15 +54,15 @@
             <tbody>
                 <tr>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">Apellido y nombre:  </label> {{$audiometria->voucher->paciente->nombreCompleto()}}
+                        <label class="campos" for="">Apellido y nombre:  </label> {{$voucher->paciente->nombreCompleto()}}
                     </td>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">Fecha Nacimiento:   </label>{{$audiometria->voucher->paciente->fecha_nacimiento()}}
+                        <label class="campos" for="">Fecha Nacimiento:   </label>{{$voucher->paciente->fecha_nacimiento()}}
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">CUIL-DNI:  </label>{{$audiometria->voucher->paciente->cuil}}
+                        <label class="campos" for="">CUIL-DNI:  </label>{{$voucher->paciente->cuil}}
                     </td>
                     <td style="text-align: left; width: 350px">
                         <label class="campos" for="">Ambiente: </label> ________________________________________________

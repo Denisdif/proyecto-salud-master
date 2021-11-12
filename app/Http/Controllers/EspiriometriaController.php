@@ -32,12 +32,10 @@ class EspiriometriaController extends Controller
 
     public function crearPDF($id)
     {
-        $espiriometria=Espiriometria::find($id);
-        
+        $voucher= Voucher::find($id);
         $pdf = PDF::loadView('espiriometria.PDF',[
-            "espiriometria"   =>  $espiriometria
+            "voucher"   =>  $voucher
             ]);
-
         $pdf->setPaper('a4','letter');
         return $pdf->stream('espiriometria.pdf');
         

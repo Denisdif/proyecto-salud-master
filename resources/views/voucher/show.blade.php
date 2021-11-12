@@ -59,19 +59,37 @@
                                     <tbody>
                                         @foreach ($estudios_sistema[2] as $item)
                                         <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
-                                            <td style="width: 65%">{{ $estudios_sistema[0][$item]->estudio->nombre }}</td>
-                                            @if ($estudios_sistema[0][$item]->archivo_adjunto)
+                                            @if ($estudios_sistema[0][$item]->estudio->nombre == "ESPIRIOMETRIA")
+                                                <td style="width: 65%">ESPIRIOMETRIA</td>
                                                 <td style="text-align: center">
-                                                    <a target="_blank" href="{{ route('voucherEstudio.show',$estudios_sistema[0][$item]->id) }}" class="btn fondo1 btn-responsive">
+                                                    <a target="_blank" href="{{ route('espiriometrias.pdf',$voucher->id) }}" class="btn fondo1 btn-responsive">
                                                         <i class="fas fa-file-pdf"></i>
                                                     </a>
                                                 </td>
                                             @else
-                                            <td> 
-                                                <a  title="Cargar pdf" class="btn fondo2 btn-responsive" href={{ route($estudios_sistema[1][$item], $voucher->id)}} >
-                                                    <i class="fa fa-plus" ></i>
-                                                </a>
-                                            </td>
+                                                @if ($estudios_sistema[0][$item]->estudio->nombre == "AUDIOMETRIA")
+                                                    <td style="width: 65%">AUDIOMETRIA</td>
+                                                    <td style="text-align: center">
+                                                        <a target="_blank" href="{{ route('audiometrias.pdf',$voucher->id) }}" class="btn fondo1 btn-responsive">
+                                                            <i class="fas fa-file-pdf"></i>
+                                                        </a>
+                                                    </td>
+                                                @else
+                                                    <td style="width: 65%">{{ $estudios_sistema[0][$item]->estudio->nombre }}</td>
+                                                    @if ($estudios_sistema[0][$item]->archivo_adjunto)
+                                                        <td style="text-align: center">
+                                                            <a target="_blank" href="{{ route('voucherEstudio.show',$estudios_sistema[0][$item]->id) }}" class="btn fondo1 btn-responsive">
+                                                                <i class="fas fa-file-pdf"></i>
+                                                            </a>
+                                                        </td>
+                                                    @else
+                                                    <td> 
+                                                        <a  title="Cargar pdf" class="btn fondo2 btn-responsive" href={{ route($estudios_sistema[1][$item], $voucher->id)}} >
+                                                            <i class="fa fa-plus" ></i>
+                                                        </a>
+                                                    </td>
+                                                    @endif
+                                                @endif
                                             @endif
                                         </tr>
                                         @endforeach

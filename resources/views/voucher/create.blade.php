@@ -20,40 +20,39 @@
             </div>
             <div class="card-body fondo0">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="row">
-                    <div class="col-6">
-                        <!-- Paciente -->
-                        <div class="form-group">
-                            <label> <p style="font-size:130%">Seleccionar Paciente</p></label>
-                            <select
-                                name="paciente_id"
-                                id="paciente_id"
-                                class="paciente_id custom-select"
-                                >
-                                <option
-                                    value="0"
-                                    disabled="true"
-                                    selected="true"
-                                    title="-Seleccione un tipo de paciente-">
-                                    -Seleccione un paciente-
-                                </option>
-                                @foreach ($pacientes as $paciente)
-                                    <option value="{{$paciente->id }}">{{$paciente->documento . " " . $paciente->nombreCompleto() . " " . $paciente->origen->definicion}}</option>
-                                @endforeach
-                            </select>
+                    <div class="row">
+                        <div class="col-6">
+                            <!-- Paciente -->
+                            <div class="form-group">
+                                <label> <p style="font-size:130%">Seleccionar Paciente</p></label>
+                                <select
+                                    name="paciente_id"
+                                    id="paciente_id"
+                                    class="paciente_id custom-select"
+                                    >
+                                    <option
+                                        value="0"
+                                        disabled="true"
+                                        selected="true"
+                                        title="-Seleccione un tipo de paciente-">
+                                        -Seleccione un paciente-
+                                    </option>
+                                    @foreach ($pacientes as $paciente)
+                                        <option value="{{$paciente->id }}">{{$paciente->documento . " " . $paciente->nombreCompleto() . " " . $paciente->origen->definicion}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
+                        <div class="col-6 ">
+                            <!-- Paciente -->
+                            <div class="form-group">
+                                <label> <p style="font-size:130%">Fecha: </p></label>
+                                <input class="form-control" type="date" name="turno"  required
+                                value="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
+                            </div>
+                        </div> 
                     </div>
-                    <div class="col-6 ">
-                        <!-- Paciente -->
-                        <div class="form-group">
-                            <label> <p style="font-size:130%">Fecha: </p></label>
-                            <input class="form-control" type="date" name="turno"  required
-                            value="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
-                        </div>
-                    </div> 
                 </div>
-                </div>
-                
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card "> <!--collapsed-card -->
                         <div class="card-header header-bg">
@@ -118,7 +117,6 @@
                 <!-- / Estudios-->
             </div>
         </div>
-
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="form-group" style="text-align:center">
                 <a href="/voucher">
@@ -128,8 +126,6 @@
             </div>
         </div>
     </div> 
-
-
 {!!Form::close()!!}
 
 @push('scripts')
@@ -138,7 +134,6 @@
             var select67 = $("#paciente_id").select2({width:'100%'});
             select67.data('select2').$selection.css('height', '34px');
         });
-
     </script>
     <script>
         $(document).ready(function(){
@@ -208,8 +203,5 @@
         }
     </script>
 @endpush
-
-
-
 @endsection
 

@@ -14,22 +14,22 @@ class TipoEstudioSeeder extends Seeder
     {
 
         $tipoEstudio = TipoEstudio::create([
-        	'nombre' => 'Análisis bioquímicos',
+        	'nombre' => 'ANALISIS BIOQUIMICO',
         ]);
         $tipoEstudio = TipoEstudio::create([
-        	'nombre' => 'Análisis bioquímicos Anexo 01',
+        	'nombre' => 'ANALISIS BIOQUIMICO ANEXO 01',
         ]);
         $tipoEstudio = TipoEstudio::create([
-        	'nombre' => 'Complementarios',
+        	'nombre' => 'COMPLEMENTARIO',
         ]);
         $tipoEstudio = TipoEstudio::create([
-        	'nombre' => 'Ex. Clinicos',
+        	'nombre' => 'EXAMEN CLINICO',
         ]);
         $tipoEstudio = TipoEstudio::create([
-        	'nombre' => 'Psicotécnico',
+        	'nombre' => 'PSICOTECNICO',
         ]);
         $tipoEstudio = TipoEstudio::create([
-        	'nombre' => 'Radiología',
+        	'nombre' => 'RADIOLOGIA',
         ]);
     }
 }

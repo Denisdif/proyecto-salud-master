@@ -31,12 +31,11 @@ class AudiometriaController extends Controller
 
     public function crearPDF($id)
     {
-        $audiometria=Audiometria::find($id);
+        $voucher= Voucher::find($id);
         $pdf = PDF::loadView('audiometria.PDF',[
-            "audiometria"   =>  $audiometria
+            "voucher"   =>  $voucher
             ]);
         $pdf->setPaper('a4','letter');
-        $pdf->save(public_path().'/archivo/'."es una prueba.pdf");
 
         return $pdf->stream('audiometria.pdf');
     }

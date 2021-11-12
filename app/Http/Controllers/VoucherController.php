@@ -79,53 +79,6 @@ class VoucherController extends Controller
                 $voucher_estudio->voucher_id = $voucher->id;
                 $voucher_estudio->estudio_id = $item->id;
                 $voucher_estudio->save();
-
-                if ($item->nombre == "AUDIOMETRIA") 
-                {
-                    //Nueva audiometria
-                    $audiometria = new Audiometria();
-                    $audiometria->voucher_id = $voucher->id;
-                    $audiometria->save();
-
-                    //Ruta de PDF
-                    $ruta = public_path().'/archivo/'."AUDIOMETRIA".$voucher_estudio->id.".pdf";
-
-                    //Generar PDF
-                    $pdf = PDF::loadView('audiometria.PDF',[
-                        "audiometria"   =>  $audiometria
-                        ]);
-                    $pdf->setPaper('a4','letter');
-                    $pdf->save($ruta);
-                    
-                    //Almacenar archivo adjunto
-                    $archivo_adjunto = new ArchivoAdjunto();
-                    $archivo_adjunto->anexo = $ruta;
-                    $archivo_adjunto->voucher_estudio_id = $voucher_estudio->id;
-                    $archivo_adjunto->save();
-                }
-
-                if ($item->nombre == "ESPIRIOMETRIA") 
-                {
-                    $espiriometria = new Espiriometria();
-                    $espiriometria->voucher_id = $voucher->id;
-                    $espiriometria->save();
-
-                    //Ruta de PDF
-                    $ruta = public_path().'/archivo/'."ESPIRIOMETRIA".$voucher_estudio->id.".pdf";
-
-                    //Generar PDF
-                    $pdf = PDF::loadView('espiriometria.PDF',[
-                        "espiriometria"   =>  $espiriometria
-                        ]);
-                    $pdf->setPaper('a4','letter');
-                    $pdf->save($ruta);
-                    
-                    //Almacenar archivo adjunto
-                    $archivo_adjunto = new ArchivoAdjunto();
-                    $archivo_adjunto->anexo = $ruta;
-                    $archivo_adjunto->voucher_estudio_id = $voucher_estudio->id;
-                    $archivo_adjunto->save();
-                }
             }
         }
         return redirect()->route('voucher.show',$voucher->id);

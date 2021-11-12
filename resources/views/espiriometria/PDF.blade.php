@@ -50,7 +50,7 @@
         <p class="campos" >Fecha: _________/_________/_________</p>
         <!-- Datos precargados -->
         <p class="subtitulo">DATOS DE LA EMPRESA</p>
-        <p class="datos"> <label class="campos" for="">Razón social:</label> {{$espiriometria->voucher->paciente->origen->definicion}} </p>
+        <p class="datos"> <label class="campos" for="">Razón social:</label> {{$voucher->paciente->origen->definicion}} </p>
 
         <p class="subtitulo">DATOS DE LA TRABAJADOR</p>
 
@@ -58,18 +58,18 @@
             <tbody>
                 <tr>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">Apellido y nombre:  </label> {{$espiriometria->voucher->paciente->nombreCompleto()}}
+                        <label class="campos" for="">Apellido y nombre:  </label> {{$voucher->paciente->nombreCompleto()}}
                     </td>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">Fecha Nacimiento:   </label>{{$espiriometria->voucher->paciente->fecha_nacimiento()}}
+                        <label class="campos" for="">Fecha Nacimiento:   </label>{{$voucher->paciente->fecha_nacimiento()}}
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">CUIL-DNI:  </label>{{$espiriometria->voucher->paciente->cuil}}
+                        <label class="campos" for="">CUIL-DNI:  </label>{{$voucher->paciente->cuil}}
                     </td>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">           Edad:</label> {{$espiriometria->voucher->paciente->edad()}}
+                        <label class="campos" for="">           Edad:</label> {{$voucher->paciente->edad()}}
                     </td>
                 </tr>
                 <tr>
