@@ -89,132 +89,6 @@ class DeclaracionJuradaController extends Controller
             $paciente->update();            
             $n=DeclaracionJurada::count() + 1;
 
-            // Generación de Diagnóstico
-                /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
-                Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
-                $matriz = [];
-                $diagnostico = "<b>ANTECEDENTES FAMILIARES</b><br><br>";
-                //Carga variables
-                    $matriz[] = [       //ANTECEDENTES FAMILIARES
-                                        $request->su_padre_vive,
-                                        $request->su_madre_vive,
-                                        $request->cancer,
-                                        $request->diabetes,
-                                        $request->infarto,
-                                        $request->hipertension_Arterial,
-                                        $request->detalle,
-                                        //ANTECEDENTES PERSONALES
-                                        ' ',
-                                        $request->fuma,
-                                        $request->bebe,
-                                        $request->actividad_fisica,
-                                        //ANTECEDENTES INFANCIA
-                                        ' ',
-                                        $request->sarampion,
-                                        $request->rebeola,
-                                        $request->epilepsia,
-                                        $request->varicela,
-                                        $request->parotiditis,
-                                        $request->cefalea_prolongada,
-                                        $request->hepatitis,
-                                        $request->gastritis,
-                                        $request->ulcera_gastrica,
-                                        $request->hemorroide,
-                                        $request->hemorragias,
-                                        $request->neumonia,
-                                        $request->asma,
-                                        $request->tuberculosis,
-                                        $request->tos_cronica,
-                                        $request->catarro,
-                                        $request->detalle1_m,
-                                        //ANTECEDENTES RECIENTES
-                                        ' ',
-                                        $request->detalle1_reciente,
-                                        $request->detalle2_reciente,
-                                        $request->detalle3_reciente,
-                                        $request->detalle4_reciente,
-                                        $request->detalle5_reciente,
-                                        $request->detalle6_reciente,
-                                        $request->detalle7_reciente,
-                                        $request->detalle8_reciente,
-                                        $request->detalle9_reciente,
-                                        $request->detalle10_reciente,
-                                        $request->detalle11_reciente,
-                                        $request->detalle12_reciente,
-                                        $request->detalle13_reciente,
-                                        $request->detalle14_reciente,
-                                        //ANTECEDENTES QUIRURJICOS
-                                        ' ',
-                                        $request->detalle1_q,
-                                        $request->detalle2_q,
-                                        $request->detalle3_q,
-                                    ];
-                //
-                //Carga Labels
-                    $matriz[] = [  
-                        'Su padre falleció: ',
-                        'Su madre falleció: ',
-                        'Cancer: ',
-                        'Diabetes: ',
-                        'Infarto: ',
-                        'Hipertension Arterial: ',
-                        'Ingrese algún detalle: ',
-
-                        '<br><b>ANTECEDENTES FAMILIARES</b><br>',
-                        'Fuma: ',
-                        'Bebe: ',
-                        'Actividad física: ',
-
-                        '<br><b>ANTECEDENTES INFANCIA</b><br>',
-                        'Sarampión: ',
-                        'Rubéola: ',
-                        'Epilepsias: ',
-                        'Varicela: ',
-                        'Parotiditis: ',
-                        'Cefalea prolongadas: ',
-                        'Hepatítis: ',
-                        'Gastrítis: ',
-                        'Ulcera Gástrica: ',
-                        'Hemorroides: ',
-                        'Hemorragia: ',
-                        'Neumonía: ',
-                        'Asma: ',
-                        'Tuberculosis: ',
-                        'Tos Crónica: ',
-                        'Catarro: ',
-                        'Otras Afecciones: ',
-                        
-                        '<br><b>ANTECEDENTES RECIENTES</b><br>',
-                        '¿Enfermedad de los ojos, oidos , nariz o garganta?',
-                        '¿Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos?',
-                        '¿Insuficiencia respiratoria,  ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica?',
-                        '¿Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos?',
-                        '¿Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula?',
-                        '¿Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata?',
-                        '¿Diabetes, Tiroides u otra enfermedad endócrinas?',
-                        '¿Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones?',
-                        '¿Deformidades, rengueras o amputaciones?',
-                        '¿Enfermedades de la piel?',
-                        '¿Alergias, anemias u otras enfermedades de la sangre?',
-                        '¿Está Ud. Actualmente bajo observación o tratamiento?',
-                        '¿Ha tenido algún cambio en su peso en el último año?',
-                        'HERNIA: ',
-                        
-                        '<br><b>ANTECEDENTES QUIRÚRJUCOS</b><br>',
-                        '¿Fue intervenido/a quirúrgicamente por alguna causa?',
-                        '¿Tiene pendiente alguna cirugía? Por favor detallar Diagnóstico y fecha:',
-                        '¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?',
-                        ];
-                //
-                //Carga de diagnostico
-                for ($i=0; $i < sizeof($matriz[1]); $i++) {
-                    if ($matriz[0][$i]) {
-                        $diagnostico = $diagnostico.$matriz[1][$i].$matriz[0][$i]."<br>";
-                    }
-                };
-                $declaracion_jurada->diagnostico = $diagnostico;
-            //
-
             $declaracion_jurada->firma=$request->firma;
             $declaracion_jurada->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
             $declaracion_jurada->personal_clinica_id=$request->personal_clinica_id;
@@ -288,7 +162,10 @@ class DeclaracionJuradaController extends Controller
                 $antecedente_quirurjico->declaracion_jurada_id=$declaracion_jurada->id;
                 $antecedente_quirurjico->save();
             //
-            
+
+            $declaracion_jurada->diagnostico = $declaracion_jurada->generarDiagnostico();
+            $declaracion_jurada->update();
+
             //Generar PDF y enlazarlo
                 //Obtener voucher-estudio
                 foreach ($voucher->vouchersEstudios as $item) {

@@ -17,11 +17,11 @@ class CreatePosicionesForzadasTable extends Migration
             $table->bigIncrements('id');
             $table->binary('firma')->nullable();
             $table->char('codigo',10);
-            $table->string('puesto');
-            $table->integer('antiguedad');
-            $table->string('nroTrabajo');
+            $table->string('puesto')->nullable();
+            $table->integer('antiguedad')->nullable();
+            $table->string('nroTrabajo')->nullable();
             $table->char('dolor_articular',112);
-            $table->text('diagnostico');
+            $table->text('diagnostico')->nullable();
             
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');

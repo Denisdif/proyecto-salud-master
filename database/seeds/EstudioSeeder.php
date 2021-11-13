@@ -305,22 +305,22 @@ class EstudioSeeder extends Seeder
     //
     // Ex Clinico
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'DECLARACION JURADA',
             'tipo_estudio_id' => 4,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'HISTORIA CLINICA',
             'tipo_estudio_id' => 4,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'POSICIONES FORZADAS',
             'tipo_estudio_id' => 4,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'ILUMINACION',
             'tipo_estudio_id' => 4,
         ]);

@@ -22,76 +22,40 @@ class IluminacionDireccionado extends Model
                 /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
                 Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
                 $matriz = [];
-                $diagnostico = "<b>ANTECEDENTES</b><br><br>";
+                $diagnostico = "<b>ANTECEDENTES</b><br>";
                 //Carga variables
                     $matriz[] = [       //ANTECEDENTES
-                                        $this->enfermedades,
-                                        $this->transtornos_congenitos,
-                                        $this->enfermedades_profecionales,
-                                        $this->exposicion_anterior,
-                                        $this->exposicion_actual,
-
+                                        $this->enfermedades,$this->transtornos_congenitos,$this->enfermedades_profecionales,$this->exposicion_anterior,$this->exposicion_actual,
                                         //EXAMEN CLINICO
-                                        ' ',
-                                        $this->cefaleas,
-                                        $this->vision_doble,
-                                        $this->mareo_vertigo,
-                                        $this->conjuntivitis,
-                                        $this->vision_borrosa,
-                                        $this->inseguridad_de_pie,
-
+                                        ' ',$this->cefaleas, $this->vision_doble, $this->mareo_vertigo, $this->conjuntivitis, $this->vision_borrosa, $this->inseguridad_de_pie,
                                         //EXAMEN OCULAR
-                                        ' ',
-                                        $this->no_centrados,
-                                        $this->pupilas_anormales,
-                                        $this->conjuntivas_anormales,
-                                        $this->corneas_anormales,
-                                        $this->motilidad_anormal,
-                                        $this->nistagmus_ausente,
-                                        $this->informe_ocular,
-                                        $this->av_correccion,
-                                        $this->av_sin_correccion,
-
-                                        $this->observaciones,
+                                        ' ',$this->no_centrados,$this->pupilas_anormales,$this->conjuntivas_anormales,$this->corneas_anormales,$this->motilidad_anormal,$this->nistagmus_ausente,$this->informe_ocular,$this->av_correccion,$this->av_sin_correccion,$this->observaciones,
                                     ];
                 //
                 //Carga Labels
                     $matriz[] = [  
                                     //ANTECEDENTES
-                                    'Enfermedades: ',
-                                    'Transtornos congenitos: ',
-                                    'Enfermedades profecionales: ',
-                                    'Exposicion al riesgo anterior: ',
-                                    'Exposicion al riesgo actual: ',
+                                    'Enfermedades: ','Transtornos congenitos: ','Enfermedades profecionales: ','Exposicion al riesgo anterior: ','Exposicion al riesgo actual: ',
 
                                     //EXAMEN CLINICO
-                                    '<br><b>EXAMEN CLINICO</b><br>',
-                                    'Cefaleas: ',
-                                    'Visión doble: ',
-                                    'Mareo / vértigo: ',
-                                    'Conjuntivitis: ',
-                                    'Vision borrosa: ',
-                                    'Inseguridad en posición de pie: ',
+                                    '<br><b>EXAMEN CLINICO</b><br>Presencia de:<br>','Cefaleas: ','Visión doble: ','Mareo / vértigo: ','Conjuntivitis: ','Vision borrosa: ','Inseguridad en posición de pie: ',
 
                                     //EXAMEN OCULAR
-                                    '<br><b>EXAMEN OCULAR</b><br>',
-                                    'No centrados: ',
-                                    'Pupilas anormales: ',
-                                    'Conjuntivas anormales: ',
-                                    'Corneas anormales: ',
-                                    'Motilidad anormal: ',
-                                    'Nistagmus ausente: ',
-                                    'Informe ocular: ',
-                                    'Agudeza visual con corrección: ',
-                                    'Agudeza visual sin correccion: ',
-
-                                    'Observaciones: ',
+                                    '<br><b>EXAMEN OCULAR</b><br>Ojos:<br>','No centrados: ','Pupilas anormales: ','Conjuntivas anormales: ','Corneas anormales: ','Motilidad anormal: ','Nistagmus ausente: ','Informe ocular: ','Agudeza visual con corrección: ','Agudeza visual sin correccion: ','Observaciones: ',
                         ];
                 //
                 //Carga de diagnostico
                 for ($i=0; $i < sizeof($matriz[1]); $i++) {
-                    if ($matriz[0][$i]) {
-                        $diagnostico = $diagnostico.$matriz[1][$i].$matriz[0][$i]."<br>";
+                    if ($matriz[0][$i] != null) {
+                        if ($matriz[0][$i] == 1) {
+                            $diagnostico = $diagnostico."<u>".$matriz[1][$i]."</u>"."Si".". ";
+                        }else{
+                            if ($matriz[0][$i] == " ") {
+                                $diagnostico = $diagnostico.$matriz[1][$i].$matriz[0][$i];
+                            }else{
+                                $diagnostico = $diagnostico."<u>".$matriz[1][$i]."</u>".$matriz[0][$i].". ";
+                            }
+                        }
                     }
                 };
         return $diagnostico;

@@ -72,89 +72,6 @@ class PosicionesForzadasController extends Controller
             $posiciones_forzada->user_id=auth()->user()->id;
             $posiciones_forzada->voucher_id=$request->voucher_id;
 
-            // Generación de Diagnóstico
-                /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
-                Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
-                $matriz = [];
-                $diagnostico = "<b>TAREAS</b><br><br>";
-                //Carga variables
-                    $matriz[] = [       //TAREAS
-                                        $request->tiempo,
-                                        $request->ciclo,
-                                        $request->cargas,
-
-                                        //TIPO DE TAREAS
-                                        ' ',
-                                        $request->pregunta1,
-                                        $request->pregunta2,
-                                        $request->pregunta3,
-                                        $request->pregunta4,
-                                        $request->pregunta5,
-                                        $request->pregunta6,
-                                        $request->pregunta7,
-                                        $request->pregunta8,
-                                        $request->observacion_tarea,
-                                        
-                                        //DOLOR
-                                        ' ',
-                                        $request->forma,
-                                        $request->evolucion,
-                                        $request->pregunta1_d,
-                                        $request->pregunta2_d,
-                                        $request->pregunta3_d,
-                                        $request->pregunta4_d,
-                                        $request->pregunta5_d,
-                                        $request->observacion1_d,
-                                        $request->observacion2_d,
-                                        
-                                        //CARACTERIZACIÓN SEMIOLÓGICA
-                                        ' ',
-                                        $request->grado,
-                                        $request->observacion1_s
-                                    ];
-                //
-                //Carga Labels
-                    $matriz[] = [  
-                                    'Tiempo de Tarea: ',
-                                    'Ciclo de trabajo: ',
-                                    'Manipulación manual de cargas: ',
-
-                                    '<br><b>TIPO DE TAREAS</b><br>',
-                                    'Movimiento de alcance repetidos por encima del hombro',
-                                    'Movimiento de extensión o flexión forzados de muñeca',
-                                    'Flexión sostenida de columna',
-                                    'Flexión extrema del codo',
-                                    'El cuello se mantiene flexionado',
-                                    'Giros de columna',
-                                    'Rotación extrema del antebrazo',
-                                    'Flexión mantenida de dedos',
-                                    'Otros: ',
-
-                                    '<br><b>DOLOR</b><br>',
-                                    'Por su forma de aparición: ',
-                                    'Por su evolución: ',
-                                    'Calambres musculares',
-                                    'Parestesias',
-                                    'Calor',
-                                    'Cambios de coloración de la piel',
-                                    'Tumefacción',
-                                    'Puntos dolorosos: ',
-                                    'Localización: ',
-
-                                    '<br><b>CARACTERIZACIÓN SEMIOLÓGICA</b><br>',
-                                    'Grado: ',
-                                    'Observación: ',
-                        ];
-                //
-                //Carga de diagnostico
-                for ($i=0; $i < sizeof($matriz[1]); $i++) {
-                    if ($matriz[0][$i]) {
-                        $diagnostico = $diagnostico.$matriz[1][$i].$matriz[0][$i]."<br>";
-                    }
-                };
-            
-            $posiciones_forzada->diagnostico = $diagnostico;
-
             //Tabla articulaciones
                 //Cada cuadro es representado por una posicion en el String
                 $dolor_articular = "";
@@ -162,7 +79,6 @@ class PosicionesForzadasController extends Controller
                     $dolor_articular = $dolor_articular.$request->$i;
                 }
             $posiciones_forzada->dolor_articular = $dolor_articular;
-            
             $posiciones_forzada->save();
             
             //Tablas secundarias
@@ -202,6 +118,8 @@ class PosicionesForzadasController extends Controller
                 $semiologica->posiciones_forzada_id=$posiciones_forzada->id;
                 $semiologica->save();
             //
+
+            $posiciones_forzada->diagnostico = $posiciones_forzada->generarDiagnostico();
 
             //Generar PDF y enlazarlo
                 //Obtener voucher-estudio

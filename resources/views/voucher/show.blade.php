@@ -60,7 +60,7 @@
                                         @foreach ($estudios_sistema[2] as $item)
                                         <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
                                             @if ($estudios_sistema[0][$item]->estudio->nombre == "ESPIRIOMETRIA")
-                                                <td style="width: 65%">ESPIRIOMETRIA</td>
+                                                <td style="width: 65%">ESPIRIOMETRIA (FORMULARIO)</td>
                                                 <td style="text-align: center">
                                                     <a target="_blank" href="{{ route('espiriometrias.pdf',$voucher->id) }}" class="btn fondo1 btn-responsive">
                                                         <i class="fas fa-file-pdf"></i>
@@ -68,7 +68,7 @@
                                                 </td>
                                             @else
                                                 @if ($estudios_sistema[0][$item]->estudio->nombre == "AUDIOMETRIA")
-                                                    <td style="width: 65%">AUDIOMETRIA</td>
+                                                    <td style="width: 65%">AUDIOMETRIA (FORMULARIO)</td>
                                                     <td style="text-align: center">
                                                         <a target="_blank" href="{{ route('audiometrias.pdf',$voucher->id) }}" class="btn fondo1 btn-responsive">
                                                             <i class="fas fa-file-pdf"></i>
