@@ -120,6 +120,7 @@ class PosicionesForzadasController extends Controller
             //
 
             $posiciones_forzada->diagnostico = $posiciones_forzada->generarDiagnostico();
+            $posiciones_forzada->update();
 
             //Generar PDF y enlazarlo
                 //Obtener voucher-estudio

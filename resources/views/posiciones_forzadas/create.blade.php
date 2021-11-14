@@ -36,7 +36,7 @@
 </style>
 
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-12">
         <div class="card">
             <div class="card-header header-bg header-bg">
                 <div class="card-title">
@@ -45,7 +45,7 @@
             </div>
             <!-- /.card-header header-bg -->
             <div class="card-body">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-12">
                     <!-- Voucher id HIDDEN -->
                     <div class="form-group">
                         <input type="number" name="voucher_id" value="{{$voucher->id }}" hidden>
@@ -85,7 +85,7 @@
                     </div>
                     <!-- / Datos del paciente -->
                     <!-- Datos laborales -->
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-12">
                             <div class="card  "> <!--collapsed-card -->
                                 <div class="card-header header-bg">
                                     <h3 class="card-title">Datos laborales</h3>
@@ -115,7 +115,7 @@
                         </div>
                     <!-- / Datos laborales -->
                     <!-- Tareas -->
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-12">
                             <div class="card ">
                                 <div class="card-header header-bg">
                                     <h3 class="card-title">Tarea</h3>
@@ -127,9 +127,9 @@
                                     <div class="form-group">
                                         <!-- Tiempo de Tarea -->
                                         <div class="form-group row">
-                                            <label class="col" for="tarea_1">Tiempo de Tarea: </label>
+                                            <label class="col" for="tarea_1"> <u> Tiempo de Tarea:</u> </label>
                                             <div class="col">
-                                                <label><input type="radio" name="tiempo" value="Esporádico">Esporádico</label>
+                                                <label><input type="radio" name="tiempo" value="Esporádico"> Esporádico</label>
                                             </div>
                                             <div class="col">
                                                 <label><input type="radio" name="tiempo" value="Continuo > 2hs y < 4hs"> Continuo > 2hs y < 4hs</label>
@@ -137,34 +137,34 @@
                                             <div class="col"> 
                                                 <label><input type="radio" name="tiempo" value="Continuo > 4hs"> Continuo > 4hs</label>
                                             </div>
-                                        </div>
+                                        </div><hr>
                                         <!-- Ciclo de trabajo: -->
                                         <div class="form-group row">
-                                            <label class="col" for="tarea_1">Ciclo de trabajo: </label>
+                                            <label class="col" for="tarea_1"> <u> Ciclo de trabajo:</u> </label>
                                             <div class="col"> 
-                                                <label><input type="radio" name="ciclo" value="Corto: hasta 30 segundos">hasta 30 segundos</label>
+                                                <label><input type="radio" name="ciclo" value="Corto: hasta 30 segundos"> hasta 30 segundos</label>
                                             </div>
                                             <div class="col">
-                                                <label><input type="radio" name="ciclo" value="Moderado: 30 segundos - 1 a 2 minutos">30 segundos a 2 minutos</label>
+                                                <label><input type="radio" name="ciclo" value="Moderado: 30 segundos - 1 a 2 minutos"> 30 segundos a 2 minutos</label>
                                             </div>
                                             <div class="col">
-                                                <label><input type="radio" name="ciclo" value="Largo: < 2 minutos">< 2 minutos</label>
+                                                <label><input type="radio" name="ciclo" value="Largo: < 2 minutos"> < 2 minutos</label>
                                             </div>
-                                        </div>
+                                        </div><hr>
                                         <!-- Manipulación manual de cargas: -->
                                         <div class="form-group row">
-                                            <label class="col" for="tarea_1">Manipulación manual de cargas: </label>
+                                            <label class="col" for="tarea_1"> <u> Manipulación manual de cargas:</u> </label>
                                             <div class="col">
-                                                <label><input type="radio" name="cargas" value="Menor a 1 Kg ">Menor a 1 Kg </label>
+                                                <label><input type="radio" name="cargas" value="Menor a 1 Kg "> Menor a 1 Kg </label>
                                             </div>
                                             <div class="col">
-                                                <label><input type="radio" name="cargas" value="Entre 1 Kg y 3 Kgs">Entre 1 Kg y 3 Kgs</label>
+                                                <label><input type="radio" name="cargas" value="Entre 1 Kg y 3 Kgs"> Entre 1 Kg y 3 Kgs</label>
                                             </div>
                                             <div class="col"> 
-                                                <label><input type="radio" name="cargas" value="Mayor a 3 Kgs">Mayor a 3 Kgs</label>
+                                                <label><input type="radio" name="cargas" value="Mayor a 3 Kgs"> Mayor a 3 Kgs</label>
                                             </div>
-                                        </div>
-                                        <label for="tipo_tarea">Tipo de tarea: </label>
+                                        </div><hr>
+                                        <label for="tipo_tarea"> <u> Tipo de tarea:</u> </label>
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col icheck-danger d-inline">
@@ -209,7 +209,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="observacion_tarea">Otros, especificar: </label>
-                                            <input type="text" class="form-control" id="observacion_tarea"  name="observacion_tarea"  placeholder="Ingrese alguna observacion...">
+                                            <input type="text" class="form-control" id="observacion_tarea"  name="observacion_tarea"  placeholder="Otros...">
                                         </div>
                                     </div>
                                 </div>
@@ -217,7 +217,7 @@
                         </div>
                     <!-- / Tareas -->
                     <!-- Semiología -->
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-12">
                             <div class="card ">
                                 <div class="card-header header-bg">
                                     <h3 class="card-title">Semiología del Segmento Corporal Comprometido - Relación Movilidad – Dolor Articular y estado de masa muscular relacionada.</h3>
@@ -281,7 +281,7 @@
                         </div>
                     <!-- / Semiología -->
                     <!-- Características del dolor -->
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-12">
                             <div class="card ">
                                 <div class="card-header header-bg">
                                     <h3 class="card-title">Características del dolor</h3>
@@ -292,7 +292,7 @@
                                 <div class="card-body">
                                     <!-- Por su forma de aparición -->
                                     <div class="form-group row">
-                                        <label class="col" for="dolor_1">Por su forma de aparición: </label>
+                                        <label class="col" for="dolor_1"> <u> Por su forma de aparición:</u> </label>
                                         <div class="col">
                                             <label><input type="radio" name="forma" value="Agudo"> Agudo</label>
                                         </div>
@@ -302,10 +302,10 @@
                                         <div class="col"> 
                                             <label><input type="radio" name="forma" value="Ausente"> Ausente</label>
                                         </div>
-                                    </div>
+                                    </div><hr>
                                     <!-- Por su evolución -->
                                     <div class="form-group row">
-                                        <label class="col" for="dolor_1">Por su evolución: </label>
+                                        <label class="col" for="dolor_1"> <u> Por su evolución:</u> </label>
                                         <div class="col">
                                             <label><input type="radio" name="evolucion" value="Continuo"> Continuo</label>
                                         </div>
@@ -315,69 +315,83 @@
                                         <div class="col"> 
                                             <label><input type="radio" name="evolucion" value="Cíclico"> Cíclico</label>
                                         </div>
-                                    </div>                                  
+                                    </div><hr>       
                                     <div class="form-group row">
                                         <div class="col">
                                             <label for="observacion1">Puntos dolorosos: </label>
-                                            <input type="text" class="form-control" id="observacion1_d"  name="observacion1_d"  placeholder="Ingrese alguna observacion...">
+                                            <input type="text" class="form-control" id="observacion1_d"  name="observacion1_d"  placeholder="Puntos dolorosos">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col">
                                             <label for="observacion1">Localización: </label>
-                                            <input type="text" class="form-control" id="observacion2_d"  name="observacion2_d"  placeholder="Ingrese alguna observacion...">
+                                            <input type="text" class="form-control" id="observacion2_d"  name="observacion2_d"  placeholder="Localización">
                                         </div>
                                     </div>
-                                    <!-- Otros signos y sintomas presentes en el segmento involucrado -->
-                                        <label for="signos_1">Otros signos y sintomas presentes en el segmento involucrado: </label>
-                                        <div class="row">
-                                            <div class="col icheck-danger d-inline">
-                                                <input type="checkbox" name="pregunta1_d" value=1 id="checkboxPrimary24">
-                                                <label for="checkboxPrimary24">Calambres musculares             </label> 
-                                            </div>
-                                            <div class="col icheck-danger d-inline">
-                                                <input type="checkbox" name="pregunta2_d" value=1 id="checkboxPrimary26">
-                                                <label for="checkboxPrimary26">Parestesias                      </label>
-                                            </div>
-                                            <div class="col icheck-danger d-inline">
-                                                <input type="checkbox" name="pregunta3_d" value=1 id="checkboxPrimary28">
-                                                <label for="checkboxPrimary28">Calor                            </label>
-                                            </div>
-                                            <div class="col icheck-danger d-inline">
-                                                <input type="checkbox" name="pregunta4_d" value=1 id="checkboxPrimary30">
-                                                <label for="checkboxPrimary30">Cambios de coloración de la piel </label>
-                                            </div>
-                                            <div class="col icheck-danger d-inline">
-                                                <input type="checkbox" name="pregunta5_d" value=1 id="checkboxPrimary32">
-                                                <label for="checkboxPrimary32">Tumefacción                      </label>
-                                            </div>
-                                        </div>
-                                    <!-- / -->
-                                    <!-- Caracterización semiológica -->
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <label for="">Caracterización semiológica:</label>
-                                        </div>
+                                    <div class="row">
                                         <div class="col-6">
-                                            <label><input type="radio" name="grado" value="Grado 0: Ausencia de signos y síntomas."> Grado 0: Ausencia de signos y síntomas.</label>
+                                        <!-- Otros signos y sintomas presentes en el segmento involucrado -->
+                                            <label for="signos_1"> <u> Otros signos y sintomas presentes en el segmento involucrado:</u> </label>
+                                            <div class="form-group">
+                                                <div class="icheck-danger d-inline">
+                                                    <input type="checkbox" name="pregunta1_d" value=1 id="checkboxPrimary24">
+                                                    <label for="checkboxPrimary24">Calambres musculares             </label> 
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="icheck-danger d-inline">
+                                                    <input type="checkbox" name="pregunta2_d" value=1 id="checkboxPrimary26">
+                                                    <label for="checkboxPrimary26">Parestesias                      </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="icheck-danger d-inline">
+                                                    <input type="checkbox" name="pregunta3_d" value=1 id="checkboxPrimary28">
+                                                    <label for="checkboxPrimary28">Calor                            </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="icheck-danger d-inline">
+                                                    <input type="checkbox" name="pregunta4_d" value=1 id="checkboxPrimary30">
+                                                    <label for="checkboxPrimary30">Cambios de coloración de la piel </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="icheck-danger d-inline">
+                                                    <input type="checkbox" name="pregunta5_d" value=1 id="checkboxPrimary32">
+                                                    <label for="checkboxPrimary32">Tumefacción                      </label>
+                                                </div>
+                                            </div>
                                         </div>
+                                        
                                         <div class="col-6">
-                                            <label><input type="radio" name="grado" value="Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva."> Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva.</label>
+                                        <!-- Caracterización semiológica -->
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <label for=""> <u> Caracterización semiológica:</u></label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label><input type="radio" name="grado" value="Grado 0: Ausencia de signos y síntomas."> Grado 0: Ausencia de signos y síntomas.</label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label><input type="radio" name="grado" value="Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva."> Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva.</label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label><input type="radio" name="grado" value="Grado 2: Grado 1 mas contractura y/o dolor a la movilización."> Grado 2: Grado 1 mas contractura y/o dolor a la movilización.</label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label><input type="radio" name="grado" value="Grado 3: Grado 2 mas dolor a la palpación y/o percusión."> Grado 3: Grado 2 mas dolor a la palpación y/o percusión.</label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label><input type="radio" name="grado" value="Grado 4: Grado 3 mas limitación funcional evidente clínicamente."> Grado 4: Grado 3 mas limitación funcional evidente clínicamente.</label>
+                                                </div>
+                                            </div>    
                                         </div>
-                                        <div class="col-6">
-                                            <label><input type="radio" name="grado" value="Grado 2: Grado 1 mas contractura y/o dolor a la movilización."> Grado 2: Grado 1 mas contractura y/o dolor a la movilización.</label>
-                                        </div>
-                                        <div class="col-6">
-                                            <label><input type="radio" name="grado" value="Grado 3: Grado 2 mas dolor a la palpación y/o percusión."> Grado 3: Grado 2 mas dolor a la palpación y/o percusión.</label>
-                                        </div>
-                                        <div class="col-6">
-                                            <label><input type="radio" name="grado" value="Grado 4: Grado 3 mas limitación funcional evidente clínicamente."> Grado 4: Grado 3 mas limitación funcional evidente clínicamente.</label>
-                                        </div>
-                                    </div>                                 
+                                    </div>          
                                     <div class="form-group row">
                                         <div class="col">
                                             <label for="observacion1">Observación: </label>
-                                            <input type="text" class="form-control" id="observacion1_s"  name="observacion1_s"  placeholder="Ingrese alguna observacion...">
+                                            <input type="text" class="form-control" id="observacion1_s"  name="observacion1_s"  placeholder="Observación">
                                         </div>
                                     </div>
                                 </div>
@@ -385,7 +399,7 @@
                         </div>
                     <!-- / Características del dolor -->
                     <!-- Firma -->
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-12">
                             <div class="card ">
                                 <div class="card-header header-bg">
                                     <h3 class="card-title">Firma del Paciente</h3>
@@ -394,25 +408,25 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group">
-                                        <div id="signature-pad" class="jay-signature-pad">
-                                            <div class="jay-signature-pad--body">
-                                                <canvas id="jay-signature-pad" width=550 height=200></canvas>
-                                            </div>
-                                            <div class="signature-pad--footer txt-center">
-                                                <div class="signature-pad--actions txt-center">
-                                                    <div>
-                                                        <br>
-                                                        <button type="button" class="button clear btn btn-dark" data-action="clear"><i class="fa fa-eraser" aria-hidden="true"></i>...Limpiar</button>
-                                                        <button type="button" class="button btn btn-dark" data-action="change-color"><i class="fas fa-palette"></i> Cambiar color</button>
-                                                        <!--<button type="button" class="button save btn btn-dark" data-action="save-svg"><i class="fas fa-save"></i> Guardar como SVG</button>-->
-
+                                    <div class="row justify-content-center">
+                                        <div class="form-group">
+                                            <div id="signature-pad" class="jay-signature-pad">
+                                                <div class="jay-signature-pad--body">
+                                                    <canvas id="jay-signature-pad" width=550 height=200></canvas>
+                                                </div>
+                                                <div class="signature-pad--footer txt-center">
+                                                    <div class="signature-pad--actions txt-center">
+                                                        <div>
+                                                            <br>
+                                                            <button type="button" class="button clear btn btn-dark" data-action="clear"><i class="fa fa-eraser" aria-hidden="true"></i>...Limpiar</button>
+                                                            <button type="button" class="button btn btn-dark" data-action="change-color"><i class="fas fa-palette"></i> Cambiar color</button>
+                                                            <!--<button type="button" class="button save btn btn-dark" data-action="save-svg"><i class="fas fa-save"></i> Guardar como SVG</button>-->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

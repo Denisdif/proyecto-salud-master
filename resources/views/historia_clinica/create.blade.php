@@ -17,818 +17,822 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header fondo2 ">
                 <div class="card-title">
-                    <p style="font-size:130%"> <i class="fas fa-stethoscope"></i> Historia Clinica</p>
+                    <p style="font-size:130%"> <i class="fas fa-stethoscope"></i> Historia Clínica</p>
                 </div>
             </div>
             <div class="card-body">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <label>Seleccionar Paciente</label>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="row">
-                        <!-- Seleccionar Obra Social -->
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <label for="obra_social_id">Obra Social</label>
-                            <div class="form-group">
-                                <select
-                                    name="obra_social_id"
-                                    id="obra_social_id"
-                                    class="obra_social_id custom-select"
-                                    required>
-                                    <option
-                                        value="0"
-                                        disabled="true"
-                                        selected="true"
-                                        title="-Seleccione la obra social-">
-                                        -Seleccione una obra social-
-                                    </option>
-                                    @foreach ($obra_sociales as $obra_social)
-                                        <option
-                                            value="{{$obra_social->id }}">{{$obra_social->obraSocialCompleta()}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                <a data-target="#modal-agregarObraSocial" data-toggle="modal">
-                                    <button title="agregar obra social" class="btn btn-dark btn-md">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </a>
-                                @include('obra_social.modalAgregarObraSocial')
+                <div class="row">
+                    <!-- Voucher -->
+                    <input type="number" name="voucher_id" value={{$voucher->id}} hidden>
+                    <!-- Descripción  -->
+                    <div class="col-12">
+                        <div class="card" >
+                            <div class="card-header header-bg">
+                                <h3 class="card-title">Descripción</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>
+                                            DIRIGIDA A LA TAREA DESEMPEÑADA Y ORIENTADA A LA INVESTIGACION DE AGENTES DE RIESGO Y SU 
+                                            REPERCUSION CLINICA EN EL EXAMINADO. <br> INCLUYE EL ANEXO I (ART. 13 Y 14 RESOLUCION S.R.T. 43/97)
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <!-- Instrucciones -->
+                    <div class="col-12">
+                        <div class="card" >
+                            <div class="card-header header-bg">
+                                <h3 class="card-title">Instrucciones para el formulario</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul>
+                                            <li><p>Completar los campos de los items que correspondan.</p></li>
+                                            <li><p>Dejar vacíos los campos de los items que no correspondan.</p></li>
+                                        </ul> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Examen clinico  -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Examen Clínico</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Estatura:</label>
+                                        <input class="form-control" type="number" name="estatura" placeholder="Estatura">
+                                    </div>
+                                    <div class="col">
+                                        <label for="" class="form-label">Peso:</label>
+                                        <input class="form-control" type="number" name="peso" placeholder="Peso">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Índice MC:</label>
+                                        <input class="form-control" type="number" name="imc" placeholder="IMC">
+                                    </div>
+                                    <div class="col" style="text-align: center;padding-top: 5%" >
+                                        <div class="icheck-danger d-inline" style="">
+                                            <input value=1 type="checkbox" name="sobrepeso" id="sobrepeso">
+                                            <label for="sobrepeso">Sobrepeso</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Medicación actual:</label>
+                                        <input class="form-control" type="text" name="medicacion_actual" placeholder="Medicación...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cardiovascular -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Cardiovascular</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Frecuencia cardíaca:</label>
+                                        <input class="form-control" type="text" name="frecuencia_cardiaca" placeholder="Frecuencia cardíaca">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Várices:</label>
+                                        <input class="form-control" type="text" name="observacion_varices" placeholder="Si corresponde, indique el tipo">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-4">
+                                        <label for="">Tensión arterial:</label>
+                                    </div>
+                                    <div class="col-2">
+                                        <label><input type="radio" name="tension_arterial" value=0>N</label>
+                                    </div>
+                                    <div class="col-2">
+                                        <label><input type="radio" name="tension_arterial" value=1>S</label>
+                                    </div>
+                                </div> 
+                                <div class="form-group row">
+                                    <div class="col-4">
+                                        <label for="">Pulso:</label>
+                                    </div>
+                                    <div class="col-2">
+                                        <label><input type="radio" name="pulso" value=0>A</label>
+                                    </div>
+                                    <div class="col-2">
+                                        <label><input type="radio" name="pulso" value=1>N</label>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Neurológico -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Neurológico</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Instrucciones -->
+                                <div class="row">
+                                    <div class="card text-white bg-light col" style="width: max-content">
+                                      <div class="card-body">
+                                        <h4 class="card-title"><b>Instrucciones:</b></h4><br>
+                                        <p>                                        
+                                            <ul>
+                                                <li>Si corresponde alguno de estos items, describirlos.</li>
+                                                <li>En caso de que corresponda y no se desee ingresar una descripción, escriba "Si".</li>
+                                                <li>Si el item no corresponde, dejar el campo en vacío.</li>
+                                            </ul> 
+                                        </p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!-- Motilidad activa -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Motilidad activa</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion1_neu">
+                                    </div>
+                                </div>
+                                <!-- Motilidad pasiva -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Motilidad pasiva</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion2_neu">
+                                    </div>
+                                </div>
+                                <!-- Sensibilidad -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Sensibilidad</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion3_neu">
+                                    </div>
+                                </div>
+                                <!-- Marcha -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Marcha</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion4_neu">
+                                    </div>
+                                </div>
+                                <!-- Reflejos osteotendinosos -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Reflejos osteotendinosos</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion5_neu">
+                                    </div>
+                                </div>
+                                <!-- Pares craneales -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Pares craneales</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion6_neu">
+                                    </div>
+                                </div>
+                                <!-- Taxia -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Taxia</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion7_neu">
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones" type="text" name="observacion_neu">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Piel -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Piel</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Cicatrices -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">¿Cicatrices patológicas visibles?          </label>
+                                        <input class="form-control" type="text" name="observacion1_piel" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Vesícula -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Vesículas                                   </label>
+                                        <input class="form-control" type="text" name="obs_vesicula" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Ulceras -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Ulceras                                    </label>
+                                        <input class="form-control" type="text" name="obs_ulceras" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Fisuras -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Fisuras                                    </label>
+                                        <input class="form-control" type="text" name="obs_fisuras" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Prurito -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Prurito                                    </label>
+                                        <input class="form-control" type="text" name="obs_prurito" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Eczemas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Eczemas                                    </label>
+                                        <input class="form-control" type="text" name="obs_eczemas" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Dermatitis -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Dermatitis                                 </label>
+                                        <input class="form-control" type="text" name="obs_dertmatitis" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Eritemas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Eritemas                                   </label>
+                                        <input class="form-control" type="text" name="obs_eritemas" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Petequias -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Petequias                                  </label>
+                                        <input class="form-control" type="text" name="obs_petequias" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                                <!-- Tejido celular subcutaneo -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Tejido celular subcutaneo                                  </label>
+                                        <input class="form-control" type="text" name="tejido" placeholder="Describa si corresponde...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Osteoarticular -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Osteoarticular</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Limitaciones funcionales -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Limitaciones funcionales</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion1_os">
+                                    </div>
+                                </div>
+                                <!-- Amputaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Amputaciones</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion2_os">
+                                    </div>
+                                </div>
+                                <!-- Movilidad y reflejo -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Movilidad y reflejo</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion3_os">
+                                    </div>
+                                </div>
+                                <!-- Tonicidad y fuerza muscular normal -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Tonicidad y fuerza muscular normal</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion4_os">
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones" type="text" name="observacion_os">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Columna vertebral -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Columna vertebral</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Examen normal -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Examen normal</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion1_col">
+                                    </div>
+                                </div>
+                                <!-- Contracturas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Contracturas</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion2_col">
+                                    </div>
+                                </div>
+                                <!-- Puntos dolorosos -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Puntos dolorosos</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion3_col">
+                                    </div>
+                                </div>
+                                <!-- Limitaciones funcionales -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Limitaciones funcionales</label>
+                                        <input class="form-control" placeholder="Describa si corresponde..." type="text" name="observacion4_col">
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones" type="text" name="observacion_col">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cabeza y cuello -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Cabeza y cuello</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Instrucciones -->
+                                <div class="row">
+                                    <div class="card text-white bg-light col" style="width: max-content">
+                                      <div class="card-body">
+                                        <h4 class="card-title"><b>Instrucciones:</b></h4><br>
+                                        <p>                                        
+                                            <ul>
+                                                <li>Si posee alguna anormalidad en estos items, describir.</li>
+                                                <li>Si no posee anormalidades, dejar el campo en vacío.</li>
+                                            </ul> 
+                                        </p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!-- Cráneo -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Cráneo</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion1_cc">
+                                    </div>
+                                </div>
+                                <!-- Cara -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Cara</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion2_cc">
+                                    </div>
+                                </div>
+                                <!-- Nariz -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Nariz</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion3_cc">
+                                    </div>
+                                </div>
+                                <!-- Oídos -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Oídos</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion4_cc">
+                                    </div>
+                                </div>  
+                                <!-- Boca -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Boca</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion5_cc">
+                                    </div>
+                                </div>   
+                                <!-- Cuello y Tiroides -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Cuello y Tiroides</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion6_cc">
+                                    </div>
+                                </div>                 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Oftalmológico -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Oftalmológico</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Pupilas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Pupilas</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion1_of">
+                                    </div>
+                                </div>
+                                <!-- Corneas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Corneas</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion2_of">
+                                    </div>
+                                </div>
+                                <!-- Conjuntivas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Conjuntivas</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion3_of">
+                                    </div>
+                                </div>
+                                <!-- Visión en colores -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Visión en colores</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion4_of">
+                                    </div>
+                                </div>
+                                <!-- Ojo derecho -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Ojo derecho</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion5_of">
+                                    </div>
+                                </div>
+                                <!-- Ojo izquierdo -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Ojo izquierdo</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion6_of">
+                                    </div>
+                                </div>
+                                <!-- Usa lentes -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <div class="icheck-danger d-inline">
+                                            <input value=1 type="checkbox" name="pregunta7_of" id="pregunta7_of">
+                                            <label for="pregunta7_of">Usa lentes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones" type="text" name="observacion_of">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Abdomen -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Abdomen</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Forma -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Forma</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion1_ab">
+                                    </div>
+                                </div>
+                                <!-- Hígado -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Hígado</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion2_ab">
+                                    </div>
+                                </div>
+                                <!-- Bazo -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Bazo</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion3_ab">
+                                    </div>
+                                </div>
+                                <!-- Colon -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Colon</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion4_ab">
+                                    </div>
+                                </div>
+                                <!-- Ruidos hidroaéreos -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Ruidos hidroaéreos</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion5_ab">
+                                    </div>
+                                </div>
+                                <!-- Puño percusión -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Puño percusión</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion6_ab">
+                                    </div>
+                                </div>
+                                <!-- Cicatrices quirúrjicas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Cicatrices quirúrjicas</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion_ab">
+                                    </div>
+                                </div>
 
-                        <!--Procedencia -->
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <label for="origen_id">Procedencia</label>
-                            <div class="form-group">
-                                <select
-                                    name="origen_id"
-                                    id="origen_id"
-                                    class="origen_id custom-select"
-                                    required>
-                                    <option
-                                        value="0"
-                                        disabled="true"
-                                        selected="true"
-                                        title="-Seleccione la procedencia-">
-                                        -Seleccione la procedencia-
-                                    </option>
-                                    @foreach ($origenes as $origen)
-                                        <option
-                                            value="{{$origen->id }}">{{$origen->definicion}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                <a data-target="#modal-agregarOrigen" data-toggle="modal">
-                                    <button title="agregar procedencia" class="btn btn-dark btn-md">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </a>
-                                @include('origen.modalAgregarOrigen')
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <!-- Voucher -->
-        <input type="number" name="voucher_id" value={{$voucher->id}} hidden>
-        <!-- Examen clinico  -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">Examen Clínico</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Estatura:</label>
-                            <input class="form-control" type="number" name="estatura">
-                        </div>
-                        <div class="col">
-                            <label for="" class="form-label">Peso:</label>
-                            <input class="form-control" type="number" name="peso">
-                        </div>
-                        <div class="col">
-                            <div class="icheck-danger d-inline">
-                                <input value=1 type="checkbox" name="sobrepeso" id="sobrepeso">
-                                <label for="sobrepeso">Sobrepeso</label>
+                    <!-- Odontológico -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Odontológico</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Encias y mucosas -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Encias y mucosas</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion1_od">
+                                    </div>
+                                </div>
+                                <!-- Esmalte dental -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Esmalte dental</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion2_od">
+                                    </div>
+                                </div>
+                                <!-- Prótesis -->
+                                <h3>Prótesis</h3>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Superior</label>
+                                        <input class="form-control" placeholder="Indique si posee..." type="text" name="superior">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Inferior</label>
+                                        <input class="form-control" placeholder="Indique si posee..." type="text" name="inferior">
+                                    </div>
+                                </div>
+                                <!-- Caries -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <div class="icheck-danger d-inline">
+                                            <input value=1 type="checkbox" name="pregunta4_od" id="pregunta4_od">
+                                            <label for="pregunta4_od">Caries</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Faltan piezas dentarias -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <div class="icheck-danger d-inline">
+                                            <input value=1 type="checkbox" name="pregunta5_od" id="pregunta5_od">
+                                            <label for="pregunta5_od">Faltan piezas dentarias</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones" type="text" name="observacion_od">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Índice MC:</label>
-                            <input class="form-control" type="number" name="imc">
-                        </div>
-                        <div class="col">
-                            <label for="" class="form-label">Medicación actual:</label>
-                            <input class="form-control" type="text" name="medicacion_actual">
+                    <!-- Tórax y aparato respiratorio -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Tórax y aparato respiratorio</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Caja torácica -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Caja torácica</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion1_re">
+                                    </div>
+                                </div>
+                                <!-- Pulmones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Pulmones</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion2_re">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Cardiovascular -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">CARDIOVASCULAR</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                    <!-- Regiones inguinales -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Regiones inguinales</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Tono de la pared posterior -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Tono de la pared posterior</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion1_in">
+                                    </div>
+                                </div>
+                                <!-- Orificios superficiales -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Orificios superficiales</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion2_in">
+                                    </div>
+                                </div>
+                                <!-- Orificios profundos -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Orificios profundos</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion3_in">
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones" type="text" name="observacion_in">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card-body">
+                    <!-- Genitales -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Genitales</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Características -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Características</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades" type="text" name="observacion1_ge">
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones." type="text" name="observacion_ge">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Región anal -->
+                    <div class="col-6">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Región anal</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Características -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Características</label>
+                                        <input class="form-control" placeholder="Describa las anormalidades" type="text" name="observacion1_an">
+                                    </div>
+                                </div>
+                                <!-- Observaciones -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Observaciones</label>
+                                        <input class="form-control" placeholder="Observaciones" type="text" name="observacion_an">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARGA DE ARCHIVO -->
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">CARGA DE ARCHIVO</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <label for="">archivo</label>
+                                <input name="archivo" id="archivo" type="file">
                     
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Frecuencia cardíaca:</label>
-                            <input class="form-control" type="text" name="frecuencia_cardiaca">
-                        </div>
-
-                        <div class="col">
-                            <label for="" class="form-label">Tipo:</label>
-                            <input class="form-control" type="text" name="observacion_varices">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col">
-                            <div class="icheck-danger d-inline">
-                                <input value=1 type="checkbox" name="tension_arterial" id="tension_arterial">
-                                <label for="tension_arterial">Tensión arterial S.</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="icheck-danger d-inline">
-                                <input value=1 type="checkbox" name="pulso" id="pulso">
-                                <label for="pulso">Pulso N.</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="icheck-danger d-inline">
-                                <input value=1 type="checkbox" name="varices" id="varices">
-                                <label for="varices">Várices.</label>
+                                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="guardar">
+                                    <div class="form-group">
+                                        <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
+                                            <button class="btn btn-success btn-lg btn-block" id="btn_add"type="submit"><i class="fa fa-check"> </i>Cargar al formulario</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Piel -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">Piel</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Cicatrices -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">¿Cicatrices patológicas visibles?          </label>
-                            <input class="form-control" type="text" name="observacion1_piel" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Vesícula -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Vesícula                                   </label>
-                            <input class="form-control" type="text" name="obs_vesicula" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Ulceras -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Ulceras                                    </label>
-                            <input class="form-control" type="text" name="obs_ulceras" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Fisuras -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Fisuras                                    </label>
-                            <input class="form-control" type="text" name="obs_fisuras" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Prurito -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Prurito                                    </label>
-                            <input class="form-control" type="text" name="obs_prurito" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Eczemas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Eczemas                                    </label>
-                            <input class="form-control" type="text" name="obs_eczemas" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Dermatitis -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Dermatitis                                 </label>
-                            <input class="form-control" type="text" name="obs_dertmatitis" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Eritemas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Eritemas                                   </label>
-                            <input class="form-control" type="text" name="obs_eritemas" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Petequias -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Petequias                                  </label>
-                            <input class="form-control" type="text" name="obs_petequias" placeholder="descripciones">
-                        </div>
-                    </div>
-                    <!-- Tejido celular subcutaneo -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Tejido celular subcutaneo                                  </label>
-                            <input class="form-control" type="text" name="tejido" placeholder="descripciones">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Neurológico -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">Neurológico</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Motilidad activa -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Motilidad activa</label>
-                            <input class="form-control" type="text" name="observacion1_neu">
-                        </div>
-                    </div>
-                    <!-- Motilidad pasiva -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Motilidad pasiva</label>
-                            <input class="form-control" type="text" name="observacion2_neu">
-                        </div>
-                    </div>
-                    <!-- Sensibilidad -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Sensibilidad</label>
-                            <input class="form-control" type="text" name="observacion3_neu">
-                        </div>
-                    </div>
-                    <!-- Marcha -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Marcha</label>
-                            <input class="form-control" type="text" name="observacion4_neu">
-                        </div>
-                    </div>
-                    <!-- Reflejos osteotendinosos -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Reflejos osteotendinosos</label>
-                            <input class="form-control" type="text" name="observacion5_neu">
-                        </div>
-                    </div>
-                    <!-- Pares craneales -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Pares craneales</label>
-                            <input class="form-control" type="text" name="observacion6_neu">
-                        </div>
-                    </div>
-                    <!-- Taxia -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Taxia</label>
-                            <input class="form-control" type="text" name="observacion7_neu">
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_neu">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- OSTEOARTICULAR -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">OSTEOARTICULAR</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Limitaciones funcionales -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Limitaciones funcionales</label>
-                            <input class="form-control" type="text" name="observacion1_os">
-                        </div>
-                    </div>
-                    <!-- Amputaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Amputaciones</label>
-                            <input class="form-control" type="text" name="observacion2_os">
-                        </div>
-                    </div>
-                    <!-- Movilidad y reflejo -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Movilidad y reflejo</label>
-                            <input class="form-control" type="text" name="observacion3_os">
-                        </div>
-                    </div>
-                    <!-- Tonicidad y fuerza muscular normal -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Tonicidad y fuerza muscular normal</label>
-                            <input class="form-control" type="text" name="observacion4_os">
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_os">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- COLUMNA VERTEBRAL -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">COLUMNA VERTEBRAL</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Examen normal -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Examen normal</label>
-                            <input class="form-control" type="text" name="observacion1_col">
-                        </div>
-                    </div>
-                    <!-- Contracturas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Contracturas</label>
-                            <input class="form-control" type="text" name="observacion2_col">
-                        </div>
-                    </div>
-                    <!-- Puntos dolorosos -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Puntos dolorosos</label>
-                            <input class="form-control" type="text" name="observacion3_col">
-                        </div>
-                    </div>
-                    <!-- Limitaciones funcionales -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Limitaciones funcionales</label>
-                            <input class="form-control" type="text" name="observacion4_col">
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_col">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- CABEZA Y CUELLO -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">CABEZA Y CUELLO</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Cráneo -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Cráneo</label>
-                            <input class="form-control" type="text" name="observacion1_cc">
-                        </div>
-                    </div>
-                    <!-- Cara -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Cara</label>
-                            <input class="form-control" type="text" name="observacion2_cc">
-                        </div>
-                    </div>
-                    <!-- Nariz -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Nariz</label>
-                            <input class="form-control" type="text" name="observacion3_cc">
-                        </div>
-                    </div>
-                    <!-- Oídos -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Oídos</label>
-                            <input class="form-control" type="text" name="observacion4_cc">
-                        </div>
-                    </div>  
-                    <!-- Boca -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Boca</label>
-                            <input class="form-control" type="text" name="observacion5_cc">
-                        </div>
-                    </div>   
-                    <!-- Cuello y Tiroides -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Cuello y Tiroides</label>
-                            <input class="form-control" type="text" name="observacion6_cc">
-                        </div>
-                    </div>                 
-                </div>
-            </div>
-        </div>
-        <!-- OFTALMOLÓGICO -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">OFTALMOLÓGICO</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Pupilas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Pupilas</label>
-                            <input class="form-control" type="text" name="observacion1_of">
-                        </div>
-                    </div>
-                    <!-- Corneas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Corneas</label>
-                            <input class="form-control" type="text" name="observacion2_of">
-                        </div>
-                    </div>
-                    <!-- Conjuntivas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Conjuntivas</label>
-                            <input class="form-control" type="text" name="observacion3_of">
-                        </div>
-                    </div>
-                    <!-- Visión en colores -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Visión en colores</label>
-                            <input class="form-control" type="text" name="observacion4_of">
-                        </div>
-                    </div>
-                    <!-- Ojo derecho -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Ojo derecho</label>
-                            <input class="form-control" type="text" name="observacion5_of">
-                        </div>
-                    </div>
-                    <!-- Ojo izquierdo -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Ojo izquierdo</label>
-                            <input class="form-control" type="text" name="observacion6_of">
-                        </div>
-                    </div>
-                    <!-- Usa lentes -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <div class="icheck-danger d-inline">
-                                <input value=1 type="checkbox" name="pregunta7_of" id="pregunta7_of">
-                                <label for="pregunta7_of">Usa lentes</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_of">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ODONTOLÓGICO -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">ODONTOLÓGICO</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Encias y mucosas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Encias y mucosas</label>
-                            <input class="form-control" type="text" name="observacion1_od">
-                        </div>
-                    </div>
-                    <!-- Esmalte dental -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Esmalte dental</label>
-                            <input class="form-control" type="text" name="observacion2_od">
-                        </div>
-                    </div>
-                    <!-- Prótesis -->
-                    <h3>Prótesis</h3>
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Superior</label>
-                            <input class="form-control" type="text" name="superior">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Inferior</label>
-                            <input class="form-control" type="text" name="inferior">
-                        </div>
-                    </div>
-                    <!-- Caries -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <div class="icheck-danger d-inline">
-                                <input value=1 type="checkbox" name="pregunta4_od" id="pregunta4_od">
-                                <label for="pregunta4_od">Caries</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Faltan piezas dentarias -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <div class="icheck-danger d-inline">
-                                <input value=1 type="checkbox" name="pregunta5_od" id="pregunta5_od">
-                                <label for="pregunta5_od">Faltan piezas dentarias</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_od">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ABDOMEN -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">ABDOMEN</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Forma -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Forma</label>
-                            <input class="form-control" type="text" name="observacion1_ab">
-                        </div>
-                    </div>
-                    <!-- Hígado -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Hígado</label>
-                            <input class="form-control" type="text" name="observacion2_ab">
-                        </div>
-                    </div>
-                    <!-- Bazo -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Bazo</label>
-                            <input class="form-control" type="text" name="observacion3_ab">
-                        </div>
-                    </div>
-                    <!-- Colon -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Colon</label>
-                            <input class="form-control" type="text" name="observacion4_ab">
-                        </div>
-                    </div>
-                    <!-- Ruidos hidroaéreos -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Ruidos hidroaéreos</label>
-                            <input class="form-control" type="text" name="observacion5_ab">
-                        </div>
-                    </div>
-                    <!-- Puño percusión -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Puño percusión</label>
-                            <input class="form-control" type="text" name="observacion6_ab">
-                        </div>
-                    </div>
-                    <!-- Cicatrices quirúrjicas -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Cicatrices quirúrjicas</label>
-                            <input class="form-control" type="text" name="observacion_ab">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- TORAX Y APARTO RESPIRATORIO -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">TORAX Y APARTO RESPIRATORIO</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Caja torácica -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Caja torácica</label>
-                            <input class="form-control" type="text" name="observacion1_re">
-                        </div>
-                    </div>
-                    <!-- Pulmones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Pulmones</label>
-                            <input class="form-control" type="text" name="observacion2_re">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- REGIONES INGUINALES -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">REGIONES INGUINALES</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Tono de la pared posterior -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Tono de la pared posterior</label>
-                            <input class="form-control" type="text" name="observacion1_in">
-                        </div>
-                    </div>
-                    <!-- Orificios superficiales -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Orificios superficiales</label>
-                            <input class="form-control" type="text" name="observacion2_in">
-                        </div>
-                    </div>
-                    <!-- Orificios profundos -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Orificios profundos</label>
-                            <input class="form-control" type="text" name="observacion3_in">
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_in">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- GENITALES -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">GENITALES</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Características -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Características</label>
-                            <input class="form-control" type="text" name="observacion1_ge">
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_ge">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- REGIÓN ANAL -->
-        <div class="col-6">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">REGIÓN ANAL</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Características -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Características</label>
-                            <input class="form-control" type="text" name="observacion1_an">
-                        </div>
-                    </div>
-                    <!-- Observaciones -->
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="" class="form-label">Observaciones</label>
-                            <input class="form-control" type="text" name="observacion_an">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- CARGA DE ARCHIVO -->
-        <div class="col-12">
-            <div class="card card-dark">
-                <div class="card-header">
-                    <h3 class="card-title">CARGA DE ARCHIVO</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <label for="">archivo</label>
-                    <input name="archivo" id="archivo" type="file">
-        
-                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="guardar">
-                        <div class="form-group">
-                            <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
-                                <button class="btn btn-success btn-lg btn-block" id="btn_add"type="submit"><i class="fa fa-check"> </i>Cargar al formulario</button>
-                        </div>
-                    </div>
-                </div>
+                </div>  
             </div>
         </div>
     </div>

@@ -50,7 +50,8 @@ class PosicionesForzada extends Model
                 $matriz = [];
                 $diagnostico = "<b>TAREAS</b><br>";
                 //Carga variables
-                    $matriz[] = [       //TAREAS
+                    $matriz[] = [       
+                                        //TAREAS
                                         $this->tarea->tiempo,
                                         $this->tarea->ciclo,
                                         $this->tarea->cargas,
@@ -122,17 +123,16 @@ class PosicionesForzada extends Model
                 for ($i=0; $i < sizeof($matriz[1]); $i++) {
                     if ($matriz[0][$i] != null) {
                         if ($matriz[0][$i] == 1) {
-                            $diagnostico = $diagnostico."<u>".$matriz[1][$i]."</u>"."Si"."<br>";
+                            $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>"."<br>";
                         }else{
                             if ($matriz[0][$i] == " ") {
-                                $diagnostico = $diagnostico.$matriz[1][$i].$matriz[0][$i];
+                                $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
                             }else{
-                                $diagnostico = $diagnostico."<u>".$matriz[1][$i]."</u>".$matriz[0][$i]."<br>";
+                                $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>"."<br>";
                             }
                         }
                     }
                 };
-            
                 return $diagnostico;
             }
 }

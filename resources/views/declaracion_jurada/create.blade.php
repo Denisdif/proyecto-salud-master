@@ -36,64 +36,99 @@
 </style>
 
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header fondo2">
                 <div class="card-title">
                     <p style="font-size:130%"> <i class="fas fa-stethoscope"></i> Declaración jurada de Salud</p>
                 </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="row">
+                <div class="col">
+                    <div class="col-12">
                         <!-- Voucher -->
                         <input type="number" name="voucher_id" value={{$voucher->id}} hidden>
-                        <!-- Seleccionar Medico -->
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label>Seleccionar Medico</label>
-                                <select
-                                    name="personal_clinica_id"
-                                    id="personal_clinica_id"
-                                    class="personal_clinica_id custom-select"
-                                    >
-                                    <option
-                                        value="0"
-                                        disabled="true"
-                                        selected="true"
-                                        title="-Seleccione un medico-">
-                                        -Seleccione un medico-
-                                    </option>
-                                    @foreach ($personal_clinicas as $personal_clinica)
-                                        <option value="{{$personal_clinica->id }}">{{$personal_clinica->nombreCompleto() . " - " . $personal_clinica->puesto->nombre}}</option>
-                                    @endforeach
-                                </select>
+                    </div>
+                    <!-- Instrucciones -->
+                    <div class="col-12">
+                        <div class="card" >
+                            <div class="card-header header-bg">
+                                <h3 class="card-title">Instrucciones para el formulario</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul>
+                                            <li><p>Completar los campos de los items que correspondan.</p></li>
+                                            <li><p>Dejar vacíos los campos de los items que no correspondan.</p></li>
+                                        </ul> 
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <label>Estatura</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <!-- Datos de paciente -->
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
+                                <h3 class="card-title">Datos de paciente</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
                                 </div>
-                                <input type="text" name="estatura" placeholder="Ingrese la estatura" class="form-control" title="Ingrese la Estatura" required>
                             </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <label>Peso</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Seleccionar Medico</label>
+                                            <select
+                                                name="personal_clinica_id"
+                                                id="personal_clinica_id"
+                                                class="personal_clinica_id custom-select"
+                                                >
+                                                <option
+                                                    value="0"
+                                                    disabled="true"
+                                                    selected="true"
+                                                    title="-Seleccione un medico-">
+                                                    -Seleccione un medico-
+                                                </option>
+                                                @foreach ($personal_clinicas as $personal_clinica)
+                                                    <option value="{{$personal_clinica->id }}">{{$personal_clinica->nombreCompleto() . " - " . $personal_clinica->puesto->nombre}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Estatura</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                            </div>
+                                            <input type="text" name="estatura" placeholder="Ingrese la estatura" class="form-control" title="Ingrese la Estatura" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Peso</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                            </div>
+                                            <input type="text" name="peso" placeholder="Ingrese el peso" class="form-control" title="Ingrese el Peso" required>
+                                        </div>
+                                    </div>
                                 </div>
-                                <input type="text" name="peso" placeholder="Ingrese el peso" class="form-control" title="Ingrese el Peso" required>
                             </div>
                         </div>
                     </div>
                     <!-- Antecedentes Familiares -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark">
-                            <div class="card-header">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
                                 <h3 class="card-title">Antecedentes Familiares</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
@@ -122,14 +157,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3>¿Su madre o padre padece alguna de las siguientes afecciones?</h3>
+                                    <label for=""><u>Su madre o padre padece alguna de las siguientes afecciones: </u></label>
+                                    <h3></h3>
                                     <!-- Afecciones -->
                                     <div class="form-group row">
                                         <!-- Cancer -->
                                         <div class="col">
                                             <div class="icheck-danger d-inline">
                                                 <input value=1 type="checkbox" name="cancer" id="cancer">
-                                                <label for="cancer">Cancer</label>
+                                                <label for="cancer">Cáncer</label>
                                             </div>
                                         </div>
                                         <!-- Diabetes -->
@@ -156,17 +192,17 @@
                                     </div>
                                     <!-- Opcional: Ingrese algun detalle -->
                                     <div class="form-group row">
-                                        <label for="detalle">Ingrese algun detalle (Opcional):</label>
-                                        <input type="text" class="form-control" id="detalle"  name="detalle"  placeholder="Ingrese alguna observación...">
+                                        <label for="detalle">Si su padre o madre padecen alguna enfermedad actualmente, mencione el diagnóstico:</label>
+                                        <input type="text" class="form-control" id="detalle"  name="detalle"  placeholder="Diagnóstico">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Antecedentes Personales -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark">
-                            <div class="card-header">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
                                 <h3 class="card-title">Antecedentes Personales</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
@@ -174,42 +210,57 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
+                                    <!-- Instrucciones -->
+                                    <div class="row">
+                                        <div class="card text-white bg-light col" style="width: max-content">
+                                        <div class="card-body">
+                                            <h4 class="card-title"><b>Instrucciones:</b></h4><br>
+                                            <p>                                        
+                                                <ul>
+                                                    <li>Describir si corresponde.</li>
+                                                    <li>Indicar la cantidad.</li>
+                                                    <li>Si el ítem no corresponde, dejar el campo vacío.</li>
+                                                </ul> 
+                                            </p>
+                                        </div>
+                                        </div>
+                                    </div>
                                     <!-- Fuma -->
                                     <div class="form-group row">
                                         <label for="detalle">
                                             Fuma:
                                         </label>
-                                        <input type="text" class="form-control"  name="fuma"  placeholder="Ingrese cantidad si corresponde...">
+                                        <input type="text" class="form-control"  name="fuma"  placeholder="Describa e ingrese la cantidad si corresponde...">
                                     </div>
                                     <!-- Bebe -->
                                     <div class="form-group row">
                                         <label for="detalle">
                                             Bebe:
                                         </label>
-                                        <input type="text" class="form-control"  name="bebe"  placeholder="Ingrese cantidad si corresponde...">
+                                        <input type="text" class="form-control"  name="bebe"  placeholder="Describa e ingrese la cantidad si corresponde...">
                                     </div>
                                     <!-- Actividad fisica -->
                                     <div class="form-group row">
                                         <label for="detalle">
                                             Actividad física:
                                         </label>
-                                        <input type="text" class="form-control"  name="actividad_fisica"  placeholder="Ingrese cantidad si corresponde...">
+                                        <input type="text" class="form-control"  name="actividad_fisica"  placeholder="Describa e ingrese la cantidad si corresponde...">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Antecedentes de la Infancia -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark">
-                            <div class="card-header">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
                                 <h3 class="card-title">Antecedentes de la Infancia</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h3>¿Padeció algunas de las siguientes afecciones?</h3>
+                                <label for="">¿Padeció algunas de las siguientes afecciones?</label>
                                 <div class="form-group">
                                     <div class="row">
                                         <input type="hidden" name=sarampion value=0>
@@ -306,7 +357,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <label for="" class="form-label">Otras Afecciones:</label>
-                                            <input type="text" class="form-control" name="detalle1_m">
+                                            <input type="text" class="form-control" name="detalle1_m" placeholder="Describa...">
                                         </div>
                                     </div>
                                 </div>
@@ -314,9 +365,9 @@
                         </div>
                     </div>
                     <!-- Antecedentes Recientes -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark">
-                            <div class="card-header">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
                                 <h3 class="card-title">Antecedentes Recientes</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
@@ -324,6 +375,20 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
+                                    <!-- Instrucciones -->
+                                    <div class="row">
+                                        <div class="card text-white bg-light col" style="width: max-content">
+                                        <div class="card-body">
+                                            <h4 class="card-title"><b>Instrucciones:</b></h4><br>
+                                            <p>                                        
+                                                <ul>
+                                                    <li>Detalle si corresponde.</li>
+                                                    <li>Si el ítem no corresponde, dejar el campo vacío.</li>
+                                                </ul> 
+                                            </p>
+                                        </div>
+                                        </div>
+                                    </div>
                                     <!-- ¿Enfermedad de los ojos, oidos , nariz o garganta? -->
                                     <div class="form-group row">
                                         <label for="detalle">
@@ -427,9 +492,9 @@
                         </div>
                     </div>
                     <!-- Antecedentes Quirúrjicos -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark">
-                            <div class="card-header">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
                                 <h3 class="card-title">Antecedentes Quirúrjicos</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
@@ -462,42 +527,54 @@
                             </div>
                         </div>
                     </div>
+                    
+
                     <!-- Firma -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="card card-dark">
-                            <div class="card-header">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-header fondo2">
                                 <h3 class="card-title">Firma del Paciente</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <div id="signature-pad" class="jay-signature-pad">
-                                        <div class="jay-signature-pad--body">
-                                            <canvas id="jay-signature-pad" width=550 height=200></canvas>
-                                        </div>
-                                        <div class="signature-pad--footer txt-center">
-                                            <div class="signature-pad--actions txt-center">
-                                                <div>
-                                                    <br>
-                                                    <button type="button" class="button clear btn btn-dark" data-action="clear"><i class="fa fa-eraser" aria-hidden="true"></i>...Limpiar</button>
-                                                    <button type="button" class="button btn btn-dark" data-action="change-color"><i class="fas fa-palette"></i> Cambiar color</button>
-                                                    <!--<button type="button" class="button save btn btn-dark" data-action="save-svg"><i class="fas fa-save"></i> Guardar como SVG</button>-->
-
+                                <!-- Instrucciones -->
+                                <div class="row">
+                                    <div class="card text-white bg-light col" style="width: max-content">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><b>Declaración:</b></h4><br>
+                                        <p> Por la presente declaro bajo juramento que los datos de la presente declaración, de mi puño y
+                                            letra, son reales y corresponden a mi Historia Clínica Personal. </p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="form-group">
+                                        <div id="signature-pad" class="jay-signature-pad">
+                                            <div class="jay-signature-pad--body">
+                                                <canvas id="jay-signature-pad" width=550 height=200></canvas>
+                                            </div>
+                                            <div class="signature-pad--footer txt-center">
+                                                <div class="signature-pad--actions txt-center">
+                                                    <div>
+                                                        <br>
+                                                        <button type="button" class="button clear btn btn-dark" data-action="clear"><i class="fa fa-eraser" aria-hidden="true"></i>...Limpiar</button>
+                                                        <button type="button" class="button btn btn-dark" data-action="change-color"><i class="fas fa-palette"></i> Cambiar color</button>
+                                                        <!--<button type="button" class="button save btn btn-dark" data-action="save-svg"><i class="fas fa-save"></i> Guardar como SVG</button>-->
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                     <input type="hidden" name="firma" id="firma">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-12">
             <div class="form-group" style="text-align:center">
                 <label>
 

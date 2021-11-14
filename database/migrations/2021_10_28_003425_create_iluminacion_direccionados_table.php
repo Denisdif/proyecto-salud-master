@@ -16,11 +16,11 @@ class CreateIluminacionDireccionadosTable extends Migration
         Schema::create('iluminacion_direccionados', function (Blueprint $table) {
             //Atributos de formulario
                 $table->bigIncrements('id');
-                $table->string('puesto')->nullable();
-                $table->string('antiguedad')->nullable();
-                $table->string('direccion_completa')->nullable();
-                $table->string('observaciones')->nullable();
-                $table->text('diagnostico')->nullable();
+                $table->string('puesto')                        ->nullable();
+                $table->string('antiguedad')                    ->nullable();
+                $table->string('direccion_completa')            ->nullable();
+                $table->string('observaciones')                 ->nullable();
+                $table->text('diagnostico')                     ->nullable();
 
                 $table->unsignedBigInteger('voucher_id');
                 $table->foreign('voucher_id')->references('id')->on('vouchers')->onDelete('restrict');
