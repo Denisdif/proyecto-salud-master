@@ -15,10 +15,10 @@ class CreateDeclaracionJuradasTable extends Migration
     {
         Schema::create('declaracion_juradas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->binary('firma')->nullable();
+            $table->binary('firma')             ->nullable();
             $table->char('codigo',10);
-            $table->date('fecha_realizacion')->nullable();
-            $table->text('diagnostico')->nullable();
+            $table->date('fecha_realizacion')   ->nullable();
+            $table->text('diagnostico')         ->nullable();
             
             $table->unsignedBigInteger('personal_clinica_id');
             $table->foreign('personal_clinica_id')->references('id')->on('personal_clinicas')->onDelete('restrict');

@@ -17,7 +17,6 @@ class CreateCardiovascularesTable extends Migration
             $table->bigIncrements('id');
             $table->string('frecuencia_cardiaca')->nullable();
             $table->string('observacion_varices')->nullable();
-            $table->boolean('varices')->nullable();
             $table->boolean('tension_arterial')->nullable();
             $table->boolean('pulso')->nullable();
 
