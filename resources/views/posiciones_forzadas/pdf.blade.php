@@ -18,7 +18,7 @@
             text-align: right;
         }
         .letra11{ 
-            font-size: 10px;
+            font-size: 12px;
         }
         .subtitulo{
             font-weight: bold;

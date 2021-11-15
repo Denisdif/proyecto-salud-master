@@ -38,7 +38,6 @@ class EspiriometriaController extends Controller
             ]);
         $pdf->setPaper('a4','letter');
         return $pdf->stream('espiriometria.pdf');
-        
     }
 
     public function store(Request $request)

@@ -44,6 +44,20 @@ class Voucher extends Model implements Auditable
         return $estudios;
     }
 
+    //Devuelve todos los voucher-estudios a cargar del voucher
+    public function estudiosCargados()
+    {
+        $estudios = [];
+        foreach ($this->vouchersEstudios as $item) {
+            if (($item->estudio->nombre !="DECLARACION JURADA")and($item->estudio->nombre !="HISTORIA CLINICA")and($item->estudio->nombre !="POSICIONES FORZADAS")and($item->estudio->nombre !="ILUMINACION")) {
+                if ($item->archivo_adjunto){
+                    $estudios[] = $item;
+                }
+            }
+        }
+        return $estudios;
+    }
+
     //Devuelve todos los tipos de estudios de los estudios del voucher
     public function tiposEstudios()
     {

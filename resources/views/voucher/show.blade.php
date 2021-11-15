@@ -12,7 +12,8 @@
                     <p style="font-size:130%"> <i class="fa fa-voucher" aria-hidden="true"></i>Datos de Voucher</p>
                 </div>
                 <div class="card-tools">
-                    <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Informe Final</a>
+                    <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Informe Final Generar</a>
+                    <a href= {{ route('aptitudes.pdf',$voucher->id)}} class="btn fondo1">Informe Final PDF</a>
                 </div>
             </div>
             <div class="card-body">
