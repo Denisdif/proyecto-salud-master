@@ -31,10 +31,18 @@ class AptitudController extends Controller
         $posiciones_forzadas = $voucher->posicionesForzadas;
         $iluminacion_direccionado = $voucher->iluminacionDireccionado;
 
-        $diagnosticoD = $declaracion_jurada->generarDiagnostico();
-        $diagnosticoH = $historia_clinica->generarDiagnostico();
-        $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
-        $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
+        if ($declaracion_jurada) {
+            $diagnosticoD = $declaracion_jurada->generarDiagnostico();
+        }
+        if ($historia_clinica) {
+            $diagnosticoH = $historia_clinica->generarDiagnostico();
+        }
+        if ($posiciones_forzadas) {
+            $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
+        }
+        if ($iluminacion_direccionado) {
+            $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
+        }
 
         //Carga de estudios cargados
         $estudios = $voucher->estudiosCargados();

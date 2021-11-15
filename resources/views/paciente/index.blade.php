@@ -103,6 +103,13 @@
                                     </button>
                                 </a>
                             @endif
+
+
+                            <a href="{{URL::action('PacienteController@voucher',$paciente->id)}}">
+                                <button title="carpeta"  class="btn fondo3 btn-responsive">
+                                    <i style="color: rgb(255, 255, 255)" class="fas fa-folder"></i>
+                                </button>
+                            </a>
                    
 
                              <!-- aca colocar el modalshow-->

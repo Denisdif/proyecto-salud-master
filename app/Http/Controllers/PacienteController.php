@@ -15,12 +15,6 @@ use App\Domicilio;
 use App\Ciudad;
 use App\Pais;
 use App\Provincia;
-use App\Barrio;
-use App\Calle;
-use Intervention\Image\Facades\Image;
-use DB;
-use Session;
-use Illuminate\Support\Facades\Redirect;
 
 class PacienteController extends Controller
 {
@@ -360,6 +354,13 @@ class PacienteController extends Controller
         $pacienteRestaurar->update(['estado_id'=>1]);
         return redirect()->route('paciente.index');
 
+    }
+
+    public function voucher($id)
+    {
+        $paciente = Paciente::find($id);
+        $vouchers = $paciente->vouchers;
+        return view("paciente.vouchers", compact('vouchers','paciente'));
     }
 
 }
