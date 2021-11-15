@@ -4,8 +4,15 @@
     <li class="breadcrumb-item"><a href="/voucher">Indice de Vouchers</a></li>
     <li class="breadcrumb-item active">Datos de Voucher</li>
 @endsection
+
 @section('content')
     <div class="container col-12">
+        @if(Session::has('message'))
+        <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{Session::get('message')}}
+        </div>
+        @endif
         <div class="card">
             <div class="card-header fondo2">
                 <div class="card-title">
@@ -196,7 +203,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Archivo:</label>
-                        <input class="form-control-file" name="anexo" type="file">
+                        <input class="form-control-file" name="anexo" type="file" accept="application/pdf">
                     </div>
                     <div class="form-group">
                         <input type="text" name="voucher_estudio_id" class="form-control" id="voucher_estudio" hidden>
@@ -206,7 +213,7 @@
                 <!-- FOOTER -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn fondo1" >Guardar</button>
+                    <button type="submit" id="cargarPdf" class="btn fondo1" >Guardar</button>
                 </div>
             </form>
             </div>
