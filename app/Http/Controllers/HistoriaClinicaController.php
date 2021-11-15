@@ -24,18 +24,9 @@ use App\ObraSocial;
 use App\Origen;
 use App\Pais;
 use PDF;
-
-
 use Illuminate\Http\Request;
-
-
 class HistoriaClinicaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $historias_clinicas = HistoriaClinica::all();
@@ -67,6 +58,7 @@ class HistoriaClinicaController extends Controller
 
     public function store(Request $request)
     {
+        //Crear y buscar Models
         $n=HistoriaClinica::count() + 1;
         $voucher=Voucher::find($request->voucher_id);
         $historia_clinica=new HistoriaClinica();
@@ -84,8 +76,6 @@ class HistoriaClinicaController extends Controller
         $paciente->obra_social_id=$request->get('obra_social_id');
         $paciente->origen_id=$request->get('origen_id');
         $paciente->update();
-        //cuando la magia andaba... 
-        //Paciente::find($historia_clinica->paciente_id)->update(['historia_clinica'=>true]);
         
         //Carga de tablas
             //Examen Clinico
@@ -234,9 +224,6 @@ class HistoriaClinicaController extends Controller
                 $reganal->save();
             //
         //
-        
-        $historia_clinica->diagnostico = $historia_clinica->generarDiagnostico();
-        $historia_clinica->save();
 
         //Generar PDF y enlazarlo
             //Obtener voucher-estudio
@@ -260,28 +247,5 @@ class HistoriaClinicaController extends Controller
             $archivo_adjunto->save();
         //
         return redirect()->route('historia_clinica.index');
-    }
-
-
-    public function show(HistoriaClinica $historiaClinica)
-    {
-        //
-    }
-
-
-    public function edit(HistoriaClinica $historiaClinica)
-    {
-        //
-    }
-
-
-    public function update(Request $request, HistoriaClinica $historiaClinica)
-    {
-        //
-    }
-
-    public function destroy(HistoriaClinica $historiaClinica)
-    {
-        //
     }
 }

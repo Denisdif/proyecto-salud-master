@@ -19,7 +19,6 @@ class PosicionesForzadasController extends Controller
     public function traerDatosPaciente(Request $request)
     {
         $paciente=Paciente::find($request->id);
-
         $retorno = [
             'nombres'           =>  $paciente->nombreCompleto(),
             'cuil'              =>  $paciente->cuil,
@@ -34,7 +33,6 @@ class PosicionesForzadasController extends Controller
         return view('posiciones_forzadas.index',compact('posiciones_forzadas'));
     }
 
-    //cuando todo funcione probar con compact
     public function crearPDF($id)
     {
         $posiciones_forzada=PosicionesForzada::find($id);
@@ -45,7 +43,6 @@ class PosicionesForzadasController extends Controller
             "articulaciones"       =>  $articulaciones,
             "cuadro"               =>  $cuadro
             ]);
-
         $pdf->setPaper('a4','letter');
         return $pdf->stream('posiciones-forzada.pdf');
     }
@@ -61,9 +58,12 @@ class PosicionesForzadasController extends Controller
 
     public function store(Request $request)
     {          
-            $n=PosicionesForzada::count() + 1;
+            //Buscar y generar Models
             $voucher=Voucher::find($request->voucher_id);
             $posiciones_forzada=new PosicionesForzada();
+
+            //Almacenar Posiciones forzadas
+            $n=PosicionesForzada::count() + 1;
             $posiciones_forzada->firma=$request->firma;
             $posiciones_forzada->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
             $posiciones_forzada->puesto=$request->puesto;
@@ -71,13 +71,12 @@ class PosicionesForzadasController extends Controller
             $posiciones_forzada->nroTrabajo=$request->nroTrabajo;
             $posiciones_forzada->user_id=auth()->user()->id;
             $posiciones_forzada->voucher_id=$request->voucher_id;
-
             //Tabla articulaciones
                 //Cada cuadro es representado por una posicion en el String
                 $dolor_articular = "";
                 for ($i=0; $i < 112; $i++) { 
                     $dolor_articular = $dolor_articular.$request->$i;
-                }
+            }
             $posiciones_forzada->dolor_articular = $dolor_articular;
             $posiciones_forzada->save();
             
@@ -119,9 +118,6 @@ class PosicionesForzadasController extends Controller
                 $semiologica->save();
             //
 
-            $posiciones_forzada->diagnostico = $posiciones_forzada->generarDiagnostico();
-            $posiciones_forzada->update();
-
             //Generar PDF y enlazarlo
                 //Obtener voucher-estudio
                 foreach ($voucher->vouchersEstudios as $item) {
@@ -148,25 +144,5 @@ class PosicionesForzadasController extends Controller
                 $archivo_adjunto->save();
             //
         return redirect()->route('posiciones_forzadas.index');
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

@@ -19,12 +19,6 @@ use Carbon\Carbon;
 
 class DeclaracionJuradaController extends Controller
 {
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     function __construct()
     {
          $this->middleware('permission:listar declaraciones_juradas|crear declaracion_jurada|editar declaracion_jurada|eliminar declaracion_jurada', ['only' => ['index','store']]);
@@ -47,18 +41,13 @@ class DeclaracionJuradaController extends Controller
         return response()->json($retorno);
 
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $declaraciones_juradas = DeclaracionJurada::all();
         return view('declaracion_jurada.index',compact('declaraciones_juradas'));
     }
-
-    //cuando todo funcione probar con compact
+    
     public function crearPDF($id)
     {
     $declaracion_jurada=DeclaracionJurada::find($id);
@@ -80,15 +69,18 @@ class DeclaracionJuradaController extends Controller
 
     public function store(Request $request)
     {       
+            //Crear y buscar los models
             $declaracion_jurada=new DeclaracionJurada();
             $voucher=Voucher::find($request->voucher_id);
             $paciente=Paciente::find($voucher->paciente_id);
 
+            //Actualizar paciente
             $paciente->peso=$request->peso;
             $paciente->estatura=$request->estatura;
-            $paciente->update();            
-            $n=DeclaracionJurada::count() + 1;
+            $paciente->update();
 
+            //Almacenar Declaracion jurada
+            $n=DeclaracionJurada::count() + 1;
             $declaracion_jurada->firma=$request->firma;
             $declaracion_jurada->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
             $declaracion_jurada->personal_clinica_id=$request->personal_clinica_id;
@@ -163,9 +155,6 @@ class DeclaracionJuradaController extends Controller
                 $antecedente_quirurjico->save();
             //
 
-            $declaracion_jurada->diagnostico = $declaracion_jurada->generarDiagnostico();
-            $declaracion_jurada->update();
-
             //Generar PDF y enlazarlo
                 //Obtener voucher-estudio
                 foreach ($voucher->vouchersEstudios as $item) {
@@ -189,25 +178,5 @@ class DeclaracionJuradaController extends Controller
             //
 
         return redirect()->route('declaracion_jurada.index');
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

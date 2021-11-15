@@ -31,9 +31,16 @@ class AptitudController extends Controller
         $posiciones_forzadas = $voucher->posicionesForzadas;
         $iluminacion_direccionado = $voucher->iluminacionDireccionado;
 
+        $diagnosticoD = $declaracion_jurada->generarDiagnostico();
+        $diagnosticoH = $historia_clinica->generarDiagnostico();
+        $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
+        $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
+
         //Carga de estudios cargados
         $estudios = $voucher->estudiosCargados();
-        return view('aptitud.create', compact('voucher','riesgos','estudios','declaracion_jurada','historia_clinica','posiciones_forzadas','iluminacion_direccionado'));
+        return view('aptitud.create', compact('voucher','riesgos','estudios',
+                                              'declaracion_jurada','historia_clinica','posiciones_forzadas','iluminacion_direccionado',
+                                              'diagnosticoD','diagnosticoH','diagnosticoP','diagnosticoI' ));
     }
 
     public function crearPDF($id)

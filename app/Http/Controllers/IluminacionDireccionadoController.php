@@ -30,10 +30,9 @@ class IluminacionDireccionadoController extends Controller
     
     public function store(Request $request)
     {   
+        //Almacenar y obtener Models
         $voucher=Voucher::find($request->voucher_id);
         $iluminacion = IluminacionDireccionado::create($request->all());
-        $iluminacion->diagnostico = $iluminacion->generarDiagnostico();
-        $iluminacion->update();
 
         //Generar PDF y enlazarlo
             //Obtener voucher-estudio
@@ -54,9 +53,6 @@ class IluminacionDireccionadoController extends Controller
             $archivo_adjunto->voucher_estudio_id = $estudio->id;
             $archivo_adjunto->save();
         //
-
-
-
         return redirect()->route('iluminacion_direccionados.index');
     }
 }

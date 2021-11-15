@@ -21,7 +21,6 @@ class CreatePosicionesForzadasTable extends Migration
             $table->integer('antiguedad')->nullable();
             $table->string('nroTrabajo')->nullable();
             $table->char('dolor_articular',112);
-            $table->text('diagnostico')->nullable();
             
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');

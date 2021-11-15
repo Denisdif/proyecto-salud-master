@@ -104,9 +104,7 @@
                                             <div class="row form-group">
                                                 <div class="col">
                                                     <label for="">Diagnóstico: </label>
-                                                    @php
-                                                        echo $historia_clinica->diagnostico;
-                                                    @endphp
+                                                    {{$diagnosticoH}}
                                                 </div>
                                             </div>
                                         </div>
@@ -125,7 +123,7 @@
                                                 <div class="col">
                                                     <label for="">Diagnóstico: </label>
                                                     @php
-                                                        echo $declaracion_jurada->diagnostico;
+                                                        echo $diagnosticoD;
                                                     @endphp
                                                 </div>
                                             </div>
@@ -145,7 +143,7 @@
                                                 <div class="col">
                                                     <label for="">Diagnóstico: </label>
                                                     @php
-                                                        echo $posiciones_forzadas->diagnostico;
+                                                        echo $diagnosticoP;
                                                     @endphp
                                                 </div>
                                             </div>
@@ -165,7 +163,7 @@
                                                 <div class="col">
                                                     <label for="">Diagnóstico: </label>
                                                     @php
-                                                        echo $iluminacion_direccionado->diagnostico;
+                                                        echo $diagnosticoI;
                                                     @endphp
                                                 </div>
                                             </div>
