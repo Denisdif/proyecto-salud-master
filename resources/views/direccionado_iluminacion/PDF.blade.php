@@ -15,14 +15,14 @@
         }
         h2{
             font-weight: bold;
-            text-decoration: underline;
-            font-size: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            font-size: 12px;
+            background-color: brown;
+            color: white;
+            text-align: center;
         }
         h3{
             font-weight: bold;
-            font-size: 15px;
+            font-size: 12px;
         }}
         label{
             font-weight: bold;
@@ -45,9 +45,14 @@
         <p class="datos"> Está orientado a trabajadores de minas o galerías subterráneas </p>
 
         <!-- Empresa -->
-        <h2>Datos de la empresa o establecimiento                          </h2>
+        <h2>Datos del trabajador</h2>
         <table>
             <tbody>
+                <tr>
+                    <td class="datos" style="text-align: left; width: 350px">
+                        <p><label for=""> <u>Datos de la empresa o establecimiento:</u></label> </p>
+                    </td>
+                </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 350px">
                        <label for=""> Nombre:                   </label>    
@@ -66,11 +71,15 @@
                 </tr>
             </tbody>
         </table>
-
         <!-- Tabajador -->
-        <h2>Datos de la trabajador                                         </h2>
+        <hr>
         <table>
             <tbody>
+                <tr>
+                    <td class="datos" style="text-align: left; width: 350px">
+                        <p><label for=""> <u>Datos personales:</u></label> </p>
+                    </td>
+                </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 350px">
                         <label for=""> Nombre completo:                   </label>    
@@ -98,37 +107,37 @@
                     </td>
                     <td class="datos" style="text-align: left; width: 350px">
                         <label for=""> Antigüedad en la empresa:          </label>    
-                            {{$iluminacion->antiguedad                                      }}  
+                            {{$iluminacion->antiguedad                                      }}  años.
                     </td>
                 </tr>
             </tbody>
         </table>
-
         <!-- Antecedentes -->
         <h2>Antecedentes                                                   </h2>
         <table>
             <tbody>
                 <tr>
                     <td class="datos" style="text-align: left; width: 700px">
-                        <label for=""> Antecedentes de enfermedades:                                            </label>    
-                            {{$iluminacion->enfermedades                                    }}  
+                        <label for=""> Antecedentes de enfermedades:                                            </label> 
+                        <p>                            {{$iluminacion->enfermedades                                    }}  </p>
+                        <hr>
                     </td>
                 </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 700px">
-                        <label for=""> Antecedentes de trastornos congénitos:                                   </label>    
-                            {{$iluminacion->transtornos_congenitos                          }}  
+                        <label for=""> Antecedentes de trastornos congénitos:                                   </label> 
+                        <p>                            {{$iluminacion->transtornos_congenitos                          }}  </p>
+                        <hr>   
                     </td>
                 </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 700px">
-                        <label for=""> Antecedentes de enfermedades profesionales o accidentes de trabajo:      </label>    
-                            {{$iluminacion->enfermedades_profecionales                      }}  
+                        <label for=""> Antecedentes de enfermedades profesionales o accidentes de trabajo:      </label> 
+                        <p>                            {{$iluminacion->enfermedades_profecionales                      }}  </p>
                     </td>
                 </tr>
             </tbody>
         </table>
-
         <!-- Exposición al riesgo -->
         <h2>Exposición al riesgo                                           </h2>
         <table>
@@ -136,26 +145,28 @@
                 <tr>
                     <td class="datos" style="text-align: left; width: 700px">
                         <label for="">Exposición anterior:                </label>
-                        <p>{{$iluminacion->exposicion_anterior           }}  </p>  
+                        <p>                        {{$iluminacion->exposicion_anterior           }}    </p> <hr>
                     </td>
                 </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 700px">
                         <label for="">Exposición actual:                  </label>
-                        <p>{{$iluminacion->exposicion_actual             }}  </p>
+                        <p>                        {{$iluminacion->exposicion_actual             }}  </p>
                     </td>
                 </tr>
             </tbody>
         </table>
-
         <!-- Salto de página -->
         <div style="page-break-after:always;"></div>
-
         <!-- Examen clínico -->
         <h2>Examen clínico                                                 </h2>
-        <h3>Presencia de:                                                  </h3>
         <table>
             <tbody>
+                <tr>
+                    <td class="datos" style="text-align: left; width: 350px">
+                        <p><label for=""> <u>Presencia de:</u></label></p>
+                    </td>
+                </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 350px">
                         <label for="">Cefaleas:                                       </label>    
@@ -188,12 +199,16 @@
                 </tr>
             </tbody>
         </table>
-
         <!-- Examen ocular -->
         <h2>Examen ocular                                                  </h2>
-        <h3>Ojos:                                                          </h3>
         <table>
             <tbody>
+                <tr>
+                    <td class="datos" style="text-align: left; width: 350px">
+                        <p><label for=""> <u>Ojos:</u></label></p>
+                         
+                    </td>
+                </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 350px">
                         <label for="">Centrados:                                       </label>    
@@ -252,13 +267,19 @@
                     <td colspan="2" class="datos" style="text-align: left;">
                         <label for="">Informe:                                       </label>    
                         {{$iluminacion->informe_ocular}}
+                        <hr>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <h3>Agudeza visual:                                                </h3>
         <table>
             <tbody>
+                <tr>
+                    <td class="datos" style="text-align: left; width: 350px">
+                        <p><label for=""> <u>Agudeza visual:</u></label></p>
+                         
+                    </td>
+                </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 700px">
                         <label for="">Con correción:                                       </label>    
@@ -285,7 +306,6 @@
                 </tr>
             </tbody>
         </table>
-
     </div>
 </body>
 </html>

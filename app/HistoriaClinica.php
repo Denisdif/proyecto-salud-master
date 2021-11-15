@@ -117,7 +117,6 @@ class HistoriaClinica extends Model implements Auditable
                                         $this->cardiovascular->frecuencia_cardiaca,
                                         $this->cardiovascular->tension_arterial,
                                         $this->cardiovascular->pulso,
-                                        $this->cardiovascular->varices,
                                         $this->cardiovascular->observacion_varices,
 
                                         //Piel
@@ -235,7 +234,6 @@ class HistoriaClinica extends Model implements Auditable
                                 'Tensión arterial "S":',
                                 'Pulso "N"',
                                 'Várices: ',
-                                'Tipo várices: ',
 
                                 '<br><b>PIEL</b><br>',
                                 'Cicatrices patológicas visibles: ',

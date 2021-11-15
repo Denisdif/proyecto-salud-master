@@ -81,17 +81,17 @@
                                 <div class="form-group row">
                                     <div class="col">
                                         <label for="" class="form-label">Estatura:</label>
-                                        <input class="form-control" type="number" name="estatura" placeholder="Estatura">
+                                        <input class="form-control" type="number" step="0.01" name="estatura" placeholder="Estatura">
                                     </div>
                                     <div class="col">
                                         <label for="" class="form-label">Peso:</label>
-                                        <input class="form-control" type="number" name="peso" placeholder="Peso">
+                                        <input class="form-control" type="number" step="0.01" name="peso" placeholder="Peso">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col">
                                         <label for="" class="form-label">Índice MC:</label>
-                                        <input class="form-control" type="number" name="imc" placeholder="IMC">
+                                        <input class="form-control" type="number" step="0.01" name="imc" placeholder="IMC">
                                     </div>
                                     <div class="col" style="text-align: center;padding-top: 5%" >
                                         <div class="icheck-danger d-inline" style="">

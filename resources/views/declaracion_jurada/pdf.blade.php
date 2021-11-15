@@ -4,75 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>Declaracion Jurada</title>
-
     <style>
         td{
             border-bottom:  0.1px solid rgb(202, 202, 202);
             padding: 3px;
+            font-size: 12px;
+        }
+        label{
+            font-weight: bold;
         }
     </style>
-
 </head>
 <body>
-
     <div id="content" class="container">
         <div id="header" style="text-align: right">
             <img src="{{public_path('imagenes/logo.png')}}" alt="logo" width="200px">
         </div>
         <h3 style="text-align: center">DECLARACION JURADA DE SALUD</h3>
-
-
         <!-- DATOS PERSONALES -->
-        <h5 style="text-align: center; background-color: brown; color: #FFFFFF"><b>DATOS PERSONALES</b></h5>
         <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF" colspan="12">DATOS PERSONALES</td>
+            </tr>
             <tr style="text-align: left;">
-                <td style=" width: 342px" colspan="6"> <b> Nombre Completo:</b> {{$declaracion_jurada->voucher->paciente->nombreCompleto()}}</td>
-                <td style=" width: 342px" colspan="6"><b>Sexo:</b> {{$declaracion_jurada->voucher->paciente->sexo->abreviatura }}  </td>
+                <td style=" width: 350px" colspan="6"> <b> Nombre Completo:</b> {{$declaracion_jurada->voucher->paciente->nombreCompleto()}}</td>
+                <td style=" width: 350px" colspan="6"><b>Sexo:</b> {{$declaracion_jurada->voucher->paciente->sexo->abreviatura }}  </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 342px" colspan="6"> <b> Fecha de Nacimiento:</b> {{Carbon\Carbon::parse($declaracion_jurada->voucher->paciente->fecha_nacimiento)->format('d/m/Y') }}</td>
-                <td style=" width: 342px" colspan="6"> <b>Lugar:</b>  {{$declaracion_jurada->voucher->paciente->lugarNacimiento() }} </td>
+                <td style=" width: 350px" colspan="6"> <b> Fecha de Nacimiento:</b> {{Carbon\Carbon::parse($declaracion_jurada->voucher->paciente->fecha_nacimiento)->format('d/m/Y') }}</td>
+                <td style=" width: 350px" colspan="6"> <b>Lugar:</b>  {{$declaracion_jurada->voucher->paciente->lugarNacimiento() }} </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 342px" colspan="6"> <b> Documento de identidad: </b>    {{$declaracion_jurada->voucher->paciente->documentoIdentidad() }}           </td>
-                <td style=" width: 342px" colspan="6"> <b> Estado Civil:           </b>    {{$declaracion_jurada->voucher->paciente->estadoCivil->abreviatura }}       </td>
+                <td style=" width: 350px" colspan="6"> <b> Documento de identidad: </b>    {{$declaracion_jurada->voucher->paciente->documentoIdentidad() }}           </td>
+                <td style=" width: 350px" colspan="6"> <b> Estado Civil:           </b>    {{$declaracion_jurada->voucher->paciente->estadoCivil->abreviatura }}       </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 342px" colspan="6"> <b> Domicilio: </b>     {{$declaracion_jurada->voucher->paciente->direccion() }}                               </td>
-                <td style=" width: 342px" colspan="6"> <b> CP:        </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->codigo_postal }}          </td>
-
+                <td style=" width: 350px" colspan="6"> <b> Domicilio: </b>     {{$declaracion_jurada->voucher->paciente->direccion() }}                               </td>
+                <td style=" width: 350px" colspan="6"> <b> CP:        </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->codigo_postal }}          </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 342px" colspan="6"> <b> Provincia: </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->provincia->nombre }}      </td>
-                <td style=" width: 342px" colspan="6"> <b> Localidad: </b>     {{$declaracion_jurada->voucher->paciente->ciudad->nombre }}      </td>
+                <td style=" width: 350px" colspan="6"> <b> Provincia: </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->provincia->nombre }}      </td>
+                <td style=" width: 350px" colspan="6"> <b> Localidad: </b>     {{$declaracion_jurada->voucher->paciente->ciudad->nombre }}      </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 342px" colspan="6"> <b> Teléfono:      </b>     {{$declaracion_jurada->voucher->paciente->telefono }}      </td>
-                <td style=" width: 342px" colspan="6"> <b> Peso (Kgrs.):  </b>     {{$declaracion_jurada->voucher->paciente->peso }}          </td>
+                <td style=" width: 350px" colspan="6"> <b> Teléfono:      </b>     {{$declaracion_jurada->voucher->paciente->telefono }}      </td>
+                <td style=" width: 350px" colspan="6"> <b> Peso (Kgrs.):  </b>     {{$declaracion_jurada->voucher->paciente->peso }}          </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 342px" colspan="6"> <b> Estatura: (Mts.)    </b>   {{$declaracion_jurada->voucher->paciente->estatura }}        </td>
-                <td style=" width: 342px" colspan="6"> <b> FECHA ÚLTIMO EXAMEN </b>   ...        </td>
+                <td style=" width: 350px" colspan="6"> <b> Estatura: (Mts.)    </b>   {{$declaracion_jurada->voucher->paciente->estatura }}        </td>
+                <td style=" width: 350px" colspan="6"> <b> Fecha último examen: </b>   {{$declaracion_jurada->voucher->paciente->fecha_realizacion }}        </td>
             </tr>
         </table>
-
-
         <!-- ANTECEDENTES FAMILIARES -->
-        <h5 style="text-align: center; background-color: brown; color: #FFFFFF"><b>ANTECEDENTES FAMILIARES</b></h5>
-        <table class="table table-condensed table-hover" style="border:1px solid #FFFFFF; width:100%">
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">¿Su padre vive? </th>
-                <td  colspan="2" style="text-align: left">
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF" colspan="12">ANTECEDENTES FAMILIARES</td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style=" width: 350px" colspan="6">
+                    <label for="">Su padre vive: </label>
                     @if ($declaracion_jurada->antecedenteFamiliar->su_padre_vive==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">¿Su madre vive? </th>
-                <td colspan="2" style="text-align: left">
+                <td style=" width: 350px" colspan="6">
+                    <label for="">Su madre vive:</label>
                     @if ($declaracion_jurada->antecedenteFamiliar->su_madre_vive==true)
                         SI
                     @else
@@ -80,131 +79,129 @@
                     @endif
                 </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="8"> ¿Su madre o padre padece alguna de las siguientes afecciones? </th>
+            <tr style="text-align: left;">
+                <td style=" width: 350px" colspan="12">
+                    ¿Su madre o padre padece alguna de las siguientes afecciones?
+                </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Cancer </th>
-                <td  colspan="2" style="text-align: left">
+            <tr style="text-align: left;">
+                <td  colspan="3">
+                    <label for="">Cáncer:</label>
                     @if ($declaracion_jurada->antecedenteFamiliar->cancer==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Diabetes </th>
-                <td  colspan="2" style="text-align: left">
+                <td  colspan="3">
+                    <label for=""> Diabetes:</label>
                     @if ($declaracion_jurada->antecedenteFamiliar->diabetes==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Infarto </th>
-                <td  colspan="2" style="text-align: left">
+                <td  colspan="3">
+                    <label for="">Infarto:</label>
                     @if ($declaracion_jurada->antecedenteFamiliar->infarto==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Hipertension Arterial </th>
-                <td  colspan="2" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteFamiliar->hipertension_arterial==true)
+                <td  colspan="3">
+                    <label for="">Hipertension Arterial:</label>
+                    @if ($declaracion_jurada->antecedenteFamiliar->hipertension_Arterial==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="8"> Si su padre o madre padecen alguna enfermedad actualmente </th>
+            <tr style="text-align: left;">
+                <td style=" width: 350px" colspan="12">
+                    <label for="">Si su padre o madre padecen alguna enfermedad actualmente, mencione el diagnóstico: </label>
+                </td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style=" width: 350px" colspan="12">
+                    {{$declaracion_jurada->antecedenteFamiliar->detalle}}
+                </td>
+            </tr>
+        </table>
+        <!-- ANTECEDENTES PERSONALES -->
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">ANTECEDENTES PERSONALES</td>
+            </tr>
+            <tr >
+                <td colspan="12">
+                    <label for="">Fuma:</label> 
+                    @if ($declaracion_jurada->antecedentePersonal->fuma)
+                        {{$declaracion_jurada->antecedentePersonal->fuma}}
+                    @else
+                        No
+                    @endif
+                </td>
             </tr>
             <tr>
-                <th colspan="2">Mencione el diagnóstico</th>
-                <td style="text-align: left" colspan="6">{{$declaracion_jurada->antecedenteFamiliar->detalle}}</td>
+                <td colspan="12">
+                    <label for="">Bebe:</label> 
+                    @if ($declaracion_jurada->antecedentePersonal->bebe)
+                        {{$declaracion_jurada->antecedentePersonal->bebe}}
+                    @else
+                        No
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <td colspan="12">
+                    <label for="">Act. Física:</label> 
+                    @if ($declaracion_jurada->antecedentePersonal->actividad_fisica)
+                        {{$declaracion_jurada->antecedentePersonal->actividad_fisica}}
+                    @else
+                        No
+                    @endif
+                </td>
             </tr>
         </table>
-
-
-        <!-- ANTECEDENTES PERSONALES -->
-        <h5 style="text-align: center; background-color: brown; color: #FFFFFF"><b>ANTECEDENTES PERSONALES</b></h5>
-        <table class="table table-condensed table-hover" style="border:1px solid #FFFFFF; width:100%">
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Fuma </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedentePersonal->fuma==true)
-                        SI
-                    @else
-                        NO
-                    @endif
+        <!-- ANTECEDENTES INFANCIA -->
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">ANTECEDENTES MÉDICOS DE LA INFANCIA</td>
+            </tr>
+            <tr>
+                <td colspan="12">
+                    <label for="">¿Padeció algunas de las siguientes afecciones?</label>
                 </td>
-                <th colspan="2">¿En que cantidad? </th>
-                <td style="text-align: left" colspan="3">{{$declaracion_jurada->antecedentePersonal->detalle1_p}}</td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Bebe </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedentePersonal->bebe==true)
-                        SI
-                    @else
-                        NO
-                    @endif
-                </td>
-                <th colspan="2">¿En que cantidad? </th>
-                <td style="text-align: left" colspan="3">{{$declaracion_jurada->antecedentePersonal->detalle2_p}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Act. Física </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedentePersonal->actividad_fisica==true)
-                        SI
-                    @else
-                        NO
-                    @endif
-                </td>
-                <th colspan="2">¿En que cantidad? </th>
-                <td style="text-align: left" colspan="3">{{$declaracion_jurada->antecedentePersonal->detalle3_p}}</td>
-            </tr>
-        </table>
-
-
-        <!-- ANTECEDENTES PERSONALES -->
-        <h5 style="text-align: center; background-color: brown; color: #FFFFFF"><b>ANTECEDENTES MÉDICOS DE LA INFANCIA</b></h5>
-        <table  class="table table-condensed table-hover" style="border:1px solid #FFFFFF; width:100%">
-            <tr style="text-align: left" valign="middle">
-                <th colspan="12"> ¿Padeció algunas de las siguientes afecciones? </th>
-            </tr>
-
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Sarampión </th>
-                <td  colspan="1" style="text-align: left">
+            <tr>
+                <td colspan="3">
+                    <label for="">Sarampión: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->sarampion==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Rubéola </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteMedicoInfancia->rubeola==true)
+                <td colspan="3">
+                    <label for="">Rubéola: </label> 
+                    @if ($declaracion_jurada->antecedenteMedicoInfancia->rebeola==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Epilepsias </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Epilepsias: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->epilepsia==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Varicela </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Varicela: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->varicela==true)
                         SI
                     @else
@@ -212,33 +209,33 @@
                     @endif
                 </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Parotiditis </th>
-                <td  colspan="1" style="text-align: left">
+            <tr>
+                <td colspan="3">
+                    <label for="">Parotiditis: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->parotiditis==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Cefalea prolongada </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Cefalea prolongada: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->cefalea_prolongada==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Hepatitis </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Hepatitis: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->hepatitis==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Gastritis </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Gastritis: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->gastritis==true)
                         SI
                     @else
@@ -246,33 +243,33 @@
                     @endif
                 </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Úlcera gástrica </th>
-                <td  colspan="1" style="text-align: left">
+            <tr>
+                <td colspan="3">
+                    <label for="">Úlcera gástrica: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->ulcera_gastrica==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Hemorroide </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Hemorroide: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->hemorroide==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Hemorragias </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Hemorragias: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->hemorragias==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Neumonia </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Neumonía: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->neumonia==true)
                         SI
                     @else
@@ -280,33 +277,33 @@
                     @endif
                 </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="2">Asma </th>
-                <td  colspan="1" style="text-align: left">
+            <tr>
+                <td colspan="3">
+                    <label for="">Asma: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->asma==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Tuberculosis </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Tuberculosis: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->tuberculosis==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Tos cronica </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Tos cronica: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->tos_cronica==true)
                         SI
                     @else
                         NO
                     @endif
                 </td>
-                <th colspan="2">Catarro </th>
-                <td  colspan="1" style="text-align: left">
+                <td colspan="3">
+                    <label for="">Catarro: </label> 
                     @if ($declaracion_jurada->antecedenteMedicoInfancia->catarro==true)
                         SI
                     @else
@@ -315,272 +312,211 @@
                 </td>
             </tr>
             <tr>
-                <th colspan="8">Otras Afecciones: </th>
-                <td style="text-align: left" colspan="4">{{$declaracion_jurada->antecedenteMedicoInfancia->otras_afecciones}}</td>
+                <td colspan="12">
+                    <label for="">Otras Afecciones: </label>{{$declaracion_jurada->antecedenteMedicoInfancia->detalle1_m}}
+                </td>
             </tr>
         </table>
-
-
-
+        <div style="page-break-after:always;"></div>
         <!-- ANTECEDENTES RECIENTES -->
-        <h5 style="text-align: center; background-color: brown; color: #FFFFFF"><b>¿ Ha tenido Ud. O ha sido tratado en los últimos años por:</b></h5>
-        <table  class="table table-condensed table-hover" style="border:1px solid #FFFFFF; width:100%">
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Enfermedad de los ojos, oidos , nariz o garganta ? </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta1_reciente==true)
-                        SI
-                    @else
-                        NO
-                    @endif
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">ANTECEDENTES RECIENTES</td>
+            </tr>
+            <tr>
+                <td colspan="12">
+                    <label for="">Ha tenido Ud. O ha sido tratado en los últimos años por:</label>
                 </td>
-
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle1_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos ? </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta2_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Enfermedad de los ojos, oidos , nariz o garganta:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle1_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle1_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle2_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Insuficiencia respiratoria, ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica ? </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta3_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Mareos, desmayos, convulsiones, dolores de cabeza, parálisis o ataques, desordenes mentales o nerviosos: </label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle2_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle2_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle3_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta4_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Insuficiencia respiratoria, ronquera persistente, tos, asma, bronquitis, enfisema, tuberculosis o enfermedad respiratoria crónica:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle3_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle3_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle4_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta5_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Dolor de pecho, palpitaciones, presión sanguínea, fiebre reumática, ataque al corazón u otra enfermedad del corazón o vasos sanguíneos</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle4_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle4_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle5_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta6_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Ictericia, hemorragia intestinal, úlcera, colitis, diverticulosis, otras enfermedades del intestino, hígado o vesícula:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle5_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle5_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle6_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Diabetes, Tiroides u otra enfermedad endócrinas?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta7_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Azúcar, sangre o pus en la orina, enfermedad del riñón, vejiga o próstata:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle6_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle6_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle7_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta8_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Diabetes, Tiroides u otra enfermedad endócrinas:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle7_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle7_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle8_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Deformidades, rengueras o amputaciones ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta9_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Gota, Afecciones musculares u óseas, incluidos columna, espalda o articulaciones:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle8_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle8_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle9_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Enfermedades de la piel ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta10_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Deformidades, rengueras o amputaciones:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle9_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle9_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle10_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Alergias, anemias u otras enfermedades de la sangre ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta11_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Enfermedades de la piel:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle10_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle10_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle11_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Está Ud. Actualmente bajo observación o tratamiento ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta12_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Alergias, anemias u otras enfermedades de la sangre:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle11_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle11_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle12_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">Ha tenido algún cambio en su peso en el último año ?</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta13_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Está Ud. Actualmente bajo observación o tratamiento:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle12_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle12_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle13_reciente}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">HERNIA</th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteReciente->pregunta14_reciente==true)
-                        SI
+                <td colspan="12">
+                    <label>Ha tenido algún cambio en su peso en el último año:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle13_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle13_reciente}}
                     @else
                         NO
                     @endif
                 </td>
             </tr>
             <tr style="text-align: left" valign="middle">
-                <th colspan="1">¿Cuáles? </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteReciente->detalle14_reciente}}</td>
+                <td colspan="12">
+                    <label>HERNIA:</label>
+                    @if ($declaracion_jurada->antecedenteReciente->detalle14_reciente)
+                        {{$declaracion_jurada->antecedenteReciente->detalle14_reciente}}
+                    @else
+                        NO
+                    @endif
+                </td>
             </tr>
         </table>
-
         <!-- ANTECEDENTES QUIRURGICOS -->
-        <h5 style="text-align: center; background-color: brown; color: #FFFFFF"><b>ANTECEDENTES QUIRURGICOS: </b></h5>
-        <table  class="table table-condensed table-hover" style="border:1px solid #FFFFFF; width:100%">
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7"> ¿Fue intervenido/a quirúrgicamente por alguna causa? </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteQuirurjico->pregunta1_q==true)
-                        SI
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">ANTECEDENTES QUIRURGICOS</td>
+            </tr>
+            <tr >
+                <td colspan="12">
+                    <label for="">¿Fue intervenido/a quirúrgicamente por alguna causa?</label> 
+                    @if ($declaracion_jurada->antecedenteQuirurjico->detalle1_q)
+                        {{$declaracion_jurada->antecedenteQuirurjico->detalle1_q}}
                     @else
-                        NO
+                        No
                     @endif
                 </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">  ¿Tiene pendiente alguna cirugía?  </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteQuirurjico->pregunta2_q==true)
-                        SI
+            <tr >
+                <td colspan="12">
+                    <label for="">¿Tiene pendiente alguna cirugía?</label> 
+                    @if ($declaracion_jurada->antecedenteQuirurjico->detalle2_q)
+                        {{$declaracion_jurada->antecedenteQuirurjico->detalle2_q}}
                     @else
-                        NO
+                        No
                     @endif
                 </td>
             </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="1"> Por favor detallar Diagnóstico y fecha:  </th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteQuirurjico->detalle2_q}}</td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="7">  ¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?  </th>
-                <td  colspan="1" style="text-align: left">
-                    @if ($declaracion_jurada->antecedenteQuirurjico->pregunta3_q==true)
-                        SI
+            <tr >
+                <td colspan="12">
+                    <label for="">¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?</label> 
+                    @if ($declaracion_jurada->antecedenteQuirurjico->detalle3_q)
+                        {{$declaracion_jurada->antecedenteQuirurjico->detalle3_q}}
                     @else
-                        NO
+                        No
                     @endif
                 </td>
-            </tr>
-            <tr style="text-align: left" valign="middle">
-                <th colspan="1">  ¿Cuál?</th>
-                <td style="text-align: left" colspan="7">{{$declaracion_jurada->antecedenteQuirurjico->detalle3_q}}</td>
             </tr>
         </table>
-        Por la presente declaro bajo juramento que los datos de la presente declaración, de mi puño y letra, son reales y corresponden a mi Historia Clínica Personal.
-        <br>
-        <br>
-        Lugar y Fecha: Puerto Rico {{Carbon\Carbon::parse($declaracion_jurada->fecha_realizacion)->format('d/m/Y') }}
-        <br><br>
-
+        <p style="font-size: 12px">
+            Por la presente declaro bajo juramento que los datos de la presente declaración, de mi puño y letra, son reales y corresponden a mi Historia Clínica Personal.
+            <br><br>
+            Lugar y Fecha: Puerto Rico {{Carbon\Carbon::parse($declaracion_jurada->fecha_realizacion)->format('d/m/Y') }}
+        </p>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div>
                     <img src="{{$declaracion_jurada->firma}}" width=130 height=130 alt="firma del paciente">
-                    
                 </div>
                 <label>Firma del Paciente</label>
             </div>
-        
             <!--Fecha de Realización -->
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div>
@@ -589,37 +525,6 @@
                 <label>Firma del Médico</label>
             </div>
         </div>
-
-
-        
     </div>
-
-
-
-
-    <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
-
-
-
-
- <!-- Bootstrap 3.3.5 -->
- <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
-
-
-
-   <!-- AdminLTE App -->
- <script src="{{asset('js/app.min.js')}}"></script>
-
- <script type="text/php">
-    if ( isset($pdf) ) {
-        $pdf->page_script('
-            $font = $fontMetrics->get_font("Arial, Helvetica, sans-serif", "normal");
-            $pdf->text(270, 800, "Pagina $PAGE_NUM de $PAGE_COUNT", $font, 10);
-        ');
-    }
-</script>
-
-
 </body>
 </html>

@@ -67,7 +67,7 @@ class DeclaracionJurada extends Model implements Auditable
             /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
             Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
             $matriz = [];
-            $diagnostico = "<b>ANTECEDENTES FAMILIARES</b><br><br>";
+            $diagnostico = "<b><u>ANTECEDENTES FAMILIARES (AFECCIONES DE PADRE Y/O MADRE)</u></b><br><br>";
             //Carga variables
                 $matriz[] = [       //ANTECEDENTES FAMILIARES
                                     $this->antecedenteFamiliar->su_padre_vive,
@@ -126,9 +126,9 @@ class DeclaracionJurada extends Model implements Auditable
             //
             //Carga Labels
                 $matriz[] = [  
-                    'Su padre falleció: ',
-                    'Su madre falleció: ',
-                    'Cancer: ',
+                    'Su padre vive: ',
+                    'Su madre vive: ',
+                    'Cáncer: ',
                     'Diabetes: ',
                     'Infarto: ',
                     'Hipertension Arterial: ',
@@ -184,10 +184,10 @@ class DeclaracionJurada extends Model implements Auditable
             for ($i=0; $i < sizeof($matriz[1]); $i++) {
                 if ($matriz[0][$i] != null) {
                     if ($matriz[0][$i] == 1) {
-                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>"."<br>";
+                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>".". ";
                     }else{
                         if ($matriz[0][$i] == " ") {
-                            $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
+                            $diagnostico = $diagnostico."<u>".$matriz[1][$i]."</u>"."<b>".$matriz[0][$i]."</b>";
                         }else{
                             $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>"."<br>";
                         }

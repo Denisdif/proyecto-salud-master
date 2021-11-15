@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <style>
         .tabla {
             border-collapse: collapse;
@@ -23,8 +22,10 @@
         }
         .subtitulo{
             font-weight: bold;
-            text-decoration: underline;
-            font-size: 10px;
+            font-size: 12px;
+            background-color: brown;
+            color: white;
+            text-align: center;
         }
         label{
             font-weight: bold;
@@ -34,7 +35,6 @@
         }
 
     </style>
-
     <title>POSICIONES FORZADAS</title>
 </head>
 <body style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
@@ -46,7 +46,7 @@
             Agente de Riesgo: Gestos repetitivos y posiciones forzadas <br>
             Anexo V – Resolución SRT N° 37/2010 
         </h3>
-
+        <p class="subtitulo">Datos del paciente</p>
         <!-- Datos de PF -->
             <table class="letra11">
                 <tbody>
@@ -94,60 +94,23 @@
             @if ($posiciones_forzada->tarea != null)
                 <table class="letra11">
                     <tbody>
-                        <!-- Tiempo -->
                         <tr>
+                            <!-- Tiempo -->
                             <td style="text-align: left; width: 350px">
                                 <label for="">Tiempo de tarea:</label>                                
-                                @switch($posiciones_forzada->tarea->tiempo)
-                                    @case("opcion1")
-                                        Esporádico.
-                                        @break
-                                    @case("opcion2")
-                                        Continuo, mayor a 2hs y menor a 4hs.
-                                        @break
-                                    @case("opcion3")
-                                        Continuo, mayor a 4hs.        
-                                        @break
-                                    @default
-                                        No se selecciono ninguna opción
-                                @endswitch
+                                {{$posiciones_forzada->tarea->tiempo}}
                             </td>
                             <!-- Ciclo -->
-
                             <td style="text-align: left; width: 350px">
                                 <label for="">Ciclo de trabajo:</label> 
-                                @switch($posiciones_forzada->tarea->ciclo )
-                                    @case("opcion4")
-                                        Largo (Mayor que 2 minutos)                        
-                                        @break
-                                    @case("opcion5")
-                                        Moderado: 30 segundos - 1 a 2 minutos
-                                        @break
-                                    @case("opcion6")
-                                        Corto: hasta 30 segundos                  
-                                        @break
-                                    @default
-                                        No se selecciono ninguna opción
-                                @endswitch
+                                {{$posiciones_forzada->tarea->ciclo}}
                             </td>
                         </tr>
-                        <!-- Cargas -->
                         <tr>
+                             <!-- Cargas -->
                             <td style="text-align: left; width: 350px">
                                 <label for=""> Manipulación manual de cargas:  </label>
-                                @switch($posiciones_forzada->tarea->cargas )
-                                    @case("opcion7")
-                                        Menor a 1 Kg            
-                                        @break
-                                    @case("opcion8")
-                                        Entre 1 Kg y 3 Kgs
-                                        @break
-                                    @case("opcion9")
-                                        Mayor a 3 Kgs     
-                                        @break
-                                    @default
-                                        No se cargó ninguna opción
-                                @endswitch
+                                {{$posiciones_forzada->tarea->cargas}}
                             </td>
                         </tr>
                     </tbody>
@@ -248,7 +211,7 @@
         <!-- / Tarea -->
         <hr>
         <!-- Tabla -->
-            <p class="subtitulo">Semiología del Segmento Corporal Comprometido - Relación Movilidad – Dolor Articular y estado de masa muscular relacionada: </p>
+            <p class="subtitulo">Semiología del Segmento Corporal Comprometido-Relación Movilidad-Dolor Articular y estado de M.M </p>
             <div style="padding-left: 5%; padding-top: 1%" >
                 <table class="tabla" style="font-size: 10px">
                     <!-- Titulos -->
@@ -303,36 +266,12 @@
                     <!-- Forma -->
                     <tr>
                         <td style="text-align: left; width: 350px">
-                              <label for="">Por su forma de aparición:</label>
-                              @switch($posiciones_forzada->dolor->forma)
-                                    @case("opcion1_d")
-                                        Agudo          
-                                        @break
-                                    @case("opcion2_d")
-                                        Insidioso
-                                        @break
-                                    @case("opcion3_d")
-                                        Ausente
-                                        @break
-                                    @default
-                                        No se selecciono ninguna opción
-                                @endswitch
+                            <label for="">Por su forma de aparición:</label>
+                            {{$posiciones_forzada->dolor->forma}}
                         </td>
                         <td style="text-align: left; width: 350px">
                             <label for=""> Por su evolución:  </label>
-                            @switch($posiciones_forzada->dolor->evolucion)
-                                @case("opcion4_d")
-                                    Continuo      
-                                    @break
-                                @case("opcion5_d")
-                                    Brotes
-                                    @break
-                                @case("opcion6_d")
-                                    Cíclico
-                                    @break
-                                @default
-                                    No se selecciono ninguna opción
-                            @endswitch
+                            {{$posiciones_forzada->dolor->evolucion}}
                         </td>
                     </tr>
                     <tr>
@@ -344,8 +283,8 @@
                          </td>
                     </tr>
                     <tr>
-                        <td  style="text-align: left; width: 350px">
-                            <p class="subtitulo"> Otros Signos y Síntomas Presentes en el Segmento Involucrado:  </p>
+                        <td colspan="2" style="text-align: left">
+                            <label for="">Otros Signos y Síntomas Presentes en el Segmento Involucrado:</label>
                         </td>
                     </tr>
                     <tr>
@@ -371,10 +310,10 @@
             </table>
             @endif
         <!-- / Dolor -->
-        <hr>
+        <div style="page-break-after:always;"></div>
         <!-- Semiológica -->
             @if ($posiciones_forzada->semiologica != null)
-                <p class="subtitulo">Caracterización Semiológica: </p>
+                <p class="subtitulo">Caracterización Semiológica </p>
                 <table class="tabla letra11">
                     <tbody>
                         <tr>
@@ -382,7 +321,7 @@
                                 Grado 0
                             </td>
                             <td style="text-align:centert; width: 25px">
-                            @if ($posiciones_forzada->semiologica->grado == "opcion1_s")
+                            @if ($posiciones_forzada->semiologica->grado == "Grado 0: Ausencia de signos y síntomas.")
                                 x
                             @endif
                             </td>
@@ -395,7 +334,7 @@
                                 Grado 1
                             </td>
                             <td style="text-align: center; width: 25px">
-                                @if ($posiciones_forzada->semiologica->grado == "opcion2_s")
+                                @if ($posiciones_forzada->semiologica->grado == "Grado 1: Dolor en reposo y/o existencia de sintomatología sugestiva.")
                                 x
                                 @endif
                             </td>
@@ -408,7 +347,7 @@
                                 Grado 2
                             </td>
                             <td style="text-align: center; width: 25px">
-                                @if ($posiciones_forzada->semiologica->grado == "opcion3_s")
+                                @if ($posiciones_forzada->semiologica->grado == "Grado 2: Grado 1 mas contractura y/o dolor a la movilización.")
                                 x
                                 @endif
                             </td>
@@ -421,7 +360,7 @@
                                 Grado 3
                             </td>
                             <td style="text-align: center; width: 25px">
-                                @if ($posiciones_forzada->semiologica->grado == "opcion4_s")
+                                @if ($posiciones_forzada->semiologica->grado == "Grado 3: Grado 2 mas dolor a la palpación y/o percusión.")
                                 x
                                 @endif
                             </td>
@@ -434,7 +373,7 @@
                                 Grado 4
                             </td>
                             <td style="text-align: center; width: 25px">
-                                @if ($posiciones_forzada->semiologica->grado == "opcion5_s")
+                                @if ($posiciones_forzada->semiologica->grado == "Grado 4: Grado 3 mas limitación funcional evidente clínicamente.")
                                 x
                                 @endif
                             </td>
@@ -451,39 +390,5 @@
             @endif
         <!-- / Semiológica -->
     </div>
-
 </body>
 </html>
-<!-- Codigo para reutilizar
-        Firma:          {{$posiciones_forzada->firma        }} <br>
-
-
-    */
-
-    
-        <table>
-            <tbody>
-                <tr>
-                    <td style="text-align: left; width: 350px">
-                          
-                    </td>
-                    <td style="text-align: left; width: 350px">
-                       
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: left; width: 350px">
-                       
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-     Salto de pagina 
-                <hr style="
-                    page-break-after: always;
-                    border: none;
-                    margin: 0;
-                    padding: 0;
-                ">
-         / Salto de pagina -->
