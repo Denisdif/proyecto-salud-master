@@ -306,6 +306,17 @@
                 </tr>
             </tbody>
         </table>
+        <!-- Firma -->
+        <table class="table table-condensed table-hover" >
+            <tr >
+                <td style="width: 570px;text-align: right">
+                    <div>
+                        <img src="{{$iluminacion->firma}}" width=130 height=130 alt="firma del paciente">
+                    </div>
+                    <label>Firma del Paciente</label>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

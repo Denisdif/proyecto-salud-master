@@ -13,6 +13,26 @@
     'files' => true,
 ))!!}
 
+<style>
+    .jay-signature-pad {
+        position: relative;
+        display: -ms-flexbox;
+        -ms-flex-direction: column;
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+        max-height: 315px;
+        border: 1px solid #e8e8e8;
+        background-color: #fff;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
+        border-radius: 15px;
+        padding: 20px;
+    }
+    .txt-center {
+        text-align: -webkit-center;
+    }
+</style>
+
 {{Form::token()}}
 <div class="row">
     <div class="col-12">
@@ -810,28 +830,47 @@
                             </div>
                         </div>
                     </div>
-                    <!-- CARGA DE ARCHIVO -->
+                    <!-- Firma -->
                     <div class="col-12">
                         <div class="card ">
                             <div class="card-header fondo2">
-                                <h3 class="card-title">CARGA DE ARCHIVO</h3>
+                                <h3 class="card-title">Firma del Paciente</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <label for="">archivo</label>
-                                <input name="archivo" id="archivo" type="file">
-                    
-                                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="guardar">
+                                <div class="row justify-content-center">
                                     <div class="form-group">
-                                        <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
-                                            <button class="btn btn-success btn-lg btn-block" id="btn_add"type="submit"><i class="fa fa-check"> </i>Cargar al formulario</button>
+                                        <div id="signature-pad" class="jay-signature-pad">
+                                            <div class="jay-signature-pad--body">
+                                                <canvas id="jay-signature-pad" width=550 height=200></canvas>
+                                            </div>
+                                            <div class="signature-pad--footer txt-center">
+                                                <div class="signature-pad--actions txt-center">
+                                                    <div>
+                                                        <br>
+                                                        <button type="button" class="button clear btn btn-dark" data-action="clear"><i class="fa fa-eraser" aria-hidden="true"></i>...Limpiar</button>
+                                                        <button type="button" class="button btn btn-dark" data-action="change-color"><i class="fas fa-palette"></i> Cambiar color</button>
+                                                        <!--<button type="button" class="button save btn btn-dark" data-action="save-svg"><i class="fas fa-save"></i> Guardar como SVG</button>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" name="firma" id="firma">
+                    <!-- Guardar -->
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="guardar">
+                        <div class="form-group">
+                            <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
+                                <button class="btn btn-success btn-lg btn-block" id="confirmar"type="submit"><i class="fa fa-check"> </i>Cargar al formulario</button>
+                        </div>
+                    </div>
+                <!-- / Guardar -->
                 </div>  
             </div>
         </div>
@@ -844,63 +883,66 @@
 @push('scripts')
     <script>
         $(document).ready(function(){
-            /*var select1 = $("#paciente_id").select2({width:'100%'});
-            select1.data('select2').$selection.css('height', '34px');*/
+            //Firma
+                var wrapper = document.getElementById("signature-pad");
+                var clearButton = wrapper.querySelector("[data-action=clear]");
+                var changeColorButton = wrapper.querySelector("[data-action=change-color]");
+                var guardar = document.getElementById("confirmar");
+                var canvas = wrapper.querySelector("canvas");
+                var signaturePad = new SignaturePad(canvas, {
+                    backgroundColor: 'rgb(255, 255, 255)'
+                });
+                function resizeCanvas() {
+                    var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+                    canvas.width = canvas.offsetWidth * ratio;
+                    canvas.height = canvas.offsetHeight * ratio;
+                    canvas.getContext("2d").scale(ratio, ratio);
+                    signaturePad.clear();
+                }
+                window.onresize = resizeCanvas;
+                resizeCanvas();
+                function download(dataURL, filename) {
+                    var blob = dataURLToBlob(dataURL);
+                    var url = window.URL.createObjectURL(blob);
+                    var a = document.createElement("a");
+                    a.style = "display: none";
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                }
+                function dataURLToBlob(dataURL) {
+                    var parts = dataURL.split(';base64,');
+                    var contentType = parts[0].split(":")[1];
+                    var raw = window.atob(parts[1]);
+                    var rawLength = raw.length;
+                    var uInt8Array = new Uint8Array(rawLength);
+                    for (var i = 0; i < rawLength; ++i) {
+                        uInt8Array[i] = raw.charCodeAt(i);
+                    }
+                    return new Blob([uInt8Array], { type: contentType });
+                }
+                clearButton.addEventListener("click", function (event) {
+                    signaturePad.clear();
+                });
+                changeColorButton.addEventListener("click", function (event) {
+                    var r = Math.round(Math.random() * 255);
+                    var g = Math.round(Math.random() * 255);
+                    var b = Math.round(Math.random() * 255);
+                    var color = "rgb(" + r + "," + g + "," + b +")";
+                    signaturePad.penColor = color;
+                });
 
-            /*var select1 = $("#voucher_id").select2({width:'100%'});
-            select1.data('select2').$selection.css('height', '34px');*/
-            var select2 = $("#obra_social_id").select2({width:'100%'});
-            select2.data('select2').$selection.css('height', '34px');
-            var select3 = $("#origen_id").select2({width:'100%'});
-            select3.data('select2').$selection.css('height', '34px');
-
-            $("#paciente_id").change(function(){
-                mostrarDatos();
-            });
-
-            function mostrarDatos()
-            {
-                paciente_id=$("#paciente_id").val();
-                pacientes=$("#paciente_id option:selected").text();
-
-
-                /*   Aca iría el Ajax para obtener la cantidad por Paquete*/
-                $.ajax({
-                    type:'get',
-                    url:'{!!URL::to('historia_clinica/create/traerDatosPaciente')!!}',
-                    data:{'id':paciente_id},
-                    success:function(data){
-                        documento=data['documento'];
-                        nombres=data['nombres'];
-                        apellidos=data['apellidos'];
-                        fecha_nacimiento=data['fecha_nacimiento'];
-                        foto=data['foto'];
-                        cuil=data['cuil'];
-                        peso=data['peso'];
-                        estatura=data['estatura'];
-                        empresa=data['empresa'];
-                        sexo=data['sexo'];
-
-
-                        var datosPaciente='<img class="img-thumbnail" height="85px" alt="sin imagen" width="85px" src='+foto+'><input type="hidden" name="stock" value="'+nombres+'"><p style="font-size:140%" class="text-left">'+nombres+'</p><input type="hidden" name="stock" value="'+apellidos+'"><p style="font-size:140%" class="text-left">'+apellidos+'</p><input type="hidden" name="stock" value="'+documento+'"><p style="font-size:140%" class="text-left">'+documento+'</p><input type="hidden" name="stock" value="'+fecha_nacimiento+'"><p style="font-size:140%" class="text-left">'+fecha_nacimiento+'</p><input type="hidden" name="stock" value="'+cuil+'"><p style="font-size:140%" class="text-left">'+cuil+'</p><input type="hidden" name="stock" value="'+peso+'"><p style="font-size:140%" class="text-left">'+peso+'</p><input type="hidden" name="stock" value="'+estatura+'"><p style="font-size:140%" class="text-left">'+estatura+'</p><input type="hidden" name="stock" value="'+empresa+'"><p style="font-size:140%" class="text-left">'+empresa+'</p><input type="hidden" name="stock" value="'+sexo+'"><p style="font-size:140%" class="text-left">'+sexo+'</p><input type="hidden" name="paciente_id" value="'+paciente_id+'">';
-                        $("#datos_paciente").append(datosPaciente);
-                        eliminarDelSelect2 ();
-
-
-                    },
-                    error:function(){
-                        console.log('no anda AJAX');
+                guardar.addEventListener("click", function (event) {
+                    if (signaturePad.isEmpty()) {
+                    alert("Please provide a signature first.");
+                    } else {
+                    var dataURL = signaturePad.toDataURL('image/svg+xml');
+                    document.getElementById('firma').value = dataURL;
                     }
                 });
-                /*   Aca iría el Ajax para obtener el stock maximo y realizar el multiplicador*/
-
-            }
-                function eliminarDelSelect2 ()
-                {
-                    $("#paciente_id option:selected").remove();
-
-                }
-
+            //
         });
 
     </script>

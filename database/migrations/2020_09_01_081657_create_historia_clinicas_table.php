@@ -15,7 +15,7 @@ class CreateHistoriaClinicasTable extends Migration
     {
         Schema::create('historia_clinicas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            //$table->binary('firma')->nullable();
+            $table->binary('firma')->nullable();
             $table->char('codigo',10);
 
             $table->unsignedBigInteger('user_id');

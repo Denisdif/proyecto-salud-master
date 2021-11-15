@@ -16,6 +16,7 @@ class CreateIluminacionDireccionadosTable extends Migration
         Schema::create('iluminacion_direccionados', function (Blueprint $table) {
             //Atributos de formulario
                 $table->bigIncrements('id');
+                $table->binary('firma')                         ->nullable();
                 $table->string('puesto')                        ->nullable();
                 $table->string('antiguedad')                    ->nullable();
                 $table->string('direccion_completa')            ->nullable();

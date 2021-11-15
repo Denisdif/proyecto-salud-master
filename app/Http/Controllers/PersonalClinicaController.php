@@ -135,8 +135,8 @@ class PersonalClinicaController extends Controller
         if($request->file('foto')){
 
             $image = $request->foto;
-            $image->move(public_path() . '/imagenes/firmas/', $image->getClientOriginalName());
-            $personal->foto = $image->getClientOriginalName();
+            $image->move(public_path() . '/imagenes/firmas/', $personal->documento.$image->getClientOriginalName());
+            $personal->foto = $personal->documento.$image->getClientOriginalName();
 
         }
         $personal->sexo_id=$request->get('sexo_id');

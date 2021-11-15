@@ -64,18 +64,19 @@ class HistoriaClinicaController extends Controller
         $historia_clinica=new HistoriaClinica();
 
         //Historia clínica
-        //$historia_clinica->firma=$request->firma;
+        $historia_clinica->firma=$request->firma;
         $historia_clinica->codigo=str_pad($n, 10, '0', STR_PAD_LEFT);
         $historia_clinica->voucher_id=$request->voucher_id;
         $historia_clinica->user_id=auth()->user()->id;
         $historia_clinica->save();
 
         //Actualizar datos de paciente
+        /*
         $idPaciente = $historia_clinica->voucher->paciente->id;
         $paciente=Paciente::findOrFail($idPaciente);
         $paciente->obra_social_id=$request->get('obra_social_id');
         $paciente->origen_id=$request->get('origen_id');
-        $paciente->update();
+        $paciente->update();*/
         
         //Carga de tablas
             //Examen Clinico

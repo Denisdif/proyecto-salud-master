@@ -325,7 +325,7 @@
                                 x
                             @endif
                             </td>
-                            <td style="text-align: left; width: 500px">
+                            <td style="text-align: left; width: 570px">
                                 Ausencia de signos y síntomas     
                             </td>
                         </tr>
@@ -338,7 +338,7 @@
                                 x
                                 @endif
                             </td>
-                            <td style="text-align: left; width: 500px">
+                            <td style="text-align: left; width: 570px">
                                 Dolor en reposo y/o existencia de sintomatologia sugestiva   
                             </td>
                         </tr>
@@ -351,7 +351,7 @@
                                 x
                                 @endif
                             </td>
-                            <td style="text-align: left; width: 500px">
+                            <td style="text-align: left; width: 570px">
                                 Grado 1 mas contrac tura y/o dolor a la movilizacion
                             </td>
                         </tr>
@@ -364,7 +364,7 @@
                                 x
                                 @endif
                             </td>
-                            <td style="text-align: left; width: 500px">
+                            <td style="text-align: left; width: 570px">
                                 Grado 2 mas dolor a la palpación y/o percusiòn
                             </td>
                         </tr>
@@ -377,7 +377,7 @@
                                 x
                                 @endif
                             </td>
-                            <td style="text-align: left; width: 500px">
+                            <td style="text-align: left; width: 570px">
                                 Grado 3 mas limitacion funcional evidente clinicamente
                             </td>
                         </tr>
@@ -389,6 +389,18 @@
                 </div>
             @endif
         <!-- / Semiológica -->
+        <hr>
+        <!-- FIRMAS -->
+        <table class="table table-condensed table-hover" >
+            <tr >
+                <td style="width: 570px;text-align: right">
+                    <div>
+                        <img src="{{$posiciones_forzada->firma}}" width=130 height=130 alt="firma del paciente">
+                    </div>
+                    <label>Firma del Paciente</label>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
