@@ -14,7 +14,7 @@
             padding: 1%;
         }
         .titulo{
-            background-color: red;
+            background-color: brown;
             color: white;
             font-weight: bold;
             font-size: 15px;
@@ -53,7 +53,7 @@
             <tbody>
                 @foreach ($voucher->vouchersEstudios as $item)
                 {{$cont++}}
-                @if (($tipo->id == 3) || ($tipo->id == 6))
+                @if (($tipo->id == 3) || ($tipo->id == 4) || ($tipo->id == 6))
                     @if ($item->estudio->tipo_estudio_id == $tipo->id)
                         {{$i++}} 
                         @if ($i%3 == 0)
@@ -67,6 +67,10 @@
                     @if ($cont == sizeof($voucher->vouchersEstudios))
                         </tr>
                     @endif
+                @else
+                    @if ($tipo->nombre == strtoupper($item->estudio->nombre))
+                        <tr><td>{{ $tipo->nombre}}</td></tr>
+                    @endif  
                 @endif
                 @endforeach
             </tbody>

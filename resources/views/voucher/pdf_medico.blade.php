@@ -14,7 +14,7 @@
             padding: 1%;
         }
         .titulo{
-            background-color: red;
+            background-color: brown;
             color: white;
             font-weight: bold;
             font-size: 15px;
