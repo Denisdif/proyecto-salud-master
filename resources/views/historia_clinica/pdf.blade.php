@@ -103,12 +103,7 @@
                     <label for="">Frecuencia Cardíaca:</label> {{$hc_formulario->cardiovascular->frecuencia_cardiaca}}
                 </td>
                 <td colspan="6">
-                    <label for="">Tensión Arterial:</label>
-                    @if ($hc_formulario->cardiovascular->tension_arterial==true)
-                        S
-                    @else
-                        D
-                    @endif
+                    <label for="">Tensión Arterial:</label> {{$hc_formulario->cardiovascular->tension_arterial}}
                 </td>
             </tr>
             <tr style="text-align: left;">
@@ -116,12 +111,7 @@
                     <label for="">Várices:</label> {{$hc_formulario->cardiovascular->observacion_varices}}
                 </td>
                 <td colspan="6">
-                    <label for="">Pulso:</label>
-                    @if ($hc_formulario->cardiovascular->pulso==true)
-                        N
-                    @else
-                        A
-                    @endif
+                    <label for="">Pulso:</label> {{$hc_formulario->cardiovascular->pulso}}
                 </td>
             </tr>
         </table>

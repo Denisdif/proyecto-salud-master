@@ -136,10 +136,10 @@
                                         <label for="">Tensión arterial:</label>
                                     </div>
                                     <div class="col-2">
-                                        <label><input type="radio" name="tension_arterial" value=0>N</label>
+                                        <label><input type="radio" name="tension_arterial" value="N">N</label>
                                     </div>
                                     <div class="col-2">
-                                        <label><input type="radio" name="tension_arterial" value=1>S</label>
+                                        <label><input type="radio" name="tension_arterial" value="S">S</label>
                                     </div>
                                 </div> 
                                 <div class="form-group row">
@@ -147,10 +147,10 @@
                                         <label for="">Pulso:</label>
                                     </div>
                                     <div class="col-2">
-                                        <label><input type="radio" name="pulso" value=0>A</label>
+                                        <label><input type="radio" name="pulso" value="A">A</label>
                                     </div>
                                     <div class="col-2">
-                                        <label><input type="radio" name="pulso" value=1>N</label>
+                                        <label><input type="radio" name="pulso" value="N">N</label>
                                     </div>
                                 </div>  
                             </div>

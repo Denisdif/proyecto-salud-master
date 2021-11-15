@@ -53,7 +53,7 @@
             </tr>
             <tr style="text-align: left;" >
                 <td style=" width: 350px" colspan="6"> <b> Estatura: (Mts.)    </b>   {{$declaracion_jurada->voucher->paciente->estatura }}        </td>
-                <td style=" width: 350px" colspan="6"> <b> Fecha último examen: </b>   {{$declaracion_jurada->voucher->paciente->fecha_realizacion }}        </td>
+                <td style=" width: 350px" colspan="6"> <b> Fecha último examen: </b>   {{$declaracion_jurada->fecha_realizacion }}        </td>
             </tr>
         </table>
         <!-- ANTECEDENTES FAMILIARES -->
@@ -507,24 +507,25 @@
         </table>
         <p style="font-size: 12px">
             Por la presente declaro bajo juramento que los datos de la presente declaración, de mi puño y letra, son reales y corresponden a mi Historia Clínica Personal.
-            <br><br>
-            Lugar y Fecha: Puerto Rico {{Carbon\Carbon::parse($declaracion_jurada->fecha_realizacion)->format('d/m/Y') }}
         </p>
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div>
-                    <img src="{{$declaracion_jurada->firma}}" width=130 height=130 alt="firma del paciente">
-                </div>
-                <label>Firma del Paciente</label>
-            </div>
-            <!--Fecha de Realización -->
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div>
-                    <img src="{{$declaracion_jurada->personalClinica->firma}}" width=130 height=130 alt="firma del médico">
-                </div>
-                <label>Firma del Médico</label>
-            </div>
-        </div>
+        <p style="font-size: 12px">Lugar y Fecha: Puerto Rico {{Carbon\Carbon::parse($declaracion_jurada->fecha_realizacion)->format('d/m/Y') }}</p>
+        <!-- FIRMAS -->
+        <table class="table table-condensed table-hover" >
+            <tr >
+                <td style="width: 350px;text-align: center" colspan="6">
+                    <div>
+                        <img src="{{$declaracion_jurada->firma}}" width=130 height=130 alt="firma del paciente">
+                    </div>
+                    <label>Firma del Paciente</label>
+                </td>
+                <td style="width: 350px;text-align: center" colspan="6">
+                    <div>
+                        <img src="{{public_path('imagenes/firmas/'.$declaracion_jurada->personalClinica->foto)}}" width=130 height=130 alt="firma del médico">
+                    </div>
+                    <label>Firma del Médico</label>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

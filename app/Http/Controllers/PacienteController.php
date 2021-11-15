@@ -217,18 +217,8 @@ class PacienteController extends Controller
 
         }
         $paciente->save();
-
-
-
-
-
-
         return redirect()->route('paciente.index');
     }
-
-
-
-
     /**
      * Display the specified resource.
      *

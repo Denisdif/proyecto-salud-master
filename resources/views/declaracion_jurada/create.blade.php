@@ -82,7 +82,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div class="form-group">
                                             <label>Seleccionar Medico</label>
                                             <select
@@ -104,20 +104,23 @@
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <label>Estatura</label>
+                                        <label>Fecha de último examen</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                             </div>
+                                            <input type="date" name="fecha_realizacion" placeholder="Ingrese la estatura" class="form-control" title="Ingrese la Estatura" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Estatura</label>
+                                        <div class="input-group">
                                             <input type="text" name="estatura" placeholder="Ingrese la estatura" class="form-control" title="Ingrese la Estatura" required>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <label>Peso</label>
                                         <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                            </div>
                                             <input type="text" name="peso" placeholder="Ingrese el peso" class="form-control" title="Ingrese el Peso" required>
                                         </div>
                                     </div>
@@ -527,8 +530,6 @@
                             </div>
                         </div>
                     </div>
-                    
-
                     <!-- Firma -->
                     <div class="col-12">
                         <div class="card ">
