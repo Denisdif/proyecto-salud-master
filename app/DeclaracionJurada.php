@@ -67,7 +67,7 @@ class DeclaracionJurada extends Model implements Auditable
             /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
             Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
             $matriz = [];
-            $diagnostico = "<b><u>ANTECEDENTES FAMILIARES (AFECCIONES DE PADRE Y/O MADRE)</u></b><br><br>";
+            $diagnostico = "<b>ANTECEDENTES FAMILIARES (AFECCIONES DE PADRE Y/O MADRE)</b><br>";
             //Carga variables
                 $matriz[] = [       //ANTECEDENTES FAMILIARES
                                     $this->antecedenteFamiliar->su_padre_vive,
@@ -122,6 +122,7 @@ class DeclaracionJurada extends Model implements Auditable
                                     $this->antecedenteQuirurjico->detalle1_q,
                                     $this->antecedenteQuirurjico->detalle2_q,
                                     $this->antecedenteQuirurjico->detalle3_q,
+                                    ' ',
                                 ];
             //
             //Carga Labels
@@ -178,18 +179,26 @@ class DeclaracionJurada extends Model implements Auditable
                     '¿Fue intervenido/a quirúrgicamente por alguna causa?',
                     '¿Tiene pendiente alguna cirugía? Por favor detallar Diagnóstico y fecha:',
                     '¿Padece alguna otra enfermedad no especificada en el interrogatorio anterior?',
+                    ' ',
                     ];
             //
             //Carga de diagnostico
+            $vacio = false;
             for ($i=0; $i < sizeof($matriz[1]); $i++) {
                 if ($matriz[0][$i] != null) {
                     if ($matriz[0][$i] == 1) {
-                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>".". ";
+                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>. ";
+                        $vacio = false;
                     }else{
                         if ($matriz[0][$i] == " ") {
-                            $diagnostico = $diagnostico."<u>".$matriz[1][$i]."</u>"."<b>".$matriz[0][$i]."</b>";
+                            if ($vacio) {
+                                $diagnostico = $diagnostico.'Sin datos relevantes.';
+                            }
+                            $vacio = true;
+                            $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
                         }else{
-                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>"."<br>";
+                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>. ";
+                            $vacio = false;
                         }
                     }
                 }

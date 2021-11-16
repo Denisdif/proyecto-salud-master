@@ -67,9 +67,37 @@ class AptitudController extends Controller
                     'RIESGO COD. 09: INGRESO EN ESPACIOS CONFINADOS.',
                     'RIESGO COD. 10: OPERACIÓN DE VEHÍCULOS MOTORIZADOS.',];
         //
+        //Carga de estudios de sistema
+            $declaracion_jurada = $voucher->declaracionJurada;
+            $historia_clinica = $voucher->historiaClinica;
+            $posiciones_forzadas = $voucher->posicionesForzadas;
+            $articulaciones = ['Hombro','Codo','Muñeca','Mano y dedos','Cadera','Rodilla','Tobillo'];
+            $cuadro = 0;
+            $iluminacion_direccionado = $voucher->iluminacionDireccionado;
 
-        $ruta = public_path().'/archivo/'."APTITUD".$aptitud->id.".pdf";
-        $pdf = PDF::loadView('aptitud.pdf',["voucher" => $voucher, "riesgos" => $riesgos]);
+            $diagnosticoD = " ";
+            $diagnosticoH = " ";
+            $diagnosticoP = " ";
+            $diagnosticoI = " ";
+
+            if ($declaracion_jurada) {
+                $diagnosticoD = $declaracion_jurada->generarDiagnostico();
+            }
+            if ($historia_clinica) {
+                $diagnosticoH = $historia_clinica->generarDiagnostico();
+            }
+            if ($posiciones_forzadas) {
+                $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
+            }
+            if ($iluminacion_direccionado) {
+                $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
+            }
+        //
+
+        $pdf = PDF::loadView('aptitud.pdf',["voucher" => $voucher, "riesgos" => $riesgos,
+                                            "diagnosticoD" => $diagnosticoD,"diagnosticoH" => $diagnosticoH,
+                                            "diagnosticoP" => $diagnosticoP,"diagnosticoI" => $diagnosticoI,
+                                            "articulaciones" => $articulaciones, "cuadro" => $cuadro, "posiciones_forzada"=>$posiciones_forzadas]);
         $pdf->setPaper('a4','letter');
 
         return $pdf->stream('aptitud.pdf');
@@ -95,6 +123,26 @@ class AptitudController extends Controller
             }
         }
 
+        //Carga de estudios de sistema
+            $declaracion_jurada = $voucher->declaracionJurada;
+            $historia_clinica = $voucher->historiaClinica;
+            $posiciones_forzadas = $voucher->posicionesForzadas;
+            $iluminacion_direccionado = $voucher->iluminacionDireccionado;
+
+            if ($declaracion_jurada) {
+                $diagnosticoD = $declaracion_jurada->generarDiagnostico();
+            }
+            if ($historia_clinica) {
+                $diagnosticoH = $historia_clinica->generarDiagnostico();
+            }
+            if ($posiciones_forzadas) {
+                $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
+            }
+            if ($iluminacion_direccionado) {
+                $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
+            }
+        //
+            /*
         //PDF
         $ruta = public_path().'/archivo/'."APTITUD".$aptitud->id.".pdf";
         $pdf = PDF::loadView('aptitud.pdf',["voucher"   =>  $voucher]);
@@ -102,7 +150,7 @@ class AptitudController extends Controller
         $pdf->save($ruta);
         $aptitud->pdf = $ruta;
 
-        $aptitud->update();
+        $aptitud->update();*/
 
         return redirect()->route('voucher.show',$voucher->id);
     }

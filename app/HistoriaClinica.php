@@ -220,6 +220,7 @@ class HistoriaClinica extends Model implements Auditable
                                         ' ',
                                         $this->regionAnal->observacion1_an,
                                         $this->regionAnal->observacion_an,
+                                        ' ',
                 ];
             //
             //Carga Labels
@@ -231,8 +232,8 @@ class HistoriaClinica extends Model implements Auditable
 
                                 '<br><b>CARDIOVASCULAR</b><br>',
                                 'Fecruencia cardíaca: ',
-                                'Tensión arterial "S":',
-                                'Pulso "N"',
+                                'Tensión arterial:',
+                                'Pulso:',
                                 'Várices: ',
 
                                 '<br><b>PIEL</b><br>',
@@ -324,19 +325,27 @@ class HistoriaClinica extends Model implements Auditable
                                 '<br><b>REGIÓN ANAL</b><br>',
                                 'Características: ',
                                 'Observaciones: ',
+                                ' ',
                                 ];
                 
             //
             //Carga de diagnostico
+            $vacio = false;
             for ($i=0; $i < sizeof($matriz[1]); $i++) {
                 if ($matriz[0][$i] != null) {
                     if ($matriz[0][$i] == 1) {
-                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>"."<br>";
+                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>. ";
+                        $vacio = false;
                     }else{
                         if ($matriz[0][$i] == " ") {
+                            if ($vacio) {
+                                $diagnostico = $diagnostico.'Sin datos relevantes.';
+                            }
+                            $vacio = true;
                             $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
                         }else{
-                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>"."<br>";
+                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>. ";
+                            $vacio = false;
                         }
                     }
                 }

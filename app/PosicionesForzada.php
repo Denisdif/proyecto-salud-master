@@ -83,7 +83,8 @@ class PosicionesForzada extends Model
                                         //CARACTERIZACIÓN SEMIOLÓGICA
                                         ' ',
                                         $this->semiologica->grado,
-                                        $this->semiologica->observacion1_s
+                                        $this->semiologica->observacion1_s,
+                                        ' ',
                                     ];
                 //
                 //Carga Labels
@@ -117,18 +118,26 @@ class PosicionesForzada extends Model
                                     '<br><b>CARACTERIZACIÓN SEMIOLÓGICA</b><br>',
                                     'Grado: ',
                                     'Observación: ',
+                                    ' ',
                         ];
                 //
                 //Carga de diagnostico
+                $vacio = true;
                 for ($i=0; $i < sizeof($matriz[1]); $i++) {
                     if ($matriz[0][$i] != null) {
                         if ($matriz[0][$i] == 1) {
-                            $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>"."<br>";
+                            $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>. ";
+                            $vacio = false;
                         }else{
                             if ($matriz[0][$i] == " ") {
+                                if ($vacio) {
+                                    $diagnostico = $diagnostico.'Sin datos relevantes.';
+                                }
+                                $vacio = true;
                                 $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
                             }else{
-                                $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>"."<br>";
+                                $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>. ";
+                                $vacio = false;
                             }
                         }
                     }

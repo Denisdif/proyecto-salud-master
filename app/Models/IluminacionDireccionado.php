@@ -29,7 +29,7 @@ class IluminacionDireccionado extends Model
                                         //EXAMEN CLINICO
                                         ' ',$this->cefaleas, $this->vision_doble, $this->mareo_vertigo, $this->conjuntivitis, $this->vision_borrosa, $this->inseguridad_de_pie,
                                         //EXAMEN OCULAR
-                                        ' ',$this->no_centrados,$this->pupilas_anormales,$this->conjuntivas_anormales,$this->corneas_anormales,$this->motilidad_anormal,$this->nistagmus_ausente,$this->informe_ocular,$this->av_correccion,$this->av_sin_correccion,$this->observaciones,
+                                        ' ',$this->no_centrados,$this->pupilas_anormales,$this->conjuntivas_anormales,$this->corneas_anormales,$this->motilidad_anormal,$this->nistagmus_ausente,$this->informe_ocular,$this->av_correccion,$this->av_sin_correccion,$this->observaciones,' ',
                                     ];
                 //
                 //Carga Labels
@@ -41,23 +41,30 @@ class IluminacionDireccionado extends Model
                                     '<br><b>EXAMEN CLINICO</b><br>Presencia de:<br>','Cefaleas: ','Visión doble: ','Mareo / vértigo: ','Conjuntivitis: ','Vision borrosa: ','Inseguridad en posición de pie: ',
 
                                     //EXAMEN OCULAR
-                                    '<br><b>EXAMEN OCULAR</b><br>Ojos:<br>','No centrados: ','Pupilas anormales: ','Conjuntivas anormales: ','Corneas anormales: ','Motilidad anormal: ','Nistagmus ausente: ','Informe ocular: ','Agudeza visual con corrección: ','Agudeza visual sin correccion: ','Observaciones: ',
+                                    '<br><b>EXAMEN OCULAR</b><br>Ojos:<br>','No centrados: ','Pupilas anormales: ','Conjuntivas anormales: ','Corneas anormales: ','Motilidad anormal: ','Nistagmus ausente: ','Informe ocular: ','Agudeza visual con corrección: ','Agudeza visual sin correccion: ','Observaciones: ', ' ',
                         ];
                 //
-                //Carga de diagnostico
-                for ($i=0; $i < sizeof($matriz[1]); $i++) {
-                    if ($matriz[0][$i] != null) {
-                        if ($matriz[0][$i] == 1) {
-                            $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>"."<br>";
-                        }else{
-                            if ($matriz[0][$i] == " ") {
-                                $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
-                            }else{
-                                $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>"."<br>";
+            //Carga de diagnostico
+            $vacio = false;
+            for ($i=0; $i < sizeof($matriz[1]); $i++) {
+                if ($matriz[0][$i] != null) {
+                    if ($matriz[0][$i] == 1) {
+                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>. ";
+                        $vacio = false;
+                    }else{
+                        if ($matriz[0][$i] == " ") {
+                            if ($vacio) {
+                                $diagnostico = $diagnostico.'Sin datos relevantes.';
                             }
+                            $vacio = true;
+                            $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
+                        }else{
+                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>. ";
+                            $vacio = false;
                         }
                     }
-                };
+                }
+            };
         return $diagnostico;
     }
     

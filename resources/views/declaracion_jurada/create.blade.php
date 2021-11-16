@@ -109,19 +109,19 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                             </div>
-                                            <input type="date" name="fecha_realizacion" placeholder="Ingrese la estatura" class="form-control" title="Ingrese la Estatura" required>
+                                            <input type="date" name="fecha_realizacion" class="form-control" >
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <label>Estatura</label>
                                         <div class="input-group">
-                                            <input type="text" name="estatura" placeholder="Ingrese la estatura" class="form-control" title="Ingrese la Estatura" required>
+                                            <input type="number" step="0.01" name="estatura" placeholder="Ingrese la estatura" class="form-control" title="Ingrese la Estatura" required>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <label>Peso</label>
                                         <div class="input-group">
-                                            <input type="text" name="peso" placeholder="Ingrese el peso" class="form-control" title="Ingrese el Peso" required>
+                                            <input type="number" step="0.01" name="peso" placeholder="Ingrese el peso" class="form-control" title="Ingrese el Peso" required>
                                         </div>
                                     </div>
                                 </div>

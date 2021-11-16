@@ -14,6 +14,9 @@
         label{
             font-weight: bold;
         }
+        .hidden{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -58,32 +61,93 @@
             @if ($voucher->historiaClinica)
                 <tr>
                     <td colspan="12">
-                        <label for="">HISTORIA CLINICA: </label>
-                        {{$voucher->historiaClinica->diagnostico}}
+                        <u><label for="">HISTORIA CLINICA: </label></u><br>
+                        @php
+                            echo $diagnosticoH;
+                        @endphp
                     </td>
                 </tr>
             @endif
             @if ($voucher->declaracionJurada)
                 <tr>
                     <td colspan="12">
-                        <label for="">DECLARACION JURADA: </label>
-                        {{$voucher->declaracionJurada->diagnostico}}
+                        <u><label for="">DECLARACION JURADA: </label></u><br>
+                        @php
+                            echo $diagnosticoD
+                        @endphp
                     </td>
                 </tr>
             @endif
             @if ($voucher->posicionesForzadas)
                 <tr>
                     <td colspan="12">
-                        <label for="">POSICIONES FORZADAS: </label>
-                        {{$voucher->posicionesForzadas->diagnostico}}
+                        <u><label for="">POSICIONES FORZADAS: </label></u><br>
+                        @php
+                            echo $diagnosticoP
+                        @endphp
                     </td>
                 </tr>
+            </table>
+            <!-- Tabla -->
+                <table>
+                    <tr>
+                        <td><label for="">Semiología del Segmento Corporal Comprometido-Relación Movilidad-Dolor Articular y estado de M.M</label> </td>
+                    </tr>
+                </table>
+                <div style="padding-left: 5%; padding-top: 1%" >
+                    <table class="tabla" style="font-size: 12px">
+                        <!-- Titulos -->
+                            <thead>
+                                <tr>
+                                    <th  scope="col" colspan="2">Articulación</th>
+                                    <th style="width: 60px">Abduc.</th>
+                                    <th style="width: 60px">Adduc.</th>
+                                    <th style="width: 60px">Flexión</th>
+                                    <th style="width: 60px">Extens.</th>
+                                    <th style="width: 60px">Rot. Externa</th>
+                                    <th style="width: 60px">Rot. Interna</th>
+                                    <th style="width: 60px">Irradiac.</th>
+                                    <th style="width: 60px">Alt. M. Muscular</th>
+                                </tr>
+                            </thead>
+                        <!-- / Titulos -->
+                        <tbody>
+                            @foreach ($articulaciones as $art)
+                                <!-- Iteración izquierda o derecha -->
+                                @for ($i = 0; $i < 2; $i++)
+                                    @if ($i == 0)
+                                    <tr>
+                                        <th scope="row" rowspan="2">{{$art}}</th>
+                                        <td>Der.</td>
+                                    @else
+                                    <tr>
+                                        <td>Izq.</td>
+                                    @endif
+                                    <!-- Iteración por cada cuadro -->
+                                    @for ($j = $cuadro; $j < $cuadro+8; $j++)
+                                        @if ($posiciones_forzada->dolor_articular[$j])
+                                            <td style="text-align: center">x</td>
+                                        @else
+                                            <td style="text-align: center"></td>
+                                        @endif
+                                    @endfor
+                                    <div class="hidden"> {{$cuadro = $cuadro + 8}} </div>
+                                </tr>
+                                @endfor
+                            @endforeach 
+                        </tbody>
+                    </table>
+                </div>
+            <!-- / Tabla -->
+            <table>
             @endif
             @if ($voucher->iluminacionDireccionado)
                 <tr>
                     <td colspan="12">
-                        <label for="">ILUMINACION INSUFICIENTE: </label>
-                        {{$voucher->iluminacionDireccionado->diagnostico}}
+                        <u><label for="">ILUMINACION INSUFICIENTE: </label></u><br>
+                        @php
+                            echo $diagnosticoI
+                        @endphp
                     </td>
                 </tr>
             @endif

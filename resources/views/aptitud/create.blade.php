@@ -99,12 +99,17 @@
                                     <div class="card">
                                         <div class="card-header fondo2">
                                             Historia Clínica
+                                            <div class="card-tools">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                            </div>
                                         </div>
                                         <div class="card-body">
                                             <div class="row form-group">
+                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
                                                 <div class="col">
-                                                    <label for="">Diagnóstico: </label>
-                                                    {{$diagnosticoH}}
+                                                    @php
+                                                        echo $diagnosticoH;
+                                                    @endphp
                                                 </div>
                                             </div>
                                         </div>
@@ -117,11 +122,14 @@
                                     <div class="card">
                                         <div class="card-header fondo2">
                                             Declaracion Jurada
+                                            <div class="card-tools">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                            </div>
                                         </div>
                                         <div class="card-body">
                                             <div class="row form-group">
+                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
                                                 <div class="col">
-                                                    <label for="">Diagnóstico: </label>
                                                     @php
                                                         echo $diagnosticoD;
                                                     @endphp
@@ -137,11 +145,14 @@
                                     <div class="card">
                                         <div class="card-header fondo2">
                                             Posiciones Forzadas
+                                            <div class="card-tools">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                            </div>
                                         </div>
                                         <div class="card-body">
                                             <div class="row form-group">
+                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
                                                 <div class="col">
-                                                    <label for="">Diagnóstico: </label>
                                                     @php
                                                         echo $diagnosticoP;
                                                     @endphp
@@ -157,11 +168,14 @@
                                     <div class="card">
                                         <div class="card-header fondo2">
                                             Iluminacion Insuficiente
+                                        <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
                                         </div>
                                         <div class="card-body">
                                             <div class="row form-group">
+                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
                                                 <div class="col">
-                                                    <label for="">Diagnóstico: </label>
                                                     @php
                                                         echo $diagnosticoI;
                                                     @endphp
