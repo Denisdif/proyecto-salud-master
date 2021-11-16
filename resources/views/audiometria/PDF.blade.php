@@ -65,7 +65,7 @@
                         <label class="campos" for="">CUIL-DNI:  </label>{{$voucher->paciente->cuil}}
                     </td>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">Ambiente: </label> ________________________________________________
+                        <label class="campos" for="">Ambiente: </label> CABINA
                     </td>
                 </tr>
                 <tr>
@@ -78,7 +78,7 @@
                 </tr>
                 <tr>
                     <td style="text-align: left; width: 350px">
-                        <label class="campos" for="">Audiómetro utilizado:</label> ______________________________________
+                        <label class="campos" for="">Audiómetro utilizado:</label> KAMPLEK
                     </td>
                 </tr>
             </tbody>
