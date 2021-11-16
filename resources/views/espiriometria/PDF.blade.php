@@ -18,7 +18,7 @@
         .titulo{
             font-weight: bold;
             text-decoration: underline;
-            background-color: red;
+            background-color: brown;
             color: white;
         }
         .subtitulo{
@@ -99,10 +99,10 @@
         <hr>
         <h3 class="titulo" style="text-align: center">DECLARACION JURADA        </h3>
         <div id="header" style="text-align:center">
-            <img src="{{public_path('imagenes/DJ _Espir.JPG')}}" width="710px">
+            <img src="{{public_path('imagenes/DJ _Espir.JPG')}}" width="650px">
         </div>
         <div id="header" style="text-align:center; padding-top: 7%">
-            <img src="{{public_path('imagenes/Firma_esp.JPG')}}" width="710px">
+            <img src="{{public_path('imagenes/Firma_esp.JPG')}}" width="650px">
         </div>
     </div>
 

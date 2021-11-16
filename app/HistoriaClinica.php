@@ -344,7 +344,7 @@ class HistoriaClinica extends Model implements Auditable
                             $vacio = true;
                             $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
                         }else{
-                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>. ";
+                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>.<br> ";
                             $vacio = false;
                         }
                     }

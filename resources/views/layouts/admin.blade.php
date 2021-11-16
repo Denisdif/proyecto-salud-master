@@ -321,6 +321,7 @@
                                 <p>Cuenta de Usuario</p>
                             </a>
                         </li>   
+                        <!--
                         <li class="nav-item">
                             <a href="{{ route('estudios.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-cogs"></i>
@@ -332,7 +333,7 @@
                                 <i class="nav-icon fa fa-cogs"></i>
                                 <p>Tipos de estudios</p>
                             </a>
-                        </li>
+                        </li>-->
                         @endrole
                         <!--
                             <li class="nav-item">

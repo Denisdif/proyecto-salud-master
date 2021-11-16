@@ -18,7 +18,7 @@
             border: rgb(0, 0, 0) 1px solid;
         }
         .titulo{
-            background-color: red;
+            background-color: brown;
             color: white;
         }
         .subtitulo{

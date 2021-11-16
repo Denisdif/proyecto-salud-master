@@ -38,7 +38,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header header-bg header-bg">
+            <div class="card-header header-bg ">
                 <div class="card-title">
                     <p style="font-size:130%"> <i class="fas fa-stethoscope"></i> Formulario de Posiciones Forzadas</p>
                 </div>

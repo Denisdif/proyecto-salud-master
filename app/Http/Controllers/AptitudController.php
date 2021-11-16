@@ -148,9 +148,9 @@ class AptitudController extends Controller
         $pdf = PDF::loadView('aptitud.pdf',["voucher"   =>  $voucher]);
         $pdf->setPaper('a4','letter');
         $pdf->save($ruta);
-        $aptitud->pdf = $ruta;
+        $aptitud->pdf = $ruta;*/
 
-        $aptitud->update();*/
+        $aptitud->update();
 
         return redirect()->route('voucher.show',$voucher->id);
     }

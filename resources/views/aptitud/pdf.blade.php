@@ -54,14 +54,14 @@
         </table>
         <!-- RESULTADOS DE ESTUDIOS -->
         <table class="table table-condensed table-hover" >
-            <tr>
-                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">RESULTADOS DE ESTUDIOS</td>
-            </tr>
+
             <!-- Estudios por sistema -->
             @if ($voucher->historiaClinica)
                 <tr>
+                    <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">HISTORIA CLINICA</td>
+                </tr>    
+                <tr>
                     <td colspan="12">
-                        <u><label for="">HISTORIA CLINICA: </label></u><br>
                         @php
                             echo $diagnosticoH;
                         @endphp
@@ -69,6 +69,9 @@
                 </tr>
             @endif
             @if ($voucher->declaracionJurada)
+                <tr>
+                    <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">DECLARACION JURADA</td>
+                </tr>
                 <tr>
                     <td colspan="12">
                         <u><label for="">DECLARACION JURADA: </label></u><br>
@@ -79,6 +82,9 @@
                 </tr>
             @endif
             @if ($voucher->posicionesForzadas)
+                <tr>
+                    <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">POSICIONES FORZADAS</td>
+                </tr>
                 <tr>
                     <td colspan="12">
                         <u><label for="">POSICIONES FORZADAS: </label></u><br>
@@ -152,6 +158,9 @@
                 </tr>
             @endif
             <!-- Estudios por cargar -->
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">RESULTADOS DE ESTUDIOS</td>
+            </tr>
             @foreach ($voucher->estudiosCargar() as $item)
                 @if ($item->archivo_adjunto)
                     <tr>

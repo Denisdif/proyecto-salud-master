@@ -49,7 +49,7 @@ class IluminacionDireccionado extends Model
             for ($i=0; $i < sizeof($matriz[1]); $i++) {
                 if ($matriz[0][$i] != null) {
                     if ($matriz[0][$i] == 1) {
-                        $diagnostico = $diagnostico.$matriz[1][$i]."<b>Si</b>. ";
+                        $diagnostico = $diagnostico.$matriz[1][$i].". ";
                         $vacio = false;
                     }else{
                         if ($matriz[0][$i] == " ") {
@@ -59,7 +59,7 @@ class IluminacionDireccionado extends Model
                             $vacio = true;
                             $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";
                         }else{
-                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b>. ";
+                            $diagnostico = $diagnostico.$matriz[1][$i]." "."<b>".$matriz[0][$i]."</b><br>. ";
                             $vacio = false;
                         }
                     }
