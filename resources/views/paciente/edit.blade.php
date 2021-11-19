@@ -72,12 +72,8 @@
                                 -Seleccione un tipo de documento-
                             </option>
                                 @foreach ($tipo_documentos as $tipo_documento)
-                                    @if ($paciente->tipoDocumento != null)
-                                        @if ($tipo_documento->id==$paciente->tipo_documento)
+                                    @if ($paciente->tipoDocumento != null)&&($tipo_documento->id==$paciente->tipo_documento)
                                             <option value="{{$tipo_documento->id}}" selected>{{$tipo_documento->definicion}}</option>
-                                        @else
-                                            <option value="{{$tipo_documento->id}}">{{$tipo_documento->definicion}}</option>
-                                        @endif
                                     @else
                                         <option value="{{$tipo_documento->id}}">{{$tipo_documento->definicion}}</option>
                                     @endif

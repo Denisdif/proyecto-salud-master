@@ -32,6 +32,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PacienteSeeder::class);
         $this->call(TipoEstudioSeeder::class);
         $this->call(EstudioSeeder::class);
-        $this->call(VoucherSeeder::class);
+        //$this->call(VoucherSeeder::class);
     }
 }

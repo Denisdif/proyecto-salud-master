@@ -29,6 +29,7 @@
                                     name="paciente_id"
                                     id="paciente_id"
                                     class="paciente_id custom-select"
+                                    required
                                     >
                                     <option
                                         value="0"
@@ -38,7 +39,7 @@
                                         -Seleccione un paciente-
                                     </option>
                                     @foreach ($pacientes as $paciente)
-                                        <option value="{{$paciente->id }}">{{$paciente->documento . " " . $paciente->nombreCompleto() . " " . $paciente->origen->definicion}}</option>
+                                        <option value="{{$paciente->id }}">{{$paciente->documento . " " . $paciente->nombreCompleto() /*. " " . $paciente->origen->definicion*/}}</option>
                                     @endforeach
                                 </select>
                             </div>
