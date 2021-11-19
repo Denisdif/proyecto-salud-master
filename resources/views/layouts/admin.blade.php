@@ -278,7 +278,7 @@
                         <li class="nav-item">
                             <a href="{{ route('iluminacion_direccionados.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
-                                <p>Iluinación Direccionado</p>
+                                <p>Direccionado</p>
                             </a>
                         </li> 
                         <li class="nav-item">

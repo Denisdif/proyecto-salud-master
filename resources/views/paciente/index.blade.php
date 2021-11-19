@@ -11,20 +11,20 @@
 <div class="card ">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         @include('errors.request')
-        <div class="card-header">
+        <div class="card-header header-bg">
             <div class="card-title">
                 <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Indice de Pacientes</p>
             </div>
             <div class="card-tools">
                 <a href= {{ route('paciente.create')}}>
-                    <button class="btn btn-primary">
+                    <button class="btn fondo1">
                         <i class="fas fa-user-plus"></i> Nuevo
                     </button>
                 </a>
             </div>
         </div>
         <div class="card-body">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <p>
                     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fa fa-filter" aria-hidden="true"></i> Filtrar
@@ -36,7 +36,7 @@
                         @include('paciente.search')
                     </div>
                 </div>
-            </div>
+            </div-->
             <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table table-bordered table-condensed table-hover">
                 <thead style="background-color:#222D32">
                     <tr  class="text-uppercase">
@@ -76,7 +76,7 @@
                             
 
                             <a data-keyboard="false" data-target="#modal-show-{{ $paciente->id }}" data-toggle="modal">
-                                <button title="editar" class="btn btn-info btn-md">
+                                <button title="editar" class="btn fondo1 btn-md">
                                     <i class="fa fa-eye"></i>
                                 </button>
 
@@ -84,7 +84,7 @@
 
               
                             <a href="{{URL::action('PacienteController@edit',$paciente->id)}}">
-                                <button title="editar" class="btn btn-primary btn-responsive">
+                                <button title="editar" class="btn fondo2 btn-responsive">
                                     <i class="fa fa-edit"></i>
                                 </button>
                             </a>
@@ -92,7 +92,7 @@
 
                             @if($paciente->estado_id == 1)
                                 <a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $paciente->id }}" data-toggle="modal">
-                                    <button title="eliminar" class="btn btn-danger btn-md">
+                                    <button title="eliminar" class="btn fondo1 btn-md">
                                         <i class="fas fa-user-minus"></i>
                                     </button>
                                 </a>

@@ -22,7 +22,7 @@
                     @if ($voucher->aptitud)
                         <a href= {{ route('aptitudes.pdf',$voucher->id)}} class="btn fondo1"><i class="fas fa-file-pdf"></i> Informe Final</a>
                     @else 
-                        <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Informe Final Generar</a>
+                        <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Generar Informe Final</a>
                     @endif
                 </div>
             </div>

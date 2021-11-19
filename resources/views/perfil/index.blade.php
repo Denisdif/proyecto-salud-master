@@ -9,7 +9,7 @@
 <div class="card">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         @include('errors.request')
-        <div class="card-header">
+        <div class="card-header header-bg">
             <div class="card-title">
                 <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Mi Perfil</p>
             </div>
@@ -41,7 +41,7 @@
                         <td style="text-align: center" colspan="3">
 
                             <a data-keyboard="false" data-target="#modal-show-{{ $user->id }}" data-toggle="modal">
-                                <button title="ver" class="btn btn-info btn-responsive">
+                                <button title="ver" class="btn fondo1 btn-responsive">
                                     <i class="fa fa-eye"></i>
                                 </button>
 
@@ -49,7 +49,7 @@
                             @include('user.modalshow')
 
                              <a href="{{URL::action('PerfilController@edit')}}">
-                                <button title="editar" class="btn btn-primary btn-responsive">
+                                <button title="editar" class="btn fondo2 btn-responsive">
                                     <i class="fa fa-edit"></i>
                                 </button>
                             </a>

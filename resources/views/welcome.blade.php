@@ -11,7 +11,7 @@
 <div class="card-body">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <!--div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="small-box bg-primary">
                     <div class="inner">
                         <h3>{{$cantUser}}</h3>
@@ -21,7 +21,7 @@
                         <i class="fa fa-id-card" aria-hidden="true"></i>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
         <!--div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
