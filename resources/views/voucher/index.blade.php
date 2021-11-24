@@ -2,7 +2,7 @@
 
 @section('navegacion')
     <li class="breadcrumb-item"><a href="/">Menu Principal</a></li>
-    <li class="breadcrumb-item active">Indice de Vouchers</li>
+    <li class="breadcrumb-item active">Indice de Estudios</li>
 @endsection
 
 @section('content') <!-- Contenido -->
@@ -12,7 +12,7 @@
         @include('voucher.mensaje')
         <div class="card-header fondo2">
             <div class="card-title">
-                <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Indice de Vouchers</p>
+                <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Indice de Estudios</p>
             </div>
             <div class="card-tools">
                 <a href= {{ route('voucher.create')}}>
