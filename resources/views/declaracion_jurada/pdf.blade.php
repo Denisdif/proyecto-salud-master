@@ -29,23 +29,23 @@
             </tr>
             <tr style="text-align: left;">
                 <td style=" width: 350px" colspan="6"> <b> Nombre Completo:</b> {{$declaracion_jurada->voucher->paciente->nombreCompleto()}}</td>
-                <td style=" width: 350px" colspan="6"><b>Sexo:</b> {{$declaracion_jurada->voucher->paciente->sexo->abreviatura }}  </td>
+                <td style=" width: 350px" colspan="6"><b>Sexo:</b> {{$declaracion_jurada->voucher->paciente->sexo ? $declaracion_jurada->voucher->paciente->sexo->abreviatura : " " }}  </td>
             </tr>
             <tr style="text-align: left;" >
                 <td style=" width: 350px" colspan="6"> <b> Fecha de Nacimiento:</b> {{Carbon\Carbon::parse($declaracion_jurada->voucher->paciente->fecha_nacimiento)->format('d/m/Y') }}</td>
-                <td style=" width: 350px" colspan="6"> <b>Lugar:</b>  {{$declaracion_jurada->voucher->paciente->lugarNacimiento() }} </td>
+                <td style=" width: 350px" colspan="6"> <b>Lugar:</b>  {{$declaracion_jurada->voucher->paciente->ciudad ? $declaracion_jurada->voucher->paciente->lugarNacimiento() : " " }} </td>
             </tr>
             <tr style="text-align: left;" >
                 <td style=" width: 350px" colspan="6"> <b> Documento de identidad: </b>    {{$declaracion_jurada->voucher->paciente->documentoIdentidad() }}           </td>
-                <td style=" width: 350px" colspan="6"> <b> Estado Civil:           </b>    {{$declaracion_jurada->voucher->paciente->estadoCivil->abreviatura }}       </td>
+                <td style=" width: 350px" colspan="6"> <b> Estado Civil:           </b>    {{$declaracion_jurada->voucher->paciente->estadoCivil ? $declaracion_jurada->voucher->paciente->estadoCivil->abreviatura : " "  }}       </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 350px" colspan="6"> <b> Domicilio: </b>     {{$declaracion_jurada->voucher->paciente->direccion() }}                               </td>
-                <td style=" width: 350px" colspan="6"> <b> CP:        </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->codigo_postal }}          </td>
+                <td style=" width: 350px" colspan="6"> <b> Domicilio: </b>     {{$declaracion_jurada->voucher->paciente->domicilio ? $declaracion_jurada->voucher->paciente->direccion() : " "}}                               </td>
+                <td style=" width: 350px" colspan="6"> <b> CP:        </b>     {{$declaracion_jurada->voucher->paciente->domicilio ? $declaracion_jurada->voucher->paciente->domicilio->ciudad->codigo_postal : " "}}          </td>
             </tr>
             <tr style="text-align: left;" >
-                <td style=" width: 350px" colspan="6"> <b> Provincia: </b>     {{$declaracion_jurada->voucher->paciente->domicilio->ciudad->provincia->nombre }}      </td>
-                <td style=" width: 350px" colspan="6"> <b> Localidad: </b>     {{$declaracion_jurada->voucher->paciente->ciudad->nombre }}      </td>
+                <td style=" width: 350px" colspan="6"> <b> Provincia: </b>     {{$declaracion_jurada->voucher->paciente->domicilio ? $declaracion_jurada->voucher->paciente->domicilio->ciudad->provincia->nombre : " "}}      </td>
+                <td style=" width: 350px" colspan="6"> <b> Localidad: </b>     {{$declaracion_jurada->voucher->paciente->ciudad ? $declaracion_jurada->voucher->paciente->lugarNacimiento() : " " }} <!-- No corresponde ciudad, debe ir el domicilio -->      </td>
             </tr>
             <tr style="text-align: left;" >
                 <td style=" width: 350px" colspan="6"> <b> Teléfono:      </b>     {{$declaracion_jurada->voucher->paciente->telefono }}      </td>
@@ -520,7 +520,9 @@
                 </td>
                 <td style="width: 350px;text-align: center" colspan="6">
                     <div>
-                        <img src="{{public_path('imagenes/firmas/'.$declaracion_jurada->personalClinica->foto)}}" width=130 height=130 alt="firma del médico">
+                        @if ($declaracion_jurada->personalClinica->foto)
+                            <img src="{{public_path('imagenes/firmas/'.$declaracion_jurada->personalClinica->foto)}}" width=130 height=130 alt="firma del médico">
+                        @endif
                     </div>
                     <label>Firma del Médico</label>
                 </td>

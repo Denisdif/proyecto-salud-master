@@ -50,7 +50,7 @@
         <p class="campos" >Fecha: _________/_________/_________</p>
         <!-- Datos precargados -->
         <p class="subtitulo">DATOS DE LA EMPRESA</p>
-        <p class="datos"> <label class="campos" for="">Razón social:</label> {{$voucher->paciente->origen->definicion}} </p>
+        <p class="datos"> <label class="campos" for="">Razón social:</label> {{$voucher->paciente->origen ? $voucher->paciente->origen->definicion : " "}} </p>
 
         <p class="subtitulo">DATOS DE LA TRABAJADOR</p>
 

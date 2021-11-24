@@ -53,11 +53,11 @@
                     <tr>
                         <td style="text-align: left; width: 350px">
                            <label for=""> Empresa:                   </label>    
-                               {{$posiciones_forzada->voucher->paciente->origen->definicion }}  
+                               {{$posiciones_forzada->voucher->paciente->origen ? $posiciones_forzada->voucher->paciente->origen->definicion : " " }}  
                         </td>
                         <td style="text-align: left; width: 350px">
                            <label for=""> CUIT:                      </label>    
-                               {{$posiciones_forzada->voucher->paciente->origen->cuit       }}  
+                               {{$posiciones_forzada->voucher->paciente->origen ? $posiciones_forzada->voucher->paciente->origen->cuit : " "       }}  
                         </td>
                     </tr>
                     <tr>

@@ -31,6 +31,11 @@ class AptitudController extends Controller
         $posiciones_forzadas = $voucher->posicionesForzadas;
         $iluminacion_direccionado = $voucher->iluminacionDireccionado;
 
+        $diagnosticoD = " ";
+        $diagnosticoH = " ";
+        $diagnosticoP = " ";
+        $diagnosticoI = " ";
+
         if ($declaracion_jurada) {
             $diagnosticoD = $declaracion_jurada->generarDiagnostico();
         }

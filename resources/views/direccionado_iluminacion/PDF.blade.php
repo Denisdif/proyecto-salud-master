@@ -56,17 +56,21 @@
                 <tr>
                     <td class="datos" style="text-align: left; width: 350px">
                        <label for=""> Nombre:                   </label>    
-                           {{$iluminacion->voucher->paciente->origen->definicion           }}  
+                           {{$iluminacion->voucher->paciente->origen ? $iluminacion->voucher->paciente->origen->definicion : " "         }}  
                     </td>
                     <td class="datos" style="text-align: left; width: 350px">
                        <label for=""> CUIT:                      </label>    
-                           {{$iluminacion->voucher->paciente->origen->cuit                 }}  
+                           {{$iluminacion->voucher->paciente->origen ? $iluminacion->voucher->paciente->origen->cuit : " "                }}  
                     </td>
                 </tr>
                 <tr>
                     <td class="datos" style="text-align: left; width: 350px">
                        <label for=""> Domicilio:                 </label>    
-                           {{$iluminacion->voucher->paciente->origen->domicilio->direccion }}  
+                        @if ($iluminacion->voucher->paciente->origen)
+                            @if ($iluminacion->voucher->paciente->origen->domicilio)
+                                {{$iluminacion->voucher->paciente->origen->domicilio->direccion}}
+                            @endif
+                        @endif 
                     </td>
                 </tr>
             </tbody>
@@ -93,7 +97,7 @@
                 <tr>
                     <td class="datos" style="text-align: left; width: 350px">
                         <label for=""> Sexo:                              </label>    
-                            {{$iluminacion->voucher->paciente->sexo->definicion             }}  
+                            {{$iluminacion->voucher->paciente->sexo ? $iluminacion->voucher->paciente->sexo->definicion : " "            }}  
                     </td>
                     <td class="datos" style="text-align: left; width: 350px">
                         <label for=""> Fecha de nacimiento:               </label>    

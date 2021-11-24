@@ -102,6 +102,5 @@ class CiudadSeeder extends Seeder
             'nombre'=>'Puerto Rico',
             'codigo_postal'=>3334,
             'provincia_id'=>1]);
-
     }
 }

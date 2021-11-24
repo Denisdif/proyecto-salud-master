@@ -29,15 +29,20 @@
             </tr>
             <tr style="text-align: left;">
                 <td style=" width: 350px" colspan="6">
-                    <label>Razón Social:</label> {{$hc_formulario->voucher->paciente->origen->definicion}}
+                    <label>Razón Social:</label> {{$hc_formulario->voucher->paciente->origen ? $hc_formulario->voucher->paciente->origen->definicion : " "}}
                 </td>
                 <td style=" width: 350px" colspan="6">
-                    <label>CUIT:</label> {{$hc_formulario->voucher->paciente->origen->cuit}} 
+                    <label>CUIT:</label> {{$hc_formulario->voucher->paciente->origen ? $hc_formulario->voucher->paciente->origen->cuit : " "}} 
                 </td>
             </tr>
             <tr style="text-align: left;">
                 <td style=" width: 350px" colspan="6">
-                    <label>Domicilio:</label> {{$hc_formulario->voucher->paciente->origen->domicilio->direccion}}
+                    <label>Domicilio:</label> 
+                    @if ($hc_formulario->voucher->paciente->origen)
+                        @if ($hc_formulario->voucher->paciente->origen->domicilio)
+                            {{$hc_formulario->voucher->paciente->origen->domicilio->direccion}}
+                        @endif
+                    @endif 
                 </td>
             </tr>
         </table>
@@ -59,7 +64,7 @@
                     <label>CUIL:</label> {{$hc_formulario->voucher->paciente->cuil }}
                 </td>
                 <td style=" width: 350px" colspan="6">
-                    <label>Sexo:</label> {{$hc_formulario->voucher->paciente->sexo->abreviatura }}
+                    <label>Sexo:</label> {{$hc_formulario->voucher->paciente->sexo ? $hc_formulario->voucher->paciente->sexo->abreviatura : " " }}
                 </td>
             </tr>
         </table>
