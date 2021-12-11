@@ -9,21 +9,14 @@ use PDF;
 
 class AptitudController extends Controller
 {
+
     public function create($id)
-    {
+    {   
+        $aptitud = new Aptitud(); 
         $voucher  = Voucher::find($id);
 
         //Carga de riesgos
-        $riesgos = ['RIESGO COD. 01: SIN EXPOSICIÓN A AGENTES O ACTIVIDADES DE RIESGO ESPECÍFICOS.',
-                    'RIESGO COD. 02: SUSTANCIAS QUÍMICAS (POLVOS, HUMOS, VAPORES O GASES).',
-                    'RIESGO COD. 03: RUIDO.',
-                    'RIESGO COD. 04: VIBRACIONES TRANSMITIDAS AL CUERPO ENTERO.',
-                    'RIESGO COD. 05: VIBRACIONES TRANSMITIDAS A LA EXTREMIDAD SUPERIOR.',
-                    'RIESGO COD. 06: VIBRACIONES TRANSMITIDAS A LA EXTREMIDAD INFERIOR.',
-                    'RIESGO COD. 07: POSICIONES FORZADAS Y GESTOS REPETITIVOS.',
-                    'RIESGO COD. 08: TRABAJO EN ALTURA.',
-                    'RIESGO COD. 09: INGRESO EN ESPACIOS CONFINADOS.',
-                    'RIESGO COD. 10: OPERACIÓN DE VEHÍCULOS MOTORIZADOS.',];
+        $riesgos = $aptitud->riesgos();
 
         //Carga de estudios de sistema
         $declaracion_jurada = $voucher->declaracionJurada;
@@ -60,17 +53,9 @@ class AptitudController extends Controller
     {   
         $voucher= Voucher::find($id);
         $aptitud= $voucher->aptitud;
+        
         //Carga de riesgos
-        $riesgos = ['RIESGO COD. 01: SIN EXPOSICIÓN A AGENTES O ACTIVIDADES DE RIESGO ESPECÍFICOS.',
-                    'RIESGO COD. 02: SUSTANCIAS QUÍMICAS (POLVOS, HUMOS, VAPORES O GASES).',
-                    'RIESGO COD. 03: RUIDO.',
-                    'RIESGO COD. 04: VIBRACIONES TRANSMITIDAS AL CUERPO ENTERO.',
-                    'RIESGO COD. 05: VIBRACIONES TRANSMITIDAS A LA EXTREMIDAD SUPERIOR.',
-                    'RIESGO COD. 06: VIBRACIONES TRANSMITIDAS A LA EXTREMIDAD INFERIOR.',
-                    'RIESGO COD. 07: POSICIONES FORZADAS Y GESTOS REPETITIVOS.',
-                    'RIESGO COD. 08: TRABAJO EN ALTURA.',
-                    'RIESGO COD. 09: INGRESO EN ESPACIOS CONFINADOS.',
-                    'RIESGO COD. 10: OPERACIÓN DE VEHÍCULOS MOTORIZADOS.',];
+        $riesgos = $aptitud->riesgos();
         //
         //Carga de estudios de sistema
             $declaracion_jurada = $voucher->declaracionJurada;

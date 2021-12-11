@@ -30,34 +30,7 @@
                 <div class="row">
                     <!-- PACIENTE -->
                     <div class="col-6 d-flex align-items-stretch">
-                        <div class="card flex-fill">
-                            <div style="text-align: center" class="card-header fondo2">
-                                DATOS DEL PACIENTE
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <div class="added"> <input type="hidden" value="'+nombres+'">
-                                            <p style="font-size:100%" class="text-left"> <strong> Nombre completo:              </strong> {{$voucher->paciente->nombreCompleto()     }} </p>
-                                            <p style="font-size:100%" class="text-left"> <strong> CUIL:                         </strong> {{$voucher->paciente->cuil                 }} </p>
-                                            <p style="font-size:100%" class="text-left"> <strong> Fecha de nacimiento:          </strong> {{$voucher->paciente->fecha_nacimiento()   }} </p> 
-                                            <p style="font-size:100%" class="text-left"> <strong> Edad:                         </strong> {{$voucher->paciente->edad()               }} </p>
-                                            <p style="font-size:100%" class="text-left"> <strong> Sexo:                         </strong> {{$voucher->paciente->sexo  ? $voucher->paciente->sexo->definicion : " "   }} </p>
-                                            <p style="font-size:100%" class="text-left"> <strong> Turno de este Voucher:        </strong> {{$voucher->turno     }} </p>  
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="added"> 
-                                            @if($voucher->paciente->imagen==null)
-                                                <img class="img-thumbnail" height="200px" width="200px" src="{{ asset('imagenes/paciente/default.png')}}">
-                                            @else
-                                                <img class="img-thumbnail" height="200px" width="200px" src="{{$voucher->paciente->imagen}}">
-                                            @endif 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @include('datos_paciente.card_datos')
                     </div>
                     <!-- ESTUDIOS DEL SISTEMA -->
                     <div class="col-6 d-flex align-items-stretch ">
