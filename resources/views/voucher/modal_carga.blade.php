@@ -14,7 +14,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="message-text" class="col-form-label">Archivo:</label>
-                    <input class="form-control-file" name="anexo[]" type="file" multiple>
+                    <input class="form-control-file" name="anexo[]" type="file" multiple required>
                 </div>
                 <div class="form-group">
                     <input type="text" name="voucher_estudio_id" class="form-control" id="voucher_estudio" hidden>

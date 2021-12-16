@@ -60,7 +60,7 @@
                                                     </td>
                                                 @else
                                                     <td style="width: 65%">{{ $estudios_sistema[0][$item]->estudio->nombre }}</td>
-                                                    @if ($estudios_sistema[0][$item]->archivo_adjunto)
+                                                    @if ($estudios_sistema[0][$item]->archivo_adjunto != "[]")
                                                         <td style="text-align: center">
                                                             <a target="_blank" href="{{ route('voucherEstudio.show',$estudios_sistema[0][$item]->id) }}" class="btn fondo1 btn-responsive">
                                                                 <i class="fas fa-file-pdf"></i>

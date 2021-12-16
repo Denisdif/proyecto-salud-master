@@ -15,7 +15,7 @@
                         @for ($i = 0; $i < sizeof($item->archivo_adjunto); $i++)
                         <tr>
                             <td style="text-align: left">
-                                <a href={{ route('voucherEstudio.show',$item->archivo_adjunto[$i]->id)}}>{{strtoupper($item->estudio->nombre)    }} {{ $i + 1 }}</a> 
+                                <a href={{ route('voucherEstudio.descargar',$item->archivo_adjunto[$i]->id)}}>{{strtoupper($item->estudio->nombre)    }} {{ $i + 1 }}</a> 
                             </td>
                         </tr>
                     @endfor
