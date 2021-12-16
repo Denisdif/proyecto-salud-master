@@ -22,6 +22,17 @@ class VoucherEstudio extends Model
 
     public function archivo_adjunto()
     {
-        return $this->hasOne('App\ArchivoAdjunto','voucher_estudio_id','id');
+        return $this->hasMany('App\ArchivoAdjunto','voucher_estudio_id','id');
+    }
+
+    //---------------------------------------- Metodos ---------------------------------------//
+
+    public function archivos()
+    {   
+        $archivos = [];
+        foreach ($this->archivo_adjunto as $item) {
+            $archivos[] = $item->anexo;
+        }
+        return $archivos;
     }
 }

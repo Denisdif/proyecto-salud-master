@@ -105,12 +105,15 @@
                                         <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
                                             <td style="text-align: left"> {{strtoupper($item->estudio->nombre)    }}    </td>
                                             <td style="text-align: left"> {{($item->estudio->tipoEstudio->nombre) }}    </td> 
-                                            @if ($item->archivo_adjunto)
+                                            @if ($item->archivo_adjunto != "[]")
                                                 <td><label class="badge badge-success" style="font-size:90%">Cargado</label></td>
                                                 <td style="text-align: center">
-                                                    <a target="_blank" href="{{ route('voucherEstudio.show',$item->id) }}" class="btn fondo1 btn-responsive">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn fondo1 btn-responsive" data-toggle="modal" data-target="#modelAchivos{{$item->id}}">
                                                         <i class="fas fa-file-pdf"></i>
-                                                    </a>
+                                                    </button>
+                                                    <!-- MODAL PARA MOSTRAR ARCHIVOS -->
+                                                    @include('voucher.modal_archivos')
                                                 </td>
                                             @else
                                                 <td><label class="badge badge-danger" style="font-size:90%">Pendiente</label></td>
@@ -131,39 +134,12 @@
             </div>
         </div>
     </div>
-    <!-- MODAL PARA ARCHIVOS -->
-    <div class="modal fade" id="archivoModal" tabindex="-1" role="dialog" aria-labelledby="archivoModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <!-- HEADER -->
-                <div class="modal-header fondo1">
-                    <h5 class="modal-title" id="archivoModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            <form method="POST" action="{{route('voucherEstudio.archivo')}}" enctype="multipart/form-data">
-                @csrf
-                <!-- BODY -->
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Archivo:</label>
-                        <input class="form-control-file" name="anexo" type="file">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="voucher_estudio_id" class="form-control" id="voucher_estudio" hidden>
-                        <input type="text" name="estudio" class="form-control" id="estudio" hidden>
-                    </div>
-                </div>
-                <!-- FOOTER -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" id="cargarPdf" class="btn fondo1" >Guardar</button>
-                </div>
-            </form>
-            </div>
-        </div>
-    </div>
+
+    <!-- MODAL PARA CARGAR ARCHIVOS -->
+    @include('voucher.modal_carga')
+
+
+
 @push('scripts')
     <script src="{{asset('js/tablaDetalle.js')}}"></script>
     <script>
