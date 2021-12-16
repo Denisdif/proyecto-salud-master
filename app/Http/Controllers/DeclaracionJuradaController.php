@@ -157,11 +157,8 @@ class DeclaracionJuradaController extends Controller
 
             //Generar PDF y enlazarlo
                 //Obtener voucher-estudio
-                foreach ($voucher->vouchersEstudios as $item) {
-                    if ($item->estudio->nombre == "DECLARACION JURADA") {
-                        $estudio = $item;
-                    }
-                }
+                $estudio = $voucher->getVoucherEstudio("DECLARACION JURADA");
+
                 //Ruta de PDF
                 $ruta = public_path().'/archivo/'."DECLARACION JURADA".$estudio->id.".pdf";
                 //Generar PDF

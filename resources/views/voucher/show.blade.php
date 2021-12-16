@@ -128,37 +128,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- TODOS LOS ESTUDIOS 
-                <div class="card "> 
-                    <div style="text-align: center" class="card-header fondo2">
-                            TODOS LOS ESTUDIOS
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                        @foreach ($tipo_estudios as $tipo)
-                                <div class="col-12"  style="padding-bottom: 2%;">
-                                    <div class=""> 
-                                        <h3 style="font-weight: bold;font-size: 20px" >{{ $tipo->nombre}}</h3>
-                                        <ul> 
-                                            <div class="row " style="padding: 1%;">
-                                                @foreach ($voucher->vouchersEstudios as $item)
-                                                    @if ($item->estudio->tipo_estudio_id == $tipo->id)
-                                                        <div class="col-4" style="font-size: 15px">
-                                                            <li>
-                                                                {{ strtoupper($item->estudio->nombre)}}
-                                                            </li> 
-                                                        </div>
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                        </ul>
-                                        <hr>
-                                    </div>
-                                </div>
-                        @endforeach
-                        </div>
-                    </div>
-                </div>-->
             </div>
         </div>
     </div>
@@ -179,7 +148,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Archivo:</label>
-                        <input class="form-control-file" name="anexo" type="file" accept="application/pdf">
+                        <input class="form-control-file" name="anexo" type="file">
                     </div>
                     <div class="form-group">
                         <input type="text" name="voucher_estudio_id" class="form-control" id="voucher_estudio" hidden>

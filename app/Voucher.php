@@ -19,8 +19,7 @@ class Voucher extends Model implements Auditable
         'posiciones_forzadas',
         'direccionado'
     ];
-
-    /*HAS es si tiene el id el otro
+        /*HAS es si tiene el id el otro
     BELONG es si el id lo tengo yo*/
     public function user()
     {
@@ -30,50 +29,6 @@ class Voucher extends Model implements Auditable
     public function paciente()
     {
         return $this->belongsTo(Paciente::class);
-    }
-
-    //Devuelve todos los voucher-estudios a cargar del voucher
-    public function estudiosCargar()
-    {
-        $estudios = [];
-        foreach ($this->vouchersEstudios as $item) {
-            if ($item->estudio->carga){
-                $estudios[] = $item;
-            }
-        }
-        return $estudios;
-    }
-
-    //Devuelve todos los voucher-estudios a cargar del voucher
-    public function estudiosCargados()
-    {
-        $estudios = [];
-        foreach ($this->vouchersEstudios as $item) {
-            if (($item->estudio->nombre !="DECLARACION JURADA")and($item->estudio->nombre !="HISTORIA CLINICA")and($item->estudio->nombre !="POSICIONES FORZADAS")and($item->estudio->nombre !="ILUMINACION")) {
-                if ($item->archivo_adjunto){
-                    $estudios[] = $item;
-                }
-            }
-        }
-        return $estudios;
-    }
-
-    //Devuelve todos los tipos de estudios de los estudios del voucher
-    public function tiposEstudios()
-    {
-        $tipo_estudios = [];
-        foreach (TipoEstudio::all() as $tipo) {
-            $carga = false;
-            foreach ($this->vouchersEstudios as $item) {
-                if ($item->estudio->tipoEstudio == $tipo){
-                    $carga = true;
-                }
-            }
-            if ($carga){
-                $tipo_estudios[] = $tipo;
-            }
-        }
-        return $tipo_estudios;
     }
 
     public function voucherPaciente()
@@ -110,4 +65,63 @@ class Voucher extends Model implements Auditable
     {
         return $this->hasOne('App\Models\Aptitud', 'voucher_id', 'id');
     }
+
+    //-------------------METODOS------------------------//
+
+        //Devuelve todos los voucher-estudios a cargar del voucher
+        public function estudiosCargar()
+        {
+            $estudios = [];
+            foreach ($this->vouchersEstudios as $item) {
+                if ($item->estudio->carga){
+                    $estudios[] = $item;
+                }
+            }
+            return $estudios;
+        }
+    
+        //Devuelve todos los voucher-estudios a cargar del voucher
+        public function estudiosCargados()
+        {
+            $estudios = [];
+            foreach ($this->vouchersEstudios as $item) {
+                if (($item->estudio->nombre !="DECLARACION JURADA")and($item->estudio->nombre !="HISTORIA CLINICA")and($item->estudio->nombre !="POSICIONES FORZADAS")and($item->estudio->nombre !="ILUMINACION")) {
+                    if ($item->archivo_adjunto){
+                        $estudios[] = $item;
+                    }
+                }
+            }
+            return $estudios;
+        }
+    
+        //Devuelve todos los tipos de estudios de los estudios del voucher
+        public function tiposEstudios()
+        {
+            $tipo_estudios = [];
+            foreach (TipoEstudio::all() as $tipo) {
+                $carga = false;
+                foreach ($this->vouchersEstudios as $item) {
+                    if ($item->estudio->tipoEstudio == $tipo){
+                        $carga = true;
+                    }
+                }
+                if ($carga){
+                    $tipo_estudios[] = $tipo;
+                }
+            }
+            return $tipo_estudios;
+        }
+    
+        //Devuelve todos los tipos de estudios de los estudios del voucher
+        public function getVoucherEstudio($nombre)
+        {
+            $voucherEstudio = "";
+            foreach ($this->vouchersEstudios as $item) {
+                if ($item->estudio->nombre == $nombre) {
+                    $voucherEstudio = $item;
+                }
+            }
+            return $voucherEstudio;
+        }
+    
 }

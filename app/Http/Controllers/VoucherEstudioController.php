@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\ArchivoAdjunto;
 use App\Models\VoucherEstudio;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-Use Redirect;
 
 class VoucherEstudioController extends Controller
 {
