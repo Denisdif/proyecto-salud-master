@@ -104,11 +104,19 @@
                 <td style="text-align: center; background-color: brown; color: #FFFFFF; width: 710px" colspan="12">EXAMEN CLÍNICO</td>
             </tr>
             <tr style="text-align: left;">
-                <td colspan="6">
+                <td colspan="12">
                     <label for="">Frecuencia Cardíaca:</label> {{$hc_formulario->cardiovascular->frecuencia_cardiaca}}
                 </td>
-                <td colspan="6">
+            </tr>
+            <tr style="text-align: left;">
+                <td colspan="8">
                     <label for="">Tensión Arterial:</label> {{$hc_formulario->cardiovascular->tension_arterial}}
+                </td>
+                <td colspan="2">
+                    <label for="">Sistolica:</label> {{$hc_formulario->cardiovascular->sistolica}}
+                </td>
+                <td colspan="2">
+                    <label for="">Diastolica:</label> {{$hc_formulario->cardiovascular->diastolica}}
                 </td>
             </tr>
             <tr style="text-align: left;">

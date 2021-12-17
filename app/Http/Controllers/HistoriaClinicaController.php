@@ -93,6 +93,8 @@ class HistoriaClinicaController extends Controller
                 $cardiovascular=new Cardiovascular();
                 $cardiovascular->frecuencia_cardiaca=         $request->frecuencia_cardiaca;
                 $cardiovascular->tension_arterial=            $request->tension_arterial;
+                $cardiovascular->sistolica=                   $request->sistolica;
+                $cardiovascular->diastolica=                  $request->diastolica;
                 $cardiovascular->pulso=                       $request->pulso;
                 $cardiovascular->observacion_varices=         $request->observacion_varices;
                 $cardiovascular->historia_clinica_id=         $historia_clinica->id;

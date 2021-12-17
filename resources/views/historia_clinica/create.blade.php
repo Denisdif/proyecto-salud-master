@@ -146,33 +146,39 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col">
-                                        <label for="" class="form-label">Várices:</label>
-                                        <input class="form-control" type="text" name="observacion_varices" placeholder="Si corresponde, indique el tipo">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <div class="col-4">
                                         <label for="">Tensión arterial:</label>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input class="form-control" type="text" name="sistolica" placeholder="Sistolica">
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="form-control" type="text" name="diastolica" placeholder="Diastolica">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-2">
-                                        <label><input type="radio" name="tension_arterial" value="N">N</label>
+                                    <div class="col-8">
+                                        <label for="">Observaciones:</label>
+                                        <input class="form-control" type="text" name="tension_arterial" placeholder="Observaciones...">
                                     </div>
-                                    <div class="col-2">
-                                        <label><input type="radio" name="tension_arterial" value="S">S</label>
-                                    </div>
-                                </div> 
+                                </div> <hr>
                                 <div class="form-group row">
                                     <div class="col-4">
                                         <label for="">Pulso:</label>
                                     </div>
                                     <div class="col-2">
-                                        <label><input type="radio" name="pulso" value="A">A</label>
+                                        <label><input type="radio" name="pulso" value="A">Anormal</label>
                                     </div>
                                     <div class="col-2">
-                                        <label><input type="radio" name="pulso" value="N">N</label>
+                                        <label><input type="radio" name="pulso" value="N">Normal</label>
                                     </div>
-                                </div>  
+                                </div><hr>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label for="" class="form-label">Várices:</label>
+                                        <input class="form-control" type="text" name="observacion_varices" placeholder="Si corresponde, indique el tipo">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -549,14 +555,14 @@
                                 <!-- Ojo derecho -->
                                 <div class="form-group row">
                                     <div class="col">
-                                        <label for="" class="form-label">Ojo derecho</label>
+                                        <label for="" class="form-label">Agudeza visual ojo derecho</label>
                                         <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion5_of">
                                     </div>
                                 </div>
                                 <!-- Ojo izquierdo -->
                                 <div class="form-group row">
                                     <div class="col">
-                                        <label for="" class="form-label">Ojo izquierdo</label>
+                                        <label for="" class="form-label">Agudeza visual ojo izquierdo</label>
                                         <input class="form-control" placeholder="Describa las anormalidades..." type="text" name="observacion6_of">
                                     </div>
                                 </div>
