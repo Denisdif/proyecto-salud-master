@@ -25,13 +25,75 @@
             <img src="{{public_path('imagenes/logo.png')}}" alt="logo" width="200px">
         </div>
         <h3 style="text-align: center">INFORME MEDICO LABORAL</h3>
+
+        <!-- DATOS DE EMPRESA -->
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF" colspan="12">DATOS DE LA EMPRESA</td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style=" width: 350px" colspan="6">
+                    <label>Razón Social:</label> {{$voucher->paciente->origen ? $voucher->paciente->origen->definicion : " "}}
+                </td>
+                <td style=" width: 350px" colspan="6">
+                    <label>CUIT:</label> {{$voucher->paciente->origen ? $voucher->paciente->origen->cuit : " "}} 
+                </td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style=" width: 350px" colspan="6">
+                    <label>Domicilio:</label> 
+                    @if ($voucher->paciente->origen)
+                        @if ($voucher->paciente->origen->domicilio)
+                            {{$voucher->paciente->origen->domicilio->direccion}}
+                        @endif
+                    @endif 
+                </td>
+                <td colspan="3"><label for="">Localidad:</label>  </td>
+                <td colspan="3"><label for="">Provincia:</label>  </td>
+            </tr>
+        </table>
+
+        <!-- DATOS DE TRABAJADOR -->
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF" colspan="12">INFORME FINAL EXAMENES PREOCUPACIONALES</td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style=" width: 350px" colspan="6">
+                    <label>Apellidos y Nombres:</label> {{$voucher->paciente->nombreCompleto()}}
+                </td>
+                <td style="width: 170px" colspan="3">
+                    <label>CUIL:</label> {{$voucher->paciente->cuil }}
+                </td>
+                <td style="width: 170px" colspan="3">
+                    <label>Fecha:</label> {{Carbon\Carbon::parse($aptitud["fecha"])->format('d/m/Y') }}
+                </td>
+            </tr>
+            <tr style="text-align: left;">
+                <td colspan="12">
+                    <label for="">Resultado: </label> {{$aptitud["aptitud_laboral"]}}
+                </td>
+            </tr>
+        </table>
+
+        <!-- PREEXISTENCIA Y OBSERVACIONES -->
+        <table class="table table-condensed table-hover" >
+            <tr>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 350px" colspan="6">PREEXISTENCIAS</td>
+                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 350px" colspan="6">OBSERVACIONES</td>
+            </tr>
+            <tr>
+                <td colspan="6"> {{$aptitud["preexistencias"]}}</td>
+                <td colspan="6"> {{$aptitud["observaciones"]}}</td>
+            </tr>
+        </table>
         <!-- DECLARACION DE RIESGOS -->
         <table class="table table-condensed table-hover" >
             <tr>
                 <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">DECLARACION DE RIESGOS</td>
             </tr>
-            @for ($i = 0; $i < strlen($voucher->aptitud->riesgos); $i++)
-                @if ($voucher->aptitud->riesgos[$i] == "1")
+            @for ($i = 0; $i < strlen($aptitud["riesgos"]); $i++)
+                @if ($aptitud["riesgos"][$i] == "1")
                     <tr style="text-align: left;">
                         <td colspan="11">
                             {{$riesgos[$i]}}
@@ -52,98 +114,7 @@
                 @endif
             @endfor
         </table>
-        <!-- RESULTADOS DE ESTUDIOS -->
-        <table class="table table-condensed table-hover" >
 
-            <!-- Estudios por sistema -->
-            @if ($voucher->historiaClinica)
-                <tr>
-                    <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">HISTORIA CLINICA</td>
-                </tr>    
-                <tr>
-                    <td colspan="12">
-                        @php
-                            echo $diagnosticoH;
-                        @endphp
-                    </td>
-                </tr>
-            @endif
-            @if ($voucher->declaracionJurada)
-                <tr>
-                    <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">DECLARACION JURADA</td>
-                </tr>
-                <tr>
-                    <td colspan="12">
-                        <u><label for="">DECLARACION JURADA: </label></u><br>
-                        @php
-                            echo $diagnosticoD
-                        @endphp
-                    </td>
-                </tr>
-            @endif
-            @if ($voucher->posicionesForzadas)
-                <tr>
-                    <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">POSICIONES FORZADAS</td>
-                </tr>
-                <tr>
-                    <td colspan="12">
-                        <u><label for="">POSICIONES FORZADAS: </label></u><br>
-                        @php
-                            echo $diagnosticoP
-                        @endphp
-                    </td>
-                </tr>
-            </table>
-            <!-- Tabla -->
-            @include('posiciones_forzadas.tabla_semiologia')
-            <!-- / Tabla -->
-            <table>
-            @endif
-            @if ($voucher->iluminacionDireccionado)
-                <tr>
-                    <td colspan="12">
-                        <u><label for="">ILUMINACION INSUFICIENTE: </label></u><br>
-                        @php
-                            echo $diagnosticoI
-                        @endphp
-                    </td>
-                </tr>
-            @endif
-            <!-- Estudios por cargar -->
-            <tr>
-                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">RESULTADOS DE ESTUDIOS</td>
-            </tr>
-            @foreach ($voucher->estudiosCargar() as $item)
-                @if ($item->archivo_adjunto)
-                    <tr>
-                        <td colspan="12">
-                            <label for="">{{$item->estudio->nombre}}: </label>
-                            {{$item->archivo_adjunto->diagnostico}}
-                        </td>
-                    </tr>
-                @endif
-            @endforeach
-        </table>
-        <!-- APTITUD LABORAL -->
-        <table class="table table-condensed table-hover" >
-            <tr>
-                <td style="text-align: center; background-color: brown; color: #FFFFFF;width: 710px" colspan="12">APTITUD LABORAL</td>
-            </tr>
-            <tr>
-                <td colspan="12">
-                    @if ($voucher->aptitud->preexistencias)
-                        Con preexistencias
-                    @else
-                        Sin preexistencias
-                    @endif
-                </td>
-            </tr>
-            <tr>
-                <td colspan="12">
-                    {{$voucher->aptitud->aptitud_laboral}}
-                </td>
-            </tr>
-        </table>
         <!-- COMENTARIOS -->
         <table class="table table-condensed table-hover" >
             <tr>
@@ -151,8 +122,8 @@
             </tr>
             <tr>
                 <td colspan="12">
-                    @if ($voucher->aptitud->comentarios)
-                        {{$voucher->aptitud->comentarios}}
+                    @if ($aptitud["comentarios"])
+                        {{$aptitud["comentarios"]}}
                     @else
                         Sin comentarios.
                     @endif

@@ -525,7 +525,6 @@
             $("#exposicion_actual").val("Empresa: "+exp_act_1+", actividad: "+exp_act_2+ ", puesto: "+exp_act_3+
                                         ", antigüedad: "+exp_act_4+ " y Horario: " +exp_act_5);
         })
-
     });  
     </script>
 @endpush

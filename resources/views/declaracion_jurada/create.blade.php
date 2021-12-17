@@ -89,7 +89,7 @@
                                                 name="personal_clinica_id"
                                                 id="personal_clinica_id"
                                                 class="personal_clinica_id custom-select"
-                                                >
+                                                required>
                                                 <option
                                                     value="0"
                                                     disabled="true"

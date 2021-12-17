@@ -25,7 +25,7 @@
             </div>
             <!-- /.card-header header-bg -->
             <div class="card-body">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
                     <!-- Voucher id HIDDEN -->
                     <div class="form-group">
                         <input type="number" name="voucher_id" value="{{$voucher->id }}" hidden>
@@ -35,193 +35,18 @@
                         @include('datos_paciente.card_datos')
                     </div>
                     <!-- Riesgos -->
-                    <div class="col-12">
-                        <div class="card  "> <!--collapsed-card -->
-                            <div class="card-header header-bg">
-                                <h3 class="card-title">Riesgos</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-body" > 
-                                <div class="row">
-                                    @for ($i = 0; $i < sizeof($riesgos); $i++)
-                                    <div class="form-group col-12">
-                                        <input type="text" value=0  name="riesgos[{{$i}}]" hidden>
-                                        <div class="icheck-danger d-inline">
-                                            <input type="checkbox" value=1 id="{{$i}}" name="riesgos[{{$i}}]">
-                                            <label for="{{$i}}">{{$riesgos[$i]}}</label>
-                                        </div>
-                                    </div>
-                                    @endfor
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('aptitud.create.riesgos')
                     <!-- Estudios -->
-                    <div class="col-12">
-                        <div class="row">
-                            <!-- Historia Clínica -->
-                            @if ($historia_clinica)
-                                <div class="col-6">
-                                    <div class="card">
-                                        <div class="card-header fondo2">
-                                            Historia Clínica
-                                            <div class="card-tools">
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row form-group">
-                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
-                                                <div class="col">
-                                                    @php
-                                                        echo $diagnosticoH;
-                                                    @endphp
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                            <!-- Declaracion Jurada -->
-                            @if ($declaracion_jurada)
-                                <div class="col-6">
-                                    <div class="card">
-                                        <div class="card-header fondo2">
-                                            Declaracion Jurada
-                                            <div class="card-tools">
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row form-group">
-                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
-                                                <div class="col">
-                                                    @php
-                                                        echo $diagnosticoD;
-                                                    @endphp
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                            <!-- Posiciones Forzadas -->
-                            @if ($posiciones_forzadas)
-                                <div class="col-6">
-                                    <div class="card">
-                                        <div class="card-header fondo2">
-                                            Posiciones Forzadas
-                                            <div class="card-tools">
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row form-group">
-                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
-                                                <div class="col">
-                                                    @php
-                                                        echo $diagnosticoP;
-                                                    @endphp
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                            <!-- Iluminacion Insuficiente -->
-                            @if ($iluminacion_direccionado)
-                                <div class="col-6">
-                                    <div class="card">
-                                        <div class="card-header fondo2">
-                                            Iluminacion Insuficiente
-                                        <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row form-group">
-                                                <div class="col-12"><label for=""><u>Diagnóstico:</u> </label></div>
-                                                <div class="col">
-                                                    @php
-                                                        echo $diagnosticoI;
-                                                    @endphp
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                            <!-- Estudios por cargar -->
-                            @for ($i = 0; $i < sizeof($estudios); $i++)
-                                <div class="col-6">
-                                    <div class="card">
-                                        <div class="card-header fondo2">
-                                            {{$estudios[$i]->estudio->nombre}}
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row form-group">
-                                                <div class="col">
-                                                    <label for="">Diagnóstico: </label>
-                                                    <textarea class="form-control" name={{$i}}  cols="15" rows="5"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
-                        </div>   
-                    </div>
+                    @include('aptitud.create.estudios')
+                    <!-- Preexistencias y observaciones -->
+                    @include('aptitud.create.pre_obs')
                     <!-- Aptitud laboral -->
-                    <div class="col-12">
-                        <div class="card  "> <!--collapsed-card -->
-                            <div class="card-header header-bg">
-                                <h3 class="card-title">Aptitud laboral</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-body" > 
-                                <div class="row">
-                                    <div class="form-group col-12">
-                                        <div class="icheck-danger d-inline">
-                                            <input type="checkbox" value=1 id="preexistencias" name="preexistencias">
-                                            <label for="preexistencias">CON PREEXISTENCIAS</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <label><input type="radio" name="aptitud_laboral" value="APTO “A”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO"> APTO “A”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO </label>
-                                    </div>
-                                    <div class="col-12">
-                                        <label><input type="radio" name="aptitud_laboral" value="APTO “B”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO CON PROBLEMAS MEDICOS CONTROLADOS"> APTO “B”: TODO TIPO DE TAREAS SEGÚN EXPOSICIÓN A RIESGO DECLARADO CON PROBLEMAS MEDICOS CONTROLADOS </label>
-                                    </div>
-                                    <div class="col-12">
-                                        <label><input type="radio" name="aptitud_laboral" value="APTO “C”: CON CONDICIONANTESSEGÚNEXPOSICIÓN A RIESGO"> APTO “C”: CON CONDICIONANTESSEGÚNEXPOSICIÓN A RIESGO </label>
-                                    </div>
-                                    <div class="col-12">
-                                        <label><input type="radio" name="aptitud_laboral" value="APTO “D”: INCONVENIENTE SU INGRESO EN EL MOMENTO ACTUAL"> APTO “D”: INCONVENIENTE SU INGRESO EN EL MOMENTO ACTUAL </label>
-                                    </div>
-                                    <div class="col-12">
-                                        <label><input type="radio" name="aptitud_laboral" value="APTO “E”: NO APTO"> APTO “E”: NO APTO </label>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col">
-                                        <label for="">COMENTARIOS SOBRE PATOLOGIAS NO RELACIONADAS CON EL TRABAJO: </label>
-                                        <textarea class="form-control" name="comentarios" id="" cols="15" rows="5"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('aptitud.create.apt_laboral')
                 </div>
                 <!-- Guardar -->
                 <div class="form-group">
                     <input id="guardar" name="_token" value="{{ csrf_token() }}" type="hidden">
-                        <button class="btn btn-success btn-lg btn-block" id="confirmar"type="submit"><i class="fa fa-check"> </i>Cargar al formulario</button>
+                    <button class="btn btn-success btn-lg btn-block" id="confirmar"type="submit"><i class="fa fa-check"> </i>Cargar al formulario</button>
                 </div>
             </div>
          </div>
@@ -232,7 +57,61 @@
 
 @push('scripts')
     <script>
-        
+        // Preexistencias
+        $(".preexistencias").change(function()
+        {   
+            //Variables
+                //Declaracion_jurada
+                $("#pre_declaracion_jurada").val() == undefined 
+                    ? (declaracion_jurada = "") 
+                    : (declaracion_jurada = $("#pre_declaracion_jurada").val());
+
+                //Historia_clinica
+                $("#pre_historia_clinica").val() == undefined 
+                    ? (historia_clinica = "") 
+                    : (historia_clinica = $("#pre_historia_clinica").val());
+
+                //Posiciones_forzada
+                $("#pre_posiciones_forzadas").val() == undefined 
+                    ? (posiciones_forzadas = "") 
+                    : (posiciones_forzadas = $("#pre_posiciones_forzadas").val());
+
+                //Iluminacion_insuficiente
+                $("#pre_iluminacion_insuficiente").val() == undefined 
+                    ? (iluminacion_insuficiente = "") 
+                    : (iluminacion_insuficiente = $("#pre_iluminacion_insuficiente").val());
+            //
+
+            $("#preexistencias").val(declaracion_jurada + " " + historia_clinica + " " + posiciones_forzadas + " " + iluminacion_insuficiente);
+        })
+
+        // Observaciones
+        $(".observaciones").change(function()
+        {
+            //Variables
+                //Declaracion_jurada
+                $("#obs_declaracion_jurada").val() == undefined 
+                    ? (declaracion_jurada = "") 
+                    : (declaracion_jurada = $("#obs_declaracion_jurada").val());
+
+                //Historia_clinica
+                $("#obs_historia_clinica").val() == undefined 
+                    ? (historia_clinica = "") 
+                    : (historia_clinica = $("#obs_historia_clinica").val());
+
+                //Posiciones_forzada
+                $("#obs_posiciones_forzadas").val() == undefined 
+                    ? (posiciones_forzadas = "") 
+                    : (posiciones_forzadas = $("#obs_posiciones_forzadas").val());
+
+                //Iluminacion_insuficiente
+                $("#obs_iluminacion_insuficiente").val() == undefined 
+                    ? (iluminacion_insuficiente = "") 
+                    : (iluminacion_insuficiente = $("#obs_iluminacion_insuficiente").val());
+            //
+
+            $("#observaciones").val(declaracion_jurada + " " + historia_clinica + " " + posiciones_forzadas + " " + iluminacion_insuficiente);
+        })
     </script>
 @endpush
 @endsection

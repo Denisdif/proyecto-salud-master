@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aptitud;
 use App\Voucher;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -51,43 +52,13 @@ class AptitudController extends Controller
 
     public function crearPDF($id)
     {   
-        $voucher= Voucher::find($id);
-        $aptitud= $voucher->aptitud;
-        
+        $aptitudModel = new Aptitud(); 
+        $voucher = Voucher::find($id);
+
         //Carga de riesgos
-        $riesgos = $aptitud->riesgos();
-        //
-        //Carga de estudios de sistema
-            $declaracion_jurada = $voucher->declaracionJurada;
-            $historia_clinica = $voucher->historiaClinica;
-            $posiciones_forzadas = $voucher->posicionesForzadas;
-            $articulaciones = ['Hombro','Codo','Muñeca','Mano y dedos','Cadera','Rodilla','Tobillo'];
-            $cuadro = 0;
-            $iluminacion_direccionado = $voucher->iluminacionDireccionado;
+        $riesgos = $aptitudModel->riesgos();
 
-            $diagnosticoD = " ";
-            $diagnosticoH = " ";
-            $diagnosticoP = " ";
-            $diagnosticoI = " ";
-
-            if ($declaracion_jurada) {
-                $diagnosticoD = $declaracion_jurada->generarDiagnostico();
-            }
-            if ($historia_clinica) {
-                $diagnosticoH = $historia_clinica->generarDiagnostico();
-            }
-            if ($posiciones_forzadas) {
-                $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
-            }
-            if ($iluminacion_direccionado) {
-                $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
-            }
-        //
-
-        $pdf = PDF::loadView('aptitud.pdf',["voucher" => $voucher, "riesgos" => $riesgos,
-                                            "diagnosticoD" => $diagnosticoD,"diagnosticoH" => $diagnosticoH,
-                                            "diagnosticoP" => $diagnosticoP,"diagnosticoI" => $diagnosticoI,
-                                            "articulaciones" => $articulaciones, "cuadro" => $cuadro, "posiciones_forzada"=>$posiciones_forzadas]);
+        $pdf = PDF::loadView('aptitud.pdf',["voucher" => $voucher, "riesgos" => $riesgos]);
         $pdf->setPaper('a4','letter');
 
         return $pdf->stream('aptitud.pdf');
@@ -96,52 +67,29 @@ class AptitudController extends Controller
 
     public function store(Request $request)
     {   
+        $aptitudModel = new Aptitud(); 
         //Obtener voucher
-        $voucher= Voucher::find($request->voucher_id);
-
+        $voucher = Voucher::find($request->voucher_id);
+        //Crear objeto aptitud
+        $aptitud = ["riesgos" => implode($request->riesgos),
+                    "comentarios" => $request->comentarios,
+                    "aptitud_laboral" => $request->aptitud_laboral,
+                    "fecha" => new Carbon(),
+                    "preexistencias" => $request->preexistencias,
+                    "observaciones" => $request->observaciones
+        ];
+        //Generar PDF
+        $pdf = PDF::loadView('aptitud.pdf',["voucher" => $voucher, 
+                                            "riesgos" => $aptitudModel->riesgos(), 
+                                            "aptitud" => $aptitud]);
+        $pdf->setPaper('a4','letter');
+        return $pdf->stream('aptitud.pdf');
+        /*
         //Cargar Aptitud
         $aptitud = Aptitud::create($request->all());
         $aptitud->riesgos = implode($request->riesgos);
-
-        //Guardar diagnosticos de estudios cargados
-        $estudios = $voucher->estudiosCargados();
-        for ($i=0; $i < sizeof($estudios); $i++) {
-            if ($estudios[$i]->archivo_adjunto) {
-                $archivo = $estudios[$i]->archivo_adjunto;
-                $archivo->diagnostico = $request->$i;
-                $archivo->save();
-            }
-        }
-
-        //Carga de estudios de sistema
-            $declaracion_jurada = $voucher->declaracionJurada;
-            $historia_clinica = $voucher->historiaClinica;
-            $posiciones_forzadas = $voucher->posicionesForzadas;
-            $iluminacion_direccionado = $voucher->iluminacionDireccionado;
-
-            if ($declaracion_jurada) {
-                $diagnosticoD = $declaracion_jurada->generarDiagnostico();
-            }
-            if ($historia_clinica) {
-                $diagnosticoH = $historia_clinica->generarDiagnostico();
-            }
-            if ($posiciones_forzadas) {
-                $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
-            }
-            if ($iluminacion_direccionado) {
-                $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
-            }
-        //
-            /*
-        //PDF
-        $ruta = public_path().'/archivo/'."APTITUD".$aptitud->id.".pdf";
-        $pdf = PDF::loadView('aptitud.pdf',["voucher"   =>  $voucher]);
-        $pdf->setPaper('a4','letter');
-        $pdf->save($ruta);
-        $aptitud->pdf = $ruta;*/
-
         $aptitud->update();
 
-        return redirect()->route('voucher.show',$voucher->id);
+        return redirect()->route('voucher.show',$voucher->id);*/
     }
 }
