@@ -61,34 +61,65 @@
         $(".preexistencias").change(function()
         {   
             //Variables
+                //Estudios
+                let cantTipo = $("#cantTipo").val();
+                let cantEstudios = [];
+                let texto = "";
+
                 //Declaracion_jurada
                 $("#pre_declaracion_jurada").val() == undefined 
                     ? (declaracion_jurada = "") 
-                    : (declaracion_jurada = $("#pre_declaracion_jurada").val());
+                    : (declaracion_jurada = $("#pre_declaracion_jurada").val()) + " ";
 
                 //Historia_clinica
                 $("#pre_historia_clinica").val() == undefined 
                     ? (historia_clinica = "") 
-                    : (historia_clinica = $("#pre_historia_clinica").val());
+                    : (historia_clinica = $("#pre_historia_clinica").val()) + " ";
 
                 //Posiciones_forzada
                 $("#pre_posiciones_forzadas").val() == undefined 
                     ? (posiciones_forzadas = "") 
-                    : (posiciones_forzadas = $("#pre_posiciones_forzadas").val());
+                    : (posiciones_forzadas = $("#pre_posiciones_forzadas").val()) + " ";
 
                 //Iluminacion_insuficiente
                 $("#pre_iluminacion_insuficiente").val() == undefined 
                     ? (iluminacion_insuficiente = "") 
-                    : (iluminacion_insuficiente = $("#pre_iluminacion_insuficiente").val());
+                    : (iluminacion_insuficiente = $("#pre_iluminacion_insuficiente").val()) + " ";
             //
 
-            $("#preexistencias").val(declaracion_jurada + " " + historia_clinica + " " + posiciones_forzadas + " " + iluminacion_insuficiente);
+            //Cargar cantidad de estudios por tipo
+            for (let i = 0; i < cantTipo; i++) {
+                cantEstudios.push($("#cantEstudio"+i).val());
+            }
+
+            //Recorrer inputs y cargar sus valores en variable "texto"
+            for (let i = 0; i < cantTipo; i++) {
+                for (let j = 0; j < cantEstudios[i]; j++) {
+                    if ($("#POinput_"+i+"_"+j).val() != "") {
+
+                        if (
+                            $("input:radio[name=POinput_"+i+"_"+j+"_check]:checked").val() == "P"
+                        ) { 
+                            texto = texto + $("#POinput_"+i+"_"+j).val() + " ";
+                        }
+                    }
+                }
+            }
+            
+            //Cargar estudios por sistema
+            texto = declaracion_jurada + historia_clinica + posiciones_forzadas + iluminacion_insuficiente + texto;
+
+            $("#preexistencias").val(texto);
         })
 
         // Observaciones
         $(".observaciones").change(function()
         {
             //Variables
+                //Estudios
+                let cantTipo = $("#cantTipo").val();
+                let cantEstudios = [];
+                let texto = "";
                 //Declaracion_jurada
                 $("#obs_declaracion_jurada").val() == undefined 
                     ? (declaracion_jurada = "") 
@@ -110,7 +141,29 @@
                     : (iluminacion_insuficiente = $("#obs_iluminacion_insuficiente").val());
             //
 
-            $("#observaciones").val(declaracion_jurada + " " + historia_clinica + " " + posiciones_forzadas + " " + iluminacion_insuficiente);
+            //Cargar cantidad de estudios por tipo
+            for (let i = 0; i < cantTipo; i++) {
+                cantEstudios.push($("#cantEstudio"+i).val());
+            }
+
+            //Recorrer inputs y cargar sus valores en variable "texto"
+            for (let i = 0; i < cantTipo; i++) {
+                for (let j = 0; j < cantEstudios[i]; j++) {
+                    if ($("#POinput_"+i+"_"+j).val() != "") {
+
+                        if (
+                            $("input:radio[name=POinput_"+i+"_"+j+"_check]:checked").val() == "O"
+                        ) { 
+                            texto = texto + $("#POinput_"+i+"_"+j).val() + " ";
+                        }
+                    }
+                }
+            }
+            
+            //Cargar estudios por sistema
+            texto = declaracion_jurada + historia_clinica + posiciones_forzadas + iluminacion_insuficiente + texto;
+
+            $("#observaciones").val(texto);
         })
     </script>
 @endpush

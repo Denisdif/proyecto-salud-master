@@ -112,7 +112,7 @@ class Voucher extends Model implements Auditable
             return $tipo_estudios;
         }
     
-        //Devuelve todos los tipos de estudios de los estudios del voucher
+        //Devuelve voucher estudio con el mismo nombre de parametro
         public function getVoucherEstudio($nombre)
         {
             $voucherEstudio = "";
@@ -123,5 +123,26 @@ class Voucher extends Model implements Auditable
             }
             return $voucherEstudio;
         }
-    
+
+        //Devuelve una matriz con todos los estudios clasificados por tipo. $Estudios[tipo][estudios]
+        public function getEstudiosClasificados()
+        {   
+            $estudiosClasificados = [];
+            $tipos = $this->tiposEstudios();
+            $voucher_estudios = $this->vouchersEstudios;
+
+            //Por cada tipo
+            for ($i=0; $i < sizeof($tipos); $i++) { 
+                $estudiosClasificados[$i][0] = $tipos[$i];   //tipo de estudio
+                $estudiosClasificados[$i][1] = [];           //estudios[]
+
+                //Por cada estudio
+                foreach ($voucher_estudios as $voucher_estudio) {
+                    if ($tipos[$i]->nombre == $voucher_estudio->estudio->tipoEstudio->nombre) {
+                        $estudiosClasificados[$i][1][] = $voucher_estudio->estudio;
+                    }
+                }
+            }
+            return $estudiosClasificados;
+        }
 }

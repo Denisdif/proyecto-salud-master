@@ -10,7 +10,6 @@ use PDF;
 
 class AptitudController extends Controller
 {
-
     public function create($id)
     {   
         $aptitud = new Aptitud(); 
@@ -25,26 +24,15 @@ class AptitudController extends Controller
         $posiciones_forzadas = $voucher->posicionesForzadas;
         $iluminacion_direccionado = $voucher->iluminacionDireccionado;
 
-        $diagnosticoD = " ";
-        $diagnosticoH = " ";
-        $diagnosticoP = " ";
-        $diagnosticoI = " ";
+        //Carga de diagnosticos
+        $voucher->declaracionJurada ? ($diagnosticoD = $declaracion_jurada->generarDiagnostico()) : ($diagnosticoD = " ");
+        $voucher->historiaClinica ? ($diagnosticoH = $historia_clinica->generarDiagnostico()) : ($diagnosticoH = " ");
+        $voucher->posicionesForzadas ? ($diagnosticoP = $posiciones_forzadas->generarDiagnostico()) : ($diagnosticoP = " ");
+        $voucher->iluminacionDireccionado ? ($diagnosticoI = $iluminacion_direccionado->generarDiagnostico()) : ($diagnosticoI = " ");
 
-        if ($declaracion_jurada) {
-            $diagnosticoD = $declaracion_jurada->generarDiagnostico();
-        }
-        if ($historia_clinica) {
-            $diagnosticoH = $historia_clinica->generarDiagnostico();
-        }
-        if ($posiciones_forzadas) {
-            $diagnosticoP = $posiciones_forzadas->generarDiagnostico();
-        }
-        if ($iluminacion_direccionado) {
-            $diagnosticoI = $iluminacion_direccionado->generarDiagnostico();
-        }
+        //Carga de estudios clasificados por tipo
+        $estudios = $voucher->getEstudiosClasificados();
 
-        //Carga de estudios cargados
-        $estudios = $voucher->estudiosCargados();
         return view('aptitud.create', compact('voucher','riesgos','estudios',
                                               'declaracion_jurada','historia_clinica','posiciones_forzadas','iluminacion_direccionado',
                                               'diagnosticoD','diagnosticoH','diagnosticoP','diagnosticoI' ));

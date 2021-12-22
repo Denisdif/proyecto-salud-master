@@ -148,23 +148,39 @@
                 </div>
             </div>
         @endif
-        <!-- Estudios por cargar 
+        <!-- Estudios por cargar -->
+        <!-- HIDDEN -->
+        <div class="row">
+            <input type="text" id="cantTipo" value={{sizeof($estudios)}} hidden>
+        </div>
         @for ($i = 0; $i < sizeof($estudios); $i++)
+            <!-- HIDDEN -->
+            <input type="text" id="cantEstudio{{$i}}" value={{sizeof($estudios[$i][1])}} hidden>
             <div class="col-6">
                 <div class="card">
                     <div class="card-header fondo2">
-                        {{$estudios[$i]->estudio->nombre}}
+                        {{$estudios[$i][0]->nombre}} {{sizeof($estudios[$i][1])}}
                     </div>
                     <div class="card-body">
-                        <div class="row form-group">
-                            <div class="col">
-                                <label for="">Diagnóstico: </label>
-                                <textarea class="form-control" name={{$i}}  cols="15" rows="5"></textarea>
+                        <!-- Inputs de estudios por cada tipo de estudio -->
+                        @for ($j = 0; $j < sizeof($estudios[$i][1]); $j++)
+                            <div class="row form-group">
+                                <div class="col-10">
+                                    <label for="">{{$estudios[$i][1][$j]->nombre}}: </label>
+                                    <input class="form-control preexistencias observaciones" type="text"  id="POinput_{{$i}}_{{$j}}">
+                                </div>
+                                <div class="col-1">
+                                    <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="O" checked>Obs</label>
+                                </div>
+                                <div class="col-1">
+                                    <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="P">Pre</label>
+                                </div>
                             </div>
-                        </div>
+                            <hr>
+                        @endfor
                     </div>
                 </div>
             </div>
-        @endfor-->
+        @endfor
     </div>   
 </div>

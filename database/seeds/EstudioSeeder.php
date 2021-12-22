@@ -238,11 +238,6 @@ class EstudioSeeder extends Seeder
     //
     // Anexo 01
         $estudio = Estudio::create([
-            'carga' => true,
-            'nombre' => 'Analisis bioquimico anexo 01',
-            'tipo_estudio_id' => 2,
-        ]);
-        $estudio = Estudio::create([
             'carga' => false,
             'nombre' => 'Colesterol Total
             (Colesterolemia)
@@ -365,32 +360,37 @@ class EstudioSeeder extends Seeder
     // Radiologia
         $estudio = Estudio::create([
             'carga' => true,
+            'nombre' => 'RADIOLOGIA',
+            'tipo_estudio_id' => 6,
+        ]);
+        $estudio = Estudio::create([
+            'carga' => false,
             'nombre' => 'RX TORAX',
             'tipo_estudio_id' => 6,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'RX COLUMNA LUMBAR (FYP)',
             'tipo_estudio_id' => 6,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'RX COLUMNA CERVICAL
             (FYP)',
             'tipo_estudio_id' => 6,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'RX MANOS',
             'tipo_estudio_id' => 6,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'RX RODILLAS',
             'tipo_estudio_id' => 6,
         ]);
         $estudio = Estudio::create([
-            'carga' => true,
+            'carga' => false,
             'nombre' => 'RX HOMBROS',
             'tipo_estudio_id' => 6,
         ]);
