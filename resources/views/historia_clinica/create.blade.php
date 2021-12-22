@@ -100,24 +100,28 @@
                             <div class="card-body">
                                 <div class="form-group row">
                                     <div class="col">
-                                        <label for="" class="form-label">Estatura:</label>
-                                        <input class="form-control" type="number" step="0.01" name="estatura" placeholder="Estatura">
+                                        <label for="" class="form-label">Estatura (Mts): </label>
+                                        <input class="form-control calculoIMC" type="number" step="0.01" id="estatura" name="estatura" placeholder="Estatura">
                                     </div>
                                     <div class="col">
-                                        <label for="" class="form-label">Peso:</label>
-                                        <input class="form-control" type="number" step="0.01" name="peso" placeholder="Peso">
+                                        <label for="" class="form-label">Peso (Kgs):</label>
+                                        <input class="form-control calculoIMC" type="number" step="0.01" id="peso" name="peso" placeholder="Peso">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col">
                                         <label for="" class="form-label">Índice MC:</label>
-                                        <input class="form-control" type="number" step="0.01" name="imc" placeholder="IMC">
+                                        <input class="form-control" type="number" step="0.01" id="imc" name="imc" placeholder="IMC" readonly>
                                     </div>
-                                    <div class="col" style="text-align: center;padding-top: 5%" >
+                                    <div class="col" style="text-align: center;padding-top: 5%" hidden>
                                         <div class="icheck-danger d-inline" style="">
                                             <input value=1 type="checkbox" name="sobrepeso" id="sobrepeso">
                                             <label for="sobrepeso">Sobrepeso</label>
                                         </div>
+                                    </div>
+                                    <div class="col" >
+                                        <label class="form-label">Descripción:</label>
+                                        <input class="form-control" type="text" id="descripcionIMC" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -951,8 +955,33 @@
             //
         });
 
-    </script>
+        // Observaciones
+        $(".calculoIMC").change(function()
+        {
+            //Variables
+                let altura = $("#estatura").val();
+                let peso = $("#peso").val();
+                let imc = peso/(altura*altura);
+            //
+            
+            //Redondeo
+            $("#imc").val(imc.toFixed(2));
 
+            //Calculo de IMC
+            if (imc >= "30") {
+                $("#sobrepeso").prop('checked', true);
+                $("#descripcionIMC").val('Sobrepeso');
+            } else {
+                $("#sobrepeso").prop('checked', false);
+                if (imc <= "18") {
+                    $("#descripcionIMC").val('Muy bajo');
+                } else {
+                    $("#descripcionIMC").val('Normal');
+                }
+            }
+        })
+
+    </script>
 @endpush
 
 @endsection

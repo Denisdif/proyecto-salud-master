@@ -143,6 +143,6 @@ class PosicionesForzadasController extends Controller
                 $archivo_adjunto->voucher_estudio_id = $estudio->id;
                 $archivo_adjunto->save();
             //
-        return redirect()->route('posiciones_forzadas.index');
+            return redirect()->route('voucher.show',$voucher->id);
     }
 }

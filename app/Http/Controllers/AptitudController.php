@@ -33,7 +33,22 @@ class AptitudController extends Controller
         //Carga de estudios clasificados por tipo
         $estudios = $voucher->getEstudiosClasificados();
 
-        return view('aptitud.create', compact('voucher','riesgos','estudios',
+        //Carga de datos adicionales
+        if ($voucher->historiaClinica) {
+            $datosAdicionales = "IMC: ".$historia_clinica->examenClinico->imc.". ";
+            if ($historia_clinica->examenClinico->sobrepeso) {
+                $datosAdicionales = $datosAdicionales." Sobrepeso. ";
+            }
+            if ($historia_clinica->examenClinico->medicacion_actual) {
+                $datosAdicionales = $datosAdicionales." Medicación actual: ".$historia_clinica->examenClinico->medicacion_actual.". ";
+            }else {
+                $datosAdicionales = $datosAdicionales." Medicación actual: No. ";
+            }
+        } else {
+            $datosAdicionales = "Sin datos";
+        }
+        
+        return view('aptitud.create', compact('voucher','riesgos','estudios', 'datosAdicionales',
                                               'declaracion_jurada','historia_clinica','posiciones_forzadas','iluminacion_direccionado',
                                               'diagnosticoD','diagnosticoH','diagnosticoP','diagnosticoI' ));
     }

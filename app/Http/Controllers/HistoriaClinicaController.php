@@ -249,6 +249,6 @@ class HistoriaClinicaController extends Controller
             $archivo_adjunto->voucher_estudio_id = $estudio->id;
             $archivo_adjunto->save();
         //
-        return redirect()->route('historia_clinica.index');
+        return redirect()->route('voucher.show',$voucher->id);
     }
 }

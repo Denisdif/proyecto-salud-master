@@ -53,6 +53,6 @@ class IluminacionDireccionadoController extends Controller
             $archivo_adjunto->voucher_estudio_id = $estudio->id;
             $archivo_adjunto->save();
         //
-        return redirect()->route('iluminacion_direccionados.index');
+        return redirect()->route('voucher.show',$voucher->id);
     }
 }

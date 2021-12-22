@@ -174,6 +174,6 @@ class DeclaracionJuradaController extends Controller
                 $archivo_adjunto->save();
             //
 
-        return redirect()->route('declaracion_jurada.index');
+        return redirect()->route('voucher.show',$voucher->id);
     }
 }

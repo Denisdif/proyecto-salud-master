@@ -32,3 +32,6 @@
         </div>
     </div>
 </div>
+
+<!-- HIDDEN para datos hardcodeados (Petición del cliente) -->
+<textarea id="datosAdicionales" class="form-control" hidden>{{$datosAdicionales}}</textarea>

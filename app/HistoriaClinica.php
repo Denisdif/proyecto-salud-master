@@ -339,7 +339,7 @@ class HistoriaClinica extends Model implements Auditable
                     }else{
                         if ($matriz[0][$i] == " ") {
                             if ($vacio) {
-                                $diagnostico = $diagnostico.'Sin datos relevantes.';
+                                $diagnostico = $diagnostico.'Sin particularidades.';
                             }
                             $vacio = true;
                             $diagnostico = $diagnostico.$matriz[1][$i]."<b>".$matriz[0][$i]."</b>";

@@ -57,6 +57,11 @@
 
 @push('scripts')
     <script>
+        $(document).ready(function(){
+            let texto = $("#datosAdicionales").val();
+            $("#preexistencias").val(texto);
+        })
+
         // Preexistencias
         $(".preexistencias").change(function()
         {   
@@ -64,7 +69,7 @@
                 //Estudios
                 let cantTipo = $("#cantTipo").val();
                 let cantEstudios = [];
-                let texto = "";
+                let texto = $("#datosAdicionales").val();
 
                 //Declaracion_jurada
                 $("#pre_declaracion_jurada").val() == undefined 

@@ -150,9 +150,7 @@
         @endif
         <!-- Estudios por cargar -->
         <!-- HIDDEN -->
-        <div class="row">
-            <input type="text" id="cantTipo" value={{sizeof($estudios)}} hidden>
-        </div>
+        <input type="text" id="cantTipo" value={{sizeof($estudios)}} hidden>
         @for ($i = 0; $i < sizeof($estudios); $i++)
             <!-- HIDDEN -->
             <input type="text" id="cantEstudio{{$i}}" value={{sizeof($estudios[$i][1])}} hidden>
