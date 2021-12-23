@@ -22,10 +22,13 @@
                     @if ($voucher->aptitud)
                         <a href= {{ route('aptitudes.pdf',$voucher->id)}} class="btn fondo1"><i class="fas fa-file-pdf"></i> Informe Final</a>
 
-                        <!-- ELIMINAR DESPUES DE PRUEBAS -->
-                        <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Generar Informe Final</a>
-                    @else 
-                        <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Generar Informe Final</a>
+                        <!-- ELIMINAR DESPUES DE PRUEBAS 
+                        <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Generar Informe Final</a>-->
+                    @else
+                        @if ($voucher->voucherListo())
+                            <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Generar Informe Final</a>
+                        @else
+                        @endif
                     @endif
                 </div>
             </div>
@@ -140,8 +143,6 @@
 
     <!-- MODAL PARA CARGAR ARCHIVOS -->
     @include('voucher.modal_carga')
-
-
 
 @push('scripts')
     <script src="{{asset('js/tablaDetalle.js')}}"></script>

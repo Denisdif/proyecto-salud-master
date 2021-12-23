@@ -79,9 +79,20 @@ class Voucher extends Model implements Auditable
             }
             return $estudios;
         }
+
+        //Devuelve todos los voucher-estudios de estudios del sistema de este Voucher
+        public function estudiosSistema(){
+            $estudios = [];
+            foreach ($this->vouchersEstudios as $item) {
+                if (($item->estudio->nombre =="DECLARACION JURADA")or($item->estudio->nombre =="HISTORIA CLINICA")or($item->estudio->nombre =="POSICIONES FORZADAS")or($item->estudio->nombre =="ILUMINACION")) {
+                    $estudios[] = $item;
+                }
+            }
+            return $estudios;
+        }
     
         //Devuelve todos los voucher-estudios a cargar del voucher
-        public function estudiosCargados()
+        /*public function estudiosCargados()
         {
             $estudios = [];
             foreach ($this->vouchersEstudios as $item) {
@@ -92,7 +103,7 @@ class Voucher extends Model implements Auditable
                 }
             }
             return $estudios;
-        }
+        }*/
     
         //Devuelve todos los tipos de estudios de los estudios del voucher
         public function tiposEstudios()
@@ -144,5 +155,21 @@ class Voucher extends Model implements Auditable
                 }
             }
             return $estudiosClasificados;
+        }
+
+        //Devuelve TRUE si ya se cargaron todos los estudios del Voucher
+        public function voucherListo(){
+            $listo = true;
+            foreach ($this->estudiosCargar() as $item) {
+                if ($item->archivo_adjunto == "[]") {
+                    $listo = false;
+                }
+            }
+            foreach ($this->estudiosSistema() as $item) {
+                if ($item->archivo_adjunto == "[]") {
+                    $listo = false;
+                }
+            }
+            return $listo;
         }
 }
