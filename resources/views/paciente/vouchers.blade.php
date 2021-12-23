@@ -14,21 +14,16 @@
             <div class="card-title">
                 <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Vouchers de {{ $paciente->nombreCompleto() }}</p>
             </div>
+            <div class="card-tools">
+                <a href= {{ route('voucher.create',$paciente->id)}}>
+                    <button class="btn fondo1">
+                        <i class="fa fa-plus"></i> Nuevo estudio
+                    </button>
+                </a>
+            </div>
         </div>
         <div class="card-body">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                 <!-- <p>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        <i class="fa fa-filter" aria-hidden="true"></i> Filtrar
-                    </a>
-                </p>-->
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
 
-                        <!-- aca colocar el include-->
-                    </div>
-                </div>
-            </div>
             <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table table-bordered table-condensed table-hover">
                 <thead style="background-color:#222D32">
                     <tr class="text-uppercase">

@@ -59,7 +59,7 @@
     <script>
         $(document).ready(function(){
             let texto = $("#datosAdicionales").val();
-            $("#preexistencias").val(texto);
+            $("#observaciones").val(texto);
         })
 
         // Preexistencias
@@ -69,7 +69,7 @@
                 //Estudios
                 let cantTipo = $("#cantTipo").val();
                 let cantEstudios = [];
-                let texto = $("#datosAdicionales").val();
+                let texto = "";
 
                 //Declaracion_jurada
                 $("#pre_declaracion_jurada").val() == undefined 
@@ -105,7 +105,7 @@
                         if (
                             $("input:radio[name=POinput_"+i+"_"+j+"_check]:checked").val() == "P"
                         ) { 
-                            texto = texto + $("#POinput_"+i+"_"+j).val() + " ";
+                            texto = texto + $("#POinput_"+i+"_"+j).val() + ". ";
                         }
                     }
                 }
@@ -124,7 +124,7 @@
                 //Estudios
                 let cantTipo = $("#cantTipo").val();
                 let cantEstudios = [];
-                let texto = "";
+                let texto = $("#datosAdicionales").val();
                 //Declaracion_jurada
                 $("#obs_declaracion_jurada").val() == undefined 
                     ? (declaracion_jurada = "") 
@@ -159,7 +159,7 @@
                         if (
                             $("input:radio[name=POinput_"+i+"_"+j+"_check]:checked").val() == "O"
                         ) { 
-                            texto = texto + $("#POinput_"+i+"_"+j).val() + " ";
+                            texto = texto + $("#POinput_"+i+"_"+j).val() + ". ";
                         }
                     }
                 }

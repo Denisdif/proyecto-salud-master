@@ -14,21 +14,14 @@
             <div class="card-title">
                 <p style="font-size:130%"> <i class="fa fa-id-card" aria-hidden="true"></i> Indice de Estudios</p>
             </div>
-            <div class="card-tools">
-                <a href= {{ route('voucher.create')}}>
-                    <button class="btn fondo1">
-                        <i class="fa fa-plus"></i> Nuevo
-                    </button>
-                </a>
-            </div>
         </div>
         <div class="card-body">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                 <!-- <p>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <p>
+                    <a class="btn btn-danger" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fa fa-filter" aria-hidden="true"></i> Filtrar
                     </a>
-                </p>-->
+                </p>
                 <div class="collapse" id="collapseExample">
                     <div class="card card-body">
 

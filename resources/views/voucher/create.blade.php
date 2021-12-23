@@ -19,66 +19,58 @@
                 </div>
             </div>
             <div class="card-body fondo0">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="row">
-                        <div class="col-6">
-                            <!-- Paciente -->
-                            <div class="form-group">
-                                <label> <p style="font-size:130%">Seleccionar Paciente</p></label>
-                                <select
-                                    name="paciente_id"
-                                    id="paciente_id"
-                                    class="paciente_id custom-select"
-                                    required
-                                    >
-                                    <option
-                                        value="0"
-                                        disabled="true"
-                                        selected="true"
-                                        title="-Seleccione un tipo de paciente-">
-                                        -Seleccione un paciente-
-                                    </option>
-                                    @foreach ($pacientes as $paciente)
-                                        <option value="{{$paciente->id }}">{{$paciente->documento . " " . $paciente->nombreCompleto() /*. " " . $paciente->origen->definicion*/}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-6 ">
-                            <!-- Paciente -->
-                            <div class="form-group">
-                                <label> <p style="font-size:130%">Fecha: </p></label>
-                                <input class="form-control" type="date" name="turno"  required
-                                value="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="card "> <!--collapsed-card -->
-                        <div class="card-header header-bg">
-                            <h3 class="card-title">Datos del Paciente</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-                            </div>
-                        </div>
-                        <div class="card-body" > <!--style="display: none;" -->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div id="datos_paciente" class="form-group">
-
-                                    </div>
+                <!-- HIDDEN -->
+                <input type="text" name="paciente_id" value="{{$paciente->id }}" hidden>
+                <!-- Fecha -->
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label> <p style="font-size:130%">Fecha: </p></label>
+                                    <input class="form-control" type="date" name="turno"  required
+                                    value="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
                                 </div>
-                                <div class="col-md-6">
-                                    <div id="foto_paciente" class="form-group">
-
+                            </div> 
+                        </div>
+                    </div>
+                <!-- / Fecha -->
+                <!-- Paciente -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="card flex-fill" >
+                            <div class="card-header header-bg">
+                                <h3 class="card-title">Datos del paciente</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div> 
+                                            <p style="font-size:100%" class="text-left"> <strong> Nombre completo:    </strong> {{$paciente->nombreCompleto()             }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> CUIL:               </strong> {{$paciente->cuil                         }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Fecha de nacimiento:</strong> {{$paciente->fecha_nacimiento()           }} </p> 
+                                            <p style="font-size:100%" class="text-left"> <strong> Edad:               </strong> {{$paciente->edad()                       }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Domicilio:          </strong> {{$paciente->domicilio ? $paciente->domicilio->direccion : " "        }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Sexo:               </strong> {{$paciente->sexo ? $paciente->sexo->definicion : " "                 }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Origen:             </strong> {{$paciente->origen ? $paciente->origen->definicion : " "             }} </p>
+                                            <p style="font-size:100%" class="text-left"> <strong> Cuit de origen:     </strong> {{$paciente->origen ? $paciente->origen->cuit : " "                   }} </p>      
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="added"> 
+                                            @if($paciente->imagen==null)
+                                                <img class="img-thumbnail" height="200px" width="200px" src="{{ asset('imagenes/paciente/default.png')}}">
+                                            @else
+                                                <img class="img-thumbnail" height="200px" width="200px" src="{{$paciente->imagen}}">
+                                            @endif 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- / Paciente -->   
+                <!-- / Paciente -->
                 <!-- Estudios -->
                     @foreach ($tipo_estudios as $tipo)
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

@@ -49,13 +49,14 @@ class VoucherController extends Controller
             ]);
     }
 
-    public function create()
+    public function create($id)
     {
         $tipo_estudios =    TipoEstudio::all();
         $estudios =         Estudio::all();
-        $pacientes =        Paciente::where('estado_id','=',1)
-                                    ->where('documento','!=',"")->get();
-        return view("voucher.create", compact('pacientes', 'estudios', 'tipo_estudios'));
+        $paciente =         Paciente::find($id);
+        /*$pacientes =        Paciente::where('estado_id','=',1)
+                                    ->where('documento','!=',"")->get();*/
+        return view("voucher.create", compact('pacientes', 'estudios', 'tipo_estudios', 'paciente'));
     }
 
 
@@ -132,15 +133,6 @@ class VoucherController extends Controller
         $estudios_sistema[] = $indice;
         return view('voucher.show', compact('voucher', 'estudios_sistema','estudios_cargar', 'tipo_estudios'));
     }
-
-    /*
-        public function showforms($id)
-        {   
-            //Variable para abrir formularios en otra vista
-            $generar_formularios = true;
-
-            return view('voucher.show', compact('voucher', 'estudios', 'tipo_estudios','generar_formularios'));
-    }*/
 
     public function edit($id)
     {

@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
     Route::get('voucher',                               'VoucherController@index')->                        name('voucher.index');
     Route::delete('voucher/{voucher}',                  'VoucherController@destroy')->                      name('voucher.destroy');
-    Route::get('voucher/create',                        'VoucherController@create')->                       name('voucher.create');
+    Route::get('voucher/create/{paciente}',             'VoucherController@create')->                       name('voucher.create');
     Route::post('voucher',                              'VoucherController@store')->                        name('voucher.store');
     Route::get('voucher/{voucher}/edit',                'VoucherController@edit')->                         name('voucher.edit');
     Route::patch('voucher/{voucher}',                   'VoucherController@update')->                       name('voucher.update');
