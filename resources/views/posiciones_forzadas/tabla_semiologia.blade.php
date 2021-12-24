@@ -1,5 +1,37 @@
 <!-- Recibe como parametro $cuadro, $articulaciones, $posiciones_forzadas -->
 
+<style>
+    .tabla {
+        border-collapse: collapse;
+    }
+    .tabla th, .tabla td {
+        border: rgb(0, 0, 0) 1px solid;
+    }
+    tbody td {
+        text-align: center;
+    }
+    tfoot th {
+        text-align: right;
+    }
+    .letra11{ 
+        font-size: 12px;
+    }
+    .subtitulo{
+        font-weight: bold;
+        font-size: 12px;
+        background-color: brown;
+        color: white;
+        text-align: center;
+    }
+    label{
+        font-weight: bold;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
 <p class="subtitulo">Semiología del Segmento Corporal Comprometido-Relación Movilidad-Dolor Articular y estado de M.M </p>
 <div style="padding-left: 5%; padding-top: 1%" >
     <table class="tabla" style="font-size: 10px">

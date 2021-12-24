@@ -67,9 +67,10 @@ class DeclaracionJurada extends Model implements Auditable
             /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
             Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
             $matriz = [];
-            $diagnostico = "<b>ANTECEDENTES FAMILIARES (AFECCIONES DE PADRE Y/O MADRE)</b><br>";
+            $diagnostico = "";
             //Carga variables
                 $matriz[] = [       //ANTECEDENTES FAMILIARES
+                                    ' ',
                                     $this->antecedenteFamiliar->su_padre_vive,
                                     $this->antecedenteFamiliar->su_madre_vive,
                                     $this->antecedenteFamiliar->cancer,
@@ -127,6 +128,7 @@ class DeclaracionJurada extends Model implements Auditable
             //
             //Carga Labels
                 $matriz[] = [  
+                    '<b>ANTECEDENTES FAMILIARES (AFECCIONES DE PADRE Y/O MADRE)</b><br>',
                     'Su padre vive: ',
                     'Su madre vive: ',
                     'Cáncer: ',

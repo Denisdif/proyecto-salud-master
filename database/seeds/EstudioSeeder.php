@@ -320,7 +320,7 @@ class EstudioSeeder extends Seeder
             'tipo_estudio_id' => 4,
         ]);
     //
-    //Psicotecnico
+    // Psicotecnico
         $estudio = Estudio::create([
             'carga' => true,
             'nombre' => 'PSICOTECNICO',

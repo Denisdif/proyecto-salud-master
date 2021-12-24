@@ -103,9 +103,10 @@ class HistoriaClinica extends Model implements Auditable
             /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
             Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
             $matriz = [];
-            $diagnostico = "<b>EXAMEN CLÍNICO</b><br>";
+            $diagnostico = "";
             //Carga variables
                 $matriz[] = [           //Examen Clinico
+                                        ' ',
                                         $this->examenClinico->peso,
                                         $this->examenClinico->estatura,
                                         $this->examenClinico->sobrepeso,
@@ -224,7 +225,8 @@ class HistoriaClinica extends Model implements Auditable
                 ];
             //
             //Carga Labels
-                $matriz[] = [   'Peso: ',
+                $matriz[] = [   '<b>EXAMEN CLÍNICO</b><br>',
+                                'Peso: ',
                                 'Estatura: ',
                                 'Sobrepeso:',
                                 'IMC: ',

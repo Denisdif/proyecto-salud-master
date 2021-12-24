@@ -21,13 +21,13 @@ class AptitudController extends Controller
         //Carga de estudios de sistema
         $declaracion_jurada = $voucher->declaracionJurada;
         $historia_clinica = $voucher->historiaClinica;
-        $posiciones_forzadas = $voucher->posicionesForzadas;
+        $posiciones_forzada = $voucher->posicionesForzadas;
         $iluminacion_direccionado = $voucher->iluminacionDireccionado;
 
         //Carga de diagnosticos
         $voucher->declaracionJurada ? ($diagnosticoD = $declaracion_jurada->generarDiagnostico()) : ($diagnosticoD = " ");
         $voucher->historiaClinica ? ($diagnosticoH = $historia_clinica->generarDiagnostico()) : ($diagnosticoH = " ");
-        $voucher->posicionesForzadas ? ($diagnosticoP = $posiciones_forzadas->generarDiagnostico()) : ($diagnosticoP = " ");
+        $voucher->posicionesForzadas ? ($diagnosticoP = $posiciones_forzada->generarDiagnostico()) : ($diagnosticoP = " ");
         $voucher->iluminacionDireccionado ? ($diagnosticoI = $iluminacion_direccionado->generarDiagnostico()) : ($diagnosticoI = " ");
 
         //Carga de estudios clasificados por tipo
@@ -45,11 +45,15 @@ class AptitudController extends Controller
                 $datosAdicionales = $datosAdicionales." Medicación actual: No. ";
             }
         } else {
-            $datosAdicionales = "Sin datos";
+            $datosAdicionales = "";
         }
+
+        //Tabla pf
+        $articulaciones = ['Hombro','Codo','Muñeca','Mano y dedos','Cadera','Rodilla','Tobillo'];
+        $cuadro = 0;
         
-        return view('aptitud.create', compact('voucher','riesgos','estudios', 'datosAdicionales',
-                                              'declaracion_jurada','historia_clinica','posiciones_forzadas','iluminacion_direccionado',
+        return view('aptitud.create', compact('voucher','riesgos','estudios', 'datosAdicionales','articulaciones','cuadro',
+                                              'declaracion_jurada','historia_clinica','posiciones_forzada','iluminacion_direccionado',
                                               'diagnosticoD','diagnosticoH','diagnosticoP','diagnosticoI' ));
     }
 

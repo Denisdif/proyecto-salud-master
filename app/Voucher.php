@@ -135,8 +135,36 @@ class Voucher extends Model implements Auditable
             return $voucherEstudio;
         }
 
-        //Devuelve una matriz con todos los estudios clasificados por tipo. $Estudios[tipo][estudios]
+        //Devuelve una matriz con todos los estudios clasificados por tipo. $Estudios[tipo][estudios] salvo los del Sistema
         public function getEstudiosClasificados()
+        {   
+            $estudiosClasificados = [];
+            $tipos = [];
+            $voucher_estudios = $this->vouchersEstudios;
+
+            foreach ($this->tiposEstudios() as $item) {
+                if ($item->nombre != "EXAMEN CLINICO") {
+                    $tipos[] = $item;
+                }
+            }
+
+            //Por cada tipo
+            for ($i=0; $i < sizeof($tipos); $i++) { 
+                $estudiosClasificados[$i][0] = $tipos[$i];   //tipo de estudio
+                $estudiosClasificados[$i][1] = [];           //estudios[]
+
+                //Por cada estudio
+                foreach ($voucher_estudios as $voucher_estudio) {
+                    if ($tipos[$i]->nombre == $voucher_estudio->estudio->tipoEstudio->nombre) {
+                        $estudiosClasificados[$i][1][] = $voucher_estudio->estudio;
+                    }
+                }
+            }
+            return $estudiosClasificados;
+        }
+
+        //Devuelve una matriz con todos los estudios clasificados por tipo. $Estudios[tipo][estudios]
+        public function getEstudiosClasificadosTodos()
         {   
             $estudiosClasificados = [];
             $tipos = $this->tiposEstudios();

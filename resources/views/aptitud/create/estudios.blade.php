@@ -75,7 +75,7 @@
             </div>
         @endif
         <!-- Posiciones Forzadas -->
-        @if ($posiciones_forzadas)
+        @if ($posiciones_forzada)
             <div class="col-6">
                 <div class="card">
                     <div class="card-header fondo2">
@@ -91,6 +91,14 @@
                                 @php
                                     echo $diagnosticoP;
                                 @endphp
+                                <!-- Tabla de semiologia -->
+                                <div class="card text-white bg-light">
+                                  <div class="card-body">
+                                    <!-- Tabla -->
+                                    @include('posiciones_forzadas.tabla_semiologia')
+                                    <!-- / Tabla -->
+                                  </div>
+                                </div>
                             </div>
                             <!-- Preexistencia u observaciones -->
                             <div class="col-12">
@@ -167,12 +175,21 @@
                                     <label for="">{{$estudios[$i][1][$j]->nombre}}: </label>
                                     <input class="form-control preexistencias observaciones" type="text"  id="POinput_{{$i}}_{{$j}}">
                                 </div>
-                                <div class="col-1">
-                                    <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="O" checked>Obs</label>
-                                </div>
-                                <div class="col-1">
-                                    <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="P">Pre</label>
-                                </div>
+                                @if (($estudios[$i][0]->nombre == "ANALISIS BIOQUIMICO") or ($estudios[$i][0]->nombre == "ANALISIS BIOQUIMICO ANEXO 01"))
+                                    <div class="col-1">
+                                        <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="O">Obs</label>
+                                    </div>
+                                    <div class="col-1">
+                                        <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="P" checked>Pre</label>
+                                    </div>
+                                @else
+                                    <div class="col-1">
+                                        <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="O" checked>Obs</label>
+                                    </div>
+                                    <div class="col-1">
+                                        <label><input class="preexistencias observaciones" type="radio" name="POinput_{{$i}}_{{$j}}_check" value="P">Pre</label>
+                                    </div>
+                                @endif
                             </div>
                             <hr>
                         @endfor

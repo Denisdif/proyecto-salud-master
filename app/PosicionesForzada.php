@@ -48,10 +48,11 @@ class PosicionesForzada extends Model
                 /* La generación deldiagnostico se realiza cargando dos arrays, uno con las etiquetas y otro con los atributos.
                 Luego se procede a cargar sólo los atributos que fueron cargados cuando se generó el formulario*/
                 $matriz = [];
-                $diagnostico = "<b>TAREAS</b><br>";
+                $diagnostico = "";
                 //Carga variables
                     $matriz[] = [       
                                         //TAREAS
+                                        ' ',
                                         $this->tarea->tiempo,
                                         $this->tarea->ciclo,
                                         $this->tarea->cargas,
@@ -88,7 +89,8 @@ class PosicionesForzada extends Model
                                     ];
                 //
                 //Carga Labels
-                    $matriz[] = [  
+                    $matriz[] = [   
+                                    '<b>TAREAS</b><br>',
                                     'Tiempo de Tarea: ',
                                     'Ciclo de trabajo: ',
                                     'Manipulación manual de cargas: ',

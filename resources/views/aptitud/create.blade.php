@@ -128,22 +128,22 @@
                 //Declaracion_jurada
                 $("#obs_declaracion_jurada").val() == undefined 
                     ? (declaracion_jurada = "") 
-                    : (declaracion_jurada = $("#obs_declaracion_jurada").val());
+                    : (declaracion_jurada = $("#obs_declaracion_jurada").val() + " ");
 
                 //Historia_clinica
                 $("#obs_historia_clinica").val() == undefined 
                     ? (historia_clinica = "") 
-                    : (historia_clinica = $("#obs_historia_clinica").val());
+                    : (historia_clinica = $("#obs_historia_clinica").val() + " ");
 
                 //Posiciones_forzada
                 $("#obs_posiciones_forzadas").val() == undefined 
                     ? (posiciones_forzadas = "") 
-                    : (posiciones_forzadas = $("#obs_posiciones_forzadas").val());
+                    : (posiciones_forzadas = $("#obs_posiciones_forzadas").val() + " ");
 
                 //Iluminacion_insuficiente
                 $("#obs_iluminacion_insuficiente").val() == undefined 
                     ? (iluminacion_insuficiente = "") 
-                    : (iluminacion_insuficiente = $("#obs_iluminacion_insuficiente").val());
+                    : (iluminacion_insuficiente = $("#obs_iluminacion_insuficiente").val() + " ");
             //
 
             //Cargar cantidad de estudios por tipo
