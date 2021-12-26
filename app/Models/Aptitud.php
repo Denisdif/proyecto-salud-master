@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aptitud extends Model
 {
-    protected $fillable = [ 'voucher_id',
-                            'firma',
-                            'preexistencias',
-                            'aptitud_laboral',
-                            'comentarios',
+    protected $fillable = [ 'voucher_id'
                           ];
 
     public function voucher()

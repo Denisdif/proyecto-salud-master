@@ -15,11 +15,6 @@ class CreateAptitudesTable extends Migration
     {
         Schema::create('aptituds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->binary('firma')->nullable();
-            $table->char('riesgos',10)->nullable();
-            $table->boolean('preexistencias')->nullable();
-            $table->string('aptitud_laboral')->nullable();
-            $table->string('comentarios')->nullable();
             $table->string('pdf')->nullable();
             
             $table->unsignedBigInteger('voucher_id')->nullable();

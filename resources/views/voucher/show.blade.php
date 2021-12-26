@@ -20,7 +20,7 @@
                 </div>
                 <div class="card-tools">
                     @if ($voucher->aptitud)
-                        <a href= {{ route('aptitudes.pdf',$voucher->id)}} class="btn fondo1"><i class="fas fa-file-pdf"></i> Informe Final</a>
+                        <a href= {{ route('aptitudes.descargar',$voucher->aptitud->id)}} class="btn fondo1"><i class="fas fa-file-pdf"></i> Informe Final</a>
 
                         <!-- ELIMINAR DESPUES DE PRUEBAS 
                         <a href= {{ route('aptitudes.create',$voucher->id)}} class="btn fondo1">Generar Informe Final</a>-->

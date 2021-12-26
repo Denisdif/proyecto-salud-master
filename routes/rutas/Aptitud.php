@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\Route;
     Route::patch('aptitudes/{id}',                  'AptitudController@update')            ->name('aptitudes.update');
     Route::delete('aptitudes/{id}',                 'AptitudController@destroy')           ->name('aptitudes.destroy');
 
-    Route::get('aptitudes/{aptitud}/pdf',           'AptitudController@crearPDF')          ->name('aptitudes.pdf');
+    Route::get('aptitudes/{aptitud}/descargar',     'AptitudController@descargar')         ->name('aptitudes.descargar');
 
 ?>

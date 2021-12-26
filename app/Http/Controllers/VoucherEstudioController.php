@@ -37,13 +37,37 @@ class VoucherEstudioController extends Controller
     {   
         $voucher_estudio = VoucherEstudio::find($id);
         $archivo_adjunto = $voucher_estudio->archivo_adjunto[0];
-        return response()->download($archivo_adjunto->anexo);
+
+        $img = $archivo_adjunto->anexo;
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename='.basename($img));
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($img));
+        ob_clean();
+        flush();
+        readfile($img);
     }
 
     //Descarga archivos pasando el Id del archivo a descargar (Se usa para estudios cargados)
     public function descargar($id)
     {   
         $archivo_adjunto = ArchivoAdjunto::find($id);
-        return response()->download($archivo_adjunto->anexo);
+
+        $img = $archivo_adjunto->anexo;
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename='.basename($img));
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($img));
+        ob_clean();
+        flush();
+        readfile($img);
     }
 }

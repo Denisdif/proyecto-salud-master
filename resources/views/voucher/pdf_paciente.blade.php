@@ -45,37 +45,37 @@
            
     </div> 
     @foreach ($tipo_estudios as $tipo)
-    <div hidden style="color: white">{{$i = -1}}</div>
-    <h3 class="titulo">{{ $tipo->nombre}}</h3>
-
+        @if ($tipo->id != 2)
+        <div hidden style="color: white">{{$i = -1}}</div>
         <div class="marco">
-        <table class="tabla">
-            <tbody>
-                @foreach ($voucher->vouchersEstudios as $item)
-                {{$cont++}}
-                @if (($tipo->id == 3) || ($tipo->id == 4) || ($tipo->id == 6))
-                    @if ($item->estudio->tipo_estudio_id == $tipo->id)
-                        {{$i++}} 
-                        @if ($i%3 == 0)
-                            <tr>
+            <table class="tabla">
+                <tbody>
+                    @foreach ($voucher->vouchersEstudios as $item)
+                    {{$cont++}}
+                    @if (($tipo->id == 3) || ($tipo->id == 4) )
+                        @if ($item->estudio->tipo_estudio_id == $tipo->id)
+                            {{$i++}} 
+                            @if ($i%3 == 0)
+                                <tr>
+                            @endif
+                            <td style="width: 240px">{{strtoupper($item->estudio->nombre)}}.  </td>
+                            @if ($i%3 == 2/3)
+                                </tr>
+                            @endif
                         @endif
-                        <td style="width: 240px">{{strtoupper($item->estudio->nombre)}}.  </td>
-                        @if ($i%3 == 2/3)
+                        @if ($cont == sizeof($voucher->vouchersEstudios))
                             </tr>
                         @endif
+                    @else
+                        @if ($tipo->nombre == strtoupper($item->estudio->nombre))
+                            <tr><td>{{ $tipo->nombre}}</td></tr>
+                        @endif  
                     @endif
-                    @if ($cont == sizeof($voucher->vouchersEstudios))
-                        </tr>
-                    @endif
-                @else
-                    @if ($tipo->nombre == strtoupper($item->estudio->nombre))
-                        <tr><td>{{ $tipo->nombre}}</td></tr>
-                    @endif  
-                @endif
-                @endforeach
-            </tbody>
-        </table>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
+        @endif
     @endforeach
 </body>
 </html>

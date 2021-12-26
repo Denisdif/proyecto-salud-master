@@ -48,8 +48,26 @@
                         @endif
                     @endif 
                 </td>
-                <td colspan="3"><label for="">Localidad:</label>  </td>
-                <td colspan="3"><label for="">Provincia:</label>  </td>
+                <td colspan="3"><label for="">Localidad:</label>
+                    @if ($voucher->paciente->origen)
+                        @if ($voucher->paciente->origen->domicilio)
+                            @if ($voucher->paciente->origen->domicilio->ciudad)
+                                {{$voucher->paciente->origen->domicilio->ciudad->nombre}}
+                            @endif
+                        @endif
+                    @endif 
+                </td>
+                <td colspan="3"><label for="">Provincia:</label> 
+                    @if ($voucher->paciente->origen)
+                        @if ($voucher->paciente->origen->domicilio)
+                            @if ($voucher->paciente->origen->domicilio->ciudad)
+                                @if ($voucher->paciente->origen->domicilio->ciudad->provincia)
+                                    {{$voucher->paciente->origen->domicilio->ciudad->provincia->nombre}}
+                                @endif
+                            @endif
+                        @endif
+                    @endif 
+                </td>
             </tr>
         </table>
 

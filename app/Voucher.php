@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\TipoEstudio;
+use App\Models\Estudio;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 

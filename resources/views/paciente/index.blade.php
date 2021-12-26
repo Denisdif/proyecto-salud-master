@@ -89,7 +89,11 @@
                                 </button>
                             </a>
 
-
+                            <a href="{{URL::action('PacienteController@voucher',$paciente->id)}}">
+                                <button title="carpeta"  class="btn fondo3 btn-responsive">
+                                    <i style="color: rgb(255, 255, 255)" class="fas fa-folder"></i>
+                                </button>
+                            </a>
                             @if($paciente->estado_id == 1)
                                 <a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $paciente->id }}" data-toggle="modal">
                                     <button title="eliminar" class="btn fondo1 btn-md">
@@ -103,19 +107,8 @@
                                     </button>
                                 </a>
                             @endif
-
-
-                            <a href="{{URL::action('PacienteController@voucher',$paciente->id)}}">
-                                <button title="carpeta"  class="btn fondo3 btn-responsive">
-                                    <i style="color: rgb(255, 255, 255)" class="fas fa-folder"></i>
-                                </button>
-                            </a>
-                   
-
                              <!-- aca colocar el modalshow-->
                              @include('paciente.modalshow')
-
-
                         </td>
                     </tr>
                     <!-- aca colocar el modaldelete-->

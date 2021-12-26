@@ -90,13 +90,6 @@
                                                 id="personal_clinica_id"
                                                 class="personal_clinica_id custom-select"
                                                 required>
-                                                <option
-                                                    value="0"
-                                                    disabled="true"
-                                                    selected="true"
-                                                    title="-Seleccione un medico-">
-                                                    -Seleccione un medico-
-                                                </option>
                                                 @foreach ($personal_clinicas as $personal_clinica)
                                                     <option value="{{$personal_clinica->id }}">{{$personal_clinica->nombreCompleto() . " - " . $personal_clinica->puesto->nombre}}</option>
                                                 @endforeach

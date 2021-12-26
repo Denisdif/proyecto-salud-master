@@ -43,7 +43,7 @@ class VoucherController extends Controller
     }
     public function index()
     {
-        $vouchers = Voucher::all();
+        $vouchers = Voucher::orderBy('id', 'desc')->get();
         return view('voucher.index',[
             "vouchers"         =>  $vouchers
             ]);
@@ -54,6 +54,13 @@ class VoucherController extends Controller
         $tipo_estudios =    TipoEstudio::all();
         $estudios =         Estudio::all();
         $paciente =         Paciente::find($id);
+
+        //Eliminar estudios con el mismo nombre que el tipo de estudio
+        for ($i=0; $i < sizeof($estudios); $i++) { 
+            if (strtoupper($estudios[$i]->nombre)  == strtoupper($estudios[$i]->tipoEstudio->nombre))  {
+                unset($estudios[$i]);
+            }
+        }
         /*$pacientes =        Paciente::where('estado_id','=',1)
                                     ->where('documento','!=',"")->get();*/
         return view("voucher.create", compact('pacientes', 'estudios', 'tipo_estudios', 'paciente'));
@@ -70,19 +77,60 @@ class VoucherController extends Controller
         $voucher->paciente_id = $request->paciente_id;
         $voucher->save();
 
-        $estudios = Estudio::all();
-        foreach ($estudios as $item) {
-            //La variable aux toma el valor del id del Estudio
-            $aux = $item->id;
+        //HARDCODEADISIMO
+        //     | | | 
+        //     V V V
+        //
+            $analisisB = false;
+            $psicotecnico = false;
+            $radiologia = false;
 
-            //Compara el aux con el campo de la request, que en la vista se establece que cada uno es el id de un Estudio distinto.
-            if ($request->$aux == 1) {
+            $estudios = Estudio::all();
+            foreach ($estudios as $estudio) {
+                //La variable aux toma el valor del id del Estudio
+                $aux = $estudio->id;
+                //Compara el aux con el campo de la request, que en la vista se establece que cada uno es el id de un Estudio distinto.
+                if ($request->$aux == 1) {
+                    $voucher_estudio = new VoucherEstudio;
+                    $voucher_estudio->voucher_id = $voucher->id;
+                    $voucher_estudio->estudio_id = $estudio->id;
+                    $voucher_estudio->save();
+
+                    //Comprobar si se cargar estudios base
+                    if ($estudio->id == $voucher_estudio->estudio_id) {
+                        if ((strtoupper($estudio->tipoEstudio->nombre) == "ANALISIS BIOQUIMICO") or
+                            (strtoupper($estudio->tipoEstudio->nombre) == "ANALISIS BIOQUIMICO ANEXO 01") ) {
+                            $analisisB = true;
+                        }
+                        if (strtoupper($estudio->tipoEstudio->nombre) == "PSICOTECNICO") {
+                            $psicotecnico = true;
+                        }
+                        if (strtoupper($estudio->tipoEstudio->nombre) == "RADIOLOGIA") {
+                            $radiologia = true;
+                        }
+                    }
+                }
+            }
+            //Cargar estudios base
+            if ($analisisB) {
                 $voucher_estudio = new VoucherEstudio;
                 $voucher_estudio->voucher_id = $voucher->id;
-                $voucher_estudio->estudio_id = $item->id;
+                $voucher_estudio->estudio_id = 1;
                 $voucher_estudio->save();
             }
-        }
+            if ($psicotecnico) {
+                $voucher_estudio = new VoucherEstudio;
+                $voucher_estudio->voucher_id = $voucher->id;
+                $voucher_estudio->estudio_id = 60;
+                $voucher_estudio->save();
+            }
+            if ($radiologia) {
+                $voucher_estudio = new VoucherEstudio;
+                $voucher_estudio->voucher_id = $voucher->id;
+                $voucher_estudio->estudio_id = 66;
+                $voucher_estudio->save();
+            }
+        //
         return redirect()->route('voucher.show',$voucher->id);
     }
 

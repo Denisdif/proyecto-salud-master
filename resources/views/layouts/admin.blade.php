@@ -219,7 +219,13 @@
                                 <i class="nav-icon fa fa-user"></i>
                                 <p>Pacientes</p>
                             </a>
-                        </li>                    
+                        </li>  
+                        <li class="nav-item">
+                            <a href="{{ route('voucher.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-stethoscope"></i>
+                                <p>Estudios</p>
+                            </a>
+                        </li>
                         <!--
                             <li class="nav-header">GESTIÓN DE ACCESO</li>
                                 
@@ -256,14 +262,9 @@
                             </li>
                         -->
                         <!-- FORMULARIOS -->
-                        <li class="nav-header">FORMULARIOS</li>
-                        <li class="nav-item">
-                            <a href="{{ route('voucher.index') }}" class="nav-link">
-                                <i class="fas fa-stethoscope"></i>
-                                <p>Estudios</p>
-                            </a>
-                        </li>
-                         <!--
+                        <!--<li class="nav-header">FORMULARIOS</li>
+
+                         
                         <li class="nav-item">
                             <a href="{{ route('audiometrias.index') }}" class="nav-link">
                                 <i class="fas fa-stethoscope"></i>
