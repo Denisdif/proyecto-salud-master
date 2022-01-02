@@ -23,8 +23,8 @@
                 <p style="font-size:120%">¿Desea dar de baja al usuario <b>{{$user->name}}</b>?</p>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Cancelar</button>
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Confirmar</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Cancelar</button>
+                  <button type="submit" class="btn btn-danger"><i class="fa fa-check"></i> Confirmar</button>
                 @include('errors.request')
 
 

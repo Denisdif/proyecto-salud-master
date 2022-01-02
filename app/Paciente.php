@@ -22,8 +22,6 @@ class Paciente extends Model implements Auditable
         'cuil',
         'ciudad_id',
         'origen_id',
-        'tipo_sangre_id',
-        'tipo_documento_id',
         'telefono',
         'sexo_id',
         'estado_civil_id',
@@ -69,19 +67,9 @@ class Paciente extends Model implements Auditable
         return $this->belongsTo('App\EstadoCivil');
     }
 
-    public function tipoDocumento()
-    {
-        return $this->belongsTo('App\TipoDocumento');
-    }
-
-    public function tipoSangre()
-    {
-        return $this->belongsTo('App\TipoSangre');
-    }
-
     public function documentoIdentidad()
     {
-        return $this->tipoDocumento->abreviatura . ":  " . $this->documento;
+        return $this->documento;
     }
 
     public function ciudad()

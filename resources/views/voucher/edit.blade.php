@@ -188,8 +188,8 @@
 
                             </label>
                             <br>
-                            <button title="Guardar" class="btn btn-primary btn-responsive" type="submit"> <i class="fa fa-check"></i> Guardar</button>
-                            <button title="Limpiar" class="btn btn-danger btn-responsive" type="reset"><i class="fa fa-remove"></i> Cancelar</button>
+                            <button title="Guardar" class="btn btn-danger btn-responsive" type="submit"> <i class="fa fa-check"></i> Guardar</button>
+                            <button title="Limpiar" class="btn btn-secondary btn-responsive" type="reset"><i class="fa fa-remove"></i> Cancelar</button>
                         </div>
                     </div>
 

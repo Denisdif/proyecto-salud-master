@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\PersonalClinica;
-use App\TipoDocumento;
 use App\Sexo;
 use App\Puesto;
 use App\Especialidad;
@@ -102,13 +101,11 @@ class PersonalClinicaController extends Controller
     public function create()
     {
 
-        $tipo_documentos=TipoDocumento::all();
         $sexos=Sexo::all();
         $puestos=Puesto::all();
 
 
         return view("personal.create", [
-            "tipo_documentos"   =>  $tipo_documentos,
             "sexos"             =>  $sexos,
             "puestos"           =>  $puestos
             ]);
@@ -128,7 +125,6 @@ class PersonalClinicaController extends Controller
         $personal = new PersonalClinica;
         $personal->nombres=$request->get('nombres');
         $personal->apellidos=$request->get('apellidos');
-        $personal->tipo_documento_id=$request->get('tipo_documento_id');
         $personal->documento=$request->get('documento');
         $personal->fecha_nacimiento=$request->get('fecha_nacimiento');
         $personal->nro_matricula=$request->get('nro_matricula');

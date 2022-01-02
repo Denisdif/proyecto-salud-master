@@ -63,7 +63,7 @@ class VoucherController extends Controller
         }
         /*$pacientes =        Paciente::where('estado_id','=',1)
                                     ->where('documento','!=',"")->get();*/
-        return view("voucher.create", compact('pacientes', 'estudios', 'tipo_estudios', 'paciente'));
+        return view("voucher.create", compact(/*'pacientes', */'estudios', 'tipo_estudios', 'paciente'));
     }
 
 

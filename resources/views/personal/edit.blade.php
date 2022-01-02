@@ -93,9 +93,9 @@
                         </label>
                         <br>
                         <a href="/personal">
-                            <button title="Cancelar" class="btn btn-danger btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
+                            <button title="Cancelar" class="btn btn-secondary btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
                         </a>
-                        <button title="Guardar" id="confirmar" class="btn btn-success btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
+                        <button title="Guardar" id="confirmar" class="btn btn-danger btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
                     </div>
                 </div>
             </div>

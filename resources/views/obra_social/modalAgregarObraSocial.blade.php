@@ -24,8 +24,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button id="agregarObra" type="button" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button id="agregarObra" type="button" class="btn btn-danger">Guardar</button>
                     @include('errors.request')
                 </div>
             </div>

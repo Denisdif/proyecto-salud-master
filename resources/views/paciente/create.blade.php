@@ -56,26 +56,20 @@
                 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label for="tipo_documento_id">Tipo de DNI</label>
-                                <select name="tipo_documento_id"id="tipo_documento_id"class="tipo_documento_id custom-select"required>
-                                    <option value="0"disabled="true"selected="true"title="-Seleccione un tipo de documento-">
-                                        -Seleccione un tipo de documento-
-                                    </option>
-                                    @foreach ($tipo_documentos as $tipo_documento)
-                                        <option
-                                            value="{{$tipo_documento->id }}">{{$tipo_documento->documento()}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
+                        
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <label for="documento">Documento</label>
                                 <input type="number"name="documento"value="{{old('documento')}}"class="form-control"
                                     placeholder="33.222.111"title="Introduzca el documento">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                                <input type="date"name="fecha_nacimiento"value="{{old('fecha_nacimiento')}}"
+                                    class="form-control"placeholder="dia/mes/año"title="Introduzca la fecha de nacimiento">
                             </div>
                         </div>
                     </div>
@@ -89,34 +83,7 @@
                                 <input type="string"name="cuil"value="{{old('cuil')}}"class="form-control"placeholder="22-12312412-11"
                                     title="Introduzca el cuil">
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label for="estado_civil_id">Estado Civil</label>
-                                <select name="estado_civil_id"id="estado_civil_id"class="estado_civil_id custom-select"required>
-                                    <option value="0"disabled="true"selected="true"title="-Seleccione el estado civil-">
-                                        -Seleccione un estado civil-
-                                    </option>
-                                    @foreach ($estado_civiles as $estado_civil)
-                                        <option
-                                            value="{{$estado_civil->id }}">{{$estado_civil->definicion}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                                <input type="date"name="fecha_nacimiento"value="{{old('fecha_nacimiento')}}"
-                                    class="form-control"placeholder="dia/mes/año"title="Introduzca la fecha de nacimiento">
-                            </div>
-                        </div>
-        
+                        </div>   
         
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="form-group">
@@ -133,11 +100,28 @@
                                 </select>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
-                
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="row">
+                        
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="estado_civil_id">Estado Civil</label>
+                                <select name="estado_civil_id"id="estado_civil_id"class="estado_civil_id custom-select"required>
+                                    <option value="0"disabled="true"selected="true"title="-Seleccione el estado civil-">
+                                        -Seleccione un estado civil-
+                                    </option>
+                                    @foreach ($estado_civiles as $estado_civil)
+                                        <option
+                                            value="{{$estado_civil->id }}">{{$estado_civil->definicion}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <label for="sexo_id">Sexo</label>
@@ -153,23 +137,9 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label for="tipo_sangre_id">Tipo de Sangre</label>
-                                <select name="tipo_sangre_id"id="tipo_sangre_id"class="tipo_sangre_id custom-select"required>
-                                    <option value="0"disabled="true"selected="true"title="-Seleccione el tipo de sangre-">
-                                        -Seleccione un tipo de sangre-
-                                    </option>
-                                    @foreach ($tipo_sangres as $tipo_sangre)
-                                        <option
-                                            value="{{$tipo_sangre->id }}">{{$tipo_sangre->sangre}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
                     </div>
                 </div>
+                
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -329,7 +299,6 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <br><br>
                                         <label for="direccion">Direccion</label>
                                         <input type="string"name="direccion"value="{{old('direccion')}}"class="form-control"
                                             placeholder="Introdusca la direccion"title="Introduzca la direccion">
@@ -338,11 +307,10 @@
                                 
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group" style="text-align:center">
-                                        <br><br>
                                         <a href="/paciente">
-                                            <button title="Cancelar" class="btn btn-danger btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
+                                            <button title="Cancelar" class="btn btn-secondary btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
                                         </a>
-                                        <button title="Guardar" id="confirmar" class="btn btn-success btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
+                                        <button title="Guardar" id="confirmar" class="btn btn-danger btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
                                     </div>
                                 </div>
                         </div>
@@ -363,29 +331,21 @@
         $(document).ready(function(){
 
 
-            var select0 = $("#tipo_documento_id").select2({width:'100%'});
-            select0.data('select2').$selection.css('height', '100%');
-
             var select1 = $("#sexo_id").select2({width:'100%'});
             select1.data('select2').$selection.css('height', '100%');
-
-            var select2 = $("#tipo_sangre_id").select2({width:'100%'});
-            select2.data('select2').$selection.css('height', '100%');
 
             var select3 = $("#estado_civil_id").select2({width:'100%'});
             select3.data('select2').$selection.css('height', '100%');
 
-
-
-
             var select4 = $("#ciudad_id2").select2({width:'100%'});
             select4.data('select2').$selection.css('height', '100%');
 
-
             var select5 = $("#pais_id").select2({width:'100%'});
             select5.data('select2').$selection.css('height', '100%');
+
             var select6 = $("#provincia_id").select2({width:'100%'});
             select6.data('select2').$selection.css('height', '100%');
+            
             var select7 = $("#ciudad_id").select2({width:'100%'});
             select7.data('select2').$selection.css('height', '100%');
 

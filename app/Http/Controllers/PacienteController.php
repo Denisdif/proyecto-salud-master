@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Paciente;
 use App\Estado;
-use App\TipoDocumento;
 use App\Origen;
 use App\EstadoCivil;
-use App\TipoSangre;
 use App\Sexo;
 use App\ObraSocial;
 use App\Domicilio;
@@ -122,20 +120,16 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        $tipo_documentos=TipoDocumento::all();
         $origenes=Origen::all();
         $estado_civiles=EstadoCivil::all();
-        $tipo_sangres=TipoSangre::all();
         $sexos=Sexo::all();
         $obra_sociales=ObraSocial::all();
         $paises=Pais::all();
         $lugar_nacimiento=Ciudad::all();
 
         return view("paciente.create", [
-            "tipo_documentos"   =>  $tipo_documentos,
             "origenes"          =>  $origenes,
             "estado_civiles"    =>  $estado_civiles,
-            "tipo_sangres"      =>  $tipo_sangres,
             "sexos"             =>  $sexos,
             "obra_sociales"     =>  $obra_sociales,
             "paises"            =>  $paises,
@@ -165,9 +159,6 @@ class PacienteController extends Controller
         $paciente = new Paciente;
         $paciente->nombres=$request->get('nombres');
         $paciente->apellidos=$request->get('apellidos');
-        if($request->get('tipo_documento_id')!=null){
-            $paciente->tipo_documento_id=$request->get('tipo_documento_id');
-        }
         if($request->get('documento')!=null){
             $paciente->documento=$request->get('documento');
         }
@@ -194,9 +185,6 @@ class PacienteController extends Controller
         }
         if($request->get('origen_id')!=null){
             $paciente->origen_id=$request->get('origen_id');
-        }
-        if($request->get('tipo_sangre_id')!=null){
-            $paciente->tipo_sangre_id=$request->get('tipo_sangre_id');
         }
         if($request->get('estado_civil_id')!=null){
             $paciente->estado_civil_id=$request->get('estado_civil_id');
@@ -243,8 +231,6 @@ class PacienteController extends Controller
 
         $paciente=Paciente::findOrFail($id);
         $sexos=Sexo::all();
-        $tipo_sangres=TipoSangre::all();
-        $tipo_documentos=TipoDocumento::all();
         $origenes=Origen::all();
         $estado_civiles=EstadoCivil::all();
         $obra_sociales=ObraSocial::all();
@@ -254,7 +240,7 @@ class PacienteController extends Controller
 
 
 
-        return view("paciente.edit",compact('paises','provincias','ciudades','paciente','sexos','tipo_sangres', 'tipo_documentos','origenes','estado_civiles','obra_sociales'));
+        return view("paciente.edit",compact('paises','provincias','ciudades','paciente','sexos','origenes','estado_civiles','obra_sociales'));
     }
 
 
@@ -278,8 +264,6 @@ class PacienteController extends Controller
         $paciente->telefono=$request->get('telefono');
         $paciente->obra_social_id=$request->get('obra_social_id');
         $paciente->estado_civil_id=$request->get('estado_civil_id');
-        $paciente->tipo_sangre_id=$request->get('tipo_sangre_id');
-        $paciente->tipo_documento_id=$request->get('tipo_documento_id');
         $paciente->origen_id=$request->get('origen_id');
         
 

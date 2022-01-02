@@ -25,188 +25,185 @@
                 </div>
             </div>
             <div class="card-body">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="nombres">
+                                        Nombres
+                                </label>
+                                <input
+                                    type="string"
+                                    name="nombres"
+                                    value="{{ $paciente->nombres }}"
+                                    class="form-control"
+                                    title="nombre del paciente"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="apellidos">
+                                        Apellido
+                                </label>
+                                <input
+                                    type="string"
+                                    name="apellidos"
+                                    value="{{ $paciente->apellidos }}"
+                                    class="form-control"
+                                    title="apellidos del paciente"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="documento">
+                                    Documento
+                                </label>
+                                <input
+                                    type="integer"
+                                    name="documento"
+                                    value="{{ $paciente->documento }}"
+                                    class="form-control"
+                                    title="documento del paciente"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="fecha_nacimiento">
+                                        Fecha de nacimiento
+                                </label>
+                                <input
+                                    type="date"
+                                    name="fecha_nacimiento"
+                                    value="{{ $paciente->fecha_nacimiento }}"
+                                    class="form-control"
+                                    title="fecha de nacimiento de la persona"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="cuil">
+                                    Cuil
+                                </label>
+                                <input
+                                    type="text"
+                                    name="cuil"
+                                    value="{{ $paciente->cuil }}"
+                                    class="form-control"
+                                    title="fcuil del paciente"
+                                    >
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="telefono">
+                                    Teléfono
+                                </label>
+                                <input
+                                    type="string"
+                                    name="telefono"
+                                    value="{{ $paciente->telefono }}"
+                                    class="form-control"
+                                    title="número de telefono de la persona"
+                                    >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>
+                                    Género
+                                </label>
+                                <select
+                                    id="sexo_id"
+                                    name="sexo_id"
+                                    class="form-control">
+                                    <option
+                                        value="0"
+                                        disabled="true"
+                                        selected="true"
+                                        title="Seleccione un género"
+                                        >
+                                        -Seleccione un género-
+                                    </option>
+                                        @foreach ($sexos as $sexo)
+                                            @if ($paciente->sexo != null)
+                                                @if ($sexo->id==$paciente->sexo_id)
+                                                        <option value="{{$sexo->id}}" selected>{{$sexo->definicion}}</option> 
+                                                @else
+                                                        <option value="{{$sexo->id}}">{{$sexo->definicion}}</option>                                                
+                                                @endif
+                                            @else
+                                                <option value="{{$sexo->id}}">{{$sexo->definicion}}</option> 
+                                            @endif
+                                                
+                                        @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="estado_civil_id">
+                                    Estado Civil
+                                </label>
+                                <select
+                                    id="estado_civil_id"
+                                    name="estado_civil_id"
+                                    class="form-control">
+                                    <option
+                                        value="0"
+                                        disabled="true"
+                                        selected="true"
+                                        title="Seleccione un estado civil"
+                                        >
+                                        -Seleccione un estado civil-
+                                    </option>
+                                        @foreach ($estado_civiles as $estado_civil)
+                                            @if ($paciente->estadoCivil != null)
+                                                @if ($estado_civil->id==$paciente->estado_civil)
+                                                    <option value="{{$estado_civil->id}}" selected>{{$estado_civil->definicion}}</option>
+                                                @else
+                                                    <option value="{{$estado_civil->id}}">{{$estado_civil->definicion}}</option>
+                                                @endif
+                                            @else
+                                                <option value="{{$estado_civil->id}}">{{$estado_civil->definicion}}</option>
+                                            @endif
+                                            
+                                        @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
-                        <label for="nombres">
-                                Nombres
+                        <label for="foto de perfil">
+                            Foto de Perfil
                         </label>
                         <input
-                            type="string"
-                            name="nombres"
-                            value="{{ $paciente->nombres }}"
+                            type="file"
+                            name="imagen"
+                            value="{{old('imagen')}}"
                             class="form-control"
-                            title="nombre del paciente"
-                            required>
+                            >
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="apellidos">
-                                Apellido
-                        </label>
-                        <input
-                            type="string"
-                            name="apellidos"
-                            value="{{ $paciente->apellidos }}"
-                            class="form-control"
-                            title="apellidos del paciente"
-                            required>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="tipo_documento_id">
-                            Tipo de Documento
-                        </label>
-                        <select
-                            id="tipo_documento_id"
-                            name="tipo_documento_id"
-                            class="form-control"
-                            required>
-                            <option
-                                disabled="true"
-                                selected="false"
-                                title="Seleccione un tipo de documento"
-                                >
-                                -Seleccione un tipo de documento-
-                            </option>
-                                @foreach ($tipo_documentos as $tipo_documento)
-                                    @if ($paciente->tipoDocumento != null)&&($tipo_documento->id==$paciente->tipo_documento)
-                                            <option value="{{$tipo_documento->id}}" selected>{{$tipo_documento->definicion}}</option>
-                                    @else
-                                        <option value="{{$tipo_documento->id}}">{{$tipo_documento->definicion}}</option>
-                                    @endif
-                                    
-                                @endforeach
-                        </select>
-                    </div>
-                </div> 
-              
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="documento">
-                            Documento
-                        </label>
-                        <input
-                            type="integer"
-                            name="documento"
-                            value="{{ $paciente->documento }}"
-                            class="form-control"
-                            title="documento del paciente"
-                            required>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="fecha_nacimiento">
-                                Fecha de nacimiento
-                        </label>
-                        <input
-                            type="date"
-                            name="fecha_nacimiento"
-                            value="{{ $paciente->fecha_nacimiento }}"
-                            class="form-control"
-                            title="fecha de nacimiento de la persona"
-                            required>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label>
-                            Género
-                        </label>
-                        <select
-                            id="sexo_id"
-                            name="sexo_id"
-                            class="form-control">
-                            <option
-                                value="0"
-                                disabled="true"
-                                selected="true"
-                                title="Seleccione un género"
-                                >
-                                -Seleccione un género-
-                            </option>
-                                @foreach ($sexos as $sexo)
-                                    @if ($paciente->sexo != null)
-                                        @if ($sexo->id==$paciente->sexo_id)
-                                                <option value="{{$sexo->id}}" selected>{{$sexo->definicion}}</option> 
-                                        @else
-                                                <option value="{{$sexo->id}}">{{$sexo->definicion}}</option>                                                
-                                        @endif
-                                    @else
-                                        <option value="{{$sexo->id}}">{{$sexo->definicion}}</option> 
-                                    @endif
-                                        
-                                @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="tipo_sangre_id">
-                            Tipo de Sangre
-                        </label>
-                        <select
-                            id="tipo_sangre_id"
-                            name="tipo_sangre_id"
-                            class="form-control">
-                            <option
-                                value="0"
-                                disabled="true"
-                                selected="true"
-                                title="Seleccione un tipo de sangre"
-                                >
-                                -Seleccione un tipo de sangre-
-                            </option>
-                                @foreach ($tipo_sangres as $tipo_sangre)
-                                @if ($paciente->tipoSangre)
-                                    @if ($tipo_sangre->id==$paciente->tipo_sangre)
-                                        <option value="{{$tipo_sangre->id}}" selected>{{$tipo_sangre->sangre}}</option>
-                                    @else
-                                        <option value="{{$tipo_sangre->id}}">{{$tipo_sangre->sangre}}</option>
-                                    @endif
-                                @else
-                                    <option value="{{$tipo_sangre->id}}">{{$tipo_sangre->sangre}}</option>
-                                @endif
-                                    
-                                @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="estado_civil_id">
-                            Estado Civil
-                        </label>
-                        <select
-                            id="estado_civil_id"
-                            name="estado_civil_id"
-                            class="form-control">
-                            <option
-                                value="0"
-                                disabled="true"
-                                selected="true"
-                                title="Seleccione un estado civil"
-                                >
-                                -Seleccione un estado civil-
-                            </option>
-                                @foreach ($estado_civiles as $estado_civil)
-                                    @if ($paciente->estadoCivil != null)
-                                        @if ($estado_civil->id==$paciente->estado_civil)
-                                            <option value="{{$estado_civil->id}}" selected>{{$estado_civil->definicion}}</option>
-                                        @else
-                                            <option value="{{$estado_civil->id}}">{{$estado_civil->definicion}}</option>
-                                        @endif
-                                    @else
-                                        <option value="{{$estado_civil->id}}">{{$estado_civil->definicion}}</option>
-                                    @endif
-                                    
-                                @endforeach
-                        </select>
-                    </div>
-                </div>                
+                </div>               
             </div>
         </div>
     </div>
@@ -288,18 +285,7 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="form-group">
-                            <label for="cuil">
-                                Cuil
-                            </label>
-                            <input
-                                type="text"
-                                name="cuil"
-                                value="{{ $paciente->cuil }}"
-                                class="form-control"
-                                title="fcuil del paciente"
-                                >
-                        </div>
+                        
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <label>País</label>
@@ -336,7 +322,6 @@
                             @endforeach
                         </select>
                         <br>
-                        <br>
                         <label>Provincia</label>
                         <select
                             name="provincia_id"
@@ -371,7 +356,6 @@
                                 @endif
                             @endforeach
                         </select>
-                        <br>
                         <br>
                         <label>Ciudad</label>
                         <select
@@ -430,35 +414,6 @@
                                     </div>
                                 </div>
                                 
-
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
-                                        <label for="telefono">
-                                            Teléfono
-                                        </label>
-                                        <input
-                                            type="string"
-                                            name="telefono"
-                                            value="{{ $paciente->telefono }}"
-                                            class="form-control"
-                                            title="número de telefono de la persona"
-                                            >
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
-                                        <label for="foto de perfil">
-                                            Foto de Perfil
-                                        </label>
-                                        <input
-                                            type="file"
-                                            name="imagen"
-                                            value="{{old('imagen')}}"
-                                            class="form-control"
-                                            >
-                                    </div>
-                                </div>
-
                         </div>
                     </div>
 
@@ -478,9 +433,9 @@
             </label>
             <br>
             <a href="/paciente">
-                <button title="Cancelar" class="btn btn-danger btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
+                <button title="Cancelar" class="btn btn-secondary btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
             </a>
-            <button title="Guardar" id="confirmar" class="btn btn-success btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
+            <button title="Guardar" id="confirmar" class="btn btn-danger btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
         </div>
     </div>
 </div>
@@ -500,9 +455,6 @@
             var select3 = $("#origen_id").select2({width:'90%'});
             select3.data('select2').$selection.css('height', '100%');
 
-            var select4 = $("#tipo_sangre_id").select2({width:'100%'});
-            select4.data('select2').$selection.css('height', '100%');
-
             var select5 = $("#estado_civil_id").select2({width:'100%'});
             select5.data('select2').$selection.css('height', '100%');
 
@@ -514,9 +466,6 @@
 
             var select9 = $("#ciudad_id").select2({width:'100%'});
             select9.data('select2').$selection.css('height', '100%');
-
-            var select10 = $("#tipo_documento_id").select2({width:'100%'});
-            select10.data('select2').$selection.css('height', '100%');
 
             $(document).on('change','.pais_id',function(){
                 var pais_id=$(this).val();

@@ -19,7 +19,6 @@ class PersonalClinica extends Model implements Auditable
         'fecha_nacimiento',
         'firma',
         'cuenta',
-        'tipo_documento_id',
         'sexo_id',
         'especialidad_id',
         'estado_id'
@@ -40,14 +39,9 @@ class PersonalClinica extends Model implements Auditable
         return $this->hasOne('App\User');
     }
 
-    public function tipo_documento()
-    {
-        return $this->belongsTo('App\TipoDocumento');
-    }
-
     public function documentoCompleto()
     {
-        return $this->tipo_documento->abreviatura . ": " . $this->documento;
+        return $this->documento;
     }
 
     public function sexoCompleto()

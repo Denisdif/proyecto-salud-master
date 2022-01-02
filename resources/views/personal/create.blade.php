@@ -49,23 +49,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="tipo_documento_id">Tipo de Documento</label>
-                        <select
-                            name="tipo_documento_id"
-                            id="tipo_documento_id"
-                            class="tipo_documento_id custom-select"
-                            required>
-                            <option value="0"disabled="true"selected="true"title="-Seleccione un tipo de documento-">
-                                -Seleccione un tipo de documento-
-                            </option>
-                            @foreach ($tipo_documentos as $tipo_documento)
-                                <option
-                                    value="{{$tipo_documento->id }}">{{$tipo_documento->definicion}}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
+                    
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
@@ -111,9 +95,6 @@
                         </div>
                     </div>
                 </div>
-                
-                
-               
             </div>
         </div>
     </div>
@@ -150,7 +131,6 @@
                                     </option>
                                 @endforeach
                             </select>
-                            <br><br>
                             <label>
                                 Especialidad
                             </label>
@@ -206,14 +186,7 @@
                         </div>
                     </div>
                     <input type="hidden" name="firma" id="firma">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="form-group" style="text-align:center">
-                            <a href="/personal">
-                                <button title="Cancelar" class="btn btn-danger btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
-                            </a>
-                            <button title="Guardar" id="confirmar" class="btn btn-success btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
-                        </div>
-                    </div>
+                    
        
                             
                     </div>
@@ -221,6 +194,14 @@
 
             </div>
         </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="form-group" style="text-align:center">
+        <a href="/personal">
+            <button title="Cancelar" class="btn btn-secondary btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
+        </a>
+        <button title="Guardar" id="confirmar" class="btn btn-danger btn-lg" type="submit"> <i class="fa fa-check"></i> Guardar</button>
     </div>
 </div>
     
@@ -233,9 +214,6 @@
 
         $(document).ready(function(){
 
-
-            var select0 = $("#tipo_documento_id").select2({width:'100%'});
-            select0.data('select2').$selection.css('height', '100%');
 
             var select1 = $("#sexo_id").select2({width:'100%'});
             select1.data('select2').$selection.css('height', '100%');

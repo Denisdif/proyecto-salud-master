@@ -18,8 +18,8 @@
         <hr>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Cancelar</button>
-        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Confirmar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-arrow-left"></i> Cancelar</button>
+        <button type="submit" class="btn btn-danger"><i class="fa fa-check"></i> Confirmar</button>
         @include('errors.request')
       </div>
     </div>
