@@ -22,13 +22,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    function __construct()
+    /*function __construct()
     {
          $this->middleware('permission:listar usuarios|crear usuario|editar usuario|eliminar usuario', ['only' => ['index','store']]);
          $this->middleware('permission:crear usuario', ['only' => ['create','store']]);
          $this->middleware('permission:editar usuario', ['only' => ['edit','update']]);
          $this->middleware('permission:eliminar usuario', ['only' => ['destroy']]);
-    }
+    }*/
 
 
     /**
@@ -86,10 +86,10 @@ class UserController extends Controller
         //$pacientes=Paciente::where('historia_clinica',false)->get();
         //$personas=Persona::all();
         $personals=PersonalClinica::where('cuenta',false)->get();
-        $roles=DB::table('roles')->get();
+        //$roles=DB::table('roles')->get();
         return view("user.create", [
-            "personals"   =>  $personals,
-            "roles"      =>  $roles
+            "personals"   =>  $personals
+            //"roles"      =>  $roles
             ]);
 
 
@@ -130,7 +130,7 @@ class UserController extends Controller
         //PersonalClinica::find($user->personal_clinica_id)->update(['cuenta'=>true]);
 
         //Sincronizar al usuario creado con el rol y guardarlo
-        $user->roles()->sync($request->get('roles'));
+        //$user->roles()->sync($request->get('roles'));
 
         Session::flash('store_user','El usuario '.$user->name. ' ha sido registrdo con éxito');
         return Redirect::to('user');
@@ -157,12 +157,12 @@ class UserController extends Controller
     public function edit($id)
     {
         $user=User::findOrFail($id);
-        $roles=DB::table('roles')->get();
+        //$roles=DB::table('roles')->get();
         $personals=PersonalClinica::get();
 
         return view("user.edit", [
             "user"      =>  $user,
-            "roles"     =>  $roles,
+            //"roles"     =>  $roles,
             "personals" =>  $personals
             ]);
     }

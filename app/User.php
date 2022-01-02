@@ -7,14 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
-use Spatie\Permission\Traits\HasRoles;
+//use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
     public $timestamps=true;
 
-    use HasRoles;
+    //use HasRoles;
     use Notifiable;
 
 

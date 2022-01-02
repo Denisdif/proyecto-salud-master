@@ -19,13 +19,13 @@ use Carbon\Carbon;
 
 class DeclaracionJuradaController extends Controller
 {
-    function __construct()
+    /*function __construct()
     {
          $this->middleware('permission:listar declaraciones_juradas|crear declaracion_jurada|editar declaracion_jurada|eliminar declaracion_jurada', ['only' => ['index','store']]);
          $this->middleware('permission:crear declaracion_jurada', ['only' => ['create','store']]);
          $this->middleware('permission:editar declaracion_jurada', ['only' => ['edit','update']]);
          $this->middleware('permission:eliminar declaracion_jurada', ['only' => ['destroy']]);
-    }
+    }*/
 
     public function traerDatosPaciente(Request $request)
     {

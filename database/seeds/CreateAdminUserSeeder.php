@@ -26,13 +26,13 @@ class CreateAdminUserSeeder extends Seeder
 
         ]);
 
-        $role = Role::create(['name' => 'Administrador']);
+        /*$role = Role::create(['name' => 'Administrador']);
 
         $permissions = Permission::pluck('id','id')->all();
 
         $role->syncPermissions($permissions);
 
-        $user1->assignRole([$role->id]);
+        $user1->assignRole([$role->id]);*/
 
         $user2=User::create([
             'name'                  =>  'axel',
@@ -42,7 +42,7 @@ class CreateAdminUserSeeder extends Seeder
             'personal_clinica_id'   =>  3,
             'estado_id'             =>  1
         ]);
-        $user2->assignRole([$role->id]);
+        //$user2->assignRole([$role->id]);
 
     }
 }

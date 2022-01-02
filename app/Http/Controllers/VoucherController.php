@@ -19,13 +19,13 @@ use PDF;
 class VoucherController extends Controller
 {
 
-    function __construct()
+    /*function __construct()
     {
          $this->middleware('permission:listar vouchers|crear voucher|editar voucher|eliminar voucher', ['only' => ['index','store']]);
          $this->middleware('permission:crear voucher', ['only' => ['create','store']]);
          $this->middleware('permission:editar voucher', ['only' => ['edit','update']]);
          $this->middleware('permission:eliminar voucher', ['only' => ['destroy']]);
-    }
+    }*/
     
     public function traerDatosPaciente(Request $request)
     {

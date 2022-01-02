@@ -21,13 +21,13 @@ class PacienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    function __construct()
+    /*function __construct()
     {
          $this->middleware('permission:listar pacientes|crear paciente|editar paciente|eliminar paciente', ['only' => ['index','store']]);
          $this->middleware('permission:crear paciente', ['only' => ['create','store']]);
          $this->middleware('permission:editar paciente', ['only' => ['edit','update']]);
          $this->middleware('permission:eliminar paciente', ['only' => ['destroy']]);
-    }
+    }*/
 
 
     public function encontrarProvincia(Request $request)

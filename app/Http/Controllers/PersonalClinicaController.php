@@ -20,13 +20,13 @@ class PersonalClinicaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    function __construct()
+    /*function __construct()
     {
         $this->middleware('permission:listar personal|crear personal|editar personal|eliminar personal', ['only' => ['index','store']]);
         $this->middleware('permission:crear personal', ['only' => ['create','store']]);
         $this->middleware('permission:editar personal', ['only' => ['edit','update']]);
         $this->middleware('permission:eliminar personal', ['only' => ['destroy']]);
-    }
+    }*/
 
 
     public function encontrarEspecialidad(Request $request)

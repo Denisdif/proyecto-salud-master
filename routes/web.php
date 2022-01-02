@@ -24,10 +24,10 @@ Route::middleware(['auth'])->group(function() {
     include 'rutas/Welcome.php';
     include 'rutas/Sexo.php';
     include 'rutas/User.php';
-    include 'rutas/Roles.php';
+    //include 'rutas/Roles.php';
     include 'rutas/Audit.php';
     include 'rutas/Configuracion.php';
-    include 'rutas/TipoSangre.php';
+    //include 'rutas/TipoSangre.php';
     include 'rutas/Paciente.php';
     include 'rutas/DeclaracionJurada.php';
     include 'rutas/HistoriaClinica.php';

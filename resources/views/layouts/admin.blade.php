@@ -304,19 +304,14 @@
 
                         <li class="nav-header">SISTEMA</li>
                         <!--
-                        @role('Administrador')
+                        
                         <li class="nav-item">
                             <a href="{{ route('audits.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-eye"></i>
                                 <p>Auditoria</p>
                             </a>
                         </li>-->
-                        <li class="nav-item">
-                            <a href="{{ route('roles.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-key"></i>
-                                <p>Roles y Permisos</p>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a href="{{ route('user.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
@@ -336,7 +331,7 @@
                                 <p>Tipos de estudios</p>
                             </a>
                         </li>-->
-                        @endrole
+                        
                         <!--
                             <li class="nav-item">
                                 <a href="#" class="nav-link">

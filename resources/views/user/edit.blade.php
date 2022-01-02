@@ -123,23 +123,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label>Lista de roles</label>
-                        <div class="form-group">
-                            <ul class="list-unstyled">
-                                @foreach ($roles as $role)
-                                    <li>
-                                        <label>
-                                            {{ Form::checkbox('roles[]', $role->id, null) }}
-                                            {{ $role->name }}
-                                        </label>
-                                    </li>
-                                @endforeach
-                            </ul>
-                    </div>
-                </div>
-
-
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
