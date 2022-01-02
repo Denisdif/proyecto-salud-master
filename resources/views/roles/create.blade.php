@@ -37,21 +37,17 @@
                         <label>Permisos:</label>
                         <br/>
                         @foreach($permission as $value)
-                            <div class="icheck-primary d-inline"> 
+                            <div class="icheck-danger d-inline"> 
                                 <input type="checkbox" value="{{$value->id}}" name=permission[] id="{{$value}}"> 
                                 <label for="{{$value}}"> {{ $value->name }}</label>
                             </div>
                             <br>
                         @endforeach
                     </div>
-
-                   
+                </div>                   
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group" style="text-align:center">
-                        <label>
-
-                        </label>
                         <br>
                         <a href="/roles">
                             <button title="Limpiar" class="btn btn-secondary btn-lg" type="button"><i class="fas fa-arrow-left"></i> Cancelar</button>
