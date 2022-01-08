@@ -32,12 +32,6 @@ class CreatePacientesTable extends Migration
             $table->unsignedBigInteger('origen_id')->nullable();
             $table->foreign('origen_id')->references('id')->on('origenes')->onDelete('restrict');
 
-            $table->unsignedBigInteger('tipo_sangre_id')->nullable();
-            $table->foreign('tipo_sangre_id')->references('id')->on('tipo_sangres')->onDelete('restrict');
-
-            $table->unsignedBigInteger('tipo_documento_id')->nullable();
-            $table->foreign('tipo_documento_id')->references('id')->on('tipo_documentos')->onDelete('restrict');
-
             $table->unsignedBigInteger('sexo_id')->nullable();
             $table->foreign('sexo_id')->references('id')->on('sexos')->onDelete('restrict')->nullable();
 

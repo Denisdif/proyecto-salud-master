@@ -20,8 +20,6 @@ class PacienteSeeder extends Seeder
             'cuil'              =>  '33-1232141-11',
             'ciudad_id'         =>  1, //nacio en Posadas Posadas
             'origen_id'         =>  1, //Agricultores S.A
-            'tipo_sangre_id'    =>  1, //A+
-            'tipo_documento_id' =>  1, //Documento Nacional de Identidad
             'sexo_id'           =>  1, //Femenino
             'domicilio_id'      =>  1, //altura 2000 	piso2, barrio 25 de Mayo, Posadas, Misiones, Argentina
             'obra_social_id'    =>  1, //IPS
@@ -41,8 +39,6 @@ class PacienteSeeder extends Seeder
             'cuil'              =>  '22-1235171-11',
             'ciudad_id'         =>  1, //nacio en Posadas Posadas
             'origen_id'         =>  2, //Seguros Campana
-            'tipo_sangre_id'    =>  1,
-            'tipo_documento_id' =>  1,
             'sexo_id'           =>  2, //Masculino
             'domicilio_id'      =>  2, //altura 654 	piso2,  barrioA-32, Posadas, Misiones, Argentina
             'obra_social_id'    =>  2, //OSUTHGRA
@@ -62,8 +58,6 @@ class PacienteSeeder extends Seeder
             'cuil'              =>  '22-2132131-11',
             'ciudad_id'         =>  1, //nacio en Posadas Posadas
             'origen_id'         =>  1, //Agricultores S.A
-            'tipo_sangre_id'    =>  1,
-            'tipo_documento_id' =>  1,
             'sexo_id'           =>  2, //Masculino
             'domicilio_id'      =>  3, //
             'obra_social_id'    =>  1, //IPS
@@ -84,8 +78,6 @@ class PacienteSeeder extends Seeder
             'cuil'              =>  '22-6134111-11',
             'ciudad_id'         =>  1, //nacio en Posadas Posadas
             'origen_id'         =>  1, //Agricultores S.A
-            'tipo_sangre_id'    =>  1,
-            'tipo_documento_id' =>  1,
             'sexo_id'           =>  2, //Masculino
             'domicilio_id'      =>  4, //
             'obra_social_id'    =>  1, //IPS
@@ -106,8 +98,6 @@ class PacienteSeeder extends Seeder
             'cuil'              =>  '22-6134111-11',
             'ciudad_id'         =>  1, //nacio en Posadas Posadas
             'origen_id'         =>  1, //Agricultores S.A
-            'tipo_sangre_id'    =>  1,
-            'tipo_documento_id' =>  1,
             'sexo_id'           =>  2, //Masculino
             'domicilio_id'      =>  5, //
             'obra_social_id'    =>  1, //IPS
@@ -128,8 +118,6 @@ class PacienteSeeder extends Seeder
             'cuil'              =>  '22-6532111-11',
             'ciudad_id'         =>  1, //nacio en Posadas Posadas
             'origen_id'         =>  2, //Seguros Campana
-            'tipo_sangre_id'    =>  1,
-            'tipo_documento_id' =>  1,
             'sexo_id'           =>  1,
             'domicilio_id'      =>  6, //
             'obra_social_id'    =>  2, //
@@ -150,8 +138,6 @@ class PacienteSeeder extends Seeder
             'cuil'              =>  '21-6531214-12',
             'ciudad_id'         =>  1, //nacio en Posadas Posadas
             'origen_id'         =>  2, //Seguros Campana
-            'tipo_sangre_id'    =>  4,
-            'tipo_documento_id' =>  1,
             'sexo_id'           =>  1,
             'domicilio_id'      =>  6, //
             'obra_social_id'    =>  2, //

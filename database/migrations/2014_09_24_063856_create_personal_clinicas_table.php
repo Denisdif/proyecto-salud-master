@@ -25,9 +25,6 @@ class CreatePersonalClinicasTable extends Migration
 
             $table->timestamps();
 
-            $table->unsignedBigInteger('tipo_documento_id');
-            $table->foreign('tipo_documento_id')->references('id')->on('tipo_documentos')->onDelete('restrict');
-
             $table->unsignedBigInteger('sexo_id');
             $table->foreign('sexo_id')->references('id')->on('sexos')->onDelete('restrict');
 
