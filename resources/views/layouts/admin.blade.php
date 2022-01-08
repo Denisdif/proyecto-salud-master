@@ -79,11 +79,11 @@
                     <a href="" class="nav-link">Contacto</a>
                 </li>
                  -->
-                <li class="nav-item d-none d-sm-inline-block">
+                <!--li class="nav-item d-none d-sm-inline-block">
                     <a style="color: white" href="/logout" class="nav-link">
                         <i class="fas fa-sign-out-alt"></i> Cerrar sesión
                     </a>
-                </li>
+                </li-->
             </ul>
 
 
@@ -176,6 +176,12 @@
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li-->
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a style="color: white" href="/logout" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                    </a>
+                </li>
+
 
             </ul>
 

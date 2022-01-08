@@ -18,10 +18,9 @@
             <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table table-bordered table-condensed table-hover">
                 <thead style="background-color:#222D32">
                     <tr class="text-uppercase">
-                        <th width="25%" style="color:#F8F9F9" >Nombre de Usuario</th>
-                        <th width="15%" style="color:#F8F9F9" >Documento</th>
+                        <th width="35%" style="color:#F8F9F9" >Nombre de Usuario</th>
+                        <th width="20%" style="color:#F8F9F9" >Documento</th>
                         <th width="25%" style="color:#F8F9F9" >E-mail</th>
-                        <th width="15%" style="color:#F8F9F9" >Roles</th>
                         <th width="20%" style="color:#F8F9F9" >Opciones</th>
 
                     </tr>
@@ -31,13 +30,6 @@
                         <td>{{ $user->name }}</td>
                         <td>{{  number_format( (intval($user->personal_clinica->documento)/1000), 3, '.', '.') }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>
-                            @if(!empty($user->getRoleNames()))
-                            @foreach($user->getRoleNames() as $v)
-                                <label class="badge badge-success" style="font-size:90%">{{ $v }}</label>
-                            @endforeach
-                            @endif
-                        </td>
                         <td style="text-align: center" colspan="3">
 
                             <a data-keyboard="false" data-target="#modal-show-{{ $user->id }}" data-toggle="modal">
