@@ -17,17 +17,17 @@
         </div>
         <div class="card-body">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <p>
+                <!--p>
                     <a class="btn btn-danger" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fa fa-filter" aria-hidden="true"></i> Filtrar
                     </a>
                 </p>
-                <div class="collapse" id="collapseExample">
+                <div class="collapse" id="collapseExample"-->
                     <div class="card card-body">
 
-                        <!-- aca colocar el include-->
+                        @include('voucher.search')
                     </div>
-                </div>
+                <!--/div-->
             </div>
             <table id="tablaDetalle" style="border:1px solid black; width:100%" class="table table-bordered table-condensed table-hover">
                 <thead style="background-color:#222D32">
@@ -44,7 +44,7 @@
                     <tr onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
                         <td>{{ $voucher->codigo }}</td>
                         <td>{{ $voucher->paciente->nombreCompleto() }}</td>
-                        <td>{{ $voucher->created_at->format('d/m/Y') }}</td>
+                        <td>{{ \Carbon\Carbon::parse($voucher->turno)->format('d/m/Y') }}</td>
                         <td style="text-align: center" colspan="3">
                             <a target="_blank" href="{{ route('voucher.pdf_paciente',$voucher->id) }}">
                                 <button title="exportar pdf paciente" class="btn fondo1 btn-responsive">

@@ -13,6 +13,7 @@ use App\Domicilio;
 use App\Ciudad;
 use App\Pais;
 use App\Provincia;
+use App\Voucher;
 
 class PacienteController extends Controller
 {
@@ -333,7 +334,7 @@ class PacienteController extends Controller
     public function voucher($id)
     {
         $paciente = Paciente::find($id);
-        $vouchers = $paciente->vouchers;
+        $vouchers = Voucher::wherePaciente_id($id)->orderBy('turno','desc')->get();;
         return view("paciente.vouchers", compact('vouchers','paciente'));
     }
 

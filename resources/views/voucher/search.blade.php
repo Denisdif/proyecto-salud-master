@@ -1,37 +1,32 @@
 {!! Form::model(Request::only(
     ['desde','hasta']),
-    ['url' => 'user/', 'method'=>'GET', 'autocomplete'=>'on', 'role'=>'search']
+    ['url' => 'voucher/', 'method'=>'GET', 'autocomplete'=>'on', 'role'=>'search']
 
     )!!}
-<div class="row">
+<div class="col-12">
+    <div class="row">
 
-
-     </div>
-     <div class="col-auto">
-        <label for="sexo_id">Fecha desde</label>
-        <input
-            type="date"
-            name="desde"
-            id="desde"
-            class="fecha form-control"
-            value="{{$desde}}"
-        >
-    </div>
-    <div class="col-auto">
-        <label for="hasta">Fecha Hasta</label>
-        <input
-            type="date"
-            name="hasta"
-            id="hasta"
-            class="fecha form-control"
-            value="{{$hasta}}"
-        >
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-auto">
+        <div class="col-4">
+           <label for="desde">Fecha desde</label>
+           <input
+               type="date"
+               name="desde"
+               id="desde"
+               class="fecha form-control"
+               value="{{$desde}}"
+           >
+       </div>
+       <div class="col-4">
+           <label for="hasta">Fecha Hasta</label>
+           <input
+               type="date"
+               name="hasta"
+               id="hasta"
+               class="fecha form-control"
+               value="{{$hasta}}"
+           >
+       </div>
+       <div class="col-4">
         <label for=""></label>
         <div class="form-group">
             <span class="input-group-btn">
@@ -40,14 +35,14 @@
                     type="submit"
                     id="bt_add"
                     name="filtrar"
-                    class="btn btn-primary btn-responsive">
+                    class="btn btn-danger btn-responsive">
                         <i class="fa fa-search"></i> Buscar
                 </button>
 
                 <a
 
-                href= "{{ route('user.index') }}"
-                class="btn btn-default"
+                href= "{{ route('voucher.index') }}"
+                class="btn btn-secondary"
                 >
                 <i class="fas fa-eraser"></i>
                     ... Limpiar
@@ -56,12 +51,8 @@
             </span>
         </div>
     </div>
-
+   </div>
 </div>
-
-
-
-
 
 
 {{Form::close()}}

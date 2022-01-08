@@ -41,11 +41,47 @@ class VoucherController extends Controller
         ];
         return response()->json($retorno);
     }
-    public function index()
+    public function index(Request $request)
     {
-        $vouchers = Voucher::orderBy('id', 'desc')->get();
+        $vouchers = Voucher::all(); //obteneme todas los vouchers
+
+        $desde=$request->desde;
+        $hasta=$request->hasta;
+
+        $today = Carbon::now()->format('Y-m-d');
+
+        if(count($request->all())>=1) //si existe algun request(es decir, si uso el "Filtrar")
+        {
+            //dd($request->all());
+            $sql = Voucher::select('vouchers.*'); //inicio la consulta sobre una determinada tabla
+
+            if($request->desde)
+            {
+                $sql = $sql->where('turno','>=',$request->desde);
+            }            
+            if($request->hasta)
+            {
+                $sql = $sql->where('turno','<=',$request->hasta);
+            }
+
+
+            $vouchers=$sql->orderBy('turno','desc')->get(); //ejecuto la consulta
+
+
+        }
+        else //si nunca filtre, (si no existió request)
+        {
+
+            $vouchers=Voucher::whereTurno($today)->orderBy('codigo','desc')->get(); //que me obtenga directamente todos los grupos
+
+
+        }
+
+        //$vouchers = Voucher::orderBy('id', 'desc')->get();
         return view('voucher.index',[
-            "vouchers"         =>  $vouchers
+            "vouchers"         =>  $vouchers,
+            "desde"             =>  $desde,
+            "hasta"             =>  $hasta
             ]);
     }
 
