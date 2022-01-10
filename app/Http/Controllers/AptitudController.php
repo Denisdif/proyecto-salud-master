@@ -95,7 +95,7 @@ class AptitudController extends Controller
     public function descargar($id)
     {   
         $aptitud = Aptitud::find($id); 
-        return response()->download($aptitud->pdf);
+        return response()->file($aptitud->pdf);
     }
 
     /*

@@ -156,8 +156,12 @@ class Voucher extends Model implements Auditable
 
                 //Por cada estudio
                 foreach ($voucher_estudios as $voucher_estudio) {
+                    //Si pertenece al tipo de estudio
                     if ($tipos[$i]->nombre == $voucher_estudio->estudio->tipoEstudio->nombre) {
-                        $estudiosClasificados[$i][1][] = $voucher_estudio->estudio;
+                        //Si el nombre del estudio es distinto al nombre del tipo de estudio
+                        if ((strtoupper($tipos[$i]->nombre)) != ( strtoupper($voucher_estudio->estudio->nombre)) ) {
+                            $estudiosClasificados[$i][1][] = $voucher_estudio->estudio;
+                        }
                     }
                 }
             }
