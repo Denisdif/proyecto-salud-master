@@ -49,9 +49,11 @@
                         <input
                             type="integer"
                             name="documento"
+                            id="documento"
                             value="{{ $personal->documento }}"
                             class="form-control"
-                            title="documento de la persona">
+                            title="documento de la persona"
+                            onkeypress="return soloNumeros(event)">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -112,8 +114,53 @@
         $(document).ready(function(){
             var select1 = $("#sexo_id").select2({width:'100%'});
             select1.data('select2').$selection.css('height', '100%');
+
+            
+
+            $('#documento').mask('00.000.000');
         });
     </script>
+
+<script>
+    function soloLetras(e) {
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key).toLowerCase();
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+        especiales = [8, 37, 39, 46];
+    
+        tecla_especial = false
+        for(var i in especiales) {
+            if(key == especiales[i]) {
+                tecla_especial = true;
+                break;
+            }
+        }
+    
+        if(letras.indexOf(tecla) == -1 && !tecla_especial)
+            return false;
+    }
+</script>
+
+<script>
+    function soloNumeros(e) {
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key);
+        letras = " 1234567890";
+        especiales = [8, 37, 39, 46];
+    
+        tecla_especial = false
+        for(var i in especiales) {
+            if(key == especiales[i]) {
+                tecla_especial = true;
+                break;
+            }
+        }
+    
+        if(letras.indexOf(tecla) == -1 && !tecla_especial)
+            return false;
+    }
+</script>
+
 @endpush
 
 @endsection

@@ -14,6 +14,7 @@ use App\Ciudad;
 use App\Pais;
 use App\Provincia;
 use App\Voucher;
+use App\Http\Requests\PacienteRequest;
 
 class PacienteController extends Controller
 {
@@ -147,6 +148,14 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
+
+        
+        $this->validate($request, [
+            'documento' => 'unique:pacientes,documento,except,id',
+            'nombres'   => 'required',
+            'apellidos' => 'required'
+        ]);
+
 
         if($request->get('direccion')!=null) {
             $domicilio = new Domicilio;

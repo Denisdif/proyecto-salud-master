@@ -25,10 +25,10 @@ class CreatePersonalClinicasTable extends Migration
 
             $table->timestamps();
 
-            $table->unsignedBigInteger('sexo_id');
+            $table->unsignedBigInteger('sexo_id')->default(1);
             $table->foreign('sexo_id')->references('id')->on('sexos')->onDelete('restrict');
 
-            $table->unsignedBigInteger('puesto_id');
+            $table->unsignedBigInteger('puesto_id')->default(1);
             $table->foreign('puesto_id')->references('id')->on('puestos')->onDelete('restrict');
 
             $table->unsignedBigInteger('especialidad_id')->nullable();

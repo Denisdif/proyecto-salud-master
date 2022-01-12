@@ -503,6 +503,10 @@
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
 
+    <!-- mascaras -->
+    <script src="js/jquery.mask.min.js"></script>
+
     @stack('scripts')
+    @yield("scripts")
 </body>
 </html>

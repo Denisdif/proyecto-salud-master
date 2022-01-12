@@ -60,8 +60,8 @@
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <label for="documento">Documento</label>
-                                <input type="number"name="documento"value="{{old('documento')}}"class="form-control"
-                                    placeholder="33.222.111"title="Introduzca el documento">
+                                <input type="number"name="documento"id="documento"value="{{old('documento')}}"class="form-control"
+                                    placeholder="33.222.111"title="Introduzca el documento"onkeypress="return soloNumeros(event)">
                             </div>
                         </div>
 
@@ -399,11 +399,55 @@
             });
 
             
+
+            $('#documento').mask('00.000.000');
+            
         });
 
 
 
 </script>
+
+<script>
+    function soloLetras(e) {
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key).toLowerCase();
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+        especiales = [8, 37, 39, 46];
+    
+        tecla_especial = false
+        for(var i in especiales) {
+            if(key == especiales[i]) {
+                tecla_especial = true;
+                break;
+            }
+        }
+    
+        if(letras.indexOf(tecla) == -1 && !tecla_especial)
+            return false;
+    }
+</script>
+
+<script>
+    function soloNumeros(e) {
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key);
+        letras = " 1234567890";
+        especiales = [8, 37, 39, 46];
+    
+        tecla_especial = false
+        for(var i in especiales) {
+            if(key == especiales[i]) {
+                tecla_especial = true;
+                break;
+            }
+        }
+    
+        if(letras.indexOf(tecla) == -1 && !tecla_especial)
+            return false;
+    }
+</script>
+
 @endpush
 
 @endsection
