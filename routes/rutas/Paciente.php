@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
     Route::get('paciente/{paciente}', 'PacienteController@restaurar')->name('paciente.restaurar');
 
     Route::get('paciente/{paciente}/vouchers', 'PacienteController@voucher')->name('paciente.voucher');
+    Route::post('paciente-import-list-excel', 'PacienteController@importExcel')->name('pacientes.import.excel');
 ?>

@@ -21,8 +21,17 @@
                         <i class="fas fa-user-plus"></i> Nuevo
                     </button>
                 </a>
+                <a data-keyboard="false" data-target="#modal-import" data-toggle="modal">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-user-plus"></i> Importar Pacientes
+                    </button>
+                </a>
+                @include('paciente.modalimport')
             </div>
         </div>
+        @if(Session::has('message'))
+        <p class="alert alert-info">{{ Session::get('message') }}</p>
+        @endif
         <div class="card-body">
             <!--div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <p>
@@ -90,10 +99,11 @@
                             </a>
 
                             <a href="{{URL::action('PacienteController@voucher',$paciente->id)}}">
-                                <button title="carpeta"  class="btn fondo3 btn-responsive">
+                                <button title="carpeta"  class="btn fondo1 btn-responsive">
                                     <i style="color: rgb(255, 255, 255)" class="fas fa-folder"></i>
                                 </button>
                             </a>
+                            <!--
                             @if($paciente->estado_id == 1)
                                 <a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $paciente->id }}" data-toggle="modal">
                                     <button title="eliminar" class="btn fondo1 btn-md">
@@ -107,6 +117,7 @@
                                     </button>
                                 </a>
                             @endif
+                            -->
                              <!-- aca colocar el modalshow-->
                              @include('paciente.modalshow')
                         </td>

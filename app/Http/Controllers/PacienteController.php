@@ -15,6 +15,8 @@ use App\Pais;
 use App\Provincia;
 use App\Voucher;
 use App\Http\Requests\PacienteRequest;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PacientesImport;
 
 class PacienteController extends Controller
 {
@@ -345,6 +347,14 @@ class PacienteController extends Controller
         $paciente = Paciente::find($id);
         $vouchers = Voucher::wherePaciente_id($id)->orderBy('turno','desc')->get();;
         return view("paciente.vouchers", compact('vouchers','paciente'));
+    }
+
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('file');
+        Excel::import(new PacientesImport, $file);
+
+        return back()->with('message','Pacientes importados');
     }
 
 }
