@@ -17,11 +17,11 @@ class CreateAdminUserSeeder extends Seeder
     public function run()
     {
         $user1 = User::create([
-            'name'                  =>  'Mati',
+            'name'                  =>  'Admin',
             'password'              =>  bcrypt(12345678),
             'remember_token'        =>  bcrypt(12345678),
             'email'                 =>  'admin@email.com',
-            'personal_clinica_id'   =>  2,
+            'personal_clinica_id'   =>  1,
             'estado_id'             =>  1
 
         ]);
@@ -39,7 +39,7 @@ class CreateAdminUserSeeder extends Seeder
             'password'              =>  bcrypt(12345678),
             'remember_token'        =>  bcrypt(12345678),
             'email'                 =>  'axel@gmail.com',
-            'personal_clinica_id'   =>  3,
+            'personal_clinica_id'   =>  2,
             'estado_id'             =>  1
         ]);
         //$user2->assignRole([$role->id]);

@@ -12,24 +12,12 @@ class PersonalClinicaSeeder extends Seeder
      */
     public function run()
     {
+        
         PersonalClinica::create([
-            'nombres'               =>  'Carlos Lisandro',
-            'apellidos'             =>  'Villalba',
-            'documento'             =>  '37590136',
-            'fecha_nacimiento'      =>  '1993-09-14',
-            'cuenta'                =>  true,
-            'sexo_id'               =>  2,
-            'puesto_id'             =>  1,
-            'estado_id'             =>  1,
-        ]);
-
-
-
-        PersonalClinica::create([
-            'nombres'               =>  'Matias',
-            'apellidos'             =>  'Kovalski',
-            'documento'             =>  '38063440',
-            'fecha_nacimiento'      =>  '1994-02-27',
+            'nombres'               =>  'Admin',
+            'apellidos'             =>  'Administrador',
+            'documento'             =>  '00000000',
+            'fecha_nacimiento'      =>  '1974-09-15',
             'cuenta'                =>  true,
             'sexo_id'               =>  2,
             'puesto_id'             =>  1,
@@ -46,31 +34,6 @@ class PersonalClinicaSeeder extends Seeder
             'puesto_id'             =>  2,
             'estado_id'             =>  1,
         ]);
-
-
-               /*PersonalClinica::create([
-            'nombres'               =>  'Juan Miguel',
-            'apellidos'             =>  'Martinez',
-            'documento'             =>  '32144265',
-            'fecha_nacimiento'      =>  '1991-01-20',
-            'cuenta'                =>  true,
-            'tipo_documento_id'     =>  1,
-            'sexo_id'               =>  2,
-            'puesto_id'             =>  3,
-            'estado_id'             =>  2,
-        ]);*/
-
-        /*PersonalClinica::create([
-            'nombres'               =>  'Maria Andrea',
-            'apellidos'             =>  'Pereyra',
-            'documento'             =>  '28214421',
-            'fecha_nacimiento'      =>  '1993-10-25',
-            'cuenta'                =>  true,
-            'tipo_documento_id'     =>  1,
-            'sexo_id'               =>  1,
-            'puesto_id'             =>  4,
-            'estado_id'             =>  2,
-        ]);*/
 
     }
 }
