@@ -61,7 +61,7 @@ class UserController extends Controller
         {
 
             $estado_id=null; //en el select2 que me aparesca " -- Todas las Categorias --"
-            $users=User::whereEstado_id(1)->orderBy('created_at','desc')->get(); //que me obtenga directamente todos los grupos
+            $users=User::all(); //que me obtenga directamente todos los grupos
 
 
         }

@@ -68,7 +68,7 @@
                                 </button>
                             </a>
                             @if($user->estado_id == 1)
-                                <a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $user->id }}" data-toggle="modal">
+                                <!--a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $user->id }}" data-toggle="modal">
                                     <button title="eliminar" class="btn fondo1 btn-responsive">
                                         <i class="fas fa-user-minus"></i>
                                     </button>
@@ -78,7 +78,7 @@
                                     <button title="habilitar" class="btn btn-info btn-responsive">
                                         <i class="fas fa-user-plus"></i>
                                     </button>
-                                </a>
+                                </a-->
                             @endif
                         </td>
                     </tr>

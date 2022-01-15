@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
+/*
         User::create([
             'name'                  =>  'miguex_01',
             'password'              =>  bcrypt(12345678),
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             'email'                 =>  'margarete@gmail.com',
             'personal_clinica_id'   =>  3,
             'estado_id'             =>  2
-        ]);
+        ]);*/
 
 
 
