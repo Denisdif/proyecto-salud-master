@@ -22,7 +22,7 @@ class CreateAdminUserSeeder extends Seeder
             'remember_token'        =>  bcrypt(12345678),
             'email'                 =>  'admin@email.com',
             'personal_clinica_id'   =>  1,
-            'estado_id'             =>  1
+            'estado_id'             =>  2
 
         ]);
 
@@ -40,7 +40,7 @@ class CreateAdminUserSeeder extends Seeder
             'remember_token'        =>  bcrypt(12345678),
             'email'                 =>  'axel@gmail.com',
             'personal_clinica_id'   =>  2,
-            'estado_id'             =>  1
+            'estado_id'             =>  2
         ]);
         //$user2->assignRole([$role->id]);
 

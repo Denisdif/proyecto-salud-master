@@ -103,21 +103,6 @@
                                     <i style="color: rgb(255, 255, 255)" class="fas fa-folder"></i>
                                 </button>
                             </a>
-                            <!--
-                            @if($paciente->estado_id == 1)
-                                <a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $paciente->id }}" data-toggle="modal">
-                                    <button title="eliminar" class="btn fondo1 btn-md">
-                                        <i class="fas fa-user-minus"></i>
-                                    </button>
-                                </a>
-                            @else
-                                <a data-backdrop="static" data-keyboard="false" data-target="#modal-habilitar-{{ $paciente->id }}" data-toggle="modal">
-                                    <button title="habilitar" class="btn btn-info btn-md">
-                                        <i class="fas fa-user-plus"></i>
-                                    </button>
-                                </a>
-                            @endif
-                            -->
                              <!-- aca colocar el modalshow-->
                              @include('paciente.modalshow')
                         </td>

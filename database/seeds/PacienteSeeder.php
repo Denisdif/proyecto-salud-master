@@ -51,66 +51,6 @@ class PacienteSeeder extends Seeder
         ]);
 
         Paciente::create([
-            'documento'         =>  '22435463',
-            'nombres'           =>  'Marcos',
-            'apellidos'         =>  'Gottchalk',
-            'fecha_nacimiento'  =>  '1982-05-11',
-            'cuil'              =>  '22-2132131-11',
-            'ciudad_id'         =>  1, //nacio en Posadas Posadas
-            'origen_id'         =>  1, //Agricultores S.A
-            'sexo_id'           =>  2, //Masculino
-            'domicilio_id'      =>  3, //
-            'obra_social_id'    =>  1, //IPS
-            'estado_civil_id'   =>  2,  //Casado
-            'peso'              =>  91,
-            'estatura'          =>  1.88,
-            'telefono'          =>  '3764-42446876',
-            'estado_id'         =>  2,  //Inhabilitado
-
-
-        ]);
-
-        Paciente::create([
-            'documento'         =>  '21435423',
-            'nombres'           =>  'Ezequiel',
-            'apellidos'         =>  'Sejumil',
-            'fecha_nacimiento'  =>  '1993-02-12',
-            'cuil'              =>  '22-6134111-11',
-            'ciudad_id'         =>  1, //nacio en Posadas Posadas
-            'origen_id'         =>  1, //Agricultores S.A
-            'sexo_id'           =>  2, //Masculino
-            'domicilio_id'      =>  4, //
-            'obra_social_id'    =>  1, //IPS
-            'estado_civil_id'   =>  2,  //Casado
-            'peso'              =>  91,
-            'estatura'          =>  1.88,
-            'telefono'          =>  '3764-42742826',
-            'estado_id'         =>  2,  //Inhabilitado
-
-
-        ]);
-
-        Paciente::create([
-            'documento'         =>  '42433623',
-            'nombres'           =>  'Ezequiel',
-            'apellidos'         =>  'Diaz',
-            'fecha_nacimiento'  =>  '1993-02-12',
-            'cuil'              =>  '22-6134111-11',
-            'ciudad_id'         =>  1, //nacio en Posadas Posadas
-            'origen_id'         =>  1, //Agricultores S.A
-            'sexo_id'           =>  2, //Masculino
-            'domicilio_id'      =>  5, //
-            'obra_social_id'    =>  1, //IPS
-            'estado_civil_id'   =>  2,  //Casado
-            'peso'              =>  91,
-            'estatura'          =>  1.88,
-            'telefono'          =>  '3764-43726886',
-            'estado_id'         =>  2,  //Inhabilitado
-
-
-        ]);
-
-        Paciente::create([
             'documento'         =>  '23574612',
             'nombres'           =>  'Marta',
             'apellidos'         =>  'Serralima',
@@ -149,10 +89,6 @@ class PacienteSeeder extends Seeder
 
 
         ]);
-
-
-
-
 
     }
 }

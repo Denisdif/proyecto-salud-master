@@ -36,41 +36,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
-        $estados=Estado::all(); //obteneme todas las categorias
-
-        if(count($request->all())>=1) //si existe algun request(es decir, si uso el "Filtrar")
-        {
-            //dd($request->all());
-            $sql = User::select('users.*'); //inicio la consulta sobre una determinada tabla
-
-            if($request->estado_id)
-            {
-                $sql = $sql->whereEstado_id($request->estado_id); //creo la consulta y almaceno en "sql"
-            }
-
-
-            $users=$sql->orderBy('created_at','desc')->get(); //ejecuto la consulta
-            $estado_id=$request->estado_id; //mantengo el id de la categoria del tiquet
-
-
-        }
-        else //si nunca filtre, (si no existió request)
-        {
-
-            $estado_id=null; //en el select2 que me aparesca " -- Todas las Categorias --"
-            $users=User::all(); //que me obtenga directamente todos los grupos
-
-
-        }
-
+        $users=User::whereEstad(1); 
+        //d($users);
         return view('user.index',[
             "users"         =>  $users,         //los grupos de trabajo
-            "estado_id"         =>  $estado_id, //si los id son identicos que me mantenga el valor
-            "estados"           =>  $estados, //si los id son identicos que me mantenga el valor
-
             ]);
 
 

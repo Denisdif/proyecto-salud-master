@@ -21,18 +21,18 @@ class PersonalClinicaSeeder extends Seeder
             'cuenta'                =>  true,
             'sexo_id'               =>  2,
             'puesto_id'             =>  1,
-            'estado_id'             =>  1,
+            'estado_id'             =>  2,
         ]);
 
         PersonalClinica::create([
             'nombres'               =>  'Axel',
             'apellidos'             =>  'Britzius',
             'documento'             =>  '22063440',
-            'fecha_nacimiento'      =>  '1888-02-27',
+            'fecha_nacimiento'      =>  '1888-08-22',
             'cuenta'                =>  true,
             'sexo_id'               =>  2,
             'puesto_id'             =>  2,
-            'estado_id'             =>  1,
+            'estado_id'             =>  2,
         ]);
 
     }

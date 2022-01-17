@@ -32,7 +32,7 @@
                 <div class="collapse" id="collapseExample">
                     <div class="card card-body">
 
-                        @include('user.search')
+                        
                     </div>
                 </div>
             </div-->
@@ -67,19 +67,6 @@
                                     <i class="fa fa-edit"></i>
                                 </button>
                             </a>
-                            @if($user->estado_id == 1)
-                                <!--a data-backdrop="static" data-keyboard="false" data-target="#modal-delete-{{ $user->id }}" data-toggle="modal">
-                                    <button title="eliminar" class="btn fondo1 btn-responsive">
-                                        <i class="fas fa-user-minus"></i>
-                                    </button>
-                                </a>
-                            @else
-                                <a data-backdrop="static" data-keyboard="false" data-target="#modal-habilitar-{{ $user->id }}" data-toggle="modal">
-                                    <button title="habilitar" class="btn btn-info btn-responsive">
-                                        <i class="fas fa-user-plus"></i>
-                                    </button>
-                                </a-->
-                            @endif
                         </td>
                     </tr>
                     @include('user.modaldelete')
