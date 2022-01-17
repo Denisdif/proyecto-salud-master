@@ -33,7 +33,9 @@
                                     value="{{old('nombres')}}"
                                     class="form-control"
                                     placeholder="Ingrese el nombre..."
-                                    title="Introduzca un nombre"required>
+                                    title="Introduzca un nombre"
+                                    onkeypress="return soloLetras(event)"
+                                    required>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -48,7 +50,9 @@
                                     value="{{old('apellidos')}}"
                                     class="form-control"
                                     placeholder="Ingrese el apellido..."
-                                    title="Introduzca el apellido"required>
+                                    title="Introduzca el apellido"
+                                    onkeypress="return soloLetras(event)"
+                                    required>
                             </div>
                         </div>
                     </div>
@@ -81,7 +85,8 @@
                             <div class="form-group">
                                 <label for="cuil">CUIL</label>
                                 <input type="string"name="cuil"value="{{old('cuil')}}"class="form-control"placeholder="22-12312412-11"
-                                    title="Introduzca el cuil">
+                                    title="Introduzca el cuil"
+                                    onkeypress="return soloNumeros(event)">
                             </div>
                         </div>   
         
@@ -146,7 +151,8 @@
                             <div class="form-group">
                                 <label for="telefono">Teléfono</label>
                                 <input type="text"name="telefono"value="{{old('telefono')}}"class="form-control"
-                                    placeholder="3764-232266"title="Introduzca un teléfono">
+                                    placeholder="3764-232266"title="Introduzca un teléfono"
+                                    onkeypress="return soloNumeros(event)">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">

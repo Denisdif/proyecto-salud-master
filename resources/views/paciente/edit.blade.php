@@ -38,6 +38,7 @@
                                     value="{{ $paciente->nombres }}"
                                     class="form-control"
                                     title="nombre del paciente"
+                                    onkeypress="return soloLetras(event)"
                                     required>
                             </div>
                         </div>
@@ -52,7 +53,7 @@
                                     value="{{ $paciente->apellidos }}"
                                     class="form-control"
                                     title="apellidos del paciente"
-                                    onkeypress="return soloNumeros(event)"
+                                    onkeypress="return soloLetras(event)"
                                     required>
                             </div>
                         </div>
@@ -73,6 +74,7 @@
                                     value="{{ $paciente->documento }}"
                                     class="form-control"
                                     title="documento del paciente"
+                                    onkeypress="return soloNumeros(event)"
                                     required>
                             </div>
                         </div>
@@ -120,6 +122,7 @@
                                     value="{{ $paciente->telefono }}"
                                     class="form-control"
                                     title="número de telefono de la persona"
+                                    onkeypress="return soloNumeros(event)"
                                     >
                             </div>
                         </div>

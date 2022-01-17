@@ -29,7 +29,8 @@
                             name="nombres"
                             value="{{ $personal->nombres}}"
                             class="form-control"
-                            title="nombre de la persona">
+                            title="nombre de la persona"
+                            onkeypress="return soloLetras(event)">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -40,7 +41,8 @@
                             name="apellidos"
                             value="{{ $personal->apellidos }}"
                             class="form-control"
-                            title="apellido de la persona">
+                            title="apellido de la persona"
+                            onkeypress="return soloLetras(event)">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

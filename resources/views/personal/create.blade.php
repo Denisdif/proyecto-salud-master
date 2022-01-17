@@ -31,6 +31,7 @@
                             class="form-control"
                             placeholder="Ingrese el nombre..."
                             title="Introduzca un nombre"
+                            onkeypress="return soloLetras(event)"
                             required>
                     </div>
                 </div>
@@ -45,6 +46,7 @@
                             class="form-control"
                             placeholder="Ingrese el apellido..."
                             title="Introduzca el apellido"
+                            onkeypress="return soloLetras(event)"
                             required>
                     </div>
                 </div>
