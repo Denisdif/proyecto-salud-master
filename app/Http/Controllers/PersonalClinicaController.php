@@ -75,7 +75,7 @@ class PersonalClinicaController extends Controller
         {
             $puesto_id=null; //en el select2 que me aparesca " -- Todas las Categorias --"
             $estado_id=null; //en el select2 que me aparesca " -- Todas las Categorias --"
-            $personals=PersonalClinica::whereEstado_id(2); //que me obtenga directamente todos los grupos
+            $personals=PersonalClinica::whereEstado_id(1)->orderBy('created_at','desc')->get(); //que me obtenga directamente todos los grupos
 
 
         }

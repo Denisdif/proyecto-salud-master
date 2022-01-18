@@ -33,7 +33,6 @@
                 <div class="collapse" id="collapseExample">
                     <div class="card card-body">
 
-                    @include('personal.search')
                         
                     </div>
                 </div>
@@ -72,9 +71,6 @@
                             </a>
                         </td>
                     </tr>
-                    @include('personal.modaldelete')
-                    @include('personal.modalhabilitar')
-
                     @endforeach
                 </tbody>
             </table>
