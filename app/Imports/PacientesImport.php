@@ -17,7 +17,8 @@ class PacientesImport implements ToModel
         return new Paciente([
             'apellidos'=>$row[0],
             'nombres'=>$row[1],            
-            'documento' => $row[7]
+            'documento' => $row[7],
+            'estado_id' => 1
         ]);
     }
 }
