@@ -34,7 +34,7 @@ class CreatePersonalClinicasTable extends Migration
             $table->unsignedBigInteger('especialidad_id')->nullable();
             $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('restrict');
 
-            $table->unsignedBigInteger('estado_id');
+            $table->unsignedBigInteger('estado_id')->default(1);
             $table->foreign('estado_id')->references('id')->on('estados')->onDelete('restrict');
         });
     }

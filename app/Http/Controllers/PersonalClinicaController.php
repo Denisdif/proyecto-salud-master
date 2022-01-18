@@ -122,10 +122,12 @@ class PersonalClinicaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'documento' => 'required|unique:personal_clinicas,documento,except,id',
-            'nombres' => 'required',
-            'apellidos' => 'required',
-            'fecha_nacimiento'  => 'required'
+            'documento'         => 'required|unique:personal_clinicas,documento,except,id',
+            'nombres'           => 'required',
+            'apellidos'         => 'required',
+            'fecha_nacimiento'  => 'required',
+            'sexo_id'           => 'required',
+            'puesto_id'         => 'required'
         ]);
 
         //Creo los datos de la persona
