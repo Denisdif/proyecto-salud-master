@@ -165,7 +165,7 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-header fondo2">
-                        {{$estudios[$i][0]->nombre}} {{sizeof($estudios[$i][1])}}
+                        {{$estudios[$i][0]->nombre}}
                     </div>
                     <div class="card-body">
                         <!-- Inputs de estudios por cada tipo de estudio -->

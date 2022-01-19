@@ -956,7 +956,8 @@
         });
 
         // Observaciones
-        $(".calculoIMC").change(function()
+        //$(".calculoIMC").change(function()
+        $(".calculoIMC").on("change, keyup",function()
         {
             //Variables
                 let altura = $("#estatura").val();

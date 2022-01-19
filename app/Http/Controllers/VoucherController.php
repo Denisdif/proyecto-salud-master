@@ -47,6 +47,8 @@ class VoucherController extends Controller
 
         $desde=$request->desde;
         $hasta=$request->hasta;
+        if(is_null($desde)) $desde=date("Y-m-d");
+        if(is_null($hasta)) $hasta=date("Y-m-d");
 
         $today = Carbon::now()->format('Y-m-d');
 
